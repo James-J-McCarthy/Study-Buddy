@@ -380,7 +380,7 @@ rest = Transform2D(3.14289, -0.827504, 0.827504, 3.14289, 428, 498)
 [node name="UpperArmL" type="Bone2D" parent="StudyingBuddySkeleton"]
 position = Vector2(359, 359)
 rotation = 1.89813
-scale = Vector2(1, 1)
+scale = Vector2(1, 0.999999)
 rest = Transform2D(-0.100878, 0.994899, -0.994899, -0.100878, 359, 359)
 
 [node name="ForeArmL" type="Bone2D" parent="StudyingBuddySkeleton/UpperArmL"]
