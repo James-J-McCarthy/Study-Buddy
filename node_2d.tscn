@@ -1,17 +1,105 @@
-[gd_scene load_steps=3 format=3 uid="uid://doin1g4xrytqe"]
+[gd_scene load_steps=9 format=3 uid="uid://doin1g4xrytqe"]
 
+[ext_resource type="Script" path="res://MainScreen.gd" id="1_37525"]
 [ext_resource type="Texture2D" uid="uid://c77g28tb1owha" path="res://BackGround.png" id="1_ua47p"]
-[ext_resource type="Texture2D" uid="uid://b58rbfmn5elbj" path="res://pieces.png" id="2_bpu2n"]
+[ext_resource type="Texture2D" uid="uid://dmtfw5c544mkg" path="res://Phone.png" id="3_1y5kf"]
+[ext_resource type="Texture2D" uid="uid://djsbst41bgr5s" path="res://icon.svg" id="4_kf0xm"]
+[ext_resource type="Texture2D" uid="uid://dhu2tiabdrokd" path="res://RedIcon.png" id="5_htttl"]
+
+[sub_resource type="Animation" id="Animation_q42wk"]
+resource_name = "PhoneUp"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Phone_png:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(260, 914), Vector2(260, 397)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MenuBackButton:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(261, 1046), Vector2(261, 500)]
+}
+
+[sub_resource type="Animation" id="Animation_87igy"]
+resource_name = "PhoneDown"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Phone_png:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(260, 397), Vector2(260, 924)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MenuBackButton:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(264, 498), Vector2(261, 1046)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h4itg"]
+_data = {
+"PhoneDown": SubResource("Animation_87igy"),
+"PhoneUp": SubResource("Animation_q42wk")
+}
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_37525")
 
 [node name="BackGround" type="Sprite2D" parent="."]
 position = Vector2(259, 323.75)
 scale = Vector2(0.202745, 0.196515)
 texture = ExtResource("1_ua47p")
 
-[node name="CharacterPeices" type="Node2D" parent="."]
+[node name="Phone_png" type="Sprite2D" parent="."]
+position = Vector2(260, 914)
+scale = Vector2(0.15725, 0.1565)
+texture = ExtResource("3_1y5kf")
 
-[node name="Pieces" type="Sprite2D" parent="."]
-position = Vector2(398, 533)
-texture = ExtResource("2_bpu2n")
+[node name="PhoneMover" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h4itg")
+}
+
+[node name="MenuUpButton" type="TextureButton" parent="."]
+offset_left = 372.0
+offset_top = 513.0
+offset_right = 500.0
+offset_bottom = 641.0
+texture_normal = ExtResource("4_kf0xm")
+texture_pressed = ExtResource("5_htttl")
+
+[node name="MenuBackButton" type="TextureButton" parent="."]
+offset_left = 261.0
+offset_top = 1046.0
+offset_right = 389.0
+offset_bottom = 1176.0
+texture_normal = ExtResource("4_kf0xm")
+texture_pressed = ExtResource("5_htttl")
+ignore_texture_size = true
+
+[connection signal="pressed" from="MenuUpButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="MenuBackButton" to="." method="_on_menu_back_button_pressed"]
