@@ -1,37 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://doin1g4xrytqe"]
+[gd_scene load_steps=14 format=3 uid="uid://doin1g4xrytqe"]
 
 [ext_resource type="Script" path="res://MainScreen.gd" id="1_37525"]
-[ext_resource type="Texture2D" uid="uid://c77g28tb1owha" path="res://BackGround.png" id="1_ua47p"]
+[ext_resource type="Texture2D" uid="uid://c8xf1u7hrxbtf" path="res://Outside Window.PNG" id="2_xt5uq"]
 [ext_resource type="Texture2D" uid="uid://dmtfw5c544mkg" path="res://Phone.png" id="3_1y5kf"]
+[ext_resource type="Texture2D" uid="uid://drafomabonr8k" path="res://Wall.PNG" id="3_60x4m"]
 [ext_resource type="Texture2D" uid="uid://djsbst41bgr5s" path="res://icon.svg" id="4_kf0xm"]
+[ext_resource type="Texture2D" uid="uid://fjct6vuqe7fp" path="res://Clock.PNG" id="4_xiqa2"]
 [ext_resource type="Texture2D" uid="uid://dhu2tiabdrokd" path="res://RedIcon.png" id="5_htttl"]
-
-[sub_resource type="Animation" id="Animation_q42wk"]
-resource_name = "PhoneUp"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Phone_png:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(260, 914), Vector2(260, 397)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MenuBackButton:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(261, 1046), Vector2(261, 500)]
-}
+[ext_resource type="Texture2D" uid="uid://bveo3brld2oqs" path="res://Book.PNG" id="5_tv0qa"]
+[ext_resource type="Texture2D" uid="uid://6rmnmn668agc" path="res://Foreground.PNG" id="6_u6ybi"]
+[ext_resource type="Texture2D" uid="uid://dwsg5ao8lxego" path="res://Reference UI.PNG" id="7_0064q"]
 
 [sub_resource type="Animation" id="Animation_87igy"]
 resource_name = "PhoneDown"
@@ -60,6 +38,33 @@ tracks/1/keys = {
 "values": [Vector2(264, 498), Vector2(261, 1046)]
 }
 
+[sub_resource type="Animation" id="Animation_q42wk"]
+resource_name = "PhoneUp"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Phone_png:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(260, 914), Vector2(260, 397)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MenuBackButton:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(261, 1046), Vector2(261, 500)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h4itg"]
 _data = {
 "PhoneDown": SubResource("Animation_87igy"),
@@ -69,10 +74,36 @@ _data = {
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_37525")
 
-[node name="BackGround" type="Sprite2D" parent="."]
+[node name="BackGround2" type="Sprite2D" parent="."]
 position = Vector2(259, 323.75)
 scale = Vector2(0.202745, 0.196515)
-texture = ExtResource("1_ua47p")
+texture = ExtResource("2_xt5uq")
+
+[node name="Wall & Window" type="Sprite2D" parent="."]
+position = Vector2(259, 323.75)
+scale = Vector2(0.202745, 0.196515)
+texture = ExtResource("3_60x4m")
+
+[node name="Clock" type="Sprite2D" parent="."]
+position = Vector2(259, 323.75)
+scale = Vector2(0.202745, 0.196515)
+texture = ExtResource("4_xiqa2")
+
+[node name="Book" type="Sprite2D" parent="."]
+position = Vector2(259, 323.75)
+scale = Vector2(0.202745, 0.196515)
+texture = ExtResource("5_tv0qa")
+
+[node name="Forground" type="Sprite2D" parent="."]
+position = Vector2(259, 323.75)
+scale = Vector2(0.202745, 0.196515)
+texture = ExtResource("6_u6ybi")
+
+[node name="Reference" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.313726)
+position = Vector2(259, 323.75)
+scale = Vector2(0.202745, 0.196515)
+texture = ExtResource("7_0064q")
 
 [node name="Phone_png" type="Sprite2D" parent="."]
 position = Vector2(260, 914)
