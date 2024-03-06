@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://doin1g4xrytqe"]
+[gd_scene load_steps=15 format=3 uid="uid://doin1g4xrytqe"]
 
 [ext_resource type="Script" path="res://MainScreen.gd" id="1_37525"]
 [ext_resource type="Texture2D" uid="uid://c8xf1u7hrxbtf" path="res://Outside Window.PNG" id="2_xt5uq"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dhu2tiabdrokd" path="res://RedIcon.png" id="5_htttl"]
 [ext_resource type="Texture2D" uid="uid://bveo3brld2oqs" path="res://Book.PNG" id="5_tv0qa"]
 [ext_resource type="Texture2D" uid="uid://6rmnmn668agc" path="res://Foreground.PNG" id="6_u6ybi"]
+[ext_resource type="Texture2D" uid="uid://cgla60a73fw2g" path="res://Buddy.PNG" id="6_u175s"]
 [ext_resource type="Texture2D" uid="uid://dwsg5ao8lxego" path="res://Reference UI.PNG" id="7_0064q"]
 
 [sub_resource type="Animation" id="Animation_87igy"]
@@ -16,7 +17,7 @@ resource_name = "PhoneDown"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Phone_png:position")
+tracks/0/path = NodePath("Phone:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -43,7 +44,7 @@ resource_name = "PhoneUp"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Phone_png:position")
+tracks/0/path = NodePath("Phone:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -79,7 +80,7 @@ position = Vector2(259, 323.75)
 scale = Vector2(0.202745, 0.196515)
 texture = ExtResource("2_xt5uq")
 
-[node name="Wall & Window" type="Sprite2D" parent="."]
+[node name="Wall" type="Sprite2D" parent="."]
 position = Vector2(259, 323.75)
 scale = Vector2(0.202745, 0.196515)
 texture = ExtResource("3_60x4m")
@@ -94,18 +95,54 @@ position = Vector2(259, 323.75)
 scale = Vector2(0.202745, 0.196515)
 texture = ExtResource("5_tv0qa")
 
+[node name="Buddy" type="Node2D" parent="."]
+
+[node name="ArmR" type="Polygon2D" parent="Buddy"]
+position = Vector2(70, 72)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_u175s")
+polygon = PackedVector2Array(1118.1, 1487.61, 997.904, 1575.11, 986.365, 1599.63, 962.808, 1606.36, 928.673, 1599.15, 767.615, 1641.46, 761.365, 1664.53, 717.135, 1689.05, 699.827, 1689.05, 592.615, 1755.4, 573.865, 1849.15, 681.558, 1875.59, 782.038, 1882.32, 792.135, 1854.44, 838.288, 1836.17, 880.115, 1856.84, 1027.71, 1857.32, 1046.94, 1856.84, 1135.88, 1835.21, 1147.42, 1838.09, 1218.1, 1868.38, 1302.71, 1866.94, 1262.33, 1544.82)
+uv = PackedVector2Array(1118.1, 1487.61, 997.904, 1575.11, 986.365, 1599.63, 962.808, 1606.36, 928.673, 1599.15, 767.615, 1641.46, 761.365, 1664.53, 717.135, 1689.05, 699.827, 1689.05, 592.615, 1755.4, 573.865, 1849.15, 681.558, 1875.59, 782.038, 1882.32, 792.135, 1854.44, 838.288, 1836.17, 880.115, 1856.84, 1027.71, 1857.32, 1046.94, 1856.84, 1135.88, 1835.21, 1147.42, 1838.09, 1218.1, 1868.38, 1302.71, 1866.94, 1262.33, 1544.82)
+polygons = [PackedInt32Array(0, 22, 21, 20, 19), PackedInt32Array(0, 1, 17, 18, 19), PackedInt32Array(3, 4, 16), PackedInt32Array(2, 17, 1), PackedInt32Array(2, 3, 16, 17), PackedInt32Array(4, 5, 15, 16), PackedInt32Array(5, 6, 14, 15), PackedInt32Array(7, 6, 14, 13), PackedInt32Array(7, 8, 12, 13), PackedInt32Array(8, 9, 10, 11, 12)]
+
+[node name="Torso" type="Polygon2D" parent="Buddy"]
+position = Vector2(-29, 93)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_u175s")
+polygon = PackedVector2Array(1771.61, 1195.93, 1541.06, 1280.65, 1545.92, 1373.71, 1601.47, 1383.43, 1562.58, 1403.57, 1591.06, 1742.46, 1638.97, 1829.96, 1875.22, 1919.76, 2320.36, 2373.93, 2341.19, 2330.88, 2358.58, 1817.67, 2220.39, 1339.89, 2133.69, 1149.38, 1777.44, 1189.65)
+uv = PackedVector2Array(1771.61, 1195.93, 1541.06, 1280.65, 1545.92, 1373.71, 1601.47, 1383.43, 1562.58, 1403.57, 1591.06, 1742.46, 1638.97, 1829.96, 1875.22, 1919.76, 2320.36, 2373.93, 2341.19, 2330.88, 2358.58, 1817.67, 2220.39, 1339.89, 2133.69, 1149.38, 1777.44, 1189.65)
+polygons = [PackedInt32Array(1, 2, 3, 11, 12, 13, 0), PackedInt32Array(3, 4, 5, 6, 7, 8, 9, 10, 11)]
+
+[node name="Head" type="Polygon2D" parent="Buddy"]
+position = Vector2(131, 105)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_u175s")
+polygon = PackedVector2Array(766.69, 302.089, 661.381, 217.133, 483.504, 247.221, 388.814, 367.575, 425.097, 530.407, 515.363, 585.274, 437.487, 747.221, 381.735, 1038.37, 597.664, 1314.48, 810.053, 1338.37, 1277.31, 1257.84, 1445.45, 1112.71, 1496.78, 797.664, 1429.52, 625.097, 1550.76, 548.106, 1576.81, 304.62, 1413.98, 132.053, 1175.04, 134.708, 1031.68, 260.372, 1036.11, 310.814, 907.788, 289.575)
+uv = PackedVector2Array(766.69, 302.089, 661.381, 217.133, 483.504, 247.221, 388.814, 367.575, 425.097, 530.407, 515.363, 585.274, 437.487, 747.221, 381.735, 1038.37, 597.664, 1314.48, 810.053, 1338.37, 1277.31, 1257.84, 1445.45, 1112.71, 1496.78, 797.664, 1429.52, 625.097, 1550.76, 548.106, 1576.81, 304.62, 1413.98, 132.053, 1175.04, 134.708, 1031.68, 260.372, 1036.11, 310.814, 907.788, 289.575)
+polygons = [PackedInt32Array(5, 0, 1, 2, 3, 4), PackedInt32Array(19, 13, 14, 15, 16, 17, 18), PackedInt32Array(19, 20, 0, 5, 6, 7, 8, 9, 10, 11, 12, 13)]
+
+[node name="ArmL" type="Polygon2D" parent="Buddy"]
+position = Vector2(135, -71)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_u175s")
+polygon = PackedVector2Array(1068.82, 2081.5, 956.318, 2167.86, 899.5, 2363.32, 882.455, 2414.45, 846.091, 2415.59, 727.909, 2442.86, 691.545, 2494, 675.636, 2494, 664.273, 2464.45, 657.455, 2384.91, 531.318, 2398.55, 497.227, 2471.27, 400.636, 2561.05, 352.909, 2817.86, 400.636, 2837.18, 666.545, 2761.05, 684.727, 2744, 729.045, 2745.14, 748.364, 2764.45, 833.591, 2820.14, 1133.59, 2820.14, 1193.82, 2807.64, 1294.95, 2692.86, 1335.86, 2622.41, 1391.55, 2459.91, 1262, 2100.82)
+uv = PackedVector2Array(1068.82, 2081.5, 956.318, 2167.86, 899.5, 2363.32, 882.455, 2414.45, 846.091, 2415.59, 727.909, 2442.86, 691.545, 2494, 675.636, 2494, 664.273, 2464.45, 657.455, 2384.91, 531.318, 2398.55, 497.227, 2471.27, 400.636, 2561.05, 352.909, 2817.86, 400.636, 2837.18, 666.545, 2761.05, 684.727, 2744, 729.045, 2745.14, 748.364, 2764.45, 833.591, 2820.14, 1133.59, 2820.14, 1193.82, 2807.64, 1294.95, 2692.86, 1335.86, 2622.41, 1391.55, 2459.91, 1262, 2100.82)
+
+[node name="BuddySkeleton" type="Skeleton2D" parent="."]
+
 [node name="Forground" type="Sprite2D" parent="."]
 position = Vector2(259, 323.75)
 scale = Vector2(0.202745, 0.196515)
 texture = ExtResource("6_u6ybi")
 
 [node name="Reference" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.313726)
 position = Vector2(259, 323.75)
 scale = Vector2(0.202745, 0.196515)
 texture = ExtResource("7_0064q")
 
-[node name="Phone_png" type="Sprite2D" parent="."]
+[node name="Phone" type="Sprite2D" parent="."]
 position = Vector2(260, 914)
 scale = Vector2(0.15725, 0.1565)
 texture = ExtResource("3_1y5kf")
