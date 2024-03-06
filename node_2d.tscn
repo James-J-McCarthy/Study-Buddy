@@ -1,9 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://doin1g4xrytqe"]
+[gd_scene load_steps=3 format=3 uid="uid://doin1g4xrytqe"]
 
-[ext_resource type="Texture2D" uid="uid://dc3lmjaqumg77" path="res://icon.svg" id="1_a6e84"]
+[ext_resource type="Texture2D" uid="uid://c77g28tb1owha" path="res://BackGround.png" id="1_ua47p"]
+[ext_resource type="Texture2D" uid="uid://b58rbfmn5elbj" path="res://pieces.png" id="2_bpu2n"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(78, 72)
-texture = ExtResource("1_a6e84")
+[node name="BackGround" type="Sprite2D" parent="."]
+position = Vector2(259, 323.75)
+scale = Vector2(0.202745, 0.196515)
+texture = ExtResource("1_ua47p")
+
+[node name="CharacterPeices" type="Node2D" parent="."]
+
+[node name="Pieces" type="Sprite2D" parent="."]
+position = Vector2(398, 533)
+texture = ExtResource("2_bpu2n")
