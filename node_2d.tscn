@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://doin1g4xrytqe"]
+[gd_scene load_steps=20 format=3 uid="uid://doin1g4xrytqe"]
 
 [ext_resource type="Script" path="res://MainScreen.gd" id="1_37525"]
 [ext_resource type="Texture2D" uid="uid://c8xf1u7hrxbtf" path="res://Outside Window.PNG" id="2_xt5uq"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://6rmnmn668agc" path="res://Foreground.PNG" id="6_u6ybi"]
 [ext_resource type="Texture2D" uid="uid://cgla60a73fw2g" path="res://Buddy.PNG" id="6_u175s"]
 [ext_resource type="Texture2D" uid="uid://dwsg5ao8lxego" path="res://Reference UI.PNG" id="7_0064q"]
+[ext_resource type="Script" path="res://PomoTimer.gd" id="12_jdapp"]
+[ext_resource type="Script" path="res://PomoPlaceholder.gd" id="13_px1mx"]
 
 [sub_resource type="Animation" id="Animation_3ebs1"]
 length = 0.001
@@ -415,7 +417,7 @@ libraries = {
 "": SubResource("AnimationLibrary_n6bl0")
 }
 
-[node name="Forground" type="Sprite2D" parent="."]
+[node name="Foreground" type="Sprite2D" parent="."]
 position = Vector2(259, 323.75)
 scale = Vector2(0.202745, 0.196515)
 texture = ExtResource("6_u6ybi")
@@ -453,6 +455,14 @@ offset_bottom = 1176.0
 texture_normal = ExtResource("4_kf0xm")
 texture_pressed = ExtResource("5_htttl")
 ignore_texture_size = true
+
+[node name="PomoTimer" type="Node" parent="."]
+script = ExtResource("12_jdapp")
+
+[node name="PomoPlaceholder" type="RichTextLabel" parent="PomoTimer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("13_px1mx")
 
 [connection signal="pressed" from="MenuUpButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="MenuBackButton" to="." method="_on_menu_back_button_pressed"]
