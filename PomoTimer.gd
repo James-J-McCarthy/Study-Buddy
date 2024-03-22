@@ -1,27 +1,45 @@
 extends Node
 
-const MINUTE = 60.0
 var time = 0.0
-var timeLimit = 20 * MINUTE
-var timerRunning = false
+var running = false
+var debug = 0
+
+signal transmit_time(transmittedTime)
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	var mainScene = get_parent().get_parent()
+	mainScene.start_timer.connect(on_start_timer)
+	
+	var timeManager = get_parent()
+	timeManager.get_time.connect(on_get_time)
+	timeManager.reset_timer.connect(on_reset_timer)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if timerRunning && time <= timeLimit:
+	if running:
 		time += delta
-
-func getTime():
-	return time
+	
+	if debug == 60:
+		debug = 0
+		print(str(time) + "\n")
+	else:
+		debug += 1
 
 func isRunning():
-	return timerRunning
-
-func resetTime():
-	time = 0.0
+	return running
 
 func toggleRunning():
-	timerRunning = !timerRunning
+	running = !running
+
+
+func on_reset_timer():
+	time = 0.0
+
+func on_start_timer():
+	if !running:
+		toggleRunning()
+
+func on_get_time():
+	transmit_time.emit(time)

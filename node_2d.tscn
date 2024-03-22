@@ -1,8 +1,9 @@
 [gd_scene load_steps=20 format=3 uid="uid://doin1g4xrytqe"]
 
-[ext_resource type="Script" path="res://MainScreen.gd" id="1_37525"]
+[ext_resource type="Script" path="res://MainScene.gd" id="1_37525"]
 [ext_resource type="Texture2D" uid="uid://c8xf1u7hrxbtf" path="res://Outside Window.PNG" id="2_xt5uq"]
 [ext_resource type="Texture2D" uid="uid://dmtfw5c544mkg" path="res://Phone.png" id="3_1y5kf"]
+[ext_resource type="Script" path="res://TimeManager.gd" id="3_045uj"]
 [ext_resource type="Texture2D" uid="uid://drafomabonr8k" path="res://Wall.PNG" id="3_60x4m"]
 [ext_resource type="Texture2D" uid="uid://djsbst41bgr5s" path="res://icon.svg" id="4_kf0xm"]
 [ext_resource type="Texture2D" uid="uid://fjct6vuqe7fp" path="res://Clock.PNG" id="4_xiqa2"]
@@ -12,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://cgla60a73fw2g" path="res://Buddy.PNG" id="6_u175s"]
 [ext_resource type="Texture2D" uid="uid://dwsg5ao8lxego" path="res://Reference UI.PNG" id="7_0064q"]
 [ext_resource type="Script" path="res://PomoTimer.gd" id="12_jdapp"]
-[ext_resource type="Script" path="res://PomoPlaceholder.gd" id="13_px1mx"]
 
 [sub_resource type="Animation" id="Animation_3ebs1"]
 length = 0.001
@@ -281,8 +281,14 @@ _data = {
 "PhoneUp": SubResource("Animation_q42wk")
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="MainScene" type="Node2D"]
 script = ExtResource("1_37525")
+
+[node name="TimeManager" type="Node" parent="."]
+script = ExtResource("3_045uj")
+
+[node name="PomoTimer" type="Node" parent="TimeManager"]
+script = ExtResource("12_jdapp")
 
 [node name="BackGround2" type="Sprite2D" parent="."]
 position = Vector2(259, 323.75)
@@ -455,14 +461,6 @@ offset_bottom = 1176.0
 texture_normal = ExtResource("4_kf0xm")
 texture_pressed = ExtResource("5_htttl")
 ignore_texture_size = true
-
-[node name="PomoTimer" type="Node" parent="."]
-script = ExtResource("12_jdapp")
-
-[node name="PomoPlaceholder" type="RichTextLabel" parent="PomoTimer"]
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("13_px1mx")
 
 [connection signal="pressed" from="MenuUpButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="MenuBackButton" to="." method="_on_menu_back_button_pressed"]

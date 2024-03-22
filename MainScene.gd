@@ -2,10 +2,13 @@ extends Node2D
 
 var studying = true
 
+signal start_timer
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	start_timer.emit()
 	_studying_buddy_animation()
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
