@@ -27,12 +27,12 @@ func updateStudyingStatus():
 	if studying:
 		if studyLimit < time:
 			studying = false
-			print(str(studying))
+			print(str(studying) + "\n")
 			reset_timer.emit()
 	else:
 		if breakLimit < time:
 			studying = true
-			print(str(studying))
+			print(str(studying) + "\n")
 			reset_timer.emit()
 
 
