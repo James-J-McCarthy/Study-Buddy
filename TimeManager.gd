@@ -12,7 +12,7 @@ signal reset_timer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var pomoTimer = get_node("PomoTimer")
-	pomoTimer.transmit_time.connect(on_transmit_time)
+	pomoTimer.transmit_time.connect(_on_transmit_time)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -36,5 +36,5 @@ func updateStudyingStatus():
 			reset_timer.emit()
 
 
-func on_transmit_time(transmittedTime):
+func _on_transmit_time(transmittedTime):
 	time = transmittedTime

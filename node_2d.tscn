@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://doin1g4xrytqe"]
+[gd_scene load_steps=23 format=3 uid="uid://doin1g4xrytqe"]
 
 [ext_resource type="Script" path="res://MainScene.gd" id="1_37525"]
 [ext_resource type="Texture2D" uid="uid://c8xf1u7hrxbtf" path="res://Outside Window.PNG" id="2_xt5uq"]
@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://cgla60a73fw2g" path="res://Buddy.PNG" id="6_u175s"]
 [ext_resource type="Texture2D" uid="uid://dwsg5ao8lxego" path="res://Reference UI.PNG" id="7_0064q"]
 [ext_resource type="Script" path="res://PomoTimer.gd" id="12_jdapp"]
+[ext_resource type="Texture2D" uid="uid://b0hmcj5bd1msw" path="res://AppScreen.png" id="14_bik3x"]
+[ext_resource type="Texture2D" uid="uid://d2yh4mltusyva" path="res://MessagesScreen.png" id="15_75gsh"]
+[ext_resource type="Texture2D" uid="uid://b8yjup06g15vq" path="res://SettingsScreen.png" id="16_cua86"]
 
 [sub_resource type="Animation" id="Animation_3ebs1"]
 length = 0.001
@@ -235,18 +238,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(260, 397), Vector2(260, 924)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MenuBackButton:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(264, 498), Vector2(261, 1046)]
-}
 
 [sub_resource type="Animation" id="Animation_q42wk"]
 resource_name = "PhoneUp"
@@ -261,18 +252,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(260, 914), Vector2(260, 397)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MenuBackButton:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(261, 1046), Vector2(261, 500)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h4itg"]
@@ -440,6 +419,68 @@ position = Vector2(260, 914)
 scale = Vector2(0.15725, 0.1565)
 texture = ExtResource("3_1y5kf")
 
+[node name="MenuBackButton" type="TextureButton" parent="Phone"]
+anchors_preset = -1
+offset_left = 261.0
+offset_top = 1046.0
+offset_right = 707.0
+offset_bottom = 1508.0
+texture_normal = ExtResource("4_kf0xm")
+texture_pressed = ExtResource("5_htttl")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AppScreen" type="Sprite2D" parent="Phone"]
+position = Vector2(9.53891, -408.946)
+scale = Vector2(1.98038, 0.717692)
+texture = ExtResource("14_bik3x")
+
+[node name="MessagesButton" type="TextureButton" parent="Phone/AppScreen"]
+offset_left = -313.0
+offset_top = -703.0
+offset_right = -40.0
+offset_bottom = 668.0
+texture_normal = ExtResource("4_kf0xm")
+texture_pressed = ExtResource("5_htttl")
+stretch_mode = 0
+
+[node name="SettingsButton" type="TextureButton" parent="Phone/AppScreen"]
+offset_left = 43.3506
+offset_top = -703.355
+offset_right = 314.351
+offset_bottom = 676.645
+texture_normal = ExtResource("4_kf0xm")
+texture_pressed = ExtResource("5_htttl")
+stretch_mode = 0
+
+[node name="MessagesScreen" type="Sprite2D" parent="Phone"]
+position = Vector2(9.53908, -421.725)
+scale = Vector2(4.24513, 1.66537)
+texture = ExtResource("15_75gsh")
+
+[node name="MessagesBackButton" type="TextureButton" parent="Phone/MessagesScreen"]
+offset_left = 32.0
+offset_top = 77.0
+offset_right = 160.0
+offset_bottom = 315.0
+texture_normal = ExtResource("4_kf0xm")
+texture_pressed = ExtResource("5_htttl")
+stretch_mode = 0
+
+[node name="SettingsScreen" type="Sprite2D" parent="Phone"]
+position = Vector2(6.35934, -415.335)
+scale = Vector2(1.32688, 0.464984)
+texture = ExtResource("16_cua86")
+
+[node name="SettingsBackButton" type="TextureButton" parent="Phone/SettingsScreen"]
+offset_left = 282.768
+offset_top = 426.0
+offset_right = 535.768
+offset_bottom = 1127.0
+texture_normal = ExtResource("4_kf0xm")
+texture_pressed = ExtResource("5_htttl")
+stretch_mode = 0
+
 [node name="PhoneMover" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_h4itg")
@@ -453,14 +494,9 @@ offset_bottom = 641.0
 texture_normal = ExtResource("4_kf0xm")
 texture_pressed = ExtResource("5_htttl")
 
-[node name="MenuBackButton" type="TextureButton" parent="."]
-offset_left = 261.0
-offset_top = 1046.0
-offset_right = 389.0
-offset_bottom = 1176.0
-texture_normal = ExtResource("4_kf0xm")
-texture_pressed = ExtResource("5_htttl")
-ignore_texture_size = true
-
-[connection signal="pressed" from="MenuUpButton" to="." method="_on_texture_button_pressed"]
-[connection signal="pressed" from="MenuBackButton" to="." method="_on_menu_back_button_pressed"]
+[connection signal="pressed" from="Phone/MenuBackButton" to="." method="_on_menu_back_button_pressed"]
+[connection signal="pressed" from="Phone/AppScreen/MessagesButton" to="." method="_on_messages_button_pressed"]
+[connection signal="pressed" from="Phone/AppScreen/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Phone/MessagesScreen/MessagesBackButton" to="." method="_on_messages_back_button_pressed"]
+[connection signal="pressed" from="Phone/SettingsScreen/SettingsBackButton" to="." method="_on_settings_back_button_pressed"]
+[connection signal="pressed" from="MenuUpButton" to="." method="_on_menu_up_button_pressed"]
