@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://MainScene.gd" id="1_37525"]
 [ext_resource type="Texture2D" uid="uid://c8xf1u7hrxbtf" path="res://Outside Window.PNG" id="2_xt5uq"]
-[ext_resource type="Texture2D" uid="uid://dmtfw5c544mkg" path="res://Phone.png" id="3_1y5kf"]
+[ext_resource type="Texture2D" uid="uid://dmtfw5c544mkg" path="res://Temporary Art/Phone.png" id="3_1y5kf"]
 [ext_resource type="Script" path="res://TimeManager.gd" id="3_045uj"]
 [ext_resource type="Texture2D" uid="uid://drafomabonr8k" path="res://Wall.PNG" id="3_60x4m"]
-[ext_resource type="Texture2D" uid="uid://djsbst41bgr5s" path="res://icon.svg" id="4_kf0xm"]
+[ext_resource type="Texture2D" uid="uid://djsbst41bgr5s" path="res://Temporary Art/icon.svg" id="4_kf0xm"]
 [ext_resource type="Texture2D" uid="uid://fjct6vuqe7fp" path="res://Clock.PNG" id="4_xiqa2"]
 [ext_resource type="Texture2D" uid="uid://dhu2tiabdrokd" path="res://RedIcon.png" id="5_htttl"]
 [ext_resource type="Texture2D" uid="uid://bveo3brld2oqs" path="res://Book.PNG" id="5_tv0qa"]
@@ -13,9 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://cgla60a73fw2g" path="res://Buddy.PNG" id="6_u175s"]
 [ext_resource type="Texture2D" uid="uid://dwsg5ao8lxego" path="res://Reference UI.PNG" id="7_0064q"]
 [ext_resource type="Script" path="res://PomoTimer.gd" id="12_jdapp"]
-[ext_resource type="Texture2D" uid="uid://b0hmcj5bd1msw" path="res://AppScreen.png" id="14_bik3x"]
-[ext_resource type="Texture2D" uid="uid://d2yh4mltusyva" path="res://MessagesScreen.png" id="15_75gsh"]
-[ext_resource type="Texture2D" uid="uid://b8yjup06g15vq" path="res://SettingsScreen.png" id="16_cua86"]
+[ext_resource type="Texture2D" uid="uid://b0hmcj5bd1msw" path="res://Temporary Art/AppScreen.png" id="14_bik3x"]
+[ext_resource type="Texture2D" uid="uid://d2yh4mltusyva" path="res://Temporary Art/MessagesScreen.png" id="15_75gsh"]
+[ext_resource type="Texture2D" uid="uid://b8yjup06g15vq" path="res://Temporary Art/SettingsScreen.png" id="16_cua86"]
 
 [sub_resource type="Animation" id="Animation_3ebs1"]
 length = 0.001
@@ -420,7 +420,6 @@ scale = Vector2(0.15725, 0.1565)
 texture = ExtResource("3_1y5kf")
 
 [node name="MenuBackButton" type="TextureButton" parent="Phone"]
-anchors_preset = -1
 offset_left = 261.0
 offset_top = 1046.0
 offset_right = 707.0

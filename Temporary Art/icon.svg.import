@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2yh4mltusyva"
-path="res://.godot/imported/MessagesScreen.png-12db2f9fe7585468ab68088840533539.ctex"
+uid="uid://djsbst41bgr5s"
+path="res://.godot/imported/icon.svg-4f237e5014804d7ab06140db22d951e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MessagesScreen.png"
-dest_files=["res://.godot/imported/MessagesScreen.png-12db2f9fe7585468ab68088840533539.ctex"]
+source_file="res://Temporary Art/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-4f237e5014804d7ab06140db22d951e7.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

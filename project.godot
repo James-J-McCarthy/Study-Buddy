@@ -18,6 +18,9 @@ config/features=PackedStringArray("4.2", "GL Compatibility")
 
 window/size/viewport_width=500
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="res://Temporary Art/cursor.png"
+mouse_cursor/custom_image_hotspot=Vector2(60, 20)
+mouse_cursor/tooltip_position_offset=Vector2(0, 0)
 
 [rendering]
 
