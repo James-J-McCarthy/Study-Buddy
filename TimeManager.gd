@@ -1,40 +1,41 @@
 extends Node
+# This node has a timer which is sets to count down 
+# from specified lengths to determine when to update other nodes
 
-var studyLimit = 10.0
-var breakLimit = 10.0
+# var declarations: 
+var study_time = 10.0 # time is measured in seconds 
+var break_time = 5.0 # time is measured in seconds 
 var studying = true
-var time
-
-signal get_time
-signal reset_timer
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var pomoTimer = get_node("PomoTimer")
-	pomoTimer.transmit_time.connect(_on_transmit_time)
+	start_study_timer()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	updateStudyingStatus()
+# helper function that starts pomo timer given a period length
+func start_period(duration):
+	$PomoTimer.start(duration)
+
+func start_study_timer():
+	start_period(study_time)
+	studying = true
+
+func start_break_timer():
+	start_period(break_time)
+	studying = false
+
+# get's signal from pomo timer when it finishes
+func _period_finished():
+	print("Timer Finished!!") # --> place command to change animations here !!!!!
+
+
+
+# getters and setters below \/
 
 func getStudying():
 	return studying
 
-func updateStudyingStatus():
-	get_time.emit()
-	
-	if studying:
-		if studyLimit < time:
-			studying = false
-			print(str(studying) + "\n")
-			reset_timer.emit()
-	else:
-		if breakLimit < time:
-			studying = true
-			print(str(studying) + "\n")
-			reset_timer.emit()
+func set_break_time(new_duration):
+	break_time = new_duration
 
-
-func _on_transmit_time(transmittedTime):
-	time = transmittedTime
+func set_study_time(new_duration):
+	study_time = new_duration

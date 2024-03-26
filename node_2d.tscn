@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://doin1g4xrytqe"]
+[gd_scene load_steps=23 format=3 uid="uid://doin1g4xrytqe"]
 
 [ext_resource type="Script" path="res://MainScene.gd" id="1_37525"]
 [ext_resource type="Texture2D" uid="uid://c8xf1u7hrxbtf" path="res://Outside Window.PNG" id="2_xt5uq"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://dwsg5ao8lxego" path="res://Reference UI.PNG" id="7_0064q"]
 [ext_resource type="Texture2D" uid="uid://c8h5wfbc4fimv" path="res://StudyBuddy.png" id="8_xuu7q"]
 [ext_resource type="Texture2D" uid="uid://dt1s63oaean02" path="res://PhoneOnDesk.png" id="9_locot"]
-[ext_resource type="Script" path="res://PomoTimer.gd" id="12_jdapp"]
 [ext_resource type="Texture2D" uid="uid://b0hmcj5bd1msw" path="res://Temporary Art/AppScreen.png" id="14_bik3x"]
 [ext_resource type="Texture2D" uid="uid://d2yh4mltusyva" path="res://Temporary Art/MessagesScreen.png" id="15_75gsh"]
 [ext_resource type="Texture2D" uid="uid://b8yjup06g15vq" path="res://Temporary Art/SettingsScreen.png" id="16_cua86"]
@@ -267,8 +266,8 @@ script = ExtResource("1_37525")
 [node name="TimeManager" type="Node" parent="."]
 script = ExtResource("3_045uj")
 
-[node name="PomoTimer" type="Node" parent="TimeManager"]
-script = ExtResource("12_jdapp")
+[node name="PomoTimer" type="Timer" parent="TimeManager"]
+one_shot = true
 
 [node name="BackGround2" type="Sprite2D" parent="."]
 position = Vector2(259, 323.75)
@@ -405,13 +404,11 @@ rest = Transform2D(3.14289, -0.827504, 0.827504, 3.14289, 428, 498)
 [node name="UpperArmL" type="Bone2D" parent="StudyingBuddySkeleton"]
 position = Vector2(359, 359)
 rotation = 1.89813
-scale = Vector2(1, 1)
 rest = Transform2D(-0.100878, 0.994899, -0.994899, -0.100878, 359, 359)
 
 [node name="ForeArmL" type="Bone2D" parent="StudyingBuddySkeleton/UpperArmL"]
 position = Vector2(87.652, -7.88235)
 rotation = 1.7431
-scale = Vector2(1, 1)
 rest = Transform2D(0.157388, 0.987537, -0.987537, 0.157388, 87.652, -7.88235)
 
 [node name="HandL" type="Bone2D" parent="StudyingBuddySkeleton/UpperArmL/ForeArmL"]
@@ -423,24 +420,22 @@ rest = Transform2D(7.147, 0, 0, 2.45, 88.3128, -2.97414)
 [node name="Phone" type="Bone2D" parent="StudyingBuddySkeleton/UpperArmL/ForeArmL/HandL"]
 position = Vector2(4.78279, 2.33461)
 rotation = 1.49502
+scale = Vector2(1, 1)
 rest = Transform2D(0.0757015, 0.997131, -0.997131, 0.0757015, 4.78279, 2.33461)
 
 [node name="Pen" type="Bone2D" parent="StudyingBuddySkeleton/UpperArmL/ForeArmL/HandL"]
 position = Vector2(4.78279, 2.33461)
 rotation = 0.129982
-scale = Vector2(1, 1)
 rest = Transform2D(0.991564, 0.129617, -0.129617, 0.991564, 4.78279, 2.33461)
 
 [node name="UpperArmR" type="Bone2D" parent="StudyingBuddySkeleton"]
 position = Vector2(297, 382)
 rotation = 1.67185
-scale = Vector2(1, 1)
 rest = Transform2D(-0.100878, 0.994899, -0.994899, -0.100878, 297, 382)
 
 [node name="ForeArmR" type="Bone2D" parent="StudyingBuddySkeleton/UpperArmR"]
 position = Vector2(35.7571, 25.5231)
 rotation = 1.41275
-scale = Vector2(1, 1)
 rest = Transform2D(0.157388, 0.987537, -0.987537, 0.157388, 35.7571, 25.5231)
 
 [node name="HandR" type="Bone2D" parent="StudyingBuddySkeleton/UpperArmR/ForeArmR"]
@@ -550,6 +545,7 @@ offset_bottom = 641.0
 texture_normal = ExtResource("4_kf0xm")
 texture_pressed = ExtResource("5_htttl")
 
+[connection signal="timeout" from="TimeManager/PomoTimer" to="TimeManager" method="_period_finished"]
 [connection signal="pressed" from="Phone/MenuBackButton" to="." method="_on_menu_back_button_pressed"]
 [connection signal="pressed" from="Phone/AppScreen/MessagesButton" to="." method="_on_messages_button_pressed"]
 [connection signal="pressed" from="Phone/AppScreen/SettingsButton" to="." method="_on_settings_button_pressed"]
