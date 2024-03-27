@@ -5,6 +5,9 @@ var studying = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_studying_buddy_animation()
+	$TimeManager.start_study_timer()
+	
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

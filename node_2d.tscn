@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://doin1g4xrytqe"]
+[gd_scene load_steps=28 format=3 uid="uid://doin1g4xrytqe"]
 
 [ext_resource type="Script" path="res://MainScene.gd" id="1_37525"]
 [ext_resource type="Texture2D" uid="uid://c8xf1u7hrxbtf" path="res://Outside Window.PNG" id="2_xt5uq"]
@@ -224,6 +224,24 @@ _data = {
 "Writing": SubResource("Animation_njfvu")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_k5d35"]
+line_spacing = 0.0
+font_size = 140
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_0s1a5"]
+default_base_scale = 1.0
+default_font_size = 16
+
+[sub_resource type="Theme" id="Theme_7n72d"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8vj3w"]
+load_path = "res://.godot/imported/icon.svg-4f237e5014804d7ab06140db22d951e7.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_dkt7o"]
+font_size = 140
+font_color = Color(0, 0, 0, 1)
+
 [sub_resource type="Animation" id="Animation_87igy"]
 resource_name = "PhoneDown"
 tracks/0/type = "value"
@@ -262,12 +280,6 @@ _data = {
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_37525")
-
-[node name="TimeManager" type="Node" parent="."]
-script = ExtResource("3_045uj")
-
-[node name="PomoTimer" type="Timer" parent="TimeManager"]
-one_shot = true
 
 [node name="BackGround2" type="Sprite2D" parent="."]
 position = Vector2(259, 323.75)
@@ -532,6 +544,47 @@ texture_normal = ExtResource("4_kf0xm")
 texture_pressed = ExtResource("5_htttl")
 stretch_mode = 0
 
+[node name="SessionTimeLabel" type="Label" parent="Phone/SettingsScreen"]
+offset_left = -474.0
+offset_top = -921.0
+offset_right = 477.0
+offset_bottom = -248.0
+text = "Session Time: "
+label_settings = SubResource("LabelSettings_k5d35")
+
+[node name="SessionTimeSlider" type="HSlider" parent="Phone/SettingsScreen"]
+offset_left = -465.0
+offset_top = -646.0
+offset_right = 426.0
+offset_bottom = -467.0
+theme = SubResource("Theme_0s1a5")
+theme_override_icons/grabber = ExtResource("4_kf0xm")
+min_value = 5.0
+max_value = 60.0
+step = 5.0
+value = 5.0
+tick_count = 12
+
+[node name="BreakTimeSlider" type="HSlider" parent="Phone/SettingsScreen"]
+offset_left = -455.0
+offset_top = -69.0
+offset_right = 427.0
+offset_bottom = 467.0
+theme = SubResource("Theme_7n72d")
+theme_override_icons/grabber = SubResource("CompressedTexture2D_8vj3w")
+min_value = 5.0
+max_value = 60.0
+step = 5.0
+value = 5.0
+
+[node name="Label" type="Label" parent="Phone/SettingsScreen"]
+offset_left = -445.718
+offset_top = -274.839
+offset_right = 355.282
+offset_bottom = -0.839081
+text = "Break Time:"
+label_settings = SubResource("LabelSettings_dkt7o")
+
 [node name="PhoneMover" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_h4itg")
@@ -542,13 +595,22 @@ offset_left = 372.0
 offset_top = 513.0
 offset_right = 500.0
 offset_bottom = 641.0
+auto_translate = false
 texture_normal = ExtResource("4_kf0xm")
 texture_pressed = ExtResource("5_htttl")
 
-[connection signal="timeout" from="TimeManager/PomoTimer" to="TimeManager" method="_period_finished"]
+[node name="TimeManager" type="Node" parent="."]
+script = ExtResource("3_045uj")
+
+[node name="PomoTimer" type="Timer" parent="TimeManager"]
+one_shot = true
+
 [connection signal="pressed" from="Phone/MenuBackButton" to="." method="_on_menu_back_button_pressed"]
 [connection signal="pressed" from="Phone/AppScreen/MessagesButton" to="." method="_on_messages_button_pressed"]
 [connection signal="pressed" from="Phone/AppScreen/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Phone/MessagesScreen/MessagesBackButton" to="." method="_on_messages_back_button_pressed"]
 [connection signal="pressed" from="Phone/SettingsScreen/SettingsBackButton" to="." method="_on_settings_back_button_pressed"]
+[connection signal="value_changed" from="Phone/SettingsScreen/SessionTimeSlider" to="TimeManager" method="_on_session_time_slider_value_changed"]
+[connection signal="value_changed" from="Phone/SettingsScreen/BreakTimeSlider" to="TimeManager" method="_on_break_time_slider_value_changed"]
 [connection signal="pressed" from="MenuUpButton" to="." method="_on_menu_up_button_pressed"]
+[connection signal="timeout" from="TimeManager/PomoTimer" to="TimeManager" method="_period_finished"]
