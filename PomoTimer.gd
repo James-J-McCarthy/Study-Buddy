@@ -4,8 +4,6 @@ var time = 0.0
 var running = false
 var debug = 0
 
-signal transmit_time(transmittedTime)
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -40,6 +38,3 @@ func _on_reset_timer():
 func _on_start_timer():
 	if !running:
 		toggleRunning()
-
-func _on_get_time():
-	transmit_time.emit(time)

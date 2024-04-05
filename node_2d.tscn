@@ -579,6 +579,7 @@ tick_count = 12
 script = ExtResource("16_fd3s5")
 
 [node name="SessionTimeReadout" type="Label" parent="Phone/SettingsScreen/SessionTimeSlider"]
+layout_mode = 0
 offset_left = 766.828
 offset_top = 48.2264
 offset_right = 818.828
