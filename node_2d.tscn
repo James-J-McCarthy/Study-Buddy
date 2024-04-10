@@ -1,8 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://doin1g4xrytqe"]
+[gd_scene load_steps=36 format=3 uid="uid://doin1g4xrytqe"]
 
 [ext_resource type="Script" path="res://MainScene.gd" id="1_37525"]
 [ext_resource type="Texture2D" uid="uid://c8xf1u7hrxbtf" path="res://Outside Window.PNG" id="2_xt5uq"]
-[ext_resource type="Texture2D" uid="uid://dmtfw5c544mkg" path="res://Temporary Art/Phone.png" id="3_1y5kf"]
 [ext_resource type="Script" path="res://TimeManager.gd" id="3_045uj"]
 [ext_resource type="Texture2D" uid="uid://djsbst41bgr5s" path="res://Temporary Art/icon.svg" id="4_kf0xm"]
 [ext_resource type="Texture2D" uid="uid://fjct6vuqe7fp" path="res://Clock.PNG" id="4_xiqa2"]
@@ -13,11 +12,16 @@
 [ext_resource type="Texture2D" uid="uid://dwsg5ao8lxego" path="res://Reference UI.PNG" id="7_0064q"]
 [ext_resource type="Texture2D" uid="uid://c8h5wfbc4fimv" path="res://StudyBuddy.png" id="8_xuu7q"]
 [ext_resource type="Texture2D" uid="uid://dt1s63oaean02" path="res://PhoneOnDesk.png" id="9_locot"]
-[ext_resource type="Texture2D" uid="uid://b0hmcj5bd1msw" path="res://Temporary Art/AppScreen.png" id="14_bik3x"]
+[ext_resource type="Texture2D" uid="uid://deghowkq1j72p" path="res://Phone base.png" id="10_06ryp"]
+[ext_resource type="Texture2D" uid="uid://cljxtb6vx2vek" path="res://Button Home.png" id="11_2ffeu"]
+[ext_resource type="Texture2D" uid="uid://cijhhrph4p3ks" path="res://Phone BG.png" id="13_jc45a"]
+[ext_resource type="Texture2D" uid="uid://bh3rcr4t80ewb" path="res://Button Messages.png" id="14_xie2k"]
+[ext_resource type="Texture2D" uid="uid://c3dtudnxbnw7x" path="res://Button Setting.png" id="15_4lg52"]
 [ext_resource type="Texture2D" uid="uid://d2yh4mltusyva" path="res://Temporary Art/MessagesScreen.png" id="15_75gsh"]
 [ext_resource type="Texture2D" uid="uid://b8yjup06g15vq" path="res://Temporary Art/SettingsScreen.png" id="16_cua86"]
 [ext_resource type="Script" path="res://SessionTimeSlider.gd" id="16_fd3s5"]
 [ext_resource type="Script" path="res://TimerBar.gd" id="17_7dfhe"]
+[ext_resource type="Texture2D" uid="uid://dc4ilh3xeyi8x" path="res://Phone reference.jpg" id="20_qfoav"]
 
 [sub_resource type="Animation" id="Animation_3ebs1"]
 length = 0.001
@@ -354,7 +358,7 @@ rest = Transform2D(1, -1.30879e-11, 1.30879e-11, 1, 392.498, 500.394)
 
 [node name="Head" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(-48.4978, -144.394)
-scale = Vector2(1, 1)
+scale = Vector2(1, 0.999999)
 rest = Transform2D(1, -1.30879e-11, 1.30879e-11, 1, -48.4978, -144.394)
 
 [node name="EarL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/Head"]
@@ -432,6 +436,7 @@ libraries = {
 }
 
 [node name="PhoneOnDesk" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(213, 320)
 scale = Vector2(0.202745, 0.196515)
 texture = ExtResource("9_locot")
@@ -449,31 +454,30 @@ scale = Vector2(0.202745, 0.196515)
 texture = ExtResource("7_0064q")
 
 [node name="Phone" type="Sprite2D" parent="."]
-position = Vector2(260, 914)
-scale = Vector2(0.15725, 0.1565)
-texture = ExtResource("3_1y5kf")
+position = Vector2(259, 911)
+scale = Vector2(0.203, 0.197)
+texture = ExtResource("10_06ryp")
 
 [node name="MenuBackButton" type="TextureButton" parent="Phone"]
-offset_left = 261.0
-offset_top = 1046.0
-offset_right = 707.0
-offset_bottom = 1508.0
-texture_normal = ExtResource("4_kf0xm")
+offset_left = -162.562
+offset_top = 822.335
+offset_right = 283.438
+offset_bottom = 1284.33
+texture_normal = ExtResource("11_2ffeu")
 texture_pressed = ExtResource("5_htttl")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="AppScreen" type="Sprite2D" parent="Phone"]
-position = Vector2(9.53891, -408.946)
-scale = Vector2(1.98038, 0.717692)
-texture = ExtResource("14_bik3x")
+position = Vector2(1, 1)
+texture = ExtResource("13_jc45a")
 
 [node name="MessagesButton" type="TextureButton" parent="Phone/AppScreen"]
 offset_left = -313.0
 offset_top = -703.0
 offset_right = -40.0
 offset_bottom = 668.0
-texture_normal = ExtResource("4_kf0xm")
+texture_normal = ExtResource("14_xie2k")
 texture_pressed = ExtResource("5_htttl")
 stretch_mode = 0
 
@@ -482,11 +486,12 @@ offset_left = 43.3506
 offset_top = -703.355
 offset_right = 314.351
 offset_bottom = 676.645
-texture_normal = ExtResource("4_kf0xm")
+texture_normal = ExtResource("15_4lg52")
 texture_pressed = ExtResource("5_htttl")
 stretch_mode = 0
 
 [node name="MessagesScreen" type="Sprite2D" parent="Phone"]
+visible = false
 position = Vector2(9.53908, -421.725)
 scale = Vector2(4.24513, 1.66537)
 texture = ExtResource("15_75gsh")
@@ -501,6 +506,7 @@ texture_pressed = ExtResource("5_htttl")
 stretch_mode = 0
 
 [node name="SettingsScreen" type="Sprite2D" parent="Phone"]
+visible = false
 position = Vector2(6.35934, -498.402)
 scale = Vector2(1.32688, 0.529982)
 texture = ExtResource("16_cua86")
@@ -570,6 +576,13 @@ offset_right = 355.282
 offset_bottom = -0.839081
 text = "Break Time:"
 label_settings = SubResource("LabelSettings_dkt7o")
+
+[node name="PhoneReference" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.313726)
+position = Vector2(259, 912)
+scale = Vector2(0.202745, 0.196515)
+texture = ExtResource("20_qfoav")
 
 [node name="PhoneMover" type="AnimationPlayer" parent="."]
 libraries = {
