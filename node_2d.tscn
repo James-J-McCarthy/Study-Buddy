@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://doin1g4xrytqe"]
+[gd_scene load_steps=37 format=3 uid="uid://doin1g4xrytqe"]
 
 [ext_resource type="Script" path="res://MainScene.gd" id="1_37525"]
 [ext_resource type="Texture2D" uid="uid://c8xf1u7hrxbtf" path="res://Outside Window.PNG" id="2_xt5uq"]
@@ -217,7 +217,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(260, 397), Vector2(260, 924)]
+"values": [Vector2(260, 324), Vector2(260, 980)]
 }
 
 [sub_resource type="Animation" id="Animation_q42wk"]
@@ -232,13 +232,29 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(260, 914), Vector2(260, 397)]
+"values": [Vector2(260, 980), Vector2(260, 324)]
+}
+
+[sub_resource type="Animation" id="Animation_xvlc0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Phone:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(260, 980)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h4itg"]
 _data = {
 "PhoneDown": SubResource("Animation_87igy"),
-"PhoneUp": SubResource("Animation_q42wk")
+"PhoneUp": SubResource("Animation_q42wk"),
+"RESET": SubResource("Animation_xvlc0")
 }
 
 [node name="MainScene" type="Node2D"]
@@ -454,41 +470,47 @@ scale = Vector2(0.202745, 0.196515)
 texture = ExtResource("7_0064q")
 
 [node name="Phone" type="Sprite2D" parent="."]
-position = Vector2(259, 911)
+position = Vector2(260, 980)
 scale = Vector2(0.203, 0.197)
 texture = ExtResource("10_06ryp")
 
 [node name="MenuBackButton" type="TextureButton" parent="Phone"]
-offset_left = -162.562
-offset_top = 822.335
-offset_right = 283.438
-offset_bottom = 1284.33
+offset_left = -83.7438
+offset_top = 898.477
+offset_right = 362.256
+offset_bottom = 1360.48
+scale = Vector2(0.73, 0.73)
 texture_normal = ExtResource("11_2ffeu")
 texture_pressed = ExtResource("5_htttl")
 ignore_texture_size = true
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="AppScreen" type="Sprite2D" parent="Phone"]
 position = Vector2(1, 1)
 texture = ExtResource("13_jc45a")
 
 [node name="MessagesButton" type="TextureButton" parent="Phone/AppScreen"]
-offset_left = -313.0
-offset_top = -703.0
-offset_right = -40.0
-offset_bottom = 668.0
+offset_left = 265.01
+offset_top = -975.62
+offset_right = 538.01
+offset_bottom = 395.38
+scale = Vector2(0.95, 0.19)
 texture_normal = ExtResource("14_xie2k")
 texture_pressed = ExtResource("5_htttl")
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="SettingsButton" type="TextureButton" parent="Phone/AppScreen"]
-offset_left = 43.3506
-offset_top = -703.355
-offset_right = 314.351
-offset_bottom = 676.645
+offset_left = 265.01
+offset_top = -625.366
+offset_right = 536.01
+offset_bottom = 754.634
+scale = Vector2(0.95, 0.19)
 texture_normal = ExtResource("15_4lg52")
 texture_pressed = ExtResource("5_htttl")
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="MessagesScreen" type="Sprite2D" parent="Phone"]
 visible = false
@@ -578,9 +600,8 @@ text = "Break Time:"
 label_settings = SubResource("LabelSettings_dkt7o")
 
 [node name="PhoneReference" type="Sprite2D" parent="."]
-visible = false
 modulate = Color(1, 1, 1, 0.313726)
-position = Vector2(259, 912)
+position = Vector2(259, 979.05)
 scale = Vector2(0.202745, 0.196515)
 texture = ExtResource("20_qfoav")
 
