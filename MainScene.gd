@@ -5,9 +5,11 @@ var studying = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_studying_buddy_animation()
-	$TimeManager.set_study_time(get_node("Phone/SettingsScreen/SessionTimeSlider").value)
-	$TimeManager.set_break_time(get_node("Phone/SettingsScreen/BreakTimeSlider").value)
-	$TimeManager.start_study_timer()
+	var tm = $TimeManager
+	tm.initializeClockLabelText()
+	tm.set_study_time(get_node("Phone/SettingsScreen/SessionTimeSlider").value)
+	tm.set_break_time(get_node("Phone/SettingsScreen/BreakTimeSlider").value)
+	tm.start_study_timer()
 	
 	
 

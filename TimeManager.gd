@@ -7,9 +7,10 @@ extends Node
 
 # var declarations:
 # 
-var study_time# time of "study session" measured in seconds 
-var break_time# ^ for breaks
-
+var study_time # time of "study session" measured in seconds 
+var break_time # ^ for breaks
+var cyclesTotal = 4 # < prob don't initialize this here # total number of study/break cycles user wants
+var cycle = 1 # current cycles count
 var studying = true
 
 # Called when the node enters the scene tree for the first time.
@@ -19,18 +20,18 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-
-	var clockHand = get_node_or_null("../clockHand");
-	if (clockHand == null):
-		print("pass");
-		pass
-	else:
-		var currentDegree = get_node("../clockHand").rotation;
-		var degreeChange = (_delta / break_time + study_time)/360;
-		currentDegree += degreeChange;
-		if (currentDegree >= 360): 
-			currentDegree -= 360;
-		get_node("../clockHand").rotation = currentDegree;
+	if(cycle <= cyclesTotal):
+		var clockHand = get_node_or_null("../clockHand");
+		if (clockHand == null):
+			print("clockhand == null error!");
+			pass
+		else:
+			var currentDegree = get_node("../clockHand").rotation;
+			var degreeChange = (_delta / break_time + study_time)/360;
+			currentDegree += degreeChange;
+			if (currentDegree >= 360): 
+				currentDegree -= 360;
+			get_node("../clockHand").rotation = currentDegree;
 
 # helper function that starts pomo timer given a period length
 func start_period(duration):
@@ -64,21 +65,39 @@ func _on_break_time_slider_value_changed(value):
 	break_time = value
 
 # get's signal from pomo timer when it finishes or when time is reduced to < 0
+# then restarts timer based on next period length
 func _period_finished(): # I tested this funciton with a print to ensure it works
-	if(studying):
-		#print("done studying!!")
-		if(break_time > 0): # update our boolean before switching
-			studying = false
-		start_break_timer() # switch PomoClocks timing duration
-	else:
-		#print("done with break!!")
-		if(study_time > 0): # update our boolean before switching
-			studying = true
-		start_study_timer() # switch PomoClocks timing duration
-			
+	updateCycleNumerator()
+	if(cycle <= cyclesTotal):
+		if(studying):
+			#print("done studying!!")
+			if(break_time > 0): # update our boolean before switching
+				studying = false
+			start_break_timer() # switch PomoClocks timing duration
+		else:
+			#print("done with break!!")
+			if(study_time > 0): # update our boolean before switching
+				studying = true
+			start_study_timer() # switch PomoClocks timing duration
+	else: 
+		print("finished study period!!")
 
+# This function creates the text that displays the cycle
+# count. 
+# It should be called before the first exacution of start
+# period. 
+func initializeClockLabelText():
+	var cycleLabel = get_node("../CycleLabel")
+	cycleLabel.text = str(cycle, "/", cyclesTotal)
+	print("cycle text: ", cycleLabel.text)
+	
 # getters and setters below \/
-
+func updateCycleNumerator():
+	var cycleLabel = get_node("../CycleLabel")
+	cycle += 1
+	if(cycle <= cyclesTotal):
+		cycleLabel.text = str(cycle, "/", cyclesTotal)
+	
 func getStudying():
 	return studying
 

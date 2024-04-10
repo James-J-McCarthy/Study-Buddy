@@ -648,7 +648,7 @@ label_settings = SubResource("LabelSettings_7jkie")
 
 [node name="clockHand" type="Line2D" parent="."]
 position = Vector2(67, 405)
-points = PackedVector2Array(0, 0, -1, -24)
+points = PackedVector2Array(0, 0, -1, -21)
 width = 3.0
 default_color = Color(0, 0, 0, 1)
 
