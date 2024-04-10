@@ -7,8 +7,8 @@ extends Node
 
 # var declarations:
 # 
-var study_time = 10# time of "study session" measured in seconds 
-var break_time = 5# ^ for breaks
+var study_time# time of "study session" measured in seconds 
+var break_time# ^ for breaks
 
 var studying = true
 
@@ -17,6 +17,21 @@ var studying = true
 func _ready(): 
 	pass
 
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta):
+
+	var clockHand = get_node_or_null("../clockHand");
+	if (clockHand == null):
+		print("pass");
+		pass
+	else:
+		var currentDegree = get_node("../clockHand").rotation;
+		var degreeChange = (_delta / break_time + study_time)/360;
+		currentDegree += degreeChange;
+		if (currentDegree >= 360): 
+			currentDegree -= 360;
+		get_node("../clockHand").rotation = currentDegree;
+
 # helper function that starts pomo timer given a period length
 func start_period(duration):
 	$PomoTimer.start(duration)
@@ -24,11 +39,13 @@ func start_period(duration):
 # begins a study period on Pomo-Timer passing in study_time
 # Timer is set to "One-Shot" meaning it doesn't repeat after finishing
 func start_study_timer():
+	#print("start studying for: ", study_time, "seconds")
 	start_period(study_time)
 	studying = true
 
 #begins a study period on Pomo-Timer using break_time
 func start_break_timer():
+	#print("start break")
 	start_period(break_time)
 	studying = false
 
@@ -46,11 +63,19 @@ func _on_session_time_slider_value_changed(value):
 func _on_break_time_slider_value_changed(value):
 	break_time = value
 
-
 # get's signal from pomo timer when it finishes or when time is reduced to < 0
 func _period_finished(): # I tested this funciton with a print to ensure it works
-	print("YAYY") # --> place command to change animations here !!!!!
-	start_study_timer()
+	if(studying):
+		#print("done studying!!")
+		if(break_time > 0): # update our boolean before switching
+			studying = false
+		start_break_timer() # switch PomoClocks timing duration
+	else:
+		#print("done with break!!")
+		if(study_time > 0): # update our boolean before switching
+			studying = true
+		start_study_timer() # switch PomoClocks timing duration
+			
 
 # getters and setters below \/
 
