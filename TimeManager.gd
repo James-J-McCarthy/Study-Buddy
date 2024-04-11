@@ -89,8 +89,7 @@ func _period_finished(): # I tested this funciton with a print to ensure it work
 func initializeClockLabelText():
 	var cycleLabel = get_node("../CycleLabel")
 	cycleLabel.text = str(cycle, "/", cyclesTotal)
-	print("cycle text: ", cycleLabel.text)
-	
+
 # getters and setters below \/
 func updateCycleNumerator():
 	var cycleLabel = get_node("../CycleLabel")
