@@ -691,6 +691,7 @@ _data = {
 
 [sub_resource type="LabelSettings" id="LabelSettings_7jkie"]
 font = ExtResource("23_8s4wn")
+font_size = 14
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_37525")
@@ -814,7 +815,6 @@ rest = Transform2D(1, -1.30879e-11, 1.30879e-11, 1, 392.498, 500.394)
 
 [node name="Head" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(-48.4978, -144.394)
-scale = Vector2(1, 1)
 rest = Transform2D(1, -1.30879e-11, 1.30879e-11, 1, -48.4978, -144.394)
 
 [node name="EarL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/Head"]
@@ -844,13 +844,12 @@ rest = Transform2D(3.14289, -0.827503, 0.827503, 3.14289, 35.5022, -2.39432)
 [node name="UpperArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(-33.4978, -141.394)
 rotation = 1.67152
-scale = Vector2(1, 1)
+scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(-0.100553, 0.994932, -0.994932, -0.100553, -33.4978, -141.394)
 
 [node name="ForeArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL"]
 position = Vector2(87.652, -7.88235)
 rotation = 1.41794
-scale = Vector2(1, 1)
 rest = Transform2D(0.152266, 0.98834, -0.98834, 0.152266, 87.652, -7.88235)
 
 [node name="HandL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL/ForeArmL"]
@@ -862,7 +861,6 @@ rest = Transform2D(6.96462, -1.60426, 0.549942, 2.38748, 88.3128, -2.97414)
 [node name="Phone" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL/ForeArmL/HandL"]
 position = Vector2(4.78279, 2.33461)
 rotation = -0.366923
-scale = Vector2(1, 1)
 rest = Transform2D(0.933436, -0.358745, 0.358745, 0.933436, 4.78279, 2.33461)
 
 [node name="Pen" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL/ForeArmL/HandL"]
@@ -874,13 +872,11 @@ rest = Transform2D(0.356327, -0.934361, 0.934361, 0.356327, 4.78279, 2.33461)
 [node name="UpperArmR" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(-95.4978, -118.394)
 rotation = 1.67185
-scale = Vector2(1, 1)
 rest = Transform2D(-0.100882, 0.994898, -0.994898, -0.100882, -95.4978, -118.394)
 
 [node name="ForeArmR" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmR"]
 position = Vector2(35.7571, 25.5231)
 rotation = 1.41275
-scale = Vector2(1, 1)
 rest = Transform2D(0.157389, 0.987537, -0.987537, 0.157389, 35.7571, 25.5231)
 
 [node name="HandR" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmR/ForeArmR"]
@@ -1146,12 +1142,14 @@ script = ExtResource("17_7dfhe")
 autostart = true
 
 [node name="CycleLabel" type="Label" parent="."]
-offset_left = 56.0
-offset_top = 404.0
-offset_right = 81.0
-offset_bottom = 433.0
-rotation = -0.0443316
+offset_left = 54.0
+offset_top = 403.0
+offset_right = 82.0
+offset_bottom = 432.0
+rotation = -0.0331594
 label_settings = SubResource("LabelSettings_7jkie")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="clockHand" type="Line2D" parent="."]
 position = Vector2(67, 405)
