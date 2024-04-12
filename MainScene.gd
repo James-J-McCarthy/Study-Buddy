@@ -17,8 +17,7 @@ func _process(_delta):
 	pass
 
 func _studying_buddy_animation():
-	get_node("StudyingBuddySkeleton/StudyingBuddyAniPlayer").play("Writing")
-	get_node("StudyingBuddySkeleton/StudyingBuddyAniPlayer").queue("Writing2")
+	get_node("StudyingBuddySkeleton/StudyingBuddyAniPlayer").play("Writing2")
 
 
 # this code runs when MenuUpButton is pressed
