@@ -9,7 +9,7 @@ extends Node
 # 
 var study_time # time of "study session" measured in seconds 
 var break_time # ^ for breaks
-var cyclesTotal = 4 # < prob don't initialize this here # total number of study/break cycles user wants
+var cycles_total # < prob don't initialize this here # total number of study/break cycles user wants
 var cycle = 1 # current cycles count
 var studying = true
 
@@ -20,18 +20,19 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if(cycle <= cyclesTotal):
-		var clockHand = get_node_or_null("../clockHand");
-		if (clockHand == null):
-			print("clockhand == null error!");
-			pass
-		else:
-			var currentDegree = get_node("../clockHand").rotation;
-			var degreeChange = (_delta / break_time + study_time)/360;
-			currentDegree += degreeChange;
-			if (currentDegree >= 360): 
-				currentDegree -= 360;
-			get_node("../clockHand").rotation = currentDegree;
+	if (cycles_total != null):
+		if (cycle <= cycles_total):
+			var clockHand = get_node_or_null("../clockHand");
+			if (clockHand == null):
+				print("clockhand == null error!");
+				pass
+			else:
+				var currentDegree = get_node("../clockHand").rotation;
+				var degreeChange = (_delta / break_time + study_time)/360;
+				currentDegree += degreeChange;
+				if (currentDegree >= 360): 
+					currentDegree -= 360;
+				get_node("../clockHand").rotation = currentDegree;
 
 # helper function that starts pomo timer given a period length
 func start_period(duration):
@@ -68,7 +69,7 @@ func _on_break_time_slider_value_changed(value):
 # then restarts timer based on next period length
 func _period_finished(): # I tested this funciton with a print to ensure it works
 	updateCycleNumerator()
-	if(cycle <= cyclesTotal):
+	if(cycle <= cycles_total):
 		if(studying):
 			#print("done studying!!")
 			if(break_time > 0): # update our boolean before switching
@@ -88,14 +89,14 @@ func _period_finished(): # I tested this funciton with a print to ensure it work
 # period. 
 func initializeClockLabelText():
 	var cycleLabel = get_node("../CycleLabel")
-	cycleLabel.text = str(cycle, "/", cyclesTotal)
+	cycleLabel.text = str(cycle, "/", cycles_total)
 
 # getters and setters below \/
 func updateCycleNumerator():
 	var cycleLabel = get_node("../CycleLabel")
 	cycle += 1
-	if(cycle <= cyclesTotal):
-		cycleLabel.text = str(cycle, "/", cyclesTotal)
+	if(cycle <= cycles_total):
+		cycleLabel.text = str(cycle, "/", cycles_total)
 	
 func getStudying():
 	return studying
@@ -105,3 +106,33 @@ func set_break_time(new_duration):
 
 func set_study_time(new_duration):
 	study_time = new_duration
+
+func set_cycles_total(new_cycles_total):
+	cycles_total = new_cycles_total
+
+func get_break_time():
+	return break_time
+
+func get_study_time():
+	return study_time
+
+func get_cycles_total():
+	return cycles_total
+
+func _on_start_button_pressed():
+	set_study_time(get_parent().get_node("Phone").get_node("SettingsScreen").getStudyTime())
+	set_break_time(get_parent().get_node("Phone").get_node("SettingsScreen").getBreakTime())
+	set_cycles_total(get_parent().get_node("Phone").get_node("SettingsScreen").getCyclesTotal())
+	
+	get_parent().get_node("StudyingBuddy").show()
+	initializeClockLabelText()
+	start_study_timer()
+
+
+func _on_reset_button_pressed():
+	set_study_time(get_parent().get_node("Phone").get_node("SettingsScreen").getStudyTime())
+	set_break_time(get_parent().get_node("Phone").get_node("SettingsScreen").getBreakTime())
+	set_cycles_total(get_parent().get_node("Phone").get_node("SettingsScreen").getCyclesTotal())
+	
+	initializeClockLabelText()
+	start_study_timer()

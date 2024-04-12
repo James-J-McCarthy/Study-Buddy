@@ -4,16 +4,13 @@ var studying = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$MenuUpButton.hide()
+	await get_tree().create_timer(1.25).timeout # delay phone open animation by 1.25 seconds when app opens
+	$MenuUpButton.show()
+	_on_menu_up_button_pressed()
+	_on_settings_button_pressed()
 	
 	_studying_buddy_animation()
-	var tm = $TimeManager
-	
-	tm.initializeClockLabelText()
-	tm.set_study_time(get_node("Phone/SettingsScreen/StudyTimeSlider").value)
-	tm.set_break_time(get_node("Phone/SettingsScreen/BreakTimeSlider").value)
-	tm.start_study_timer()
-	
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -55,3 +52,9 @@ func _on_messages_back_button_pressed():
 func _on_settings_back_button_pressed():
 	get_node("Phone").get_node("SettingsScreen").hide()
 	get_node("Phone").get_node("AppScreen").show()
+
+func _on_start_button_pressed():
+	_on_menu_back_button_pressed()
+
+func _on_reset_button_pressed():
+	_on_menu_back_button_pressed()
