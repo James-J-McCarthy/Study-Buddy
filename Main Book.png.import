@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgla60a73fw2g"
-path="res://.godot/imported/Buddy.PNG-1873337c01d22414fc0eec7eecb404e6.ctex"
+uid="uid://vgtooyguf7dk"
+path="res://.godot/imported/Main Book.png-0db2423320942019ff44ebb2a2924cc8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Buddy.PNG"
-dest_files=["res://.godot/imported/Buddy.PNG-1873337c01d22414fc0eec7eecb404e6.ctex"]
+source_file="res://Main Book.png"
+dest_files=["res://.godot/imported/Main Book.png-0db2423320942019ff44ebb2a2924cc8.ctex"]
 
 [params]
 

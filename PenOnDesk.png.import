@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8h5wfbc4fimv"
-path="res://.godot/imported/StudyBuddy.png-c92058f037f4d11a9a85e204b40cb71e.ctex"
+uid="uid://ktfo7081sa3i"
+path="res://.godot/imported/PenOnDesk.png-45f3fd8a11f46355348694c9eac67f5b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://StudyBuddy.png"
-dest_files=["res://.godot/imported/StudyBuddy.png-c92058f037f4d11a9a85e204b40cb71e.ctex"]
+source_file="res://PenOnDesk.png"
+dest_files=["res://.godot/imported/PenOnDesk.png-45f3fd8a11f46355348694c9eac67f5b.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bveo3brld2oqs"
-path="res://.godot/imported/Book.PNG-987c9f71850417170268962963565d2a.ctex"
+uid="uid://dlntiqf7ceup4"
+path="res://.godot/imported/Desk CoverUp.png-009483dd71e6313f327e099494dda4e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Book.PNG"
-dest_files=["res://.godot/imported/Book.PNG-987c9f71850417170268962963565d2a.ctex"]
+source_file="res://Desk CoverUp.png"
+dest_files=["res://.godot/imported/Desk CoverUp.png-009483dd71e6313f327e099494dda4e2.ctex"]
 
 [params]
 

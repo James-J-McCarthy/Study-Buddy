@@ -1,17 +1,19 @@
-[gd_scene load_steps=44 format=3 uid="uid://doin1g4xrytqe"]
+[gd_scene load_steps=46 format=3 uid="uid://doin1g4xrytqe"]
 
 [ext_resource type="Script" path="res://MainScene.gd" id="1_37525"]
 [ext_resource type="Texture2D" uid="uid://c8xf1u7hrxbtf" path="res://Outside Window.PNG" id="2_xt5uq"]
 [ext_resource type="Script" path="res://TimeManager.gd" id="3_045uj"]
 [ext_resource type="Texture2D" uid="uid://djsbst41bgr5s" path="res://Temporary Art/icon.svg" id="4_kf0xm"]
 [ext_resource type="Texture2D" uid="uid://fjct6vuqe7fp" path="res://Clock.PNG" id="4_xiqa2"]
+[ext_resource type="Texture2D" uid="uid://vgtooyguf7dk" path="res://Main Book.png" id="5_4bll2"]
 [ext_resource type="Texture2D" uid="uid://dxjpimob5hr1w" path="res://Desk+Wall.png" id="5_4p7ab"]
 [ext_resource type="Texture2D" uid="uid://dhu2tiabdrokd" path="res://RedIcon.png" id="5_htttl"]
-[ext_resource type="Texture2D" uid="uid://bveo3brld2oqs" path="res://Book.PNG" id="5_tv0qa"]
+[ext_resource type="Texture2D" uid="uid://cc55byhdu8t0e" path="res://Study_Buddy.png" id="6_0ck1t"]
 [ext_resource type="Texture2D" uid="uid://6rmnmn668agc" path="res://Foreground.PNG" id="6_u6ybi"]
 [ext_resource type="Texture2D" uid="uid://dwsg5ao8lxego" path="res://Reference UI.PNG" id="7_0064q"]
-[ext_resource type="Texture2D" uid="uid://c8h5wfbc4fimv" path="res://StudyBuddy.png" id="8_xuu7q"]
+[ext_resource type="Texture2D" uid="uid://dlntiqf7ceup4" path="res://Desk CoverUp.png" id="7_t2xf4"]
 [ext_resource type="Texture2D" uid="uid://dt1s63oaean02" path="res://PhoneOnDesk.png" id="9_locot"]
+[ext_resource type="Texture2D" uid="uid://ktfo7081sa3i" path="res://PenOnDesk.png" id="9_wv1v6"]
 [ext_resource type="Texture2D" uid="uid://deghowkq1j72p" path="res://Phone base.png" id="10_06ryp"]
 [ext_resource type="Texture2D" uid="uid://cljxtb6vx2vek" path="res://Button Home.png" id="11_2ffeu"]
 [ext_resource type="Texture2D" uid="uid://cijhhrph4p3ks" path="res://Phone BG.png" id="13_jc45a"]
@@ -296,15 +298,14 @@ texture = ExtResource("4_xiqa2")
 [node name="Book" type="Sprite2D" parent="."]
 position = Vector2(259, 323.75)
 scale = Vector2(0.202745, 0.196515)
-texture = ExtResource("5_tv0qa")
+texture = ExtResource("5_4bll2")
 
 [node name="StudyingBuddy" type="Node2D" parent="."]
-visible = false
 
 [node name="ArmR" type="Polygon2D" parent="StudyingBuddy"]
 position = Vector2(70, 72)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("8_xuu7q")
+texture = ExtResource("6_0ck1t")
 skeleton = NodePath("../../StudyingBuddySkeleton")
 polygon = PackedVector2Array(1263.54, 1572.44, 1115.64, 1481.68, 1085.38, 1488.4, 995.469, 1583.36, 987.906, 1601.85, 968.578, 1601.85, 935.805, 1595.13, 761.015, 1640.5, 761.015, 1660.67, 723.2, 1685.04, 696.309, 1685.88, 595.469, 1742.18, 567.738, 1855.63, 687.906, 1879.16, 777.822, 1882.52, 794.628, 1854.79, 833.284, 1841.34, 863.536, 1856.47, 964.376, 1874.96, 999.67, 1874.96, 1055.13, 1871.6, 1103.03, 1852.27, 1133.28, 1844.71, 1165.22, 1846.39, 1261.86, 1886.72, 1287.91, 1871.6)
 uv = PackedVector2Array(1263.54, 1572.44, 1115.64, 1481.68, 1085.38, 1488.4, 995.469, 1583.36, 987.906, 1601.85, 968.578, 1601.85, 935.805, 1595.13, 761.015, 1640.5, 761.015, 1660.67, 723.2, 1685.04, 696.309, 1685.88, 595.469, 1742.18, 567.738, 1855.63, 687.906, 1879.16, 777.822, 1882.52, 794.628, 1854.79, 833.284, 1841.34, 863.536, 1856.47, 964.376, 1874.96, 999.67, 1874.96, 1055.13, 1871.6, 1103.03, 1852.27, 1133.28, 1844.71, 1165.22, 1846.39, 1261.86, 1886.72, 1287.91, 1871.6)
@@ -314,7 +315,7 @@ bones = ["Torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 [node name="Tail" type="Polygon2D" parent="StudyingBuddy"]
 position = Vector2(80, -32)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("8_xuu7q")
+texture = ExtResource("6_0ck1t")
 skeleton = NodePath("../../StudyingBuddySkeleton")
 polygon = PackedVector2Array(1772.26, 2398.84, 1746.07, 2442.29, 1669.29, 2472.05, 1640.71, 2721.46, 1755.6, 2783.96, 1921.67, 2847.05, 2036.55, 2788.12, 2138.93, 2608.36, 2114.52, 2477.41, 1971.07, 2388.72)
 uv = PackedVector2Array(1772.26, 2398.84, 1746.07, 2442.29, 1669.29, 2472.05, 1640.71, 2721.46, 1755.6, 2783.96, 1921.67, 2847.05, 2036.55, 2788.12, 2138.93, 2608.36, 2114.52, 2477.41, 1971.07, 2388.72)
@@ -324,27 +325,32 @@ bones = ["Torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head"
 [node name="Torso" type="Polygon2D" parent="StudyingBuddy"]
 position = Vector2(-29, 93)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("8_xuu7q")
+texture = ExtResource("6_0ck1t")
 skeleton = NodePath("../../StudyingBuddySkeleton")
-polygon = PackedVector2Array(1771.61, 1195.93, 1541.06, 1280.65, 1545.92, 1373.71, 1601.47, 1383.43, 1562.58, 1403.57, 1591.06, 1742.46, 1638.97, 1829.96, 1875.22, 1919.76, 2320.36, 2373.93, 2341.19, 2330.88, 2358.58, 1817.67, 2220.39, 1339.89, 2133.69, 1149.38, 1777.44, 1189.65)
-uv = PackedVector2Array(1771.61, 1195.93, 1541.06, 1280.65, 1545.92, 1373.71, 1601.47, 1383.43, 1562.58, 1403.57, 1591.06, 1742.46, 1638.97, 1829.96, 1875.22, 1919.76, 2320.36, 2373.93, 2341.19, 2330.88, 2358.58, 1817.67, 2220.39, 1339.89, 2133.69, 1149.38, 1777.44, 1189.65)
-polygons = [PackedInt32Array(1, 2, 3, 11, 12, 13, 0), PackedInt32Array(3, 4, 5, 6, 7, 8, 9, 10, 11)]
-bones = ["Torso", PackedFloat32Array(0.5, 0.5, 1, 1, 1, 1, 1, 1, 0.5, 0.5, 1, 1, 0.5, 0.5), "Torso/Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head/EarL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head/EarR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head/Nose", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Tail", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmL/ForeArmL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmL/ForeArmL/HandL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmL/ForeArmL/HandL/Phone", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmL/ForeArmL/HandL/Pen", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmR/ForeArmR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmR/ForeArmR/HandR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+polygon = PackedVector2Array(1857.14, 1155.84, 1651.95, 1236.36, 1624.68, 1348.05, 1542.86, 1398.7, 1601.3, 1727.27, 1619.48, 1802.6, 1663.64, 2022.08, 1567.53, 2067.53, 1505.19, 2325.97, 1772.73, 2384.42, 2212.99, 2363.64, 2346.75, 2267.53, 2332.47, 2071.43, 2336.36, 1987.01, 2349.35, 1807.79, 2249.35, 1364.94, 2200, 1329.87, 2167.53, 1229.87)
+uv = PackedVector2Array(1857.14, 1155.84, 1651.95, 1236.36, 1624.68, 1348.05, 1542.86, 1398.7, 1601.3, 1727.27, 1619.48, 1802.6, 1663.64, 2022.08, 1567.53, 2067.53, 1505.19, 2325.97, 1772.73, 2384.42, 2212.99, 2363.64, 2346.75, 2267.53, 2332.47, 2071.43, 2336.36, 1987.01, 2349.35, 1807.79, 2249.35, 1364.94, 2200, 1329.87, 2167.53, 1229.87)
+polygons = [PackedInt32Array(2, 16, 17, 0, 1), PackedInt32Array(2, 3, 4, 5, 6, 12, 13, 14, 15, 16), PackedInt32Array(6, 7, 8, 9, 10, 11, 12)]
+bones = ["Torso", PackedFloat32Array(0.21, 0.21, 1, 1, 1, 1, 1, 0.21, 0.21, 0.21, 0.21, 0.21, 1, 1, 1, 1, 1, 0.21), "Torso/Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head/EarL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head/EarR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head/Nose", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Tail", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmL/ForeArmL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmL/ForeArmL/HandL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmL/ForeArmL/HandL/Phone", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmL/ForeArmL/HandL/Pen", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmR/ForeArmR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmR/ForeArmR/HandR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="Desk CoverUp" type="Sprite2D" parent="StudyingBuddy"]
+position = Vector2(259, 323.75)
+scale = Vector2(0.202745, 0.196515)
+texture = ExtResource("7_t2xf4")
 
 [node name="Head" type="Polygon2D" parent="StudyingBuddy"]
 position = Vector2(131, 105)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("8_xuu7q")
+texture = ExtResource("6_0ck1t")
 skeleton = NodePath("../../StudyingBuddySkeleton")
 polygon = PackedVector2Array(766.69, 302.089, 661.381, 217.133, 483.504, 247.221, 388.814, 367.575, 425.097, 530.407, 515.363, 585.274, 437.487, 747.221, 381.735, 1038.37, 597.664, 1314.48, 810.053, 1338.37, 1277.31, 1257.84, 1445.45, 1112.71, 1496.78, 797.664, 1429.52, 625.097, 1550.76, 548.106, 1576.81, 304.62, 1413.98, 132.053, 1175.04, 134.708, 1031.68, 260.372, 1036.11, 310.814, 907.788, 289.575)
 uv = PackedVector2Array(766.69, 302.089, 661.381, 217.133, 483.504, 247.221, 388.814, 367.575, 425.097, 530.407, 515.363, 585.274, 437.487, 747.221, 381.735, 1038.37, 597.664, 1314.48, 810.053, 1338.37, 1277.31, 1257.84, 1445.45, 1112.71, 1496.78, 797.664, 1429.52, 625.097, 1550.76, 548.106, 1576.81, 304.62, 1413.98, 132.053, 1175.04, 134.708, 1031.68, 260.372, 1036.11, 310.814, 907.788, 289.575)
 polygons = [PackedInt32Array(5, 0, 1, 2, 3, 4), PackedInt32Array(19, 13, 14, 15, 16, 17, 18), PackedInt32Array(19, 20, 0, 5, 6, 7, 8, 9, 10, 11, 12, 13)]
-bones = ["Torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head", PackedFloat32Array(0.5, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0.5), "Torso/Head/EarL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0), "Torso/Head/EarR", PackedFloat32Array(1, 1, 1, 1, 1, 1, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5), "Torso/Head/Nose", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Tail", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmL/ForeArmL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmL/ForeArmL/HandL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmL/ForeArmL/HandL/Phone", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmL/ForeArmL/HandL/Pen", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmR/ForeArmR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmR/ForeArmR/HandR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+bones = ["Torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head", PackedFloat32Array(0.5, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.21, 0, 0, 0, 0.21, 0.21, 0.5), "Torso/Head/EarL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.08, 1, 1, 1, 1, 0.31, 0, 0), "Torso/Head/EarR", PackedFloat32Array(0.29, 1, 1, 1, 1, 0.29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head/Nose", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Tail", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmL/ForeArmL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmL/ForeArmL/HandL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmL/ForeArmL/HandL/Phone", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmL/ForeArmL/HandL/Pen", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmR/ForeArmR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmR/ForeArmR/HandR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="Nose" type="Polygon2D" parent="StudyingBuddy"]
 position = Vector2(202, 35)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("8_xuu7q")
+texture = ExtResource("6_0ck1t")
 skeleton = NodePath("../../StudyingBuddySkeleton")
 polygon = PackedVector2Array(340.789, 1256.47, 200.313, 1293.38, 195.551, 1414.81, 341.98, 1416, 431.265, 1346.95)
 uv = PackedVector2Array(340.789, 1256.47, 200.313, 1293.38, 195.551, 1414.81, 341.98, 1416, 431.265, 1346.95)
@@ -357,7 +363,7 @@ position = Vector2(241, 447)
 rotation = -0.717661
 scale = Vector2(0.2, 0.2)
 offset = Vector2(-255, -1855)
-texture = ExtResource("8_xuu7q")
+texture = ExtResource("6_0ck1t")
 skeleton = NodePath("../../StudyingBuddySkeleton")
 polygon = PackedVector2Array(78.8845, 1550.52, 189.599, 1520.76, 256.265, 1574.33, 343.17, 1902.9, 302.694, 1958.85, 180.075, 1908.85)
 uv = PackedVector2Array(78.8845, 1550.52, 189.599, 1520.76, 256.265, 1574.33, 343.17, 1902.9, 302.694, 1958.85, 180.075, 1908.85)
@@ -367,7 +373,7 @@ bones = ["Torso", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Torso/Head", PackedFloa
 [node name="Pen" type="Polygon2D" parent="StudyingBuddy"]
 position = Vector2(172, 3)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("8_xuu7q")
+texture = ExtResource("6_0ck1t")
 skeleton = NodePath("../../StudyingBuddySkeleton")
 polygon = PackedVector2Array(435.164, 1976, 313.425, 2054.26, 185.888, 2349.91, 174.294, 2457.16, 264.149, 2418.02, 481.541, 2058.6)
 uv = PackedVector2Array(435.164, 1976, 313.425, 2054.26, 185.888, 2349.91, 174.294, 2457.16, 264.149, 2418.02, 481.541, 2058.6)
@@ -377,7 +383,7 @@ bones = ["Torso", PackedFloat32Array(0, 0, 0, 0, 0, 0), "Torso/Head", PackedFloa
 [node name="ArmL" type="Polygon2D" parent="StudyingBuddy"]
 position = Vector2(135, -71)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("8_xuu7q")
+texture = ExtResource("6_0ck1t")
 skeleton = NodePath("../../StudyingBuddySkeleton")
 polygon = PackedVector2Array(1069.61, 2076.07, 936.273, 2179.67, 896.633, 2358.95, 884.021, 2398.59, 862.399, 2416.61, 843.48, 2417.51, 731.768, 2443.64, 696.633, 2491.38, 664.201, 2502.2, 613.75, 2485.08, 467.805, 2488.68, 397.534, 2576.97, 441.678, 2726.52, 575.913, 2788.68, 675.012, 2756.25, 690.327, 2742.74, 734.471, 2741.83, 751.588, 2767.06, 861.498, 2840.03, 1117.35, 2835.53, 1202.04, 2802.2, 1298.44, 2684.18, 1347.08, 2597.69, 1371.41, 2281.47, 1304.74, 2176.97, 1136.27, 2064.36)
 uv = PackedVector2Array(1069.61, 2076.07, 936.273, 2179.67, 896.633, 2358.95, 884.021, 2398.59, 862.399, 2416.61, 843.48, 2417.51, 731.768, 2443.64, 696.633, 2491.38, 664.201, 2502.2, 613.75, 2485.08, 467.805, 2488.68, 397.534, 2576.97, 441.678, 2726.52, 575.913, 2788.68, 675.012, 2756.25, 690.327, 2742.74, 734.471, 2741.83, 751.588, 2767.06, 861.498, 2840.03, 1117.35, 2835.53, 1202.04, 2802.2, 1298.44, 2684.18, 1347.08, 2597.69, 1371.41, 2281.47, 1304.74, 2176.97, 1136.27, 2064.36)
@@ -393,12 +399,11 @@ rest = Transform2D(1, -1.30879e-11, 1.30879e-11, 1, 392.498, 500.394)
 
 [node name="Head" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(-48.4978, -144.394)
-scale = Vector2(1, 0.999999)
 rest = Transform2D(1, -1.30879e-11, 1.30879e-11, 1, -48.4978, -144.394)
 
 [node name="EarL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/Head"]
 position = Vector2(34, -161)
-rotation = -0.935605
+rotation = -1.0554
 scale = Vector2(3.4, 3.4)
 rest = Transform2D(2.01733, -2.73686, 2.73686, 2.01733, 34, -161)
 
@@ -410,7 +415,7 @@ rest = Transform2D(2.39659, 0.711537, -0.711537, 2.39659, -86, -159)
 
 [node name="Nose" type="Bone2D" parent="StudyingBuddySkeleton/Torso/Head"]
 position = Vector2(-81.3054, -51.7361)
-rotation = -2.26784
+rotation = -2.26785
 scale = Vector2(2.49999, 2.49999)
 rest = Transform2D(-1.60489, -1.91684, 1.91684, -1.60489, -81.3054, -51.7361)
 
@@ -423,11 +428,13 @@ rest = Transform2D(3.14289, -0.827503, 0.827503, 3.14289, 35.5022, -2.39432)
 [node name="UpperArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(-33.4978, -141.394)
 rotation = 1.89813
+scale = Vector2(1, 1)
 rest = Transform2D(-0.100553, 0.994932, -0.994932, -0.100553, -33.4978, -141.394)
 
 [node name="ForeArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL"]
 position = Vector2(87.652, -7.88235)
 rotation = 1.7431
+scale = Vector2(1, 1)
 rest = Transform2D(0.152266, 0.98834, -0.98834, 0.152266, 87.652, -7.88235)
 
 [node name="HandL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL/ForeArmL"]
@@ -439,6 +446,7 @@ rest = Transform2D(6.96462, -1.60426, 0.549942, 2.38748, 88.3128, -2.97414)
 [node name="Phone" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL/ForeArmL/HandL"]
 position = Vector2(4.78279, 2.33461)
 rotation = -0.366923
+scale = Vector2(1, 1)
 rest = Transform2D(0.933436, -0.358745, 0.358745, 0.933436, 4.78279, 2.33461)
 
 [node name="Pen" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL/ForeArmL/HandL"]
@@ -450,11 +458,13 @@ rest = Transform2D(0.356327, -0.934361, 0.934361, 0.356327, 4.78279, 2.33461)
 [node name="UpperArmR" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(-95.4978, -118.394)
 rotation = 1.67185
+scale = Vector2(1, 1)
 rest = Transform2D(-0.100882, 0.994898, -0.994898, -0.100882, -95.4978, -118.394)
 
 [node name="ForeArmR" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmR"]
 position = Vector2(35.7571, 25.5231)
 rotation = 1.41275
+scale = Vector2(1, 1)
 rest = Transform2D(0.157389, 0.987537, -0.987537, 0.157389, 35.7571, 25.5231)
 
 [node name="HandR" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmR/ForeArmR"]
@@ -469,10 +479,15 @@ libraries = {
 }
 
 [node name="PhoneOnDesk" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(213, 320)
 scale = Vector2(0.202745, 0.196515)
 texture = ExtResource("9_locot")
+
+[node name="PenOnDesk" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(238, 253)
+scale = Vector2(0.202745, 0.196515)
+texture = ExtResource("9_wv1v6")
 
 [node name="Foreground" type="Sprite2D" parent="."]
 position = Vector2(259, 323.75)
@@ -638,6 +653,7 @@ max_value = 8.0
 value = 1.0
 
 [node name="CyclesReadout" type="Label" parent="Phone/SettingsScreen/CyclesSlider"]
+layout_mode = 0
 offset_left = 973.0
 offset_top = 153.0
 offset_right = 1076.0
@@ -674,6 +690,7 @@ texture_pressed = ExtResource("5_htttl")
 stretch_mode = 0
 
 [node name="PhoneReference" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.313726)
 position = Vector2(259, 979.05)
 scale = Vector2(0.202745, 0.196515)
@@ -735,8 +752,8 @@ default_color = Color(0, 0, 0, 1)
 [connection signal="value_changed" from="Phone/SettingsScreen/CyclesSlider" to="Phone/SettingsScreen/CyclesSlider/CyclesReadout" method="_on_cycles_slider_value_changed"]
 [connection signal="pressed" from="Phone/SettingsScreen/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Phone/SettingsScreen/StartButton" to="Phone/SettingsScreen" method="_on_start_button_pressed"]
-[connection signal="pressed" from="Phone/SettingsScreen/StartButton" to="TimeManager" method="_on_start_button_pressed"]
 [connection signal="pressed" from="Phone/SettingsScreen/StartButton" to="Phone/SettingsScreen/StartButton" method="_on_pressed"]
+[connection signal="pressed" from="Phone/SettingsScreen/StartButton" to="TimeManager" method="_on_start_button_pressed"]
 [connection signal="pressed" from="Phone/SettingsScreen/ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="Phone/SettingsScreen/ResetButton" to="TimeManager" method="_on_reset_button_pressed"]
 [connection signal="pressed" from="MenuUpButton" to="." method="_on_menu_up_button_pressed"]
