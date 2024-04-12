@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://doin1g4xrytqe"]
+[gd_scene load_steps=49 format=3 uid="uid://doin1g4xrytqe"]
 
 [ext_resource type="Script" path="res://MainScene.gd" id="1_37525"]
 [ext_resource type="Texture2D" uid="uid://c8xf1u7hrxbtf" path="res://Outside Window.PNG" id="2_xt5uq"]
@@ -27,7 +27,8 @@
 [ext_resource type="Script" path="res://CyclesReadout.gd" id="20_05by4"]
 [ext_resource type="Texture2D" uid="uid://dc4ilh3xeyi8x" path="res://Phone reference.jpg" id="20_qfoav"]
 [ext_resource type="FontFile" uid="uid://bygjp8by3wfd3" path="res://Fonts/ArchitectsDaughter.ttf" id="23_8s4wn"]
-[ext_resource type="Texture2D" uid="uid://dy76314xuf88n" path="res://Button Phone On Screen.png" id="25_ltmt6"]
+[ext_resource type="Texture2D" uid="uid://c8l43fr7wvjuu" path="res://Button Menu Up.png" id="25_sp6rb"]
+[ext_resource type="Texture2D" uid="uid://b6q3uno0vq8qh" path="res://Button Menu On Hover.png" id="26_y1yau"]
 
 [sub_resource type="Animation" id="Animation_3ebs1"]
 length = 0.001
@@ -1122,8 +1123,9 @@ offset_right = 754.0
 offset_bottom = 1095.0
 scale = Vector2(0.2, 0.2)
 auto_translate = false
-texture_normal = ExtResource("25_ltmt6")
-texture_pressed = ExtResource("5_htttl")
+texture_normal = ExtResource("25_sp6rb")
+texture_pressed = ExtResource("26_y1yau")
+texture_hover = ExtResource("26_y1yau")
 
 [node name="TimeManager" type="Node" parent="."]
 script = ExtResource("3_045uj")
