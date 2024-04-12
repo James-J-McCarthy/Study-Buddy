@@ -28,8 +28,11 @@ func _process(_delta):
 				pass
 			else:
 				var currentDegree = get_node("../clockHand").rotation;
-				var degreeChange = 360/(_delta / (break_time + study_time));
+				var oneSecDist = float(360 / (break_time + study_time))
+				var degreeChange = float(_delta/oneSecDist)
+				print("currentDegree: ", currentDegree)
 				currentDegree += degreeChange;
+				print("newDeg: ", currentDegree)
 				if (currentDegree >= 360): 
 					currentDegree -= 360;
 				get_node("../clockHand").rotation = currentDegree;

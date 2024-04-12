@@ -9,7 +9,6 @@ func _ready():
 	$MenuUpButton.show()
 	_on_menu_up_button_pressed()
 	_on_settings_button_pressed()
-	
 	_studying_buddy_animation()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
