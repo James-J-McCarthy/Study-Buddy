@@ -10,8 +10,9 @@ extends Node
 var study_time # time of "study session" measured in seconds 
 var break_time # ^ for breaks
 var cycles_total # < prob don't initialize this here # total number of study/break cycles user wants
-var cycle = 1 # current cycles count
+var cycle = 0 # current cycles count
 var studying = true
+var timePassed = 0
 
 # Called when the node enters the scene tree for the first time.
 
@@ -19,7 +20,7 @@ func _ready():
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _physics_process(_delta):
 	if (cycles_total != null):
 		if (cycle <= cycles_total):
 			var clockHand = get_node_or_null("../clockHand");
@@ -27,15 +28,17 @@ func _process(_delta):
 				print("clockhand == null error!");
 				pass
 			else:
-				var currentDegree = get_node("../clockHand").rotation;
-				var oneSecDist = float(360 / (break_time + study_time))
-				var degreeChange = float(_delta/oneSecDist)
-				print("currentDegree: ", currentDegree)
-				currentDegree += degreeChange;
-				print("newDeg: ", currentDegree)
-				if (currentDegree >= 360): 
-					currentDegree -= 360;
-				get_node("../clockHand").rotation = currentDegree;
+				timePassed += _delta
+
+				var currentRad = get_node("../clockHand").rotation;
+				var radsPerSecond = float((2*PI) / (break_time + study_time))
+				var radChange = float(_delta*radsPerSecond)
+				currentRad += radChange
+				if (currentRad >= 360): 
+					currentRad = 0;
+				
+				get_node("../clockHand").rotation = currentRad;
+				print("\nset degree: ", get_node("../clockHand").rotation)
 
 # helper function that starts pomo timer given a period length
 func start_period(duration):
@@ -46,6 +49,7 @@ func start_period(duration):
 func start_study_timer():
 	#print("start studying for: ", study_time, "seconds")
 	start_period(study_time)
+	updateCycleNumerator()
 	studying = true
 
 #begins a study period on Pomo-Timer using break_time
@@ -71,7 +75,7 @@ func _on_break_time_slider_value_changed(value):
 # get's signal from pomo timer when it finishes or when time is reduced to < 0
 # then restarts timer based on next period length
 func _period_finished(): # I tested this funciton with a print to ensure it works
-	updateCycleNumerator()
+
 	if(cycle <= cycles_total):
 		if(studying):
 			#print("done studying!!")
