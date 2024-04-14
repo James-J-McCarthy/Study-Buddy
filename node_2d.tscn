@@ -718,6 +718,7 @@ scale = Vector2(0.202745, 0.196515)
 texture = ExtResource("5_4bll2")
 
 [node name="StudyingBuddy" type="Node2D" parent="."]
+visible = false
 
 [node name="ArmR" type="Polygon2D" parent="StudyingBuddy"]
 position = Vector2(70, 72)
