@@ -12,7 +12,7 @@ var break_time # ^ for breaks
 var cycles_total # < prob don't initialize this here # total number of study/break cycles user wants
 var cycle = 0 # current cycles count
 var studying = true
-var timePassed = 0
+
 
 # Called when the node enters the scene tree for the first time.
 
@@ -28,8 +28,6 @@ func _physics_process(_delta):
 				print("clockhand == null error!");
 				pass
 			else:
-				timePassed += _delta
-
 				var currentRad = get_node("../clockHand").rotation;
 				var radsPerSecond = float((2*PI) / (break_time + study_time))
 				var radChange = float(_delta*radsPerSecond)
@@ -38,7 +36,7 @@ func _physics_process(_delta):
 					currentRad = 0;
 				
 				get_node("../clockHand").rotation = currentRad;
-				print("\nset degree: ", get_node("../clockHand").rotation)
+
 
 # helper function that starts pomo timer given a period length
 func start_period(duration):
