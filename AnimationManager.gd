@@ -16,7 +16,7 @@ func _process(delta):
 
 
 func _getAnimation():
-	if get_node("TimeManager").getStudying() == true:
+	if get_node("TimeManager").getStudying():
 		_getStudyingAnimation()
 	else:
 		_getBreakAnimation()

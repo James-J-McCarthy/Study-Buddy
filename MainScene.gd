@@ -4,6 +4,7 @@ var studying = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$StudyingBuddy.hide()
 	$MenuUpButton.hide()
 	await get_tree().create_timer(1.25).timeout # delay phone open animation by 1.25 seconds when app opens
 	$MenuUpButton.show()
