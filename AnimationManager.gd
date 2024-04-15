@@ -1,6 +1,6 @@
 extends Node
 
-var studyingAnimation = ["Writing", "Writing2"]
+var studyingAnimation = PackedStringArray(["Writing", "Writing2"])
 var breakAnimation = ["Phone"]
 var transitionAnimation = []
 var random = RandomNumberGenerator.new()
@@ -15,17 +15,19 @@ func _process(delta):
 	pass
 
 
-func _getAnimation():
-	if get_node("TimeManager").getStudying():
-		_getStudyingAnimation()
+func _getAnimation() -> String:
+	if get_parent().get_node("TimeManager").getStudying() == true:
+		return _getStudyingAnimation()
 	else:
-		_getBreakAnimation()
+		return _getBreakAnimation()
 
 
-func _getStudyingAnimation():
-	var animation = random.randi_range(0, studyingAnimation.length())
-	return studyingAnimation[animation]
+func _getStudyingAnimation() -> String:
+	var animation : int = random.randi_range(0, studyingAnimation.size()-1)
+	var result : String = studyingAnimation[animation]
+	return result
 	
-func _getBreakAnimation():
-	var animation = random.randi_range(0, breakAnimation.length())
-	return breakAnimation[animation]
+func _getBreakAnimation() -> String:
+	var animation : int = random.randi_range(0, breakAnimation.size()-1)
+	var result : String = breakAnimation[animation]
+	return result

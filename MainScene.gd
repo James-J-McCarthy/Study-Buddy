@@ -10,14 +10,13 @@ func _ready():
 	$MenuUpButton.show()
 	_on_menu_up_button_pressed()
 	_on_settings_button_pressed()
-	_studying_buddy_animation()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
 
 func _studying_buddy_animation():
-	get_node("StudyingBuddySkeleton/StudyingBuddyAniPlayer").play("Writing")
+	get_node("StudyingBuddySkeleton/StudyingBuddyAniPlayer").play($AnimationManager._getAnimation())
 
 
 # this code runs when MenuUpButton is pressed
@@ -55,6 +54,8 @@ func _on_settings_back_button_pressed():
 
 func _on_start_button_pressed():
 	_on_menu_back_button_pressed()
+	var animation:String = get_node("AnimationManager")._getAnimation()
+	get_node("StudyingBuddySkeleton/StudyingBuddyAniPlayer").play(animation)
 
 func _on_reset_button_pressed():
 	_on_menu_back_button_pressed()
