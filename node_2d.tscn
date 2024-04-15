@@ -964,21 +964,12 @@ texture_pressed = ExtResource("5_htttl")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="TimerButton" type="TextureButton" parent="Phone/AppScreen"]
-anchors_preset = -1
-anchor_left = -0.000168074
-anchor_top = -0.132313
-anchor_right = -0.270756
-anchor_bottom = 0.56405
-offset_left = -438.995
-offset_top = -589.747
-offset_right = 941.005
-offset_bottom = 790.253
-scale = Vector2(0.95, 0.19)
+[node name="TextureButton" type="TextureButton" parent="Phone/AppScreen"]
+offset_left = -409.867
+offset_top = -975.619
+offset_right = 179.133
+offset_bottom = -386.619
 texture_normal = ExtResource("19_qa1w7")
-texture_pressed = ExtResource("5_htttl")
-stretch_mode = 0
-metadata/_edit_use_anchors_ = true
 
 [node name="MessagesScreen" type="Sprite2D" parent="Phone"]
 visible = false
@@ -996,6 +987,7 @@ texture_pressed = ExtResource("5_htttl")
 stretch_mode = 0
 
 [node name="SettingsScreen" type="Sprite2D" parent="Phone"]
+visible = false
 position = Vector2(2.08165e-12, 2.08165e-12)
 texture = ExtResource("21_02gba")
 script = ExtResource("19_20l8k")
@@ -1149,19 +1141,20 @@ horizontal_alignment = 1
 
 [node name="ResetButton" type="TextureButton" parent="Phone/SettingsScreen"]
 visible = false
-offset_left = -465.0
-offset_top = 854.0
-offset_right = 233.0
-offset_bottom = 1180.0
-texture_normal = ExtResource("4_kf0xm")
-texture_pressed = ExtResource("5_htttl")
+offset_left = -448.276
+offset_top = 395.939
+offset_right = 44.724
+offset_bottom = 740.939
+texture_normal = ExtResource("30_ec1cj")
+texture_pressed = ExtResource("31_127ub")
 stretch_mode = 0
 
 [node name="Restart" type="Label" parent="Phone/SettingsScreen/ResetButton"]
-offset_left = 144.803
-offset_top = -341.311
-offset_right = 513.803
-offset_bottom = -149.311
+offset_left = 74.0
+offset_top = 101.523
+offset_right = 563.0
+offset_bottom = 293.523
+scale = Vector2(0.75, 0.75)
 text = "Restart"
 label_settings = SubResource("LabelSettings_ewdgv")
 horizontal_alignment = 1
@@ -1224,7 +1217,6 @@ default_color = Color(0, 0, 0, 1)
 [connection signal="pressed" from="Phone/MenuBackButton" to="." method="_on_menu_back_button_pressed"]
 [connection signal="pressed" from="Phone/AppScreen/MessagesButton" to="." method="_on_messages_button_pressed"]
 [connection signal="pressed" from="Phone/AppScreen/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="Phone/AppScreen/TimerButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Phone/MessagesScreen/MessagesBackButton" to="." method="_on_messages_back_button_pressed"]
 [connection signal="pressed" from="Phone/SettingsScreen/SettingsBackButton" to="." method="_on_settings_back_button_pressed"]
 [connection signal="pressed" from="Phone/SettingsScreen/SettingsBackButton" to="Phone/SettingsScreen" method="_on_settings_back_button_pressed"]
