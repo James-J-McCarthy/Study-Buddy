@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq8l124f57kl7"
-path="res://.godot/imported/Grabber On Click.PNG-b14753449dc1f129640a07d50ae55750.ctex"
+uid="uid://dk4cgs8ih0i0"
+path="res://.godot/imported/Grabber Clicked.png-c206f30356b94a6950dfacffbf360f0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Grabber On Click.PNG"
-dest_files=["res://.godot/imported/Grabber On Click.PNG-b14753449dc1f129640a07d50ae55750.ctex"]
+source_file="res://Grabber Clicked.png"
+dest_files=["res://.godot/imported/Grabber Clicked.png-c206f30356b94a6950dfacffbf360f0b.ctex"]
 
 [params]
 
