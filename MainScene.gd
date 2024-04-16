@@ -57,12 +57,13 @@ func _on_start_button_pressed():
 	var animation:String = get_node("AnimationManager")._getAnimation()
 	get_node("StudyingBuddySkeleton/StudyingBuddyAniPlayer").play(animation)
 
+
 func _on_reset_button_pressed():
 	_on_menu_back_button_pressed()
 
 
-func _on_studying_buddy_ani_player_animation_finished(anim_name):
+func _on_studying_buddy_ani_player_animation_started(anim_name):
 	print("finished")
 	var animation:String = get_node("AnimationManager")._getAnimation()
 	print(animation)
-	get_node("StudyingBuddySkeleton/StudyingBuddyAniPlayer").play(animation)
+	get_node("StudyingBuddySkeleton/StudyingBuddyAniPlayer").queue(animation)

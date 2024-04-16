@@ -892,6 +892,7 @@ rest = Transform2D(5.33073, 0.622873, -0.213543, 1.82757, 45.5535, -8.41874)
 libraries = {
 "": SubResource("AnimationLibrary_n6bl0")
 }
+blend_times = [&"Writing2", &"RESET", 2.0, &"Writing2", &"Writing2", 2.0, &"Writing2", &"Writing", 2.0, &"Writing", &"Writing", 2.0]
 
 [node name="AnimationManager" type="Node" parent="."]
 script = ExtResource("8_hahbl")
@@ -985,7 +986,6 @@ texture_pressed = ExtResource("5_htttl")
 stretch_mode = 0
 
 [node name="SettingsScreen" type="Sprite2D" parent="Phone"]
-visible = false
 position = Vector2(2.08165e-12, 2.08165e-12)
 texture = ExtResource("21_02gba")
 script = ExtResource("19_20l8k")
@@ -1041,6 +1041,7 @@ offset_left = 673.235
 offset_top = 16.9205
 offset_right = 725.235
 offset_bottom = 99.9205
+theme_override_font_sizes/font_size = 35
 text = "5"
 label_settings = SubResource("LabelSettings_rah3p")
 horizontal_alignment = 1
@@ -1076,7 +1077,8 @@ offset_left = 673.235
 offset_top = 16.9204
 offset_right = 725.235
 offset_bottom = 99.9204
-text = "6"
+theme_override_font_sizes/font_size = 35
+text = "2"
 label_settings = SubResource("LabelSettings_je1ay")
 horizontal_alignment = 1
 script = ExtResource("26_hcn8l")
@@ -1107,6 +1109,7 @@ offset_left = 647.0
 offset_top = -71.0
 offset_right = 750.0
 offset_bottom = 175.0
+theme_override_font_sizes/font_size = 35
 text = "1"
 label_settings = SubResource("LabelSettings_cpurt")
 script = ExtResource("20_05by4")
@@ -1212,7 +1215,7 @@ points = PackedVector2Array(0, 0, -1, -21)
 width = 3.0
 default_color = Color(0, 0, 0, 1)
 
-[connection signal="animation_finished" from="StudyingBuddySkeleton/StudyingBuddyAniPlayer" to="." method="_on_studying_buddy_ani_player_animation_finished"]
+[connection signal="animation_started" from="StudyingBuddySkeleton/StudyingBuddyAniPlayer" to="." method="_on_studying_buddy_ani_player_animation_started"]
 [connection signal="pressed" from="Phone/MenuBackButton" to="." method="_on_menu_back_button_pressed"]
 [connection signal="pressed" from="Phone/AppScreen/MessagesButton" to="." method="_on_messages_button_pressed"]
 [connection signal="pressed" from="Phone/AppScreen/SettingsButton" to="." method="_on_settings_button_pressed"]
@@ -1221,6 +1224,7 @@ default_color = Color(0, 0, 0, 1)
 [connection signal="pressed" from="Phone/SettingsScreen/SettingsBackButton" to="Phone/SettingsScreen" method="_on_settings_back_button_pressed"]
 [connection signal="value_changed" from="Phone/SettingsScreen/StudyTimeSlider" to="Phone/SettingsScreen/StudyTimeSlider/StudyTimeReadout" method="_on_study_time_slider_value_changed"]
 [connection signal="value_changed" from="Phone/SettingsScreen/StudyTimeSlider" to="TimeManager" method="_on_session_time_slider_value_changed"]
+[connection signal="value_changed" from="Phone/SettingsScreen/BreakTimeSlider" to="Phone/SettingsScreen/BreakTimeSlider/BreakTimeReadout" method="_on_break_time_slider_value_changed"]
 [connection signal="value_changed" from="Phone/SettingsScreen/BreakTimeSlider" to="TimeManager" method="_on_break_time_slider_value_changed"]
 [connection signal="value_changed" from="Phone/SettingsScreen/CyclesSlider" to="Phone/SettingsScreen/CyclesSlider/CyclesReadout" method="_on_cycles_slider_value_changed"]
 [connection signal="pressed" from="Phone/SettingsScreen/StartButton" to="." method="_on_start_button_pressed"]
