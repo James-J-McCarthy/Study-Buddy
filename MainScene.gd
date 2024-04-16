@@ -63,7 +63,12 @@ func _on_reset_button_pressed():
 
 
 func _on_studying_buddy_ani_player_animation_started(anim_name):
-	print("finished")
-	var animation:String = get_node("AnimationManager")._getAnimation()
-	print(animation)
-	get_node("StudyingBuddySkeleton/StudyingBuddyAniPlayer").queue(animation)
+	if (anim_name == "Idle"):
+		print("Idle Now, queuing:")
+		var animation:String = get_node("AnimationManager")._getAnimation()
+		print(animation)
+		get_node("StudyingBuddySkeleton/StudyingBuddyAniPlayer").queue(animation)
+	else:
+		get_node("StudyingBuddySkeleton/StudyingBuddyAniPlayer").queue("Idle")
+		print("Queuing Idle")
+	
