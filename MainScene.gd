@@ -23,7 +23,7 @@ func _studying_buddy_animation():
 func _on_menu_up_button_pressed():
 	get_node("PhoneMover").play("PhoneUp")
 	get_node("MenuUpButton").hide()
-	get_node("Phone").get_node("MessagesScreen").hide()
+	get_node("Phone").get_node("MusicScreen").hide()
 	get_node("Phone").get_node("SettingsScreen").hide()
 	get_node("Phone").get_node("AppScreen").show()
 
@@ -35,7 +35,7 @@ func _on_menu_back_button_pressed():
 # this code runs when MessagesButton is pressed
 func _on_messages_button_pressed():
 	get_node("Phone").get_node("AppScreen").hide()
-	get_node("Phone").get_node("MessagesScreen").show()
+	get_node("Phone").get_node("MusicScreen").show()
 
 # this code runs when SettingsButton is pressed
 func _on_settings_button_pressed():
@@ -44,7 +44,7 @@ func _on_settings_button_pressed():
 
 # this code runs when MessagesBackButton is pressed
 func _on_messages_back_button_pressed():
-	get_node("Phone").get_node("MessagesScreen").hide()
+	get_node("Phone").get_node("MusicScreen").hide()
 	get_node("Phone").get_node("AppScreen").show()
 
 # this code runs when SettingsBackButton is pressed
