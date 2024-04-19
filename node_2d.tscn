@@ -1333,7 +1333,7 @@ rest = Transform2D(5.33073, 0.622873, -0.213543, 1.82757, 45.5535, -8.41874)
 libraries = {
 "": SubResource("AnimationLibrary_n6bl0")
 }
-blend_times = [&"Idle", &"Writing", 2.0, &"Idle", &"Writing2", 4.0, &"Idle", &"RESET", 2.0, &"Writing", &"Idle", 2.0, &"Writing", &"Writing", 2.0, &"Writing", &"Writing2", 2.0, &"Writing", &"RESET", 2.0, &"Writing2", &"Idle", 2.0, &"Writing2", &"Writing", 2.0, &"Writing2", &"Writing2", 2.0, &"Writing2", &"RESET", 2.0]
+blend_times = [&"Idle", &"RESET", 2.0, &"Idle", &"Writing", 2.0, &"Idle", &"Writing2", 4.0, &"Writing", &"RESET", 2.0, &"Writing", &"Idle", 2.0, &"Writing", &"Writing", 2.0, &"Writing", &"Writing2", 2.0, &"Writing2", &"RESET", 2.0, &"Writing2", &"Idle", 2.0, &"Writing2", &"Writing", 2.0, &"Writing2", &"Writing2", 2.0]
 
 [node name="AnimationManager" type="Node" parent="."]
 script = ExtResource("8_hahbl")
@@ -1675,8 +1675,8 @@ default_color = Color(0, 0, 0, 1)
 [connection signal="pressed" from="Phone/SettingsScreen/SettingsBackButton" to="Phone/SettingsScreen" method="_on_settings_back_button_pressed"]
 [connection signal="value_changed" from="Phone/SettingsScreen/StudyTimeSlider" to="Phone/SettingsScreen/StudyTimeSlider/StudyTimeReadout" method="_on_study_time_slider_value_changed"]
 [connection signal="value_changed" from="Phone/SettingsScreen/StudyTimeSlider" to="TimeManager" method="_on_session_time_slider_value_changed"]
-[connection signal="value_changed" from="Phone/SettingsScreen/BreakTimeSlider" to="TimeManager" method="_on_break_time_slider_value_changed"]
 [connection signal="value_changed" from="Phone/SettingsScreen/BreakTimeSlider" to="Phone/SettingsScreen/BreakTimeSlider/BreakReadout" method="_on_break_time_slider_value_changed"]
+[connection signal="value_changed" from="Phone/SettingsScreen/BreakTimeSlider" to="TimeManager" method="_on_break_time_slider_value_changed"]
 [connection signal="value_changed" from="Phone/SettingsScreen/CyclesSlider" to="Phone/SettingsScreen/CyclesSlider/CyclesReadout" method="_on_cycles_slider_value_changed"]
 [connection signal="pressed" from="Phone/SettingsScreen/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Phone/SettingsScreen/StartButton" to="Phone/SettingsScreen" method="_on_start_button_pressed"]
