@@ -21,6 +21,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
+	updateClockHand(_delta, true)
+
+func updateClockHand(_delta, dontReset):
 	if (cycles_total != null):
 		if (cycle <= cycles_total):
 			var clockHand = get_node_or_null("../clockHand");
@@ -34,9 +37,9 @@ func _physics_process(_delta):
 				currentRad += radChange
 				if (currentRad >= 360): 
 					currentRad = 0;
-				
+				if(!dontReset):
+					currentRad = 0;
 				get_node("../clockHand").rotation = currentRad;
-
 
 # helper function that starts pomo timer given a period length
 func start_period(duration):
@@ -56,6 +59,7 @@ func start_break_timer():
 	start_period(break_time)
 	studying = false
 
+# pause/unpause function
 func hit_pause():
 	if($PomoTimer.is_paused):
 		$PomoTimer.set_paused(false)
@@ -73,7 +77,6 @@ func _on_break_time_slider_value_changed(value):
 # get's signal from pomo timer when it finishes or when time is reduced to < 0
 # then restarts timer based on next period length
 func _period_finished(): # I tested this funciton with a print to ensure it works
-
 	if(cycle <= cycles_total):
 		if(studying):
 			#print("done studying!!")
@@ -85,8 +88,17 @@ func _period_finished(): # I tested this funciton with a print to ensure it work
 			if(study_time > 0): # update our boolean before switching
 				studying = true
 			start_study_timer() # switch PomoClocks timing duration
-	else: 
-		print("finished study period!!")
+	#else: 
+	print("finished study period!!")
+
+# 
+func resetClock():
+	updateClockHand(0, false) # reset clock hand
+	$PomoTimer.stop() # stop timer
+	
+	set_cycle(0)
+	start_study_timer() # start timer from the top
+	initializeClockLabelText()
 
 # This function creates the text that displays the cycle
 # count. 
@@ -123,6 +135,9 @@ func get_study_time():
 
 func get_cycles_total():
 	return cycles_total
+	
+func set_cycle(num):
+	cycle = num
 
 func _on_start_button_pressed():
 	set_study_time(get_parent().get_node("Phone").get_node("SettingsScreen").getStudyTime())
@@ -139,5 +154,4 @@ func _on_reset_button_pressed():
 	set_break_time(get_parent().get_node("Phone").get_node("SettingsScreen").getBreakTime())
 	set_cycles_total(get_parent().get_node("Phone").get_node("SettingsScreen").getCyclesTotal())
 	
-	initializeClockLabelText()
-	start_study_timer()
+	resetClock()
