@@ -82,17 +82,17 @@ func _on_break_time_slider_value_changed(value):
 func _period_finished(): # I tested this funciton with a print to ensure it works
 	if(cycle <= cycles_total):
 		if(studying):
-			#print("done studying!!")
+			print("done studying!!")
 			if(break_time > 0): # update our boolean before switching
 				studying = false
 			start_break_timer() # switch PomoClocks timing duration
 		else:
-			#print("done with break!!")
+			print("done with break!!")
 			if(study_time > 0): # update our boolean before switching
 				studying = true
 			start_study_timer() # switch PomoClocks timing duration
-		
-		get_parent().get_node("Phone").get_node("ClockScreen").setIntervalTimerLabel(studying)
+	
+	get_parent().get_node("Phone").get_node("ClockScreen").setIntervalTimerLabel(studying)
 	#else: 
 	print("finished study period!!")
 

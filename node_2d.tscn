@@ -1301,7 +1301,7 @@ rest = Transform2D(3.14289, -0.827503, 0.827503, 3.14289, 35.5022, -2.39432)
 [node name="UpperArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(-33.4978, -141.394)
 rotation = 1.67152
-scale = Vector2(0.999999, 0.999999)
+scale = Vector2(0.999998, 0.999998)
 rest = Transform2D(-0.100553, 0.994932, -0.994932, -0.100553, -33.4978, -141.394)
 
 [node name="ForeArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL"]
@@ -1636,25 +1636,26 @@ script = ExtResource("31_qmhd2")
 
 [node name="IntervalTimeLabel" type="Label" parent="Phone/ClockScreen"]
 offset_left = -450.0
-offset_top = -960.0
-offset_right = 415.0
-offset_bottom = -575.0
+offset_top = -1047.0
+offset_right = 562.0
+offset_bottom = -671.0
 text = "Time until break:"
 label_settings = SubResource("LabelSettings_mhgdy")
+autowrap_mode = 2
 
 [node name="IntervalTimeReadout" type="Label" parent="Phone/ClockScreen/IntervalTimeLabel"]
 layout_mode = 0
 offset_left = 265.0
-offset_top = 212.0
+offset_top = 355.0
 offset_right = 732.0
-offset_bottom = 501.0
+offset_bottom = 629.0
 label_settings = SubResource("LabelSettings_6lh60")
 
 [node name="SessionTimeRemainingLabel" type="Label" parent="Phone/ClockScreen"]
 offset_left = -470.0
-offset_top = -383.0
+offset_top = -261.0
 offset_right = 582.0
-offset_bottom = 99.0
+offset_bottom = 124.0
 text = "Total session time remaining:"
 label_settings = SubResource("LabelSettings_fl5f5")
 autowrap_mode = 1
