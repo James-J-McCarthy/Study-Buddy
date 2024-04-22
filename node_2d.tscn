@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://doin1g4xrytqe"]
+[gd_scene load_steps=60 format=3 uid="uid://doin1g4xrytqe"]
 
 [ext_resource type="Script" path="res://MainScene.gd" id="1_37525"]
 [ext_resource type="Texture2D" uid="uid://c8xf1u7hrxbtf" path="res://Outside Window.PNG" id="2_xt5uq"]
@@ -36,6 +36,7 @@
 [ext_resource type="Script" path="res://BreakReadout.gd" id="27_birga"]
 [ext_resource type="Texture2D" uid="uid://bujdtah50ufyd" path="res://Button 1.PNG" id="30_ec1cj"]
 [ext_resource type="Texture2D" uid="uid://cqiomfqgvv7bi" path="res://Button 1 On Click.PNG" id="31_127ub"]
+[ext_resource type="Script" path="res://ClockScreen.gd" id="31_qmhd2"]
 
 [sub_resource type="Animation" id="Animation_vmboy"]
 resource_name = "Idle"
@@ -1067,6 +1068,18 @@ font_color = Color(0, 0, 0, 1)
 font_size = 140
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_mhgdy"]
+font_size = 120
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6lh60"]
+font_size = 150
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fl5f5"]
+font_size = 120
+font_color = Color(0, 0, 0, 1)
+
 [sub_resource type="Animation" id="Animation_87igy"]
 resource_name = "PhoneDown"
 tracks/0/type = "value"
@@ -1288,7 +1301,7 @@ rest = Transform2D(3.14289, -0.827503, 0.827503, 3.14289, 35.5022, -2.39432)
 [node name="UpperArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(-33.4978, -141.394)
 rotation = 1.67152
-scale = Vector2(1, 1)
+scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(-0.100553, 0.994932, -0.994932, -0.100553, -33.4978, -141.394)
 
 [node name="ForeArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL"]
@@ -1333,7 +1346,7 @@ rest = Transform2D(5.33073, 0.622873, -0.213543, 1.82757, 45.5535, -8.41874)
 libraries = {
 "": SubResource("AnimationLibrary_n6bl0")
 }
-blend_times = [&"Idle", &"RESET", 2.0, &"Idle", &"Writing", 2.0, &"Idle", &"Writing2", 4.0, &"Writing", &"RESET", 2.0, &"Writing", &"Idle", 2.0, &"Writing", &"Writing", 2.0, &"Writing", &"Writing2", 2.0, &"Writing2", &"RESET", 2.0, &"Writing2", &"Idle", 2.0, &"Writing2", &"Writing", 2.0, &"Writing2", &"Writing2", 2.0]
+blend_times = [&"Writing2", &"RESET", 2.0, &"Writing2", &"Writing2", 2.0, &"Writing2", &"Writing", 2.0, &"Writing2", &"Idle", 2.0, &"Writing", &"RESET", 2.0, &"Writing", &"Writing2", 2.0, &"Writing", &"Writing", 2.0, &"Writing", &"Idle", 2.0, &"Idle", &"RESET", 2.0, &"Idle", &"Writing2", 4.0, &"Idle", &"Writing", 2.0]
 
 [node name="AnimationManager" type="Node" parent="."]
 script = ExtResource("8_hahbl")
@@ -1613,6 +1626,38 @@ scale = Vector2(0.75, 0.75)
 text = "Restart"
 label_settings = SubResource("LabelSettings_ewdgv")
 horizontal_alignment = 1
+
+[node name="ClockScreen" type="Sprite2D" parent="Phone"]
+visible = false
+position = Vector2(2.89404, 2.41123)
+scale = Vector2(1.00227, 1.00146)
+texture = ExtResource("13_jc45a")
+script = ExtResource("31_qmhd2")
+
+[node name="IntervalTimeLabel" type="Label" parent="Phone/ClockScreen"]
+offset_left = -450.0
+offset_top = -960.0
+offset_right = 415.0
+offset_bottom = -575.0
+text = "Time until break:"
+label_settings = SubResource("LabelSettings_mhgdy")
+
+[node name="IntervalTimeReadout" type="Label" parent="Phone/ClockScreen/IntervalTimeLabel"]
+layout_mode = 0
+offset_left = 265.0
+offset_top = 212.0
+offset_right = 732.0
+offset_bottom = 501.0
+label_settings = SubResource("LabelSettings_6lh60")
+
+[node name="SessionTimeRemainingLabel" type="Label" parent="Phone/ClockScreen"]
+offset_left = -470.0
+offset_top = -383.0
+offset_right = 582.0
+offset_bottom = 99.0
+text = "Total session time remaining:"
+label_settings = SubResource("LabelSettings_fl5f5")
+autowrap_mode = 1
 
 [node name="PhoneReference" type="Sprite2D" parent="."]
 visible = false

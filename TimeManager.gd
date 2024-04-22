@@ -12,12 +12,15 @@ var break_time # ^ for breaks
 var cycles_total # < prob don't initialize this here # total number of study/break cycles user wants
 var cycle = 0 # current cycles count
 var studying = true
+var session_running = false
+
+var PomoTimer
 
 
 # Called when the node enters the scene tree for the first time.
 
 func _ready(): 
-	pass
+	PomoTimer = get_node("PomoTimer")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
@@ -88,6 +91,8 @@ func _period_finished(): # I tested this funciton with a print to ensure it work
 			if(study_time > 0): # update our boolean before switching
 				studying = true
 			start_study_timer() # switch PomoClocks timing duration
+		
+		get_parent().get_node("Phone").get_node("ClockScreen").setIntervalTimerLabel(studying)
 	#else: 
 	print("finished study period!!")
 
@@ -135,7 +140,23 @@ func get_study_time():
 
 func get_cycles_total():
 	return cycles_total
-	
+
+func get_session_running():
+	return session_running
+
+func get_interval_time_remaining():
+	return PomoTimer.get_time_left()
+
+func get_total_time_remaining():
+	if (studying):
+		return PomoTimer.get_time_left() + break_time + (cycles_total - cycle) * (break_time + study_time)
+	else:
+		return PomoTimer.get_time_left() + (cycles_total - cycle) * (break_time + study_time)
+
+
+func toggle_session_running():
+	session_running = !session_running
+
 func set_cycle(num):
 	cycle = num
 
@@ -147,6 +168,8 @@ func _on_start_button_pressed():
 	get_parent().get_node("StudyingBuddy").show()
 	initializeClockLabelText()
 	start_study_timer()
+	
+	session_running = true
 
 
 func _on_reset_button_pressed():

@@ -39,8 +39,12 @@ func _on_messages_button_pressed():
 
 # this code runs when SettingsButton is pressed
 func _on_settings_button_pressed():
-	get_node("Phone").get_node("AppScreen").hide()
-	get_node("Phone").get_node("SettingsScreen").show()
+	if (get_node("TimeManager") != null && get_node("TimeManager").get_session_running()):
+		get_node("Phone").get_node("AppScreen").hide()
+		get_node("Phone").get_node("ClockScreen").show()
+	else:
+		get_node("Phone").get_node("AppScreen").hide()
+		get_node("Phone").get_node("SettingsScreen").show()
 
 # this code runs when MessagesBackButton is pressed
 func _on_messages_back_button_pressed():
