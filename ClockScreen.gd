@@ -14,11 +14,11 @@ func _process(delta):
 	if (visible):
 		updateIntervalTimeReadout()
 
-func setIntervalTimerLabel(onBreak):
-	if (!onBreak):
-		get_node("IntervalTimeLabel").set_text("Break time remaining:")
-	else:
+func setIntervalTimerLabel(studying):
+	if (studying):
 		get_node("IntervalTimeLabel").set_text("Time until break:")
+	else:
+		get_node("IntervalTimeLabel").set_text("Break time remaining:")
 
 func updateIntervalTimeReadout():
 	var minutes = int(TimeManager.get_interval_time_remaining() / 60)
