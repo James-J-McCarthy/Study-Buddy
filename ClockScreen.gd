@@ -15,7 +15,7 @@ func _process(delta):
 		updateIntervalTimeReadout()
 
 func setIntervalTimerLabel(onBreak):
-	if (onBreak):
+	if (!onBreak):
 		get_node("IntervalTimeLabel").set_text("Break time remaining:")
 	else:
 		get_node("IntervalTimeLabel").set_text("Time until break:")
