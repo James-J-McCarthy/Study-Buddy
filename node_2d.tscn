@@ -1346,7 +1346,7 @@ rest = Transform2D(5.33073, 0.622873, -0.213543, 1.82757, 45.5535, -8.41874)
 libraries = {
 "": SubResource("AnimationLibrary_n6bl0")
 }
-blend_times = [&"Writing2", &"RESET", 2.0, &"Writing2", &"Writing2", 2.0, &"Writing2", &"Writing", 2.0, &"Writing2", &"Idle", 2.0, &"Writing", &"RESET", 2.0, &"Writing", &"Writing2", 2.0, &"Writing", &"Writing", 2.0, &"Writing", &"Idle", 2.0, &"Idle", &"RESET", 2.0, &"Idle", &"Writing2", 4.0, &"Idle", &"Writing", 2.0]
+blend_times = [&"Idle", &"RESET", 2.0, &"Idle", &"Writing", 2.0, &"Idle", &"Writing2", 4.0, &"Writing", &"RESET", 2.0, &"Writing", &"Idle", 2.0, &"Writing", &"Writing", 2.0, &"Writing", &"Writing2", 2.0, &"Writing2", &"RESET", 2.0, &"Writing2", &"Idle", 2.0, &"Writing2", &"Writing", 2.0, &"Writing2", &"Writing2", 2.0]
 
 [node name="AnimationManager" type="Node" parent="."]
 script = ExtResource("8_hahbl")
@@ -1386,9 +1386,9 @@ texture = ExtResource("13_jc45a")
 
 [node name="MessagesButton" type="TextureButton" parent="Phone/AppScreen"]
 offset_left = 265.01
-offset_top = -975.62
+offset_top = -960.391
 offset_right = 538.01
-offset_bottom = 395.38
+offset_bottom = 410.609
 scale = Vector2(0.95, 0.19)
 texture_normal = ExtResource("17_a4p57")
 texture_pressed = ExtResource("17_a4p57")
@@ -1396,10 +1396,10 @@ stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="SettingsButton" type="TextureButton" parent="Phone/AppScreen"]
-offset_left = 279.788
-offset_top = -747.193
-offset_right = 550.788
-offset_bottom = 632.807
+offset_left = 265.01
+offset_top = -650.746
+offset_right = 536.01
+offset_bottom = 729.254
 scale = Vector2(0.95, 0.19)
 texture_normal = ExtResource("15_4lg52")
 texture_pressed = ExtResource("15_4lg52")
@@ -1415,6 +1415,7 @@ texture_normal = ExtResource("19_qa1w7")
 texture_pressed = ExtResource("19_qa1w7")
 
 [node name="MusicScreen" type="Sprite2D" parent="Phone"]
+visible = false
 position = Vector2(1, 1)
 texture = ExtResource("21_02gba")
 
@@ -1448,6 +1449,7 @@ label_settings = SubResource("LabelSettings_k5d35")
 horizontal_alignment = 1
 
 [node name="SettingsScreen" type="Sprite2D" parent="Phone"]
+visible = false
 position = Vector2(2.08165e-12, 2.08165e-12)
 texture = ExtResource("21_02gba")
 script = ExtResource("19_20l8k")

@@ -16,7 +16,8 @@ config/features=PackedStringArray("4.2", "GL Compatibility")
 
 [display]
 
-window/size/viewport_width=500
+window/size/viewport_width=518
+window/size/mode=3
 window/stretch/mode="canvas_items"
 mouse_cursor/custom_image_hotspot=Vector2(60, 20)
 mouse_cursor/tooltip_position_offset=Vector2(0, 0)
