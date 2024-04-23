@@ -68,6 +68,7 @@ func _on_messages_back_button_pressed():
 
 func _on_start_button_pressed():
 	_on_menu_back_button_pressed()
+	get_node("StudyingBuddy").show()
 	var animation:String = get_node("AnimationManager")._getAnimation()
 	get_node("StudyingBuddySkeleton/StudyingBuddyAniPlayer").play(animation)
 
@@ -86,6 +87,7 @@ func _on_studying_buddy_ani_player_animation_started(anim_name):
 func _on_end_session_pressed():
 	var phone = get_node("Phone")
 	
+	get_node("StudyingBuddy").hide()
 	_on_settings_back_button_2_pressed()
 	phone.get_node("AppScreen").hide()
 	phone.get_node("SettingsScreen").show()
