@@ -54,6 +54,7 @@ func _on_settings_button_pressed():
 		phone.get_node("AppScreen").hide()
 		phone.get_node("SettingsScreen").show()
 
+
 # runs when mid-session settings screen back button is pressed
 func _on_settings_back_button_2_pressed():
 	get_node("Phone").get_node("MidSessionSettings").hide()
@@ -69,7 +70,6 @@ func _on_start_button_pressed():
 	_on_menu_back_button_pressed()
 	var animation:String = get_node("AnimationManager")._getAnimation()
 	get_node("StudyingBuddySkeleton/StudyingBuddyAniPlayer").play(animation)
-
 
 func _on_studying_buddy_ani_player_animation_started(anim_name):
 	if (anim_name == "Idle"):

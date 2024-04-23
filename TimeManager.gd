@@ -99,7 +99,8 @@ func _period_finished(): # I tested this funciton with a print to ensure it work
 			if(study_time > 0): # update our boolean before switching
 				studying = true
 			start_study_timer() # switch PomoClocks timing duration
-	
+	else:
+		resetClock()
 	get_parent().get_node("Phone").get_node("ClockScreen").setIntervalTimerLabel(studying)
 	#else: 
 	print("finished study period!!")
@@ -124,7 +125,7 @@ func resetClock():
 	initializeClockLabelText()
 	session_running = false
 	paused = true
-	session_running = false
+	get_node("../Phone/MidSessionSettings/(un)Pause").resetText()
 
 # This function creates the text that displays the cycle
 # count. 

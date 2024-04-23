@@ -1673,7 +1673,7 @@ offset_left = 192.118
 offset_top = 121.827
 offset_right = 597.118
 offset_bottom = 314.827
-text = "Puase"
+text = "Pause"
 label_settings = SubResource("LabelSettings_ewdgv")
 horizontal_alignment = 1
 
@@ -1768,8 +1768,8 @@ default_color = Color(0, 0, 0, 1)
 [connection signal="pressed" from="Phone/SettingsScreen/StartButton" to="Phone/SettingsScreen/StartButton" method="_on_pressed"]
 [connection signal="pressed" from="Phone/SettingsScreen/StartButton" to="TimeManager" method="_on_start_button_pressed"]
 [connection signal="pressed" from="Phone/MidSessionSettings/SettingsBackButton2" to="." method="_on_settings_back_button_2_pressed"]
-[connection signal="pressed" from="Phone/MidSessionSettings/(un)Pause" to="TimeManager" method="_on_un_pause_pressed"]
 [connection signal="pressed" from="Phone/MidSessionSettings/(un)Pause" to="Phone/MidSessionSettings/(un)Pause" method="_on_pressed"]
+[connection signal="pressed" from="Phone/MidSessionSettings/(un)Pause" to="TimeManager" method="_on_un_pause_pressed"]
 [connection signal="pressed" from="Phone/MidSessionSettings/EndSession" to="." method="_on_end_session_pressed"]
 [connection signal="pressed" from="Phone/MidSessionSettings/EndSession" to="TimeManager" method="_on_end_session_pressed"]
 [connection signal="pressed" from="MenuUpButton" to="." method="_on_menu_up_button_pressed"]

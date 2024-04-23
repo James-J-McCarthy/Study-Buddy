@@ -10,4 +10,6 @@ func _on_pressed():
 	else:
 		label.text = 'Pause'
 
-
+func resetText():
+	var label = $"Pause Label"
+	label.text = 'Pause'
