@@ -6,7 +6,6 @@ extends Sprite2D
 func _ready():
 	pass
 
-
 func getStudyTime():
 	return get_node("StudyTimeSlider").value
 
@@ -25,6 +24,3 @@ func _on_settings_back_button_pressed():
 		$BreakTimeSlider.value = get_parent().get_parent().get_node("TimeManager").get_break_time()
 		$CyclesSlider.value = get_parent().get_parent().get_node("TimeManager").get_cycles_total()
 
-func _on_start_button_pressed():
-	$StartButton.hide()
-	$ResetButton.show()

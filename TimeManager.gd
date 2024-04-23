@@ -13,6 +13,7 @@ var cycles_total # < prob don't initialize this here # total number of study/bre
 var cycle = 0 # current cycles count
 var studying = true
 var session_running = false
+var paused = true
 
 var PomoTimer
 
@@ -27,7 +28,7 @@ func _physics_process(_delta):
 	updateClockHand(_delta, true)
 
 func updateClockHand(_delta, dontReset):
-	if (cycles_total != null):
+	if (cycles_total != null && !paused):
 		if (cycle <= cycles_total):
 			var clockHand = get_node_or_null("../clockHand");
 			if (clockHand == null):
@@ -42,10 +43,16 @@ func updateClockHand(_delta, dontReset):
 					currentRad = 0;
 				if(!dontReset):
 					currentRad = 0;
-				get_node("../clockHand").rotation = currentRad;
+				get_node("../clockHand").rotation = currentRad
+
+# resets the clock hand to 12 o'clock position
+func resetClockHand():
+	get_node("../clockHand").rotation = 0
+	print('did the thing')
 
 # helper function that starts pomo timer given a period length
 func start_period(duration):
+	paused = false
 	$PomoTimer.start(duration)
 
 # begins a study period on Pomo-Timer passing in study_time
@@ -64,6 +71,7 @@ func start_break_timer():
 
 # pause/unpause function
 func hit_pause():
+	paused = !paused
 	if($PomoTimer.is_paused):
 		$PomoTimer.set_paused(false)
 	else:
@@ -96,14 +104,27 @@ func _period_finished(): # I tested this funciton with a print to ensure it work
 	#else: 
 	print("finished study period!!")
 
-# 
+# ends the current session running on the clock. 
+func endSession():
+	resetClock()
+	
+	resetClockHand()
+	
+func startSession():
+	initializeClockLabelText()
+	start_study_timer()
+	session_running = true
+	paused = false
+
+# resets clock but does not restart it
 func resetClock():
 	updateClockHand(0, false) # reset clock hand
 	$PomoTimer.stop() # stop timer
-	
 	set_cycle(0)
-	start_study_timer() # start timer from the top
 	initializeClockLabelText()
+	session_running = false
+	paused = true
+	session_running = false
 
 # This function creates the text that displays the cycle
 # count. 
@@ -153,28 +174,25 @@ func get_total_time_remaining():
 	else:
 		return PomoTimer.get_time_left() + (cycles_total - cycle) * (break_time + study_time)
 
-
 func toggle_session_running():
 	session_running = !session_running
 
 func set_cycle(num):
 	cycle = num
 
+#Signals Below: 
+
+# runs when settings start button is pressed
 func _on_start_button_pressed():
 	set_study_time(get_parent().get_node("Phone").get_node("SettingsScreen").getStudyTime())
 	set_break_time(get_parent().get_node("Phone").get_node("SettingsScreen").getBreakTime())
-	set_cycles_total(get_parent().get_node("Phone").get_node("SettingsScreen").getCyclesTotal())
-	
-	get_parent().get_node("StudyingBuddy").show()
-	initializeClockLabelText()
-	start_study_timer()
-	
-	session_running = true
+	set_cycles_total(get_parent().get_node("Phone").get_node("SettingsScreen").getCyclesTotal())	
+
+	startSession()
 
 
-func _on_reset_button_pressed():
-	set_study_time(get_parent().get_node("Phone").get_node("SettingsScreen").getStudyTime())
-	set_break_time(get_parent().get_node("Phone").get_node("SettingsScreen").getBreakTime())
-	set_cycles_total(get_parent().get_node("Phone").get_node("SettingsScreen").getCyclesTotal())
-	
+func _on_un_pause_pressed():
+	hit_pause()
+
+func _on_end_session_pressed():
 	resetClock()

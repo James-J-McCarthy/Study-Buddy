@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://doin1g4xrytqe"]
+[gd_scene load_steps=62 format=3 uid="uid://doin1g4xrytqe"]
 
 [ext_resource type="Script" path="res://MainScene.gd" id="1_37525"]
 [ext_resource type="Texture2D" uid="uid://c8xf1u7hrxbtf" path="res://Outside Window.PNG" id="2_xt5uq"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://6rmnmn668agc" path="res://Foreground.PNG" id="6_u6ybi"]
 [ext_resource type="Texture2D" uid="uid://dwsg5ao8lxego" path="res://Reference UI.PNG" id="7_0064q"]
 [ext_resource type="Texture2D" uid="uid://dlntiqf7ceup4" path="res://Desk CoverUp.png" id="7_t2xf4"]
+[ext_resource type="Script" path="res://StudyingBuddy.gd" id="8_1su8g"]
 [ext_resource type="Script" path="res://AnimationManager.gd" id="8_hahbl"]
 [ext_resource type="Texture2D" uid="uid://dt1s63oaean02" path="res://PhoneOnDesk.png" id="9_locot"]
 [ext_resource type="Texture2D" uid="uid://ktfo7081sa3i" path="res://PenOnDesk.png" id="9_wv1v6"]
@@ -37,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://bujdtah50ufyd" path="res://Button 1.PNG" id="30_ec1cj"]
 [ext_resource type="Texture2D" uid="uid://cqiomfqgvv7bi" path="res://Button 1 On Click.PNG" id="31_127ub"]
 [ext_resource type="Script" path="res://ClockScreen.gd" id="31_qmhd2"]
+[ext_resource type="Script" path="res://(un)Pause.gd" id="32_ruuc8"]
 
 [sub_resource type="Animation" id="Animation_vmboy"]
 resource_name = "Idle"
@@ -1041,7 +1043,7 @@ _data = {
 
 [sub_resource type="LabelSettings" id="LabelSettings_k5d35"]
 line_spacing = 0.0
-font_size = 140
+font_size = 110
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Theme" id="Theme_x0q6o"]
@@ -1171,6 +1173,7 @@ scale = Vector2(0.202745, 0.196515)
 texture = ExtResource("9_locot")
 
 [node name="StudyingBuddy" type="Node2D" parent="."]
+script = ExtResource("8_1su8g")
 
 [node name="ArmR" type="Polygon2D" parent="StudyingBuddy"]
 position = Vector2(70, 72)
@@ -1301,7 +1304,7 @@ rest = Transform2D(3.14289, -0.827503, 0.827503, 3.14289, 35.5022, -2.39432)
 [node name="UpperArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(-33.4978, -141.394)
 rotation = 1.67152
-scale = Vector2(0.999998, 0.999998)
+scale = Vector2(0.999996, 0.999996)
 rest = Transform2D(-0.100553, 0.994932, -0.994932, -0.100553, -33.4978, -141.394)
 
 [node name="ForeArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL"]
@@ -1346,7 +1349,7 @@ rest = Transform2D(5.33073, 0.622873, -0.213543, 1.82757, 45.5535, -8.41874)
 libraries = {
 "": SubResource("AnimationLibrary_n6bl0")
 }
-blend_times = [&"Idle", &"RESET", 2.0, &"Idle", &"Writing", 2.0, &"Idle", &"Writing2", 4.0, &"Writing", &"RESET", 2.0, &"Writing", &"Idle", 2.0, &"Writing", &"Writing", 2.0, &"Writing", &"Writing2", 2.0, &"Writing2", &"RESET", 2.0, &"Writing2", &"Idle", 2.0, &"Writing2", &"Writing", 2.0, &"Writing2", &"Writing2", 2.0]
+blend_times = [&"Writing", &"RESET", 2.0, &"Writing", &"Writing", 2.0, &"Writing", &"Writing2", 2.0, &"Writing", &"Idle", 2.0, &"Writing2", &"RESET", 2.0, &"Writing2", &"Writing", 2.0, &"Writing2", &"Writing2", 2.0, &"Writing2", &"Idle", 2.0, &"Idle", &"RESET", 2.0, &"Idle", &"Writing", 2.0, &"Idle", &"Writing2", 4.0]
 
 [node name="AnimationManager" type="Node" parent="."]
 script = ExtResource("8_hahbl")
@@ -1449,7 +1452,6 @@ label_settings = SubResource("LabelSettings_k5d35")
 horizontal_alignment = 1
 
 [node name="SettingsScreen" type="Sprite2D" parent="Phone"]
-visible = false
 position = Vector2(2.08165e-12, 2.08165e-12)
 texture = ExtResource("21_02gba")
 script = ExtResource("19_20l8k")
@@ -1459,29 +1461,10 @@ offset_left = -423.645
 offset_top = -1055.84
 offset_right = 527.355
 offset_bottom = -863.838
-text = "SETTINGS"
+text = "START A SESSION:"
 label_settings = SubResource("LabelSettings_k5d35")
 horizontal_alignment = 1
-
-[node name="SettingsBackButton" type="TextureButton" parent="Phone/SettingsScreen"]
-offset_left = 103.448
-offset_top = 411.168
-offset_right = 596.448
-offset_bottom = 756.168
-scale = Vector2(0.9, 0.9)
-texture_normal = ExtResource("23_yfb4x")
-texture_pressed = ExtResource("24_yqbli")
-stretch_mode = 0
-
-[node name="Back Label" type="Label" parent="Phone/SettingsScreen/SettingsBackButton"]
-layout_mode = 0
-offset_left = 60.2079
-offset_top = 76.0
-offset_right = 442.208
-offset_bottom = 268.0
-text = "Back"
-label_settings = SubResource("LabelSettings_k5d35")
-horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="StudyTimeSlider" type="HSlider" parent="Phone/SettingsScreen"]
 offset_left = -463.054
@@ -1608,27 +1591,6 @@ text = "Start"
 label_settings = SubResource("LabelSettings_ewdgv")
 horizontal_alignment = 1
 
-[node name="ResetButton" type="TextureButton" parent="Phone/SettingsScreen"]
-visible = false
-offset_left = -448.276
-offset_top = 395.939
-offset_right = 44.724
-offset_bottom = 740.939
-texture_normal = ExtResource("30_ec1cj")
-texture_pressed = ExtResource("31_127ub")
-stretch_mode = 0
-
-[node name="Restart" type="Label" parent="Phone/SettingsScreen/ResetButton"]
-layout_mode = 0
-offset_left = 74.0
-offset_top = 101.523
-offset_right = 563.0
-offset_bottom = 293.523
-scale = Vector2(0.75, 0.75)
-text = "Restart"
-label_settings = SubResource("LabelSettings_ewdgv")
-horizontal_alignment = 1
-
 [node name="ClockScreen" type="Sprite2D" parent="Phone"]
 visible = false
 position = Vector2(2.89404, 2.41123)
@@ -1661,6 +1623,79 @@ offset_bottom = 124.0
 text = "Total session time remaining:"
 label_settings = SubResource("LabelSettings_fl5f5")
 autowrap_mode = 1
+
+[node name="MidSessionSettings" type="Sprite2D" parent="Phone"]
+visible = false
+texture = ExtResource("21_02gba")
+
+[node name="SettingLabel" type="Label" parent="Phone/MidSessionSettings"]
+offset_left = -423.645
+offset_top = -1055.84
+offset_right = 527.355
+offset_bottom = -863.838
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_k5d35")
+horizontal_alignment = 1
+
+[node name="SettingsBackButton2" type="TextureButton" parent="Phone/MidSessionSettings"]
+offset_left = 103.448
+offset_top = 411.168
+offset_right = 596.448
+offset_bottom = 756.168
+scale = Vector2(0.9, 0.9)
+texture_normal = ExtResource("23_yfb4x")
+texture_pressed = ExtResource("24_yqbli")
+stretch_mode = 0
+
+[node name="Back Label" type="Label" parent="Phone/MidSessionSettings/SettingsBackButton2"]
+layout_mode = 0
+offset_left = 60.2079
+offset_top = 76.0
+offset_right = 442.208
+offset_bottom = 268.0
+text = "Back"
+label_settings = SubResource("LabelSettings_k5d35")
+horizontal_alignment = 1
+
+[node name="(un)Pause" type="TextureButton" parent="Phone/MidSessionSettings"]
+offset_left = -339.902
+offset_top = -807.107
+offset_right = 438.098
+offset_bottom = -340.107
+texture_normal = ExtResource("30_ec1cj")
+texture_pressed = ExtResource("31_127ub")
+stretch_mode = 0
+script = ExtResource("32_ruuc8")
+
+[node name="Pause Label" type="Label" parent="Phone/MidSessionSettings/(un)Pause"]
+layout_mode = 0
+offset_left = 192.118
+offset_top = 121.827
+offset_right = 597.118
+offset_bottom = 314.827
+text = "Puase"
+label_settings = SubResource("LabelSettings_ewdgv")
+horizontal_alignment = 1
+
+[node name="EndSession" type="TextureButton" parent="Phone/MidSessionSettings"]
+offset_left = -448.0
+offset_top = -330.0
+offset_right = 577.0
+offset_bottom = 157.0
+texture_normal = ExtResource("30_ec1cj")
+texture_pressed = ExtResource("31_127ub")
+stretch_mode = 0
+
+[node name="ES label" type="Label" parent="Phone/MidSessionSettings/EndSession"]
+layout_mode = 0
+offset_left = 142.581
+offset_top = 137.107
+offset_right = 940.581
+offset_bottom = 330.107
+text = "End Session"
+label_settings = SubResource("LabelSettings_ewdgv")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PhoneReference" type="Sprite2D" parent="."]
 visible = false
@@ -1722,19 +1757,21 @@ default_color = Color(0, 0, 0, 1)
 [connection signal="pressed" from="Phone/AppScreen/MessagesButton" to="." method="_on_messages_button_pressed"]
 [connection signal="pressed" from="Phone/AppScreen/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Phone/MusicScreen/MessagesBackButton" to="." method="_on_messages_back_button_pressed"]
-[connection signal="pressed" from="Phone/SettingsScreen/SettingsBackButton" to="." method="_on_settings_back_button_pressed"]
-[connection signal="pressed" from="Phone/SettingsScreen/SettingsBackButton" to="Phone/SettingsScreen" method="_on_settings_back_button_pressed"]
 [connection signal="value_changed" from="Phone/SettingsScreen/StudyTimeSlider" to="Phone/SettingsScreen/StudyTimeSlider/StudyTimeReadout" method="_on_study_time_slider_value_changed"]
 [connection signal="value_changed" from="Phone/SettingsScreen/StudyTimeSlider" to="TimeManager" method="_on_session_time_slider_value_changed"]
 [connection signal="value_changed" from="Phone/SettingsScreen/BreakTimeSlider" to="Phone/SettingsScreen/BreakTimeSlider/BreakReadout" method="_on_break_time_slider_value_changed"]
 [connection signal="value_changed" from="Phone/SettingsScreen/BreakTimeSlider" to="TimeManager" method="_on_break_time_slider_value_changed"]
 [connection signal="value_changed" from="Phone/SettingsScreen/CyclesSlider" to="Phone/SettingsScreen/CyclesSlider/CyclesReadout" method="_on_cycles_slider_value_changed"]
 [connection signal="pressed" from="Phone/SettingsScreen/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Phone/SettingsScreen/StartButton" to="StudyingBuddy" method="_on_start_button_pressed"]
 [connection signal="pressed" from="Phone/SettingsScreen/StartButton" to="Phone/SettingsScreen" method="_on_start_button_pressed"]
 [connection signal="pressed" from="Phone/SettingsScreen/StartButton" to="Phone/SettingsScreen/StartButton" method="_on_pressed"]
 [connection signal="pressed" from="Phone/SettingsScreen/StartButton" to="TimeManager" method="_on_start_button_pressed"]
-[connection signal="pressed" from="Phone/SettingsScreen/ResetButton" to="." method="_on_reset_button_pressed"]
-[connection signal="pressed" from="Phone/SettingsScreen/ResetButton" to="TimeManager" method="_on_reset_button_pressed"]
+[connection signal="pressed" from="Phone/MidSessionSettings/SettingsBackButton2" to="." method="_on_settings_back_button_2_pressed"]
+[connection signal="pressed" from="Phone/MidSessionSettings/(un)Pause" to="TimeManager" method="_on_un_pause_pressed"]
+[connection signal="pressed" from="Phone/MidSessionSettings/(un)Pause" to="Phone/MidSessionSettings/(un)Pause" method="_on_pressed"]
+[connection signal="pressed" from="Phone/MidSessionSettings/EndSession" to="." method="_on_end_session_pressed"]
+[connection signal="pressed" from="Phone/MidSessionSettings/EndSession" to="TimeManager" method="_on_end_session_pressed"]
 [connection signal="pressed" from="MenuUpButton" to="." method="_on_menu_up_button_pressed"]
 [connection signal="timeout" from="TimeManager/PomoTimer" to="TimeManager" method="_period_finished"]
 [connection signal="timeout" from="TimerBar/Timer" to="TimerBar" method="_on_timer_timeout"]
