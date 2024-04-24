@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://doin1g4xrytqe"]
+[gd_scene load_steps=66 format=3 uid="uid://doin1g4xrytqe"]
 
 [ext_resource type="Script" path="res://MainScene.gd" id="1_37525"]
 [ext_resource type="Texture2D" uid="uid://c8xf1u7hrxbtf" path="res://Outside Window.PNG" id="2_xt5uq"]
@@ -39,6 +39,10 @@
 [ext_resource type="Texture2D" uid="uid://cqiomfqgvv7bi" path="res://Button 1 On Click.PNG" id="31_127ub"]
 [ext_resource type="Script" path="res://ClockScreen.gd" id="31_qmhd2"]
 [ext_resource type="Script" path="res://(un)Pause.gd" id="32_ruuc8"]
+[ext_resource type="AudioStream" uid="uid://i4pb6dt6ret7" path="res://Studying Music SB.mp3" id="40_mwu18"]
+[ext_resource type="Script" path="res://MusicManager.gd" id="40_w4jlm"]
+[ext_resource type="AudioStream" uid="uid://x5lh2p2q0xew" path="res://BreakSoundsSB.mp3" id="41_wl3wp"]
+[ext_resource type="AudioStream" uid="uid://d4lv30wlkpf7k" path="res://nose honk SB.mp3" id="42_ae8ut"]
 
 [sub_resource type="Animation" id="Animation_vmboy"]
 resource_name = "Idle"
@@ -1304,7 +1308,7 @@ rest = Transform2D(3.14289, -0.827503, 0.827503, 3.14289, 35.5022, -2.39432)
 [node name="UpperArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(-33.4978, -141.394)
 rotation = 1.67152
-scale = Vector2(0.999996, 0.999996)
+scale = Vector2(0.999994, 0.999994)
 rest = Transform2D(-0.100553, 0.994932, -0.994932, -0.100553, -33.4978, -141.394)
 
 [node name="ForeArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL"]
@@ -1349,7 +1353,7 @@ rest = Transform2D(5.33073, 0.622873, -0.213543, 1.82757, 45.5535, -8.41874)
 libraries = {
 "": SubResource("AnimationLibrary_n6bl0")
 }
-blend_times = [&"Idle", &"RESET", 2.0, &"Idle", &"Writing", 2.0, &"Idle", &"Writing2", 4.0, &"Writing", &"RESET", 2.0, &"Writing", &"Idle", 2.0, &"Writing", &"Writing", 2.0, &"Writing", &"Writing2", 2.0, &"Writing2", &"RESET", 2.0, &"Writing2", &"Idle", 2.0, &"Writing2", &"Writing", 2.0, &"Writing2", &"Writing2", 2.0]
+blend_times = [&"Idle", &"Writing", 2.0, &"Idle", &"Writing2", 4.0, &"Idle", &"RESET", 2.0, &"Writing", &"Idle", 2.0, &"Writing", &"Writing", 2.0, &"Writing", &"Writing2", 2.0, &"Writing", &"RESET", 2.0, &"Writing2", &"Idle", 2.0, &"Writing2", &"Writing", 2.0, &"Writing2", &"Writing2", 2.0, &"Writing2", &"RESET", 2.0]
 
 [node name="AnimationManager" type="Node" parent="."]
 script = ExtResource("8_hahbl")
@@ -1418,7 +1422,6 @@ texture_normal = ExtResource("19_qa1w7")
 texture_pressed = ExtResource("19_qa1w7")
 
 [node name="MusicScreen" type="Sprite2D" parent="Phone"]
-visible = false
 position = Vector2(1, 1)
 texture = ExtResource("21_02gba")
 
@@ -1430,6 +1433,25 @@ offset_bottom = -864.836
 text = "MUSIC"
 label_settings = SubResource("LabelSettings_k5d35")
 horizontal_alignment = 1
+
+[node name="VolumeSlider" type="HSlider" parent="Phone/MusicScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1714.42
+offset_top = -2346.43
+offset_right = -729.424
+offset_bottom = -2133.43
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_icons/grabber = ExtResource("22_wcyrw")
+theme_override_icons/grabber_highlight = ExtResource("24_sjviw")
+max_value = 1.0
+step = 0.05
+value = 1.0
 
 [node name="MessagesBackButton" type="TextureButton" parent="Phone/MusicScreen"]
 offset_left = 103.448
@@ -1452,6 +1474,7 @@ label_settings = SubResource("LabelSettings_k5d35")
 horizontal_alignment = 1
 
 [node name="SettingsScreen" type="Sprite2D" parent="Phone"]
+visible = false
 position = Vector2(2.08165e-12, 2.08165e-12)
 texture = ExtResource("21_02gba")
 script = ExtResource("19_20l8k")
@@ -1752,10 +1775,29 @@ points = PackedVector2Array(0, 0, -1, -21)
 width = 3.0
 default_color = Color(0, 0, 0, 1)
 
+[node name="MusicManager" type="Node" parent="."]
+script = ExtResource("40_w4jlm")
+
+[node name="StudyMusic" type="AudioStreamPlayer" parent="MusicManager"]
+stream = ExtResource("40_mwu18")
+volume_db = -5.0
+bus = &"Music"
+
+[node name="BreakMusic" type="AudioStreamPlayer" parent="MusicManager"]
+stream = ExtResource("41_wl3wp")
+volume_db = -10.0
+bus = &"Music"
+
+[node name="SFXNoseHonk" type="AudioStreamPlayer" parent="MusicManager"]
+stream = ExtResource("42_ae8ut")
+volume_db = -5.0
+bus = &"SFX"
+
 [connection signal="animation_started" from="StudyingBuddySkeleton/StudyingBuddyAniPlayer" to="." method="_on_studying_buddy_ani_player_animation_started"]
 [connection signal="pressed" from="Phone/MenuBackButton" to="." method="_on_menu_back_button_pressed"]
 [connection signal="pressed" from="Phone/AppScreen/MessagesButton" to="." method="_on_messages_button_pressed"]
 [connection signal="pressed" from="Phone/AppScreen/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="value_changed" from="Phone/MusicScreen/VolumeSlider" to="MusicManager" method="_on_volume_slider_value_changed"]
 [connection signal="pressed" from="Phone/MusicScreen/MessagesBackButton" to="." method="_on_messages_back_button_pressed"]
 [connection signal="value_changed" from="Phone/SettingsScreen/StudyTimeSlider" to="Phone/SettingsScreen/StudyTimeSlider/StudyTimeReadout" method="_on_study_time_slider_value_changed"]
 [connection signal="value_changed" from="Phone/SettingsScreen/StudyTimeSlider" to="TimeManager" method="_on_session_time_slider_value_changed"]

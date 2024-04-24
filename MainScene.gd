@@ -10,6 +10,7 @@ func _ready():
 	$MenuUpButton.show()
 	_on_menu_up_button_pressed()
 	_on_settings_button_pressed()
+	#get_node("MusicManager/BreakMusic").play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
