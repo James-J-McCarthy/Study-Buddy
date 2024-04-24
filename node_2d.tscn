@@ -1063,7 +1063,7 @@ font_size = 60
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_dkt7o"]
-font_size = 140
+font_size = 110
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_cpurt"]
@@ -1071,7 +1071,7 @@ font_size = 60
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ewdgv"]
-font_size = 140
+font_size = 110
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_mhgdy"]
@@ -1465,16 +1465,15 @@ stretch_mode = 0
 
 [node name="Back Label" type="Label" parent="Phone/MusicScreen/MessagesBackButton"]
 layout_mode = 0
-offset_left = 60.2079
-offset_top = 76.0
-offset_right = 442.208
-offset_bottom = 268.0
+offset_left = 48.1504
+offset_top = 77.85
+offset_right = 430.15
+offset_bottom = 269.85
 text = "Back"
 label_settings = SubResource("LabelSettings_k5d35")
 horizontal_alignment = 1
 
 [node name="SettingsScreen" type="Sprite2D" parent="Phone"]
-visible = false
 position = Vector2(2.08165e-12, 2.08165e-12)
 texture = ExtResource("21_02gba")
 script = ExtResource("19_20l8k")
@@ -1576,9 +1575,9 @@ value = 1.0
 
 [node name="CyclesReadout" type="Label" parent="Phone/SettingsScreen/CyclesSlider"]
 layout_mode = 0
-offset_left = 656.814
+offset_left = 643.678
 offset_top = 16.9204
-offset_right = 738.814
+offset_right = 725.678
 offset_bottom = 110.92
 theme_override_font_sizes/font_size = 35
 text = "1"
@@ -1588,9 +1587,9 @@ vertical_alignment = 1
 script = ExtResource("20_05by4")
 
 [node name="CyclesLabel" type="Label" parent="Phone/SettingsScreen"]
-offset_left = -453.202
+offset_left = -458.128
 offset_top = 25.3807
-offset_right = 497.798
+offset_right = 492.872
 offset_bottom = 217.381
 text = "Timer Cycles:"
 label_settings = SubResource("LabelSettings_ewdgv")
@@ -1606,10 +1605,10 @@ stretch_mode = 0
 
 [node name="Start Label" type="Label" parent="Phone/SettingsScreen/StartButton"]
 layout_mode = 0
-offset_left = 74.0
-offset_top = 76.0
-offset_right = 445.0
-offset_bottom = 269.0
+offset_left = 64.0395
+offset_top = 81.218
+offset_right = 435.04
+offset_bottom = 274.218
 text = "Start"
 label_settings = SubResource("LabelSettings_ewdgv")
 horizontal_alignment = 1
@@ -1692,10 +1691,10 @@ script = ExtResource("32_ruuc8")
 
 [node name="Pause Label" type="Label" parent="Phone/MidSessionSettings/(un)Pause"]
 layout_mode = 0
-offset_left = 192.118
-offset_top = 121.827
-offset_right = 597.118
-offset_bottom = 314.827
+offset_left = 182.267
+offset_top = 142.132
+offset_right = 587.267
+offset_bottom = 335.132
 text = "Pause"
 label_settings = SubResource("LabelSettings_ewdgv")
 horizontal_alignment = 1
