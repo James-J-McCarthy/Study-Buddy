@@ -200,3 +200,4 @@ func _on_un_pause_pressed():
 
 func _on_end_session_pressed():
 	resetClock()
+	

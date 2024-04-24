@@ -6,7 +6,7 @@ func _on_pressed():
 	var label = $"Pause Label"
 	paused = !paused
 	if(paused):
-		label.text = 'Play'
+		label.text = 'Resume'
 	else:
 		label.text = 'Pause'
 

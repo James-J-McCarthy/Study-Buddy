@@ -1422,6 +1422,7 @@ texture_normal = ExtResource("19_qa1w7")
 texture_pressed = ExtResource("19_qa1w7")
 
 [node name="MusicScreen" type="Sprite2D" parent="Phone"]
+visible = false
 position = Vector2(1, 1)
 texture = ExtResource("21_02gba")
 
@@ -1614,6 +1615,7 @@ label_settings = SubResource("LabelSettings_ewdgv")
 horizontal_alignment = 1
 
 [node name="ClockScreen" type="Sprite2D" parent="Phone"]
+visible = false
 position = Vector2(2.89404, 2.41123)
 scale = Vector2(1.00227, 1.00146)
 texture = ExtResource("13_jc45a")
