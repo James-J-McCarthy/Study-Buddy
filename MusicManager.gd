@@ -16,10 +16,9 @@ func _ready():
 func _process(delta):
 	#I don't think I correctly figured out how to get study buddy's current studying status T_T
 	# that or the process isn't flowing correctly (issues with the stop aand start - doesn't like changing audios??)
-	
+	var timeManager = get_node("../TimeManager")
 	var studying = get_parent().get_node("TimeManager").getStudying()
-	#print(studying) #is this ever false?
-	
+
 	#program does not want to play a new audio after an audio has been stopped during _process?
 
 	#if (studying == true):
@@ -40,3 +39,8 @@ func _on_volume_slider_value_changed(value):
 #func _on_volume_slider_value_changed(value):
 	#AudioServer.set_bus_volume_db(SFX_BUS_ID, linear_to_db(value))
 	#AudioServer.set_bus_mute(SFX_BUS_ID, value < 0.05)
+
+func startStudyMusic():
+	break_music.stop()
+	study_music.play()
+	

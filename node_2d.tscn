@@ -39,10 +39,10 @@
 [ext_resource type="Texture2D" uid="uid://cqiomfqgvv7bi" path="res://Button 1 On Click.PNG" id="31_127ub"]
 [ext_resource type="Script" path="res://ClockScreen.gd" id="31_qmhd2"]
 [ext_resource type="Script" path="res://(un)Pause.gd" id="32_ruuc8"]
-[ext_resource type="AudioStream" uid="uid://i4pb6dt6ret7" path="res://Studying Music SB.mp3" id="40_mwu18"]
+[ext_resource type="AudioStream" uid="uid://i4pb6dt6ret7" path="res://Audio/Studying Music SB.mp3" id="40_mwu18"]
 [ext_resource type="Script" path="res://MusicManager.gd" id="40_w4jlm"]
-[ext_resource type="AudioStream" uid="uid://x5lh2p2q0xew" path="res://BreakSoundsSB.mp3" id="41_wl3wp"]
-[ext_resource type="AudioStream" uid="uid://d4lv30wlkpf7k" path="res://nose honk SB.mp3" id="42_ae8ut"]
+[ext_resource type="AudioStream" uid="uid://x5lh2p2q0xew" path="res://Audio/BreakSoundsSB.mp3" id="41_wl3wp"]
+[ext_resource type="AudioStream" uid="uid://d4lv30wlkpf7k" path="res://Audio/nose honk SB.mp3" id="42_ae8ut"]
 
 [sub_resource type="Animation" id="Animation_vmboy"]
 resource_name = "Idle"
@@ -1614,7 +1614,6 @@ label_settings = SubResource("LabelSettings_ewdgv")
 horizontal_alignment = 1
 
 [node name="ClockScreen" type="Sprite2D" parent="Phone"]
-visible = false
 position = Vector2(2.89404, 2.41123)
 scale = Vector2(1.00227, 1.00146)
 texture = ExtResource("13_jc45a")
@@ -1793,6 +1792,7 @@ volume_db = -5.0
 bus = &"SFX"
 
 [connection signal="animation_started" from="StudyingBuddySkeleton/StudyingBuddyAniPlayer" to="." method="_on_studying_buddy_ani_player_animation_started"]
+[connection signal="animation_started" from="StudyingBuddySkeleton/StudyingBuddyAniPlayer" to="MusicManager" method="_on_studying_buddy_ani_player_animation_started"]
 [connection signal="pressed" from="Phone/MenuBackButton" to="." method="_on_menu_back_button_pressed"]
 [connection signal="pressed" from="Phone/AppScreen/MessagesButton" to="." method="_on_messages_button_pressed"]
 [connection signal="pressed" from="Phone/AppScreen/SettingsButton" to="." method="_on_settings_button_pressed"]
