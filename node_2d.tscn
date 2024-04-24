@@ -1426,10 +1426,10 @@ position = Vector2(1, 1)
 texture = ExtResource("21_02gba")
 
 [node name="MusicLabel" type="Label" parent="Phone/MusicScreen"]
-offset_left = -424.645
-offset_top = -1056.84
-offset_right = 526.355
-offset_bottom = -864.836
+offset_left = -429.571
+offset_top = -1036.53
+offset_right = 521.429
+offset_bottom = -885.533
 text = "MUSIC"
 label_settings = SubResource("LabelSettings_k5d35")
 horizontal_alignment = 1
@@ -1474,6 +1474,7 @@ label_settings = SubResource("LabelSettings_k5d35")
 horizontal_alignment = 1
 
 [node name="SettingsScreen" type="Sprite2D" parent="Phone"]
+visible = false
 position = Vector2(2.08165e-12, 2.08165e-12)
 texture = ExtResource("21_02gba")
 script = ExtResource("19_20l8k")
@@ -1504,7 +1505,6 @@ max_value = 60.0
 step = 5.0
 value = 5.0
 scrollable = false
-tick_count = 12
 
 [node name="StudyTimeReadout" type="Label" parent="Phone/SettingsScreen/StudyTimeSlider"]
 layout_mode = 0
@@ -1651,10 +1651,10 @@ visible = false
 texture = ExtResource("21_02gba")
 
 [node name="SettingLabel" type="Label" parent="Phone/MidSessionSettings"]
-offset_left = -423.645
-offset_top = -1055.84
-offset_right = 527.355
-offset_bottom = -863.838
+offset_left = -424.0
+offset_top = -1030.0
+offset_right = 527.0
+offset_bottom = -879.0
 text = "SETTINGS"
 label_settings = SubResource("LabelSettings_k5d35")
 horizontal_alignment = 1
@@ -1680,10 +1680,10 @@ label_settings = SubResource("LabelSettings_k5d35")
 horizontal_alignment = 1
 
 [node name="(un)Pause" type="TextureButton" parent="Phone/MidSessionSettings"]
-offset_left = -339.902
-offset_top = -807.107
-offset_right = 438.098
-offset_bottom = -340.107
+offset_left = -339.901
+offset_top = -756.345
+offset_right = 438.099
+offset_bottom = -289.345
 texture_normal = ExtResource("30_ec1cj")
 texture_pressed = ExtResource("31_127ub")
 stretch_mode = 0
@@ -1700,20 +1700,20 @@ label_settings = SubResource("LabelSettings_ewdgv")
 horizontal_alignment = 1
 
 [node name="EndSession" type="TextureButton" parent="Phone/MidSessionSettings"]
-offset_left = -448.0
-offset_top = -330.0
-offset_right = 577.0
-offset_bottom = 157.0
+offset_left = -467.98
+offset_top = -289.34
+offset_right = 557.02
+offset_bottom = 197.66
 texture_normal = ExtResource("30_ec1cj")
 texture_pressed = ExtResource("31_127ub")
 stretch_mode = 0
 
 [node name="ES label" type="Label" parent="Phone/MidSessionSettings/EndSession"]
 layout_mode = 0
-offset_left = 142.581
-offset_top = 137.107
-offset_right = 940.581
-offset_bottom = 330.107
+offset_left = 113.025
+offset_top = 147.259
+offset_right = 911.025
+offset_bottom = 340.259
 text = "End Session"
 label_settings = SubResource("LabelSettings_ewdgv")
 horizontal_alignment = 1
