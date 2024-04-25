@@ -44,3 +44,7 @@ func startStudyMusic():
 	break_music.stop()
 	study_music.play()
 	
+func startBreakMusic():
+	study_music.stop()
+	break_music.play()
+	

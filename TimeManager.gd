@@ -62,15 +62,18 @@ func start_study_timer():
 	start_period(study_time)
 	updateCycleNumerator()
 	studying = true
-	var mm = get_node("../MusicManager")
-	if(mm != null):
-		mm.startStudyMusic()
+	var musicManager = get_node("../MusicManager")
+	if(musicManager != null):
+		musicManager.startStudyMusic()
 
 #begins a study period on Pomo-Timer using break_time
 func start_break_timer():
 	#print("start break")
 	start_period(break_time)
 	studying = false
+	var musicManager = get_node("../MusicManager")
+	if(musicManager != null):
+		musicManager.startBreakMusic()
 
 # pause/unpause function
 func hit_pause():
