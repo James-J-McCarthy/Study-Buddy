@@ -7,28 +7,74 @@ extends Node
 @onready var Music_BUS_ID = AudioServer.get_bus_index("Music")
 @onready var SFX_BUS_ID = AudioServer.get_bus_index("SFX")
 
+@onready var fadePlayer = AudioStreamPlayer.new()
+var fadingStudyMusic = false
+var fadingBreakMusic = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	add_child(fadePlayer)
 	break_music.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#I don't think I correctly figured out how to get study buddy's current studying status T_T
-	# that or the process isn't flowing correctly (issues with the stop aand start - doesn't like changing audios??)
-	var timeManager = get_node("../TimeManager")
-	var studying = get_parent().get_node("TimeManager").getStudying()
+	#VERSION 1 - optimal version but having issues :(
+	#if (break_music.playing == true):
+		#if fadingBreakMusic:
+			#break_music.volume_db -= 15*delta
+			#fadePlayer.volume_db += 15*delta
+			#
+			#if (fadePlayer.volume_db >= 0):
+				##break_music.volume_db = 0
+				##break_music.volume_db = -60
+				#
+				#fadePlayer.stream = break_music.stream
+				##break_music.play(fadePlayer.get_playback_position())
+#
+				#fadePlayer.stop()
+				#fadingBreakMusic = false	
+				
+	#VERSION 2
+	if (break_music.playing == true):
+		if fadingBreakMusic:
+			break_music.volume_db -= 10*delta
+			#fadePlayer.volume_db += 10*delta
+			
+			if (break_music.volume_db <= -30):
+				if(study_music.playing != true):
+					
+					study_music.play()
+					study_music.volume_db = -10
+					break_music.volume_db = -60
+				#if (study_music.volume_db <= 10):
+					#print('hi')
+					#study_music.volume_db += 10*delta				
+				
+				fadePlayer.stream = break_music.stream
+				#break_music.play(fadePlayer.get_playback_position())
 
-	#program does not want to play a new audio after an audio has been stopped during _process?
+				break_music.stop()
+				#fadePlayer.stop()
+				fadingBreakMusic = false	
+				
+	if (study_music.playing == true):
+		if fadingStudyMusic:
+			study_music.volume_db -= 30*delta
+			fadePlayer.volume_db += 30*delta
+			
+			if (fadePlayer.volume_db >= 0):
+				study_music.volume_db = 0
+				fadePlayer.volume_db = 60
+				if(study_music.playing != true):
+					
+					break_music.play()
+				
+				study_music.stream = fadePlayer.stream
+				study_music.play(fadePlayer.get_playback_position())
 
-	#if (studying == true):
-		#if (break_music.playing == true):
-			#break_music.stop()
-		#study_music.play()
-	#else:
-		#if (study_music.playing == true):
-			#study_music.stop()
-		#break_music.play()
+				fadePlayer.stop()
+				fadingStudyMusic = false	
 
 # volume only refers to music volume currently
 func _on_volume_slider_value_changed(value):
@@ -41,10 +87,20 @@ func _on_volume_slider_value_changed(value):
 	#AudioServer.set_bus_mute(SFX_BUS_ID, value < 0.05)
 
 func startStudyMusic():
-	break_music.stop()
-	study_music.play()
+	#fadePlayer.stream = study_music
+	#fadePlayer.volume_db = -60
+	#fadePlayer.play()
+	
+	fadingBreakMusic = true
+	#break_music.stop()
+	#study_music.play()
 	
 func startBreakMusic():
-	study_music.stop()
-	break_music.play()
+	fadePlayer.stream = study_music
+	fadePlayer.volume_db = -60
+	fadePlayer.play()
+	
+	fadingStudyMusic = true
+	#study_music.stop()
+	#break_music.play()
 	
