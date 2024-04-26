@@ -113,7 +113,7 @@ func _period_finished(): # I tested this funciton with a print to ensure it work
 
 # ends the current session running on the clock. 
 func endSession():
-	paused = false
+	paused = false # this prevents a bug with the clock hand not resetting on session end
 	resetClock()
 	
 	resetClockHand()

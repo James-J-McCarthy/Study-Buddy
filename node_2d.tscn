@@ -1358,7 +1358,7 @@ rest = Transform2D(5.33073, 0.622873, -0.213543, 1.82757, 45.5535, -8.41874)
 libraries = {
 "": SubResource("AnimationLibrary_n6bl0")
 }
-blend_times = [&"Phone", &"RESET", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Idle", 4.0, &"Phone", &"Writing", 4.0, &"Phone", &"Writing2", 4.0, &"Idle", &"RESET", 4.0, &"Idle", &"Phone", 2.0, &"Idle", &"Idle", 2.0, &"Idle", &"Writing", 4.0, &"Idle", &"Writing2", 6.0, &"Writing", &"RESET", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Idle", 4.0, &"Writing", &"Writing", 4.0, &"Writing", &"Writing2", 4.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Idle", 4.0, &"Writing2", &"Writing", 4.0, &"Writing2", &"Writing2", 4.0]
+blend_times = [&"Phone", &"RESET", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Writing2", 4.0, &"Phone", &"Idle", 4.0, &"Phone", &"Writing", 4.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"Idle", 4.0, &"Writing2", &"Writing", 4.0, &"Idle", &"RESET", 4.0, &"Idle", &"Phone", 2.0, &"Idle", &"Writing2", 6.0, &"Idle", &"Idle", 2.0, &"Idle", &"Writing", 4.0, &"Writing", &"RESET", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Writing2", 4.0, &"Writing", &"Idle", 4.0, &"Writing", &"Writing", 4.0]
 
 [node name="AnimationManager" type="Node" parent="."]
 script = ExtResource("8_hahbl")
@@ -1701,7 +1701,7 @@ texture_normal = ExtResource("23_yfb4x")
 texture_pressed = ExtResource("24_yqbli")
 stretch_mode = 0
 
-[node name="Back Label" type="Label" parent="Phone/MidSessionSettings/SettingsBackButton2"]
+[node name="SettingsBackButtonLabel" type="Label" parent="Phone/MidSessionSettings/SettingsBackButton2"]
 layout_mode = 0
 offset_left = 60.2079
 offset_top = 76.0
@@ -1721,7 +1721,7 @@ texture_pressed = ExtResource("31_127ub")
 stretch_mode = 0
 script = ExtResource("32_ruuc8")
 
-[node name="Pause Label" type="Label" parent="Phone/MidSessionSettings/(un)Pause"]
+[node name="PauseLabel" type="Label" parent="Phone/MidSessionSettings/(un)Pause"]
 layout_mode = 0
 offset_left = 182.267
 offset_top = 142.132
@@ -1740,7 +1740,7 @@ texture_normal = ExtResource("30_ec1cj")
 texture_pressed = ExtResource("31_127ub")
 stretch_mode = 0
 
-[node name="ES label" type="Label" parent="Phone/MidSessionSettings/EndSession"]
+[node name="EndSessionLabel" type="Label" parent="Phone/MidSessionSettings/EndSession"]
 layout_mode = 0
 offset_left = 113.025
 offset_top = 147.259
