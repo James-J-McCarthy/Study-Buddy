@@ -202,5 +202,6 @@ func _on_un_pause_pressed():
 	hit_pause()
 
 func _on_end_session_pressed():
+	paused = false
 	resetClock()
 	
