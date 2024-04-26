@@ -92,3 +92,13 @@ func _on_end_session_pressed():
 	_on_settings_back_button_2_pressed()
 	phone.get_node("AppScreen").hide()
 	phone.get_node("SettingsScreen").show()
+
+
+func _on_clock_back_button_pressed():
+	get_node("Phone").get_node("ClockScreen").hide()
+	get_node("Phone").get_node("AppScreen").show()
+
+
+func _on_clock_button_pressed():
+	get_node("Phone").get_node("AppScreen").hide()
+	get_node("Phone").get_node("ClockScreen").show()

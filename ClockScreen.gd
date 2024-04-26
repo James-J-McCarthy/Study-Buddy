@@ -13,6 +13,7 @@ func _ready():
 func _process(delta):
 	if (visible):
 		updateIntervalTimeReadout()
+		updateSessionTimeReadout()
 
 func setIntervalTimerLabel(studying):
 	if (studying):
@@ -24,3 +25,9 @@ func updateIntervalTimeReadout():
 	var minutes = int(TimeManager.get_interval_time_remaining() / 60)
 	var seconds = int(TimeManager.get_interval_time_remaining() - minutes * 60)
 	get_node("IntervalTimeLabel").get_node("IntervalTimeReadout").set_text(str(minutes) + ":" + "%02d" % seconds)
+
+func updateSessionTimeReadout():
+	var hours = int((TimeManager.get_total_time_remaining() / 60) / 60)
+	var minutes = int(TimeManager.get_total_time_remaining() / 60 - hours * 60)
+	var seconds = int(TimeManager.get_total_time_remaining() - minutes * 60 - hours * 3600)
+	get_node("SessionTimeLabel").get_node("SessionTimeReadout").set_text(str(hours) + ":" + "%02d" % minutes + ":" + "%02d" % seconds)

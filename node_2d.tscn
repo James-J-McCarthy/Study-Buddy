@@ -1,8 +1,9 @@
-[gd_scene load_steps=66 format=3 uid="uid://doin1g4xrytqe"]
+[gd_scene load_steps=68 format=3 uid="uid://doin1g4xrytqe"]
 
 [ext_resource type="Script" path="res://MainScene.gd" id="1_37525"]
 [ext_resource type="Texture2D" uid="uid://c8xf1u7hrxbtf" path="res://Outside Window.PNG" id="2_xt5uq"]
 [ext_resource type="Script" path="res://TimeManager.gd" id="3_045uj"]
+[ext_resource type="Texture2D" uid="uid://djsbst41bgr5s" path="res://Temporary Art/icon.svg" id="4_kf0xm"]
 [ext_resource type="Texture2D" uid="uid://fjct6vuqe7fp" path="res://Clock.PNG" id="4_xiqa2"]
 [ext_resource type="Texture2D" uid="uid://vgtooyguf7dk" path="res://Main Book.png" id="5_4bll2"]
 [ext_resource type="Texture2D" uid="uid://dxjpimob5hr1w" path="res://Desk+Wall.png" id="5_4p7ab"]
@@ -1086,6 +1087,10 @@ font_color = Color(0, 0, 0, 1)
 font_size = 120
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_q7i2m"]
+font_size = 150
+font_color = Color(0, 0, 0, 1)
+
 [sub_resource type="Animation" id="Animation_87igy"]
 resource_name = "PhoneDown"
 tracks/0/type = "value"
@@ -1353,7 +1358,7 @@ rest = Transform2D(5.33073, 0.622873, -0.213543, 1.82757, 45.5535, -8.41874)
 libraries = {
 "": SubResource("AnimationLibrary_n6bl0")
 }
-blend_times = [&"Idle", &"RESET", 2.0, &"Idle", &"Writing", 2.0, &"Idle", &"Writing2", 4.0, &"Writing", &"RESET", 2.0, &"Writing", &"Idle", 2.0, &"Writing", &"Writing", 2.0, &"Writing", &"Writing2", 2.0, &"Writing2", &"RESET", 2.0, &"Writing2", &"Idle", 2.0, &"Writing2", &"Writing", 2.0, &"Writing2", &"Writing2", 2.0]
+blend_times = [&"Idle", &"RESET", 2.0, &"Idle", &"Writing2", 4.0, &"Idle", &"Writing", 2.0, &"Writing2", &"RESET", 2.0, &"Writing2", &"Idle", 2.0, &"Writing2", &"Writing2", 2.0, &"Writing2", &"Writing", 2.0, &"Writing", &"RESET", 2.0, &"Writing", &"Idle", 2.0, &"Writing", &"Writing2", 2.0, &"Writing", &"Writing", 2.0]
 
 [node name="AnimationManager" type="Node" parent="."]
 script = ExtResource("8_hahbl")
@@ -1634,11 +1639,11 @@ autowrap_mode = 2
 layout_mode = 0
 offset_left = 265.0
 offset_top = 355.0
-offset_right = 732.0
+offset_right = 988.0
 offset_bottom = 629.0
 label_settings = SubResource("LabelSettings_6lh60")
 
-[node name="SessionTimeRemainingLabel" type="Label" parent="Phone/ClockScreen"]
+[node name="SessionTimeLabel" type="Label" parent="Phone/ClockScreen"]
 offset_left = -470.0
 offset_top = -261.0
 offset_right = 582.0
@@ -1646,6 +1651,23 @@ offset_bottom = 124.0
 text = "Total session time remaining:"
 label_settings = SubResource("LabelSettings_fl5f5")
 autowrap_mode = 1
+
+[node name="SessionTimeReadout" type="Label" parent="Phone/ClockScreen/SessionTimeLabel"]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 365.0
+offset_right = 1052.0
+offset_bottom = 674.0
+label_settings = SubResource("LabelSettings_q7i2m")
+
+[node name="ClockBackButton" type="TextureButton" parent="Phone/ClockScreen"]
+offset_left = 326.0
+offset_top = 469.0
+offset_right = 587.0
+offset_bottom = 738.0
+texture_normal = ExtResource("4_kf0xm")
+texture_pressed = ExtResource("5_htttl")
+stretch_mode = 0
 
 [node name="MidSessionSettings" type="Sprite2D" parent="Phone"]
 visible = false
@@ -1781,23 +1803,21 @@ script = ExtResource("40_w4jlm")
 [node name="StudyMusic" type="AudioStreamPlayer" parent="MusicManager"]
 stream = ExtResource("40_mwu18")
 volume_db = -5.0
-bus = &"Music"
 
 [node name="BreakMusic" type="AudioStreamPlayer" parent="MusicManager"]
 stream = ExtResource("41_wl3wp")
 volume_db = -10.0
-bus = &"Music"
 
 [node name="SFXNoseHonk" type="AudioStreamPlayer" parent="MusicManager"]
 stream = ExtResource("42_ae8ut")
 volume_db = -5.0
-bus = &"SFX"
 
 [connection signal="animation_started" from="StudyingBuddySkeleton/StudyingBuddyAniPlayer" to="." method="_on_studying_buddy_ani_player_animation_started"]
 [connection signal="animation_started" from="StudyingBuddySkeleton/StudyingBuddyAniPlayer" to="MusicManager" method="_on_studying_buddy_ani_player_animation_started"]
 [connection signal="pressed" from="Phone/MenuBackButton" to="." method="_on_menu_back_button_pressed"]
 [connection signal="pressed" from="Phone/AppScreen/MessagesButton" to="." method="_on_messages_button_pressed"]
 [connection signal="pressed" from="Phone/AppScreen/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Phone/AppScreen/ClockButton" to="." method="_on_clock_button_pressed"]
 [connection signal="value_changed" from="Phone/MusicScreen/VolumeSlider" to="MusicManager" method="_on_volume_slider_value_changed"]
 [connection signal="pressed" from="Phone/MusicScreen/MessagesBackButton" to="." method="_on_messages_back_button_pressed"]
 [connection signal="value_changed" from="Phone/SettingsScreen/StudyTimeSlider" to="Phone/SettingsScreen/StudyTimeSlider/StudyTimeReadout" method="_on_study_time_slider_value_changed"]
@@ -1810,6 +1830,7 @@ bus = &"SFX"
 [connection signal="pressed" from="Phone/SettingsScreen/StartButton" to="Phone/SettingsScreen" method="_on_start_button_pressed"]
 [connection signal="pressed" from="Phone/SettingsScreen/StartButton" to="Phone/SettingsScreen/StartButton" method="_on_pressed"]
 [connection signal="pressed" from="Phone/SettingsScreen/StartButton" to="TimeManager" method="_on_start_button_pressed"]
+[connection signal="pressed" from="Phone/ClockScreen/ClockBackButton" to="." method="_on_clock_back_button_pressed"]
 [connection signal="pressed" from="Phone/MidSessionSettings/SettingsBackButton2" to="." method="_on_settings_back_button_2_pressed"]
 [connection signal="pressed" from="Phone/MidSessionSettings/(un)Pause" to="Phone/MidSessionSettings/(un)Pause" method="_on_pressed"]
 [connection signal="pressed" from="Phone/MidSessionSettings/(un)Pause" to="TimeManager" method="_on_un_pause_pressed"]
