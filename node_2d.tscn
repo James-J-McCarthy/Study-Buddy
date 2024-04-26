@@ -1375,6 +1375,15 @@ position = Vector2(259, 323.75)
 scale = Vector2(0.202745, 0.196515)
 texture = ExtResource("7_0064q")
 
+[node name="CloseButton" type="TextureButton" parent="."]
+offset_left = 377.0
+offset_top = 8.0
+offset_right = 505.0
+offset_bottom = 136.0
+texture_normal = ExtResource("4_kf0xm")
+texture_pressed = ExtResource("5_htttl")
+stretch_mode = 0
+
 [node name="Phone" type="Sprite2D" parent="."]
 position = Vector2(260, 980)
 scale = Vector2(0.203, 0.197)
@@ -1814,6 +1823,7 @@ volume_db = -5.0
 
 [connection signal="animation_started" from="StudyingBuddySkeleton/StudyingBuddyAniPlayer" to="." method="_on_studying_buddy_ani_player_animation_started"]
 [connection signal="animation_started" from="StudyingBuddySkeleton/StudyingBuddyAniPlayer" to="MusicManager" method="_on_studying_buddy_ani_player_animation_started"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="Phone/MenuBackButton" to="." method="_on_menu_back_button_pressed"]
 [connection signal="pressed" from="Phone/AppScreen/MessagesButton" to="." method="_on_messages_button_pressed"]
 [connection signal="pressed" from="Phone/AppScreen/SettingsButton" to="." method="_on_settings_button_pressed"]

@@ -102,3 +102,7 @@ func _on_clock_back_button_pressed():
 func _on_clock_button_pressed():
 	get_node("Phone").get_node("AppScreen").hide()
 	get_node("Phone").get_node("ClockScreen").show()
+
+
+func _on_close_button_pressed():
+	get_tree().quit()
