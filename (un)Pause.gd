@@ -11,6 +11,5 @@ func _on_pressed():
 		label.text = 'Pause'
 
 func resetText():
-	if (visible):
-		var label = $"Pause Label"
-		label.text = 'Pause'
+	var label = $"Pause Label"
+	label.text = 'Pause'

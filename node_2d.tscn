@@ -29,7 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://dc4ilh3xeyi8x" path="res://Phone reference.jpg" id="20_qfoav"]
 [ext_resource type="Texture2D" uid="uid://blpvq0paavnsa" path="res://Settings Screen Only.PNG" id="21_02gba"]
 [ext_resource type="Texture2D" uid="uid://bvincygstqens" path="res://Grabber.PNG" id="22_wcyrw"]
-[ext_resource type="LabelSettings" uid="uid://bi0i30ujkntbi" path="res://Button Big.tres" id="23_8e3nk"]
+[ext_resource type="LabelSettings" path="res://Button Big.tres" id="23_8e3nk"]
 [ext_resource type="FontFile" uid="uid://bygjp8by3wfd3" path="res://Fonts/ArchitectsDaughter.ttf" id="23_8s4wn"]
 [ext_resource type="Texture2D" uid="uid://dl7jf4e5nbw6y" path="res://Button 2.PNG" id="23_yfb4x"]
 [ext_resource type="Texture2D" uid="uid://dk4cgs8ih0i0" path="res://Grabber Clicked.png" id="24_sjviw"]
@@ -37,8 +37,8 @@
 [ext_resource type="Texture2D" uid="uid://c8l43fr7wvjuu" path="res://Button Menu Up.png" id="25_sp6rb"]
 [ext_resource type="Texture2D" uid="uid://b6q3uno0vq8qh" path="res://Button Menu On Hover.png" id="26_y1yau"]
 [ext_resource type="Script" path="res://BreakReadout.gd" id="27_birga"]
-[ext_resource type="LabelSettings" uid="uid://ccudhtkq5auxj" path="res://App Screen Title small.tres" id="29_0rwny"]
-[ext_resource type="LabelSettings" uid="uid://ileo4jbf3gvo" path="res://Big Text Title.tres" id="30_25nkr"]
+[ext_resource type="LabelSettings" path="res://App Screen Title small.tres" id="29_0rwny"]
+[ext_resource type="LabelSettings" path="res://Big Text Title.tres" id="30_25nkr"]
 [ext_resource type="Texture2D" uid="uid://bujdtah50ufyd" path="res://Button 1.PNG" id="30_ec1cj"]
 [ext_resource type="Texture2D" uid="uid://cqiomfqgvv7bi" path="res://Button 1 On Click.PNG" id="31_127ub"]
 [ext_resource type="Script" path="res://ClockScreen.gd" id="31_qmhd2"]
@@ -1285,7 +1285,6 @@ rest = Transform2D(-0.100553, 0.994932, -0.994932, -0.100553, -33.4978, -141.394
 [node name="ForeArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL"]
 position = Vector2(87.652, -7.88235)
 rotation = 1.41794
-scale = Vector2(1, 1)
 rest = Transform2D(0.152266, 0.98834, -0.98834, 0.152266, 87.652, -7.88235)
 
 [node name="HandL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL/ForeArmL"]
@@ -1297,7 +1296,6 @@ rest = Transform2D(6.96462, -1.60426, 0.549942, 2.38748, 88.3128, -2.97414)
 [node name="Phone" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL/ForeArmL/HandL"]
 position = Vector2(4.78279, 2.33461)
 rotation = -0.366923
-scale = Vector2(1, 1)
 rest = Transform2D(0.933436, -0.358745, 0.358745, 0.933436, 4.78279, 2.33461)
 
 [node name="Pen" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL/ForeArmL/HandL"]
@@ -1309,13 +1307,11 @@ rest = Transform2D(0.356327, -0.934361, 0.934361, 0.356327, 4.78279, 2.33461)
 [node name="UpperArmR" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(-95.4978, -118.394)
 rotation = 1.67185
-scale = Vector2(1, 1)
 rest = Transform2D(-0.100882, 0.994898, -0.994898, -0.100882, -95.4978, -118.394)
 
 [node name="ForeArmR" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmR"]
 position = Vector2(35.7571, 25.5231)
 rotation = 1.41275
-scale = Vector2(1, 1)
 rest = Transform2D(0.157389, 0.987537, -0.987537, 0.157389, 35.7571, 25.5231)
 
 [node name="HandR" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmR/ForeArmR"]
@@ -1328,7 +1324,7 @@ rest = Transform2D(5.33073, 0.622873, -0.213543, 1.82757, 45.5535, -8.41874)
 libraries = {
 "": SubResource("AnimationLibrary_n6bl0")
 }
-blend_times = [&"Phone", &"RESET", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Writing2", 4.0, &"Phone", &"Idle", 4.0, &"Phone", &"Writing", 4.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"Idle", 4.0, &"Writing2", &"Writing", 4.0, &"Idle", &"RESET", 4.0, &"Idle", &"Phone", 2.0, &"Idle", &"Writing2", 6.0, &"Idle", &"Idle", 2.0, &"Idle", &"Writing", 4.0, &"Writing", &"RESET", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Writing2", 4.0, &"Writing", &"Idle", 4.0, &"Writing", &"Writing", 4.0]
+blend_times = [&"Phone", &"RESET", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Writing", 4.0, &"Phone", &"Writing2", 4.0, &"Phone", &"Idle", 4.0, &"Writing", &"RESET", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Writing", 4.0, &"Writing", &"Writing2", 4.0, &"Writing", &"Idle", 4.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Writing", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"Idle", 4.0, &"Idle", &"RESET", 4.0, &"Idle", &"Phone", 2.0, &"Idle", &"Writing", 4.0, &"Idle", &"Writing2", 6.0, &"Idle", &"Idle", 2.0]
 
 [node name="AnimationManager" type="Node" parent="."]
 script = ExtResource("8_hahbl")
