@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bi0i30ujkntbi"]
+
+[ext_resource type="FontFile" uid="uid://by7ov6qiq75tk" path="res://MotleyForcesRegular-w1rZ3.ttf" id="1_1jhv4"]
+
+[resource]
+line_spacing = 0.0
+font = ExtResource("1_1jhv4")
+font_size = 150
+font_color = Color(0, 0, 0, 1)
