@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://doin1g4xrytqe"]
+[gd_scene load_steps=63 format=3 uid="uid://doin1g4xrytqe"]
 
 [ext_resource type="Script" path="res://MainScene.gd" id="1_37525"]
 [ext_resource type="Texture2D" uid="uid://c8xf1u7hrxbtf" path="res://Outside Window.PNG" id="2_xt5uq"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://c3dtudnxbnw7x" path="res://Button Setting.png" id="15_4lg52"]
 [ext_resource type="Script" path="res://TimerBar.gd" id="17_7dfhe"]
 [ext_resource type="Texture2D" uid="uid://c3uy8j5wp5su4" path="res://Button Music.png" id="17_a4p57"]
+[ext_resource type="Script" path="res://Phone.gd" id="17_s3jtj"]
 [ext_resource type="Script" path="res://SettingsScreen.gd" id="19_20l8k"]
 [ext_resource type="Texture2D" uid="uid://dxtb2jpe7vfu1" path="res://Button Clock.png" id="19_qa1w7"]
 [ext_resource type="Script" path="res://StudyTimeReadout.gd" id="19_rmxln"]
@@ -1279,7 +1280,7 @@ rest = Transform2D(3.14289, -0.827503, 0.827503, 3.14289, 35.5022, -2.39432)
 [node name="UpperArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(-33.4978, -141.394)
 rotation = 1.67152
-scale = Vector2(0.999999, 0.999999)
+scale = Vector2(0.999998, 0.999998)
 rest = Transform2D(-0.100553, 0.994932, -0.994932, -0.100553, -33.4978, -141.394)
 
 [node name="ForeArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL"]
@@ -1355,6 +1356,7 @@ stretch_mode = 0
 position = Vector2(260, 980)
 scale = Vector2(0.203, 0.197)
 texture = ExtResource("10_06ryp")
+script = ExtResource("17_s3jtj")
 
 [node name="MenuBackButton" type="TextureButton" parent="Phone"]
 offset_left = -83.7438
@@ -1458,6 +1460,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SettingsScreen" type="Sprite2D" parent="Phone"]
+visible = false
 position = Vector2(2.08165e-12, 2.08165e-12)
 texture = ExtResource("21_02gba")
 script = ExtResource("19_20l8k")
@@ -1722,6 +1725,8 @@ text = "End Session"
 label_settings = SubResource("LabelSettings_ewdgv")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="SessionEndScreen" type="Sprite2D" parent="Phone"]
 
 [node name="PhoneReference" type="Sprite2D" parent="."]
 visible = false

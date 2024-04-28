@@ -1,5 +1,5 @@
 extends Node2D
-
+var phone
 var studying = true
 
 # Called when the node enters the scene tree for the first time.
@@ -10,6 +10,7 @@ func _ready():
 	$MenuUpButton.show()
 	_on_menu_up_button_pressed()
 	_on_settings_button_pressed()
+	phone = get_node("Phone")
 	#get_node("MusicManager/BreakMusic").play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,9 +25,8 @@ func _studying_buddy_animation():
 func _on_menu_up_button_pressed():
 	get_node("PhoneMover").play("PhoneUp")
 	get_node("MenuUpButton").hide()
-	get_node("Phone").get_node("MusicScreen").hide()
-	get_node("Phone").get_node("SettingsScreen").hide()
-	get_node("Phone").get_node("AppScreen").show()
+	phone = get_node("Phone")
+	phone.appScreenVis()
 
 # this code runs when MenuBackButton is pressed
 func _on_menu_back_button_pressed():
@@ -63,8 +63,7 @@ func _on_settings_back_button_2_pressed():
 	
 # this code runs when MessagesBackButton is pressed
 func _on_messages_back_button_pressed():
-	get_node("Phone").get_node("MusicScreen").hide()
-	get_node("Phone").get_node("AppScreen").show()
+	phone.appScreenVis()
 
 
 func _on_start_button_pressed():
@@ -87,21 +86,15 @@ func _on_studying_buddy_ani_player_animation_started(anim_name):
 # this kicks the user off the mid-session-settings screen
 func _on_end_session_pressed():
 	var phone = get_node("Phone")
-	
-	get_node("StudyingBuddy").hide()
-	_on_settings_back_button_2_pressed()
-	phone.get_node("AppScreen").hide()
-	phone.get_node("SettingsScreen").show()
+	phone.settingScreenVis()
 
 
 func _on_clock_back_button_pressed():
-	get_node("Phone").get_node("ClockScreen").hide()
-	get_node("Phone").get_node("AppScreen").show()
+	phone.appScreenVis()
 
 
 func _on_clock_button_pressed():
-	get_node("Phone").get_node("AppScreen").hide()
-	get_node("Phone").get_node("ClockScreen").show()
+	phone.clockScreenVis()
 
 
 func _on_close_button_pressed():
