@@ -1280,7 +1280,7 @@ rest = Transform2D(3.14289, -0.827503, 0.827503, 3.14289, 35.5022, -2.39432)
 [node name="UpperArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(-33.4978, -141.394)
 rotation = 1.67152
-scale = Vector2(0.999998, 0.999998)
+scale = Vector2(0.999995, 0.999995)
 rest = Transform2D(-0.100553, 0.994932, -0.994932, -0.100553, -33.4978, -141.394)
 
 [node name="ForeArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL"]
@@ -1727,6 +1727,38 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SessionEndScreen" type="Sprite2D" parent="Phone"]
+visible = false
+texture = ExtResource("10_06ryp")
+
+[node name="Restart" type="TextureButton" parent="Phone/SessionEndScreen"]
+offset_left = -522.0
+offset_top = 426.0
+offset_right = 59.0
+offset_bottom = 781.0
+texture_normal = ExtResource("30_ec1cj")
+texture_pressed = ExtResource("31_127ub")
+stretch_mode = 0
+
+[node name="RestartLabel" type="Label" parent="Phone/SessionEndScreen/Restart"]
+layout_mode = 0
+offset_left = -74.0
+offset_top = 81.0
+offset_right = 665.0
+offset_bottom = 274.0
+text = "Restart"
+label_settings = SubResource("LabelSettings_ewdgv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseButton" type="TextureButton" parent="Phone/SessionEndScreen"]
+offset_left = 84.0
+offset_top = 477.0
+offset_right = 1118.0
+offset_bottom = 999.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("4_kf0xm")
+texture_pressed = ExtResource("5_htttl")
+stretch_mode = 0
 
 [node name="PhoneReference" type="Sprite2D" parent="."]
 visible = false
@@ -1839,6 +1871,8 @@ volume_db = -5.0
 [connection signal="pressed" from="Phone/MidSessionSettings/(un)Pause" to="TimeManager" method="_on_un_pause_pressed"]
 [connection signal="pressed" from="Phone/MidSessionSettings/EndSession" to="." method="_on_end_session_pressed"]
 [connection signal="pressed" from="Phone/MidSessionSettings/EndSession" to="TimeManager" method="_on_end_session_pressed"]
+[connection signal="pressed" from="Phone/SessionEndScreen/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Phone/SessionEndScreen/CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="MenuUpButton" to="." method="_on_menu_up_button_pressed"]
 [connection signal="timeout" from="TimeManager/PomoTimer" to="TimeManager" method="_period_finished"]
 [connection signal="timeout" from="TimerBar/Timer" to="TimerBar" method="_on_timer_timeout"]

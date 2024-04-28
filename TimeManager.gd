@@ -10,25 +10,29 @@ extends Node
 var study_time # time of "study session" measured in seconds 
 var break_time # ^ for breaks
 var cycles_total # < prob don't initialize this here # total number of study/break cycles user wants
-var cycle = 0 # current cycles count
+var cycle = 1 # current cycles count
 var studying = true
 var session_running = false
 var paused = true
-
+var phone
 var PomoTimer
-
 
 # Called when the node enters the scene tree for the first time.
 
 func _ready(): 
-	PomoTimer = get_node("PomoTimer")
+	phone = get_node("../Phone")
+	PomoTimer = $"PomoTimer"
+	getPeriodValues() #initilize values
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
 	updateClockHand(_delta, true)
 
+# this function moves the clock hand based on time past since the last 
+# call of this function (delta)
+# and a boolean. if dontReset is false, puts hand back to '12
 func updateClockHand(_delta, dontReset):
-	if (cycles_total != null && !paused):
+	if (cycles_total != null && paused == false):
 		if (cycle <= cycles_total):
 			var clockHand = get_node_or_null("../clockHand")
 			if (clockHand == null):
@@ -45,12 +49,15 @@ func updateClockHand(_delta, dontReset):
 					currentRad = 0
 				get_node("../clockHand").rotation = currentRad
 
-# resets the clock hand to 12 o'clock position
-
-
+func getPeriodValues():
+	study_time = get_node("../Phone/SettingsScreen/StudyTimeSlider").value
+	cycles_total = get_node("../Phone/SettingsScreen/CyclesSlider").value
+	break_time = get_node("../Phone/SettingsScreen/BreakTimeSlider").value
+	
 # helper function that starts pomo timer given a period length
 func start_period(duration):
-	paused = false
+	if(PomoTimer == null):
+		PomoTimer = get_node("PomoTimer")
 	PomoTimer.start(duration)
 
 # begins a study period on Pomo-Timer passing in study_time
@@ -75,13 +82,11 @@ func start_break_timer():
 
 # pause/unpause function
 func hit_pause():
-	print("hit pause")
 	paused = !paused
-	if(PomoTimer.is_paused):
-		PomoTimer.set_paused(false)
-	else:
+	if(paused):
 		PomoTimer.set_paused(true)
-
+	else:
+		PomoTimer.set_paused(false)
 
 # SIGNALS: 
 func _on_session_time_slider_value_changed(value):
@@ -93,22 +98,26 @@ func _on_break_time_slider_value_changed(value):
 # get's signal from pomo timer when it finishes or when time is reduced to < 0
 # then restarts timer based on next period length
 func _period_finished(): # I tested this funciton with a print to ensure it works
-	if(cycle <= cycles_total):
-		if(studying):
-			print("done studying!!")
-			if(break_time > 0): # update our boolean before switching
-				studying = false
-			start_break_timer() # switch PomoClocks timing duration
-		else:
-			print("done with break!!")
-			if(study_time > 0): # update our boolean before switching
-				studying = true
-			start_study_timer() # switch PomoClocks timing duration
+	if(studying):
+		print("done studying!!")
+		studying = false
+		start_break_timer() # switch PomoClocks timing duration
 	else:
-		resetClock()
-	get_parent().get_node("Phone").get_node("ClockScreen").setIntervalTimerLabel(studying)
-	#else: 
-	print("finished study period!!")
+		print("done with break!!")
+		if(cycle >= cycles_total):
+			cycle +=1
+			#end of session logic triggered here:
+			phone.up()
+			phone.endScreenVis()
+			print("finished study period!!")
+		else:
+			start_study_timer() # switch PomoClocks timing duration
+			studying = true
+		cycle += 1
+		updateCycleNumerator()
+	phone.get_node("ClockScreen").setIntervalTimerLabel(studying)
+
+	
 
 # ends the current session running on the clock. 
 func endSession():
@@ -122,6 +131,7 @@ func setBreakMarker():
 
 
 func startSession():
+	getPeriodValues()
 	initializeClockLabelText()
 	start_study_timer()
 	session_running = true
@@ -130,10 +140,9 @@ func startSession():
 
 # resets clock but does not restart it
 func resetClock():
-	print("reset clock")
 	updateClockHand(0, false) # reset clock hand
 	PomoTimer.stop() # stop timer
-	set_cycle(0)
+	set_cycle(1)
 	initializeClockLabelText()
 	session_running = false
 	paused = true
@@ -150,10 +159,9 @@ func initializeClockLabelText():
 # getters and setters below \/
 func updateCycleNumerator():
 	var cycleLabel = get_node("../CycleLabel")
-	cycle += 1
 	if(cycle <= cycles_total):
 		cycleLabel.text = str(cycle, "/", cycles_total)
-	
+
 func getStudying():
 	return studying
 
@@ -197,10 +205,9 @@ func set_cycle(num):
 
 # runs when settings start button is pressed
 func _on_start_button_pressed():
-	set_study_time(get_parent().get_node("Phone").get_node("SettingsScreen").getStudyTime())
-	set_break_time(get_parent().get_node("Phone").get_node("SettingsScreen").getBreakTime())
-	set_cycles_total(get_parent().get_node("Phone").get_node("SettingsScreen").getCyclesTotal())	
-
+	phone.get_node("SettingsScreen").getStudyTime()
+	phone.get_node("SettingsScreen").getBreakTime()
+	phone.get_node("SettingsScreen").getCyclesTotal()	
 	startSession()
 
 
@@ -208,5 +215,4 @@ func _on_un_pause_pressed():
 	hit_pause()
 
 func _on_end_session_pressed():
-	resetClock()
-	
+	endSession()	
