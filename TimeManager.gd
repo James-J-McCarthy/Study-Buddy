@@ -51,7 +51,7 @@ func updateClockHand(_delta, dontReset):
 # helper function that starts pomo timer given a period length
 func start_period(duration):
 	paused = false
-	$PomoTimer.start(duration)
+	PomoTimer.start(duration)
 
 # begins a study period on Pomo-Timer passing in study_time
 # Timer is set to "One-Shot" meaning it doesn't repeat after finishing
@@ -76,10 +76,10 @@ func start_break_timer():
 # pause/unpause function
 func hit_pause():
 	paused = !paused
-	if($PomoTimer.is_paused):
-		$PomoTimer.set_paused(false)
+	if(PomoTimer.is_paused):
+		PomoTimer.set_paused(false)
 	else:
-		$PomoTimer.set_paused(true)
+		PomoTimer.set_paused(true)
 
 
 # SIGNALS: 
@@ -124,7 +124,7 @@ func startSession():
 # resets clock but does not restart it
 func resetClock():
 	updateClockHand(0, false) # reset clock hand
-	$PomoTimer.stop() # stop timer
+	PomoTimer.stop() # stop timer
 	set_cycle(0)
 	initializeClockLabelText()
 	session_running = false
