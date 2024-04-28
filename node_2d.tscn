@@ -1279,7 +1279,7 @@ rest = Transform2D(3.14289, -0.827503, 0.827503, 3.14289, 35.5022, -2.39432)
 [node name="UpperArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(-33.4978, -141.394)
 rotation = 1.67152
-scale = Vector2(1, 1)
+scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(-0.100553, 0.994932, -0.994932, -0.100553, -33.4978, -141.394)
 
 [node name="ForeArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL"]
@@ -1342,10 +1342,11 @@ scale = Vector2(0.202745, 0.196515)
 texture = ExtResource("7_0064q")
 
 [node name="CloseButton" type="TextureButton" parent="."]
-offset_left = 377.0
+offset_left = 443.0
 offset_top = 8.0
-offset_right = 505.0
+offset_right = 571.0
 offset_bottom = 136.0
+scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("4_kf0xm")
 texture_pressed = ExtResource("5_htttl")
 stretch_mode = 0

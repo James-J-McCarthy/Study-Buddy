@@ -30,25 +30,23 @@ func _physics_process(_delta):
 func updateClockHand(_delta, dontReset):
 	if (cycles_total != null && !paused):
 		if (cycle <= cycles_total):
-			var clockHand = get_node_or_null("../clockHand");
+			var clockHand = get_node_or_null("../clockHand")
 			if (clockHand == null):
-				print("clockhand == null error!");
+				print("clockhand == null error!")
 				pass
 			else:
-				var currentRad = get_node("../clockHand").rotation;
+				var currentRad = get_node("../clockHand").rotation
 				var radsPerSecond = float((2*PI) / (break_time + study_time))
 				var radChange = float(_delta*radsPerSecond)
 				currentRad += radChange
 				if (currentRad >= 360): 
-					currentRad = 0;
+					currentRad = 0
 				if(!dontReset):
-					currentRad = 0;
+					currentRad = 0
 				get_node("../clockHand").rotation = currentRad
 
 # resets the clock hand to 12 o'clock position
-func resetClockHand():
-	get_node("../clockHand").rotation = 0
-	print('did the thing')
+
 
 # helper function that starts pomo timer given a period length
 func start_period(duration):
@@ -116,7 +114,6 @@ func endSession():
 	paused = false # this prevents a bug with the clock hand not resetting on session end
 	resetClock()
 	
-	resetClockHand()
 	
 func startSession():
 	initializeClockLabelText()
