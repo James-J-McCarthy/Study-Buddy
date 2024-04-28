@@ -75,6 +75,7 @@ func start_break_timer():
 
 # pause/unpause function
 func hit_pause():
+	print("hit pause")
 	paused = !paused
 	if(PomoTimer.is_paused):
 		PomoTimer.set_paused(false)
@@ -113,16 +114,23 @@ func _period_finished(): # I tested this funciton with a print to ensure it work
 func endSession():
 	paused = false # this prevents a bug with the clock hand not resetting on session end
 	resetClock()
-	
-	
+
+func setBreakMarker():
+	var angleInRad = study_time * (float((2*PI) / (break_time + study_time)))
+	var bm = get_node("../breakMarker")
+	bm.rotation = angleInRad
+
+
 func startSession():
 	initializeClockLabelText()
 	start_study_timer()
 	session_running = true
 	paused = false
+	setBreakMarker()
 
 # resets clock but does not restart it
 func resetClock():
+	print("reset clock")
 	updateClockHand(0, false) # reset clock hand
 	PomoTimer.stop() # stop timer
 	set_cycle(0)

@@ -1778,6 +1778,22 @@ points = PackedVector2Array(0, 0, -1, -21)
 width = 3.0
 default_color = Color(0, 0, 0, 1)
 
+[node name="breakMarker" type="Line2D" parent="."]
+position = Vector2(66, 406)
+rotation = -0.0471239
+skew = -0.0349066
+points = PackedVector2Array(1.62857, -18.011, 1.76825, -22.0134)
+width = 3.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="12Marker" type="Line2D" parent="."]
+position = Vector2(66, 406)
+rotation = -0.0471239
+skew = -0.0349066
+points = PackedVector2Array(1.62857, -18.011, 1.76825, -22.0134)
+width = 3.0
+default_color = Color(0, 0, 0, 1)
+
 [node name="MusicManager" type="Node" parent="."]
 script = ExtResource("40_w4jlm")
 
