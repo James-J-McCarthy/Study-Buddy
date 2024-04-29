@@ -85,21 +85,15 @@ func _on_studying_buddy_ani_player_animation_started(anim_name):
 func _on_end_session_pressed():
 	phone.settingsScreenVis()
 
-
 func _on_clock_back_button_pressed():
 	phone.appScreenVis()
-
 
 func _on_clock_button_pressed():
 	phone.clockScreenVis()
 
-
 func _on_close_button_pressed():
 	get_tree().quit()
-
 
 func _on_restart_pressed():
 	phone.settingsScreenVis()
 	timeManager.resetClock()
-	
-	

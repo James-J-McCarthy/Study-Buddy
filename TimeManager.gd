@@ -43,8 +43,9 @@ func updateClockHand(_delta, dontReset):
 				var radsPerSecond = float((2*PI) / (break_time + study_time))
 				var radChange = float(_delta*radsPerSecond)
 				currentRad += radChange
-				if (currentRad >= 360): 
+				if (currentRad >= float((2*PI))): 
 					currentRad = 0
+					cycle+=1
 				if(!dontReset):
 					currentRad = 0
 				get_node("../clockHand").rotation = currentRad
@@ -104,8 +105,10 @@ func _period_finished(): # I tested this funciton with a print to ensure it work
 		start_break_timer() # switch PomoClocks timing duration
 	else:
 		print("done with break!!")
-		if(cycle >= cycles_total):
-			cycle +=1
+		
+		# ">" because by the time this runs the last time, cycle
+		# will already be updated.
+		if(cycle > cycles_total):
 			#end of session logic triggered here:
 			phone.up()
 			phone.endScreenVis()
@@ -113,7 +116,7 @@ func _period_finished(): # I tested this funciton with a print to ensure it work
 		else:
 			start_study_timer() # switch PomoClocks timing duration
 			studying = true
-		cycle += 1
+		#cycle += 1
 		updateCycleNumerator()
 	phone.get_node("ClockScreen").setIntervalTimerLabel(studying)
 

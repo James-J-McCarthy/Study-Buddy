@@ -1280,7 +1280,7 @@ rest = Transform2D(3.14289, -0.827503, 0.827503, 3.14289, 35.5022, -2.39432)
 [node name="UpperArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(-33.4978, -141.394)
 rotation = 1.67152
-scale = Vector2(0.999995, 0.999995)
+scale = Vector2(0.999994, 0.999994)
 rest = Transform2D(-0.100553, 0.994932, -0.994932, -0.100553, -33.4978, -141.394)
 
 [node name="ForeArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL"]
@@ -1325,7 +1325,7 @@ rest = Transform2D(5.33073, 0.622873, -0.213543, 1.82757, 45.5535, -8.41874)
 libraries = {
 "": SubResource("AnimationLibrary_n6bl0")
 }
-blend_times = [&"Phone", &"Phone", 4.0, &"Phone", &"Idle", 4.0, &"Phone", &"Writing", 4.0, &"Phone", &"Writing2", 4.0, &"Phone", &"RESET", 4.0, &"Idle", &"Phone", 2.0, &"Idle", &"Idle", 2.0, &"Idle", &"Writing", 4.0, &"Idle", &"Writing2", 6.0, &"Idle", &"RESET", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Idle", 4.0, &"Writing", &"Writing", 4.0, &"Writing", &"Writing2", 4.0, &"Writing", &"RESET", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Idle", 4.0, &"Writing2", &"Writing", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"RESET", 4.0]
+blend_times = [&"Idle", &"Idle", 2.0, &"Idle", &"Phone", 2.0, &"Idle", &"Writing", 4.0, &"Idle", &"Writing2", 6.0, &"Idle", &"RESET", 4.0, &"Phone", &"Idle", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Writing", 4.0, &"Phone", &"Writing2", 4.0, &"Phone", &"RESET", 4.0, &"Writing", &"Idle", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Writing", 4.0, &"Writing", &"Writing2", 4.0, &"Writing", &"RESET", 4.0, &"Writing2", &"Idle", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Writing", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"RESET", 4.0]
 
 [node name="AnimationManager" type="Node" parent="."]
 script = ExtResource("8_hahbl")
@@ -1810,7 +1810,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="clockHand" type="Line2D" parent="."]
-position = Vector2(67, 405)
+position = Vector2(67, 406)
 points = PackedVector2Array(0, 0, -1, -21)
 width = 3.0
 default_color = Color(0, 0, 0, 1)
