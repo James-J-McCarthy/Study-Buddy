@@ -51,9 +51,9 @@ func updateClockHand(_delta, dontReset):
 				get_node("../clockHand").rotation = currentRad
 
 func getPeriodValues():
-	study_time = get_node("../Phone/SettingsScreen/StudyTimeSlider").value * 60
+	study_time = get_node("../Phone/SettingsScreen/StudyTimeSlider").value * 1
 	cycles_total = get_node("../Phone/SettingsScreen/CyclesSlider").value 
-	break_time = get_node("../Phone/SettingsScreen/BreakTimeSlider").value * 60
+	break_time = get_node("../Phone/SettingsScreen/BreakTimeSlider").value * 1
 	
 # helper function that starts pomo timer given a period length
 func start_period(duration):
@@ -113,6 +113,9 @@ func _period_finished(): # I tested this funciton with a print to ensure it work
 			phone.up()
 			phone.endScreenVis()
 			print("finished study period!!")
+			var musicManager = get_node("../MusicManager")
+			if(musicManager != null):
+				musicManager.sessionEndMusic()
 		else:
 			start_study_timer() # switch PomoClocks timing duration
 			studying = true
@@ -126,6 +129,9 @@ func _period_finished(): # I tested this funciton with a print to ensure it work
 func endSession():
 	paused = false # this prevents a bug with the clock hand not resetting on session end
 	resetClock()
+	var musicManager = get_node("../MusicManager")
+	if(musicManager != null):
+		musicManager.sessionEndMusic()
 
 func setBreakMarker():
 	var angleInRad = study_time * (float((2*PI) / (break_time + study_time)))
