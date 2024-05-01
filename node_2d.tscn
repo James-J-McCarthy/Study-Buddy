@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://doin1g4xrytqe"]
+[gd_scene load_steps=64 format=3 uid="uid://doin1g4xrytqe"]
 
 [ext_resource type="Script" path="res://MainScene.gd" id="1_37525"]
 [ext_resource type="Texture2D" uid="uid://c8xf1u7hrxbtf" path="res://Outside Window.PNG" id="2_xt5uq"]
@@ -29,6 +29,7 @@
 [ext_resource type="Script" path="res://CyclesReadout.gd" id="20_05by4"]
 [ext_resource type="Texture2D" uid="uid://dc4ilh3xeyi8x" path="res://Phone reference.jpg" id="20_qfoav"]
 [ext_resource type="Texture2D" uid="uid://blpvq0paavnsa" path="res://Settings Screen Only.PNG" id="21_02gba"]
+[ext_resource type="FontFile" uid="uid://by7ov6qiq75tk" path="res://MotleyForcesRegular-w1rZ3.ttf" id="21_rr2ru"]
 [ext_resource type="Texture2D" uid="uid://bvincygstqens" path="res://Grabber.PNG" id="22_wcyrw"]
 [ext_resource type="LabelSettings" uid="uid://bi0i30ujkntbi" path="res://Button Big.tres" id="23_8e3nk"]
 [ext_resource type="FontFile" uid="uid://bygjp8by3wfd3" path="res://Fonts/ArchitectsDaughter.ttf" id="23_8s4wn"]
@@ -1050,13 +1051,14 @@ _data = {
 "Writing2": SubResource("Animation_vatju")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_kdu7m"]
+font = ExtResource("21_rr2ru")
+font_size = 46
+font_color = Color(0, 0, 0, 1)
+
 [sub_resource type="Theme" id="Theme_x0q6o"]
 
 [sub_resource type="Theme" id="Theme_7n72d"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_ewdgv"]
-font_size = 110
-font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_87igy"]
 resource_name = "PhoneDown"
@@ -1325,7 +1327,7 @@ rest = Transform2D(5.33073, 0.622873, -0.213543, 1.82757, 45.5535, -8.41874)
 libraries = {
 "": SubResource("AnimationLibrary_n6bl0")
 }
-blend_times = [&"Phone", &"RESET", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Idle", 4.0, &"Phone", &"Writing2", 4.0, &"Phone", &"Writing", 4.0, &"Idle", &"RESET", 4.0, &"Idle", &"Phone", 2.0, &"Idle", &"Idle", 2.0, &"Idle", &"Writing2", 6.0, &"Idle", &"Writing", 4.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Idle", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"Writing", 4.0, &"Writing", &"RESET", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Idle", 4.0, &"Writing", &"Writing2", 4.0, &"Writing", &"Writing", 4.0]
+blend_times = [&"Phone", &"RESET", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Idle", 4.0, &"Phone", &"Writing", 4.0, &"Phone", &"Writing2", 4.0, &"Idle", &"RESET", 4.0, &"Idle", &"Phone", 2.0, &"Idle", &"Idle", 2.0, &"Idle", &"Writing", 4.0, &"Idle", &"Writing2", 6.0, &"Writing", &"RESET", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Idle", 4.0, &"Writing", &"Writing", 4.0, &"Writing", &"Writing2", 4.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Idle", 4.0, &"Writing2", &"Writing", 4.0, &"Writing2", &"Writing2", 4.0]
 
 [node name="AnimationManager" type="Node" parent="."]
 script = ExtResource("8_hahbl")
@@ -1385,24 +1387,57 @@ texture_pressed = ExtResource("17_a4p57")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
+[node name="MusicLabel" type="Label" parent="Phone/AppScreen/MessagesButton"]
+layout_mode = 0
+offset_left = 67.4097
+offset_top = 1389.26
+offset_right = 211.41
+offset_bottom = 1426.26
+scale = Vector2(1, 5)
+text = "MUSIC"
+label_settings = SubResource("LabelSettings_kdu7m")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="SettingsButton" type="TextureButton" parent="Phone/AppScreen"]
 offset_left = 265.01
-offset_top = -650.746
+offset_top = -630.449
 offset_right = 536.01
-offset_bottom = 729.254
+offset_bottom = 749.551
 scale = Vector2(0.95, 0.19)
 texture_normal = ExtResource("15_4lg52")
 texture_pressed = ExtResource("15_4lg52")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
+[node name="SettingLabel" type="Label" parent="Phone/AppScreen/SettingsButton"]
+offset_left = 57.0389
+offset_top = 1415.98
+offset_right = 223.039
+offset_bottom = 1452.98
+scale = Vector2(1, 5)
+text = "SETTING"
+label_settings = SubResource("LabelSettings_kdu7m")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="ClockButton" type="TextureButton" parent="Phone/AppScreen"]
 offset_left = -409.867
-offset_top = -975.619
+offset_top = -960.391
 offset_right = 179.133
-offset_bottom = -386.619
+offset_bottom = -371.391
 texture_normal = ExtResource("19_qa1w7")
 texture_pressed = ExtResource("19_qa1w7")
+
+[node name="ClockLabel" type="Label" parent="Phone/AppScreen/ClockButton"]
+offset_left = 216.749
+offset_top = 593.909
+offset_right = 382.749
+offset_bottom = 630.909
+text = "CLOCK"
+label_settings = SubResource("LabelSettings_kdu7m")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MusicScreen" type="Sprite2D" parent="Phone"]
 visible = false
@@ -1510,7 +1545,7 @@ offset_left = -453.202
 offset_top = -822.335
 offset_right = 497.798
 offset_bottom = -630.335
-text = "Study Time: "
+text = "Study Time (Minutes): "
 label_settings = ExtResource("30_25nkr")
 vertical_alignment = 1
 
@@ -1545,7 +1580,7 @@ offset_left = -453.202
 offset_top = -401.015
 offset_right = 497.798
 offset_bottom = -209.015
-text = "Break Time:"
+text = "Break Time (Minutes):"
 label_settings = ExtResource("30_25nkr")
 vertical_alignment = 1
 
@@ -1645,13 +1680,23 @@ offset_bottom = 674.0
 label_settings = ExtResource("30_25nkr")
 
 [node name="ClockBackButton" type="TextureButton" parent="Phone/ClockScreen"]
-offset_left = 326.0
-offset_top = 469.0
-offset_right = 587.0
-offset_bottom = 738.0
-texture_normal = ExtResource("4_kf0xm")
-texture_pressed = ExtResource("5_htttl")
+offset_left = 129.816
+offset_top = 438.573
+offset_right = 582.816
+offset_bottom = 707.573
+texture_normal = ExtResource("30_ec1cj")
+texture_pressed = ExtResource("31_127ub")
 stretch_mode = 0
+
+[node name="SettingsBackButtonLabel" type="Label" parent="Phone/ClockScreen/ClockBackButton"]
+offset_left = 44.2346
+offset_top = 40.5497
+offset_right = 426.235
+offset_bottom = 232.55
+text = "Back"
+label_settings = ExtResource("23_8e3nk")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MidSessionSettings" type="Sprite2D" parent="Phone"]
 visible = false
@@ -1685,6 +1730,7 @@ offset_bottom = 268.0
 text = "Back"
 label_settings = ExtResource("23_8e3nk")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="(un)Pause" type="TextureButton" parent="Phone/MidSessionSettings"]
 offset_left = -339.901
@@ -1703,8 +1749,9 @@ offset_top = 142.132
 offset_right = 587.267
 offset_bottom = 335.132
 text = "Pause"
-label_settings = SubResource("LabelSettings_ewdgv")
+label_settings = ExtResource("23_8e3nk")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="EndSession" type="TextureButton" parent="Phone/MidSessionSettings"]
 offset_left = -467.98
@@ -1722,7 +1769,7 @@ offset_top = 147.259
 offset_right = 911.025
 offset_bottom = 340.259
 text = "End Session"
-label_settings = SubResource("LabelSettings_ewdgv")
+label_settings = ExtResource("23_8e3nk")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1741,24 +1788,36 @@ stretch_mode = 0
 
 [node name="RestartLabel" type="Label" parent="Phone/SessionEndScreen/Restart"]
 layout_mode = 0
-offset_left = -74.0
-offset_top = 81.0
-offset_right = 665.0
-offset_bottom = 274.0
+offset_left = 88.5025
+offset_top = 132.375
+offset_right = 624.503
+offset_bottom = 265.375
+scale = Vector2(0.8, 0.8)
 text = "Restart"
-label_settings = SubResource("LabelSettings_ewdgv")
+label_settings = ExtResource("23_8e3nk")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CloseButton" type="TextureButton" parent="Phone/SessionEndScreen"]
 offset_left = 84.0
-offset_top = 477.0
+offset_top = 457.0
 offset_right = 1118.0
-offset_bottom = 999.0
+offset_bottom = 1106.0
 scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("4_kf0xm")
-texture_pressed = ExtResource("5_htttl")
+texture_normal = ExtResource("23_yfb4x")
+texture_pressed = ExtResource("24_yqbli")
 stretch_mode = 0
+
+[node name="RestartLabel" type="Label" parent="Phone/SessionEndScreen/CloseButton"]
+offset_left = 107.862
+offset_top = 233.208
+offset_right = 643.862
+offset_bottom = 366.208
+scale = Vector2(1.5, 1.5)
+text = "Close"
+label_settings = ExtResource("23_8e3nk")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PhoneReference" type="Sprite2D" parent="."]
 visible = false
