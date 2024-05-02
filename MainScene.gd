@@ -3,6 +3,8 @@ var phone
 var studying = true
 var timeManager
 var buddyOnScreen = false
+var aniManager
+var aniPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,14 +19,16 @@ func _ready():
 	_on_menu_up_button_pressed()
 	_on_settings_button_pressed()
 	
+	aniManager = $AnimationManager
+	aniPlayer = get_node("StudyingBuddySkeleton/StudyingBuddyAniPlayer")
 	#get_node("MusicManager/BreakMusic").play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
 
-func _studying_buddy_animation():
-	get_node("StudyingBuddySkeleton/StudyingBuddyAniPlayer").play($AnimationManager._getAnimation())
+#func _studying_buddy_animation():
+	#get_node("StudyingBuddySkeleton/StudyingBuddyAniPlayer").play($AnimationManager._getAnimation())
 
 # this code runs when MenuUpButton is pressed
 func _on_menu_up_button_pressed():
@@ -68,23 +72,29 @@ func _on_messages_back_button_pressed():
 func _on_start_button_pressed():
 	_on_menu_back_button_pressed()
 	get_node("StudyingBuddy").show()
-	get_node("StudyingBuddySkeleton/StudyingBuddyAniPlayer").play("Roll In")
+	if (buddyOnScreen == false):
+		aniPlayer.play("Roll In")
+		buddyOnScreen = true;
+	else:
+		var animation:String = aniManager._getAnimation()
+		aniPlayer.play(animation)
 
 # Queue up the next appropriate animation whenever "Idle" animation is running.
 # This function checks the boolean "Studying" during the begining of Idle Animation.
 # ^ Results in a >5 second delay on animations from the actual state change.
 func _on_studying_buddy_ani_player_animation_started(anim_name):
 	# If the animation that started now is "Idle", queue the next animation
-	if (anim_name == "Idle"):
-		print("Idle Now, queuing:")
-		var animation:String = get_node("AnimationManager")._getAnimation()
-		print(animation)
-		get_node("StudyingBuddySkeleton/StudyingBuddyAniPlayer").queue(animation)
-	
-	# If the animation started now is not "Idle", queue "Idle"
-	else:
-		get_node("StudyingBuddySkeleton/StudyingBuddyAniPlayer").queue("Idle")
-		print("Queuing Idle")
+	#if timeManager.get_session_running() == true:
+		if anim_name == "Idle":
+			print("Idle Now, queuing:")
+			var animation:String = aniManager._getAnimation()
+			print(animation)
+			aniPlayer.queue(animation)
+		
+		# If the animation started now is not "Idle", queue "Idle"
+		else:
+			aniPlayer.queue("Idle")
+			print("Queuing Idle")
 	
 
 # this kicks the user off the mid-session-settings screen
