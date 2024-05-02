@@ -1,10 +1,10 @@
 extends Node
 
 # Store all the available Studying Animation
-var studyingAnimation = PackedStringArray(["Writing", "Writing2"])
+var studyingAnimation = PackedStringArray(["Writing", "Writing2", "Phone", "Writing", "Writing2"])
 
 # Store all the available Break ANimation
-var breakAnimation = PackedStringArray(["Phone"])
+var breakAnimation = PackedStringArray(["Phone_5MIN"])
 
 # A randome number generator
 var random = RandomNumberGenerator.new()
