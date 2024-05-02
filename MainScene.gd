@@ -2,6 +2,7 @@ extends Node2D
 var phone
 var studying = true
 var timeManager
+var buddyOnScreen = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -67,15 +68,20 @@ func _on_messages_back_button_pressed():
 func _on_start_button_pressed():
 	_on_menu_back_button_pressed()
 	get_node("StudyingBuddy").show()
-	var animation:String = get_node("AnimationManager")._getAnimation()
-	get_node("StudyingBuddySkeleton/StudyingBuddyAniPlayer").play(animation)
+	get_node("StudyingBuddySkeleton/StudyingBuddyAniPlayer").play("Roll In")
 
+# Queue up the next appropriate animation whenever "Idle" animation is running.
+# This function checks the boolean "Studying" during the begining of Idle Animation.
+# ^ Results in a >5 second delay on animations from the actual state change.
 func _on_studying_buddy_ani_player_animation_started(anim_name):
+	# If the animation that started now is "Idle", queue the next animation
 	if (anim_name == "Idle"):
 		print("Idle Now, queuing:")
 		var animation:String = get_node("AnimationManager")._getAnimation()
 		print(animation)
 		get_node("StudyingBuddySkeleton/StudyingBuddyAniPlayer").queue(animation)
+	
+	# If the animation started now is not "Idle", queue "Idle"
 	else:
 		get_node("StudyingBuddySkeleton/StudyingBuddyAniPlayer").queue("Idle")
 		print("Queuing Idle")
