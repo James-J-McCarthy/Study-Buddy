@@ -24,7 +24,6 @@
 [ext_resource type="Texture2D" uid="uid://vj60owv3uvhx" path="res://Pot.png" id="14_mbevd"]
 [ext_resource type="Texture2D" uid="uid://c3dtudnxbnw7x" path="res://Button Setting.png" id="15_4lg52"]
 [ext_resource type="Texture2D" uid="uid://bjqoitllf6h1k" path="res://Leaves.png" id="15_bdx30"]
-[ext_resource type="Script" path="res://TimerBar.gd" id="17_7dfhe"]
 [ext_resource type="Texture2D" uid="uid://c3uy8j5wp5su4" path="res://Button Music.png" id="17_a4p57"]
 [ext_resource type="Script" path="res://Phone.gd" id="17_s3jtj"]
 [ext_resource type="Script" path="res://SettingsScreen.gd" id="19_20l8k"]
@@ -51,6 +50,7 @@
 [ext_resource type="Script" path="res://(un)Pause.gd" id="32_ruuc8"]
 [ext_resource type="Script" path="res://MusicManager.gd" id="40_w4jlm"]
 [ext_resource type="AudioStream" uid="uid://d4lv30wlkpf7k" path="res://Audio/nose honk SB.mp3" id="42_ae8ut"]
+[ext_resource type="Script" path="res://SessionTimerBar.gd" id="43_u5x6i"]
 [ext_resource type="AudioStream" uid="uid://b4p8h7aml471h" path="res://Audio/Study Music UPDATED.mp3" id="47_sxob4"]
 [ext_resource type="AudioStream" uid="uid://bkjfssnsmoike" path="res://Audio/Break Music UPDATED.mp3" id="48_lcdcp"]
 [ext_resource type="AudioStream" uid="uid://b045r5hn0o3ib" path="res://Audio/Session End SFX.mp3" id="50_5qd5m"]
@@ -1422,7 +1422,7 @@ rest = Transform2D(3.14289, -0.827503, 0.827503, 3.14289, 35.5022, -2.39432)
 [node name="UpperArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(-33.4978, -141.394)
 rotation = 1.67152
-scale = Vector2(1, 1)
+scale = Vector2(0.999994, 0.999994)
 rest = Transform2D(-0.100553, 0.994932, -0.994932, -0.100553, -33.4978, -141.394)
 
 [node name="ForeArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL"]
@@ -1467,7 +1467,7 @@ rest = Transform2D(5.33073, 0.622873, -0.213543, 1.82757, 45.5535, -8.41874)
 libraries = {
 "": SubResource("AnimationLibrary_n6bl0")
 }
-blend_times = [&"Phone", &"RESET", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Writing2", 4.0, &"Phone", &"Idle", 2.0, &"Phone", &"Writing", 4.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"Idle", 4.0, &"Writing2", &"Writing", 4.0, &"Idle", &"RESET", 4.0, &"Idle", &"Phone", 1.0, &"Idle", &"Writing2", 6.0, &"Idle", &"Idle", 2.0, &"Idle", &"Writing", 4.0, &"Writing", &"RESET", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Writing2", 4.0, &"Writing", &"Idle", 4.0, &"Writing", &"Writing", 4.0]
+blend_times = [&"Phone", &"RESET", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Idle", 2.0, &"Phone", &"Writing", 4.0, &"Phone", &"Writing2", 4.0, &"Idle", &"RESET", 4.0, &"Idle", &"Phone", 1.0, &"Idle", &"Idle", 2.0, &"Idle", &"Writing", 4.0, &"Idle", &"Writing2", 6.0, &"Writing", &"RESET", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Idle", 4.0, &"Writing", &"Writing", 4.0, &"Writing", &"Writing2", 4.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Idle", 4.0, &"Writing2", &"Writing", 4.0, &"Writing2", &"Writing2", 4.0]
 
 [node name="AnimationManager" type="Node" parent="."]
 script = ExtResource("8_hahbl")
@@ -1826,7 +1826,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ClockScreen" type="Sprite2D" parent="Phone"]
-visible = false
 position = Vector2(2.89404, 2.41123)
 scale = Vector2(1.00227, 1.00146)
 texture = ExtResource("13_jc45a")
@@ -1879,6 +1878,17 @@ offset_bottom = 91.8549
 grow_horizontal = 2
 grow_vertical = 2
 label_settings = ExtResource("30_25nkr")
+
+[node name="SessionTimerBar" type="Line2D" parent="Phone/ClockScreen/SessionTimeLabel"]
+position = Vector2(-465.625, -2052.75)
+scale = Vector2(8.14608, 5.06874)
+points = PackedVector2Array(65, 480, 65, 480)
+width = 20.0
+default_color = Color(0.878431, 0.435294, 0.419608, 1)
+script = ExtResource("43_u5x6i")
+
+[node name="Timer" type="Timer" parent="Phone/ClockScreen/SessionTimeLabel/SessionTimerBar"]
+autostart = true
 
 [node name="ClockBackButton" type="TextureButton" parent="Phone/ClockScreen"]
 offset_left = 130.0
@@ -1946,9 +1956,9 @@ script = ExtResource("32_ruuc8")
 
 [node name="PauseLabel" type="Label" parent="Phone/MidSessionSettings/(un)Pause"]
 layout_mode = 0
-offset_left = 182.267
+offset_left = 162.561
 offset_top = 142.132
-offset_right = 587.267
+offset_right = 588.561
 offset_bottom = 335.132
 text = "Pause"
 label_settings = ExtResource("23_8e3nk")
@@ -1976,7 +1986,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SessionEndScreen" type="Sprite2D" parent="Phone"]
-visible = false
 texture = ExtResource("10_06ryp")
 
 [node name="Restart" type="TextureButton" parent="Phone/SessionEndScreen"]
@@ -2051,16 +2060,6 @@ script = ExtResource("3_045uj")
 [node name="PomoTimer" type="Timer" parent="TimeManager"]
 one_shot = true
 
-[node name="TimerBar" type="Line2D" parent="."]
-visible = false
-points = PackedVector2Array(150, 500, 150, 500)
-width = 20.0
-default_color = Color(0.878431, 0.435294, 0.419608, 1)
-script = ExtResource("17_7dfhe")
-
-[node name="Timer" type="Timer" parent="TimerBar"]
-autostart = true
-
 [node name="CycleLabel" type="Label" parent="."]
 offset_left = 54.0
 offset_top = 403.0
@@ -2134,14 +2133,17 @@ bus = &"SFX"
 [connection signal="pressed" from="Phone/SettingsScreen/StartButton" to="Phone/SettingsScreen" method="_on_start_button_pressed"]
 [connection signal="pressed" from="Phone/SettingsScreen/StartButton" to="Phone/SettingsScreen/StartButton" method="_on_pressed"]
 [connection signal="pressed" from="Phone/SettingsScreen/StartButton" to="TimeManager" method="_on_start_button_pressed"]
+[connection signal="timeout" from="Phone/ClockScreen/SessionTimeLabel/SessionTimerBar/Timer" to="Phone/ClockScreen/SessionTimeLabel/SessionTimerBar" method="_on_timer_timeout"]
 [connection signal="pressed" from="Phone/ClockScreen/ClockBackButton" to="." method="_on_clock_back_button_pressed"]
 [connection signal="pressed" from="Phone/MidSessionSettings/SettingsBackButton2" to="." method="_on_settings_back_button_2_pressed"]
+[connection signal="pressed" from="Phone/MidSessionSettings/(un)Pause" to="Phone/ClockScreen/SessionTimeLabel/SessionTimerBar" method="_on_un_pause_pressed"]
 [connection signal="pressed" from="Phone/MidSessionSettings/(un)Pause" to="Phone/MidSessionSettings/(un)Pause" method="_on_pressed"]
 [connection signal="pressed" from="Phone/MidSessionSettings/(un)Pause" to="TimeManager" method="_on_un_pause_pressed"]
 [connection signal="pressed" from="Phone/MidSessionSettings/EndSession" to="." method="_on_end_session_pressed"]
+[connection signal="pressed" from="Phone/MidSessionSettings/EndSession" to="Phone/ClockScreen/SessionTimeLabel/SessionTimerBar" method="_on_end_session_pressed"]
 [connection signal="pressed" from="Phone/MidSessionSettings/EndSession" to="TimeManager" method="_on_end_session_pressed"]
 [connection signal="pressed" from="Phone/SessionEndScreen/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Phone/SessionEndScreen/Restart" to="Phone/ClockScreen/SessionTimeLabel/SessionTimerBar" method="_on_restart_pressed"]
 [connection signal="pressed" from="Phone/SessionEndScreen/CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="MenuUpButton" to="." method="_on_menu_up_button_pressed"]
 [connection signal="timeout" from="TimeManager/PomoTimer" to="TimeManager" method="_period_finished"]
-[connection signal="timeout" from="TimerBar/Timer" to="TimerBar" method="_on_timer_timeout"]
