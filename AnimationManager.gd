@@ -9,9 +9,11 @@ var breakAnimation = PackedStringArray(["Phone_5MIN"])
 # A randome number generator
 var random = RandomNumberGenerator.new()
 
+var timeManager
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	timeManager = get_parent().get_node("TimeManager")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,10 +23,11 @@ func _process(delta):
 # Return a random animation based on whether the buddy is studying.
 # @Return: A string name of the animation
 func _getAnimation() -> String:
-	if get_parent().get_node("TimeManager").getStudying() == true:
+	if timeManager.getStudying() == true:
 		return _getStudyingAnimation()
 	else:
 		return _getBreakAnimation()
+	
 
 # Return a random studying animation.
 func _getStudyingAnimation() -> String:
