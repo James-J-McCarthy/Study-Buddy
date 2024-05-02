@@ -1,24 +1,26 @@
 extends TextureButton
+
 var paused = false
 var label
 
 func _ready():
 	label = $"PauseLabel"
-	
-# This function only updates the Label. 
+
+# This function only updates the label on the pause button when it is pressed
 func _on_pressed():
-	checkNullLable()
+	checkNullLabel()
 	paused = !paused
-	if(paused):
+	if (paused):
 		label.text = 'Resume'
 	else:
 		label.text = 'Pause'
 
 func resetText():
-	checkNullLable()
+	checkNullLabel()
 	label.text = 'Pause'
 
-func checkNullLable(): 
+# This prevents the app from crashing if the label is referenced
+# without being instantiated first
+func checkNullLabel(): 
 	if(label == null):
-		print("Label Null Error!") # !!!!!!!!!!!!!!!!! debug line !!!!!!!!!!!!!!!
 		label = $"PauseLabel"
