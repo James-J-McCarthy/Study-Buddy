@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://doin1g4xrytqe"]
+[gd_scene load_steps=68 format=3 uid="uid://doin1g4xrytqe"]
 
 [ext_resource type="Script" path="res://MainScene.gd" id="1_37525"]
 [ext_resource type="Texture2D" uid="uid://dymt2u5vj5pon" path="res://Outside Window.jpg" id="2_m37tu"]
@@ -27,8 +27,6 @@
 [ext_resource type="Script" path="res://Phone.gd" id="17_s3jtj"]
 [ext_resource type="Script" path="res://SettingsScreen.gd" id="19_20l8k"]
 [ext_resource type="Texture2D" uid="uid://dxtb2jpe7vfu1" path="res://Button Clock.png" id="19_qa1w7"]
-[ext_resource type="Script" path="res://StudyTimeReadout.gd" id="19_rmxln"]
-[ext_resource type="Script" path="res://CyclesReadout.gd" id="20_05by4"]
 [ext_resource type="Texture2D" uid="uid://dc4ilh3xeyi8x" path="res://Phone reference.jpg" id="20_qfoav"]
 [ext_resource type="Texture2D" uid="uid://blpvq0paavnsa" path="res://Settings Screen Only.PNG" id="21_02gba"]
 [ext_resource type="FontFile" uid="uid://by7ov6qiq75tk" path="res://MotleyForcesRegular-w1rZ3.ttf" id="21_rr2ru"]
@@ -40,7 +38,6 @@
 [ext_resource type="Texture2D" uid="uid://ccoy2sshcx4ri" path="res://Button 2 On Click.PNG" id="24_yqbli"]
 [ext_resource type="Texture2D" uid="uid://c8l43fr7wvjuu" path="res://Button Menu Up.png" id="25_sp6rb"]
 [ext_resource type="Texture2D" uid="uid://b6q3uno0vq8qh" path="res://Button Menu On Hover.png" id="26_y1yau"]
-[ext_resource type="Script" path="res://BreakReadout.gd" id="27_birga"]
 [ext_resource type="LabelSettings" path="res://App Screen Title small.tres" id="29_0rwny"]
 [ext_resource type="LabelSettings" path="res://Big Text Title.tres" id="30_25nkr"]
 [ext_resource type="Texture2D" uid="uid://bujdtah50ufyd" path="res://Button 1.PNG" id="30_ec1cj"]
@@ -2123,7 +2120,6 @@ text = "5"
 label_settings = ExtResource("30_25nkr")
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("19_rmxln")
 
 [node name="StudyTimeLabel" type="Label" parent="Phone/SettingsScreen"]
 offset_left = -453.202
@@ -2148,7 +2144,7 @@ max_value = 60.0
 step = 5.0
 value = 5.0
 
-[node name="BreakReadout" type="Label" parent="Phone/SettingsScreen/BreakTimeSlider"]
+[node name="BreakTimeReadout" type="Label" parent="Phone/SettingsScreen/BreakTimeSlider"]
 layout_mode = 0
 offset_left = 660.098
 offset_top = 20.3046
@@ -2158,7 +2154,6 @@ text = "5"
 label_settings = ExtResource("30_25nkr")
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("27_birga")
 
 [node name="BreakTimeLabel" type="Label" parent="Phone/SettingsScreen"]
 offset_left = -453.202
@@ -2192,7 +2187,6 @@ text = "1"
 label_settings = ExtResource("30_25nkr")
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("20_05by4")
 
 [node name="CyclesLabel" type="Label" parent="Phone/SettingsScreen"]
 offset_left = -458.128
@@ -2538,10 +2532,13 @@ bus = &"SFX"
 [connection signal="value_changed" from="Phone/MusicScreen/Music Volume Slider" to="MusicManager" method="_on_volume_slider_value_changed"]
 [connection signal="pressed" from="Phone/MusicScreen/MessagesBackButton" to="." method="_on_messages_back_button_pressed"]
 [connection signal="value_changed" from="Phone/MusicScreen/SFX Volume Slider" to="MusicManager" method="_on_sfx_volume_slider_value_changed"]
+[connection signal="value_changed" from="Phone/SettingsScreen/StudyTimeSlider" to="Phone/SettingsScreen" method="_on_study_time_slider_value_changed"]
 [connection signal="value_changed" from="Phone/SettingsScreen/StudyTimeSlider" to="Phone/SettingsScreen/StudyTimeSlider/StudyTimeReadout" method="_on_study_time_slider_value_changed"]
 [connection signal="value_changed" from="Phone/SettingsScreen/StudyTimeSlider" to="TimeManager" method="_on_session_time_slider_value_changed"]
-[connection signal="value_changed" from="Phone/SettingsScreen/BreakTimeSlider" to="Phone/SettingsScreen/BreakTimeSlider/BreakReadout" method="_on_break_time_slider_value_changed"]
+[connection signal="value_changed" from="Phone/SettingsScreen/BreakTimeSlider" to="Phone/SettingsScreen" method="_on_break_time_slider_value_changed"]
+[connection signal="value_changed" from="Phone/SettingsScreen/BreakTimeSlider" to="Phone/SettingsScreen/BreakTimeSlider/BreakTimeReadout" method="_on_break_time_slider_value_changed"]
 [connection signal="value_changed" from="Phone/SettingsScreen/BreakTimeSlider" to="TimeManager" method="_on_break_time_slider_value_changed"]
+[connection signal="value_changed" from="Phone/SettingsScreen/CyclesSlider" to="Phone/SettingsScreen" method="_on_cycles_slider_value_changed"]
 [connection signal="value_changed" from="Phone/SettingsScreen/CyclesSlider" to="Phone/SettingsScreen/CyclesSlider/CyclesReadout" method="_on_cycles_slider_value_changed"]
 [connection signal="pressed" from="Phone/SettingsScreen/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Phone/SettingsScreen/StartButton" to="StudyingBuddy" method="_on_start_button_pressed"]

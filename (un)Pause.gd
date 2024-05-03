@@ -10,6 +10,7 @@ var label  # The text on the pause button
 func _ready():
 	label = $"PauseLabel"
 
+
 # This function only updates the label on the pause button when it is pressed
 func _on_pressed():
 	checkNullLabel()

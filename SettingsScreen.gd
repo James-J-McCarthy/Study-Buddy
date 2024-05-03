@@ -1,11 +1,12 @@
-# This script manages what happens on the settings screen
+# This script manages the elements on on the settings screen
 extends Sprite2D
-var studySlider
-var studySliderReadout
-var breakSlider
-var breakSliderReadout
-var cycleSlider
-var cycleSliderReadout
+
+var studySlider # Slider setting study interval duration
+var studySliderReadout # Readout display of current study interval duration setting
+var breakSlider # Slider setting break interval duration
+var breakSliderReadout # Readout display of current break interval duration setting
+var cycleSlider # Slider setting number of study cycles
+var cycleSliderReadout # Readout display of current setting for number of study cycles
 var timeManager
 
 
@@ -19,6 +20,8 @@ func _ready():
 	cycleSliderReadout = cycleSlider.get_node("CyclesReadout")
 	timeManager = get_node("../../TimeManager")
 
+
+# State getters below
 func getStudyTime():
 	return studySlider.value
 
@@ -29,7 +32,9 @@ func getCyclesTotal():
 	return cycleSlider.value
 
 
-
+# The following three functions update the value readout next to
+# each of the respective settings sliders when the slider values are
+# changed from their defaults
 func _on_break_time_slider_value_changed(value):
 	breakSliderReadout.set_text(str(value)) 
 
@@ -37,4 +42,4 @@ func _on_study_time_slider_value_changed(value):
 	studySliderReadout.set_text(str(value))
 
 func _on_cycles_slider_value_changed(value):
-	pass # Replace with function body.
+	cycleSliderReadout.set_text(str(value))
