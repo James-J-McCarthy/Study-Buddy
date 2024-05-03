@@ -21,6 +21,9 @@ func _ready():
 	CloseButton = get_node("CloseButton")
 	ConfirmationScreen = get_node("Quit Confirmation Screen")
 	
+	get_node("PenOnDesk").hide()
+	get_node("PhoneOnDesk").show()
+	
 	await get_tree().create_timer(1.25).timeout # delay phone open animation by 1.25 seconds when app opens
 	
 	# Make menu button visible and pull up phone with settings screen visible

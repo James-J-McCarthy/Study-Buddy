@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blpvq0paavnsa"
-path="res://.godot/imported/Settings Screen Only.PNG-f22c7c025e1f6b861153ed7ec316bc8e.ctex"
+uid="uid://dghvp4gpfggu0"
+path="res://.godot/imported/Button Exit Screen Right.png-d28d16bbc2d2f177d3a9f79259e9ee91.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Settings Screen Only.PNG"
-dest_files=["res://.godot/imported/Settings Screen Only.PNG-f22c7c025e1f6b861153ed7ec316bc8e.ctex"]
+source_file="res://Button Exit Screen Right.png"
+dest_files=["res://.godot/imported/Button Exit Screen Right.png-d28d16bbc2d2f177d3a9f79259e9ee91.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://doin1g4xrytqe"]
+[gd_scene load_steps=87 format=3 uid="uid://doin1g4xrytqe"]
 
 [ext_resource type="Script" path="res://MainScene.gd" id="1_37525"]
 [ext_resource type="Texture2D" uid="uid://dymt2u5vj5pon" path="res://Outside Window.jpg" id="2_m37tu"]
@@ -23,16 +23,13 @@
 [ext_resource type="Script" path="res://SettingsScreen.gd" id="19_20l8k"]
 [ext_resource type="Texture2D" uid="uid://bcujtp80o4tum" path="res://Button Quit Clicked.png" id="19_v4wam"]
 [ext_resource type="Texture2D" uid="uid://bfnkf6wsfnnvq" path="res://Button Quit Hover.png" id="20_scb68"]
-[ext_resource type="Texture2D" uid="uid://blpvq0paavnsa" path="res://Settings Screen Only.PNG" id="21_02gba"]
 [ext_resource type="Texture2D" uid="uid://cx4mn84vf41fd" path="res://Phone frame.png" id="21_b6ex8"]
 [ext_resource type="FontFile" uid="uid://by7ov6qiq75tk" path="res://MotleyForcesRegular-w1rZ3.ttf" id="21_rr2ru"]
 [ext_resource type="Texture2D" uid="uid://bvincygstqens" path="res://Grabber.PNG" id="22_wcyrw"]
 [ext_resource type="LabelSettings" uid="uid://bi0i30ujkntbi" path="res://Button Big.tres" id="23_8e3nk"]
 [ext_resource type="Texture2D" uid="uid://coqfecqqrf01t" path="res://Button Close Phone.png" id="23_kjpqw"]
-[ext_resource type="Texture2D" uid="uid://dl7jf4e5nbw6y" path="res://Button 2.PNG" id="23_yfb4x"]
 [ext_resource type="Texture2D" uid="uid://clyvg7tmjwede" path="res://Button Close Phone Clicked.png" id="24_h2iqv"]
 [ext_resource type="Texture2D" uid="uid://dk4cgs8ih0i0" path="res://Grabber Clicked.png" id="24_sjviw"]
-[ext_resource type="Texture2D" uid="uid://ccoy2sshcx4ri" path="res://Button 2 On Click.PNG" id="24_yqbli"]
 [ext_resource type="Texture2D" uid="uid://c85tpuikggn8n" path="res://Button Close Phone Hover.png" id="25_nkuoj"]
 [ext_resource type="Texture2D" uid="uid://c8l43fr7wvjuu" path="res://Button Menu Up.png" id="25_sp6rb"]
 [ext_resource type="Texture2D" uid="uid://b6q3uno0vq8qh" path="res://Button Menu On Hover.png" id="26_y1yau"]
@@ -41,8 +38,6 @@
 [ext_resource type="LabelSettings" uid="uid://ccudhtkq5auxj" path="res://App Screen Title small.tres" id="29_0rwny"]
 [ext_resource type="Texture2D" uid="uid://dfd3ggtopn7rg" path="res://Button Music Hover.png" id="29_s5tdk"]
 [ext_resource type="LabelSettings" uid="uid://ileo4jbf3gvo" path="res://Big Text Title.tres" id="30_25nkr"]
-[ext_resource type="Texture2D" uid="uid://bujdtah50ufyd" path="res://Button 1.PNG" id="30_ec1cj"]
-[ext_resource type="Texture2D" uid="uid://cqiomfqgvv7bi" path="res://Button 1 On Click.PNG" id="31_127ub"]
 [ext_resource type="Script" path="res://ClockScreen.gd" id="31_qmhd2"]
 [ext_resource type="Texture2D" uid="uid://clvvhxwfyoroy" path="res://Button Setting App.png" id="31_u1xyh"]
 [ext_resource type="Texture2D" uid="uid://b8oalye2d2tan" path="res://Button Setting Clicked.png" id="32_ifnww"]
@@ -50,18 +45,31 @@
 [ext_resource type="Texture2D" uid="uid://b2afiah7wm54m" path="res://Button Setting Hover.png" id="33_of0wp"]
 [ext_resource type="Texture2D" uid="uid://hgkufa36o8ry" path="res://Button Clock App.png" id="34_cwdbc"]
 [ext_resource type="Texture2D" uid="uid://ch6ob6m1cy5jc" path="res://Button Clock Clicked.png" id="35_ws7sy"]
+[ext_resource type="Texture2D" uid="uid://cidl0uwkmpf7" path="res://Settings_Screen_Only.png" id="36_c4tim"]
 [ext_resource type="Texture2D" uid="uid://be3jdv4yk5lmc" path="res://Button Clock Hover.png" id="36_pw0la"]
 [ext_resource type="Script" path="res://MusicManager.gd" id="40_w4jlm"]
+[ext_resource type="Texture2D" uid="uid://tr21dlncryvg" path="res://Button_2.png" id="41_ko85q"]
 [ext_resource type="AudioStream" uid="uid://d4lv30wlkpf7k" path="res://Audio/nose honk SB.mp3" id="42_ae8ut"]
+[ext_resource type="Texture2D" uid="uid://coueorru3epic" path="res://Button_2 Clicked.png" id="42_lb6vm"]
+[ext_resource type="Texture2D" uid="uid://bink06e8ga6w" path="res://Button_2 Hover.png" id="43_hwlvj"]
 [ext_resource type="Script" path="res://SessionTimerBar.gd" id="43_u5x6i"]
+[ext_resource type="Texture2D" uid="uid://cmqn63ypbmci5" path="res://Button_1.png" id="46_5hgmv"]
+[ext_resource type="Texture2D" uid="uid://c685hyvperjyr" path="res://Button_1 Clicked.png" id="47_qpykk"]
 [ext_resource type="AudioStream" uid="uid://b4p8h7aml471h" path="res://Audio/Study Music UPDATED.mp3" id="47_sxob4"]
+[ext_resource type="Texture2D" uid="uid://t0bxsx7dkr8j" path="res://Button_1 Hover.png" id="48_ovidr"]
 [ext_resource type="AudioStream" uid="uid://b88it1kgdsccp" path="res://Audio/NEW Break Music.mp3" id="48_wxd8c"]
 [ext_resource type="AudioStream" uid="uid://b045r5hn0o3ib" path="res://Audio/Session End SFX.mp3" id="50_5qd5m"]
 [ext_resource type="Texture2D" uid="uid://dqdievemrso52" path="res://Button Close Phone BLANK.png" id="51_b7lw4"]
 [ext_resource type="Texture2D" uid="uid://durwrxgijioom" path="res://End Session Phone Screen.png" id="51_yx2dx"]
+[ext_resource type="Texture2D" uid="uid://bld4isgbepit5" path="res://Button Exit Screen Left.png" id="54_i1nl8"]
 [ext_resource type="LabelSettings" uid="uid://cla7mm21lnk8g" path="res://start session time lables.tres" id="55_7uhdd"]
+[ext_resource type="Texture2D" uid="uid://cxpe5yrcatfs3" path="res://Button Exit Screen Left Clicked.png" id="55_gjpdr"]
 [ext_resource type="Texture2D" uid="uid://uximovvvroxc" path="res://Quit ConfirmationScreen.png" id="56_6iuua"]
+[ext_resource type="Texture2D" uid="uid://bg67j6t61pfro" path="res://Button Exit Screen Left Hover.png" id="56_6vrdi"]
+[ext_resource type="Texture2D" uid="uid://dghvp4gpfggu0" path="res://Button Exit Screen Right.png" id="57_f2o0s"]
 [ext_resource type="LabelSettings" uid="uid://c1qxsvqm2r5v5" path="res://Main Screen Small Text.tres" id="57_nugnk"]
+[ext_resource type="Texture2D" uid="uid://djwh7upc1c52y" path="res://Button Exit Screen Right Clicked.png" id="58_8n4yx"]
+[ext_resource type="Texture2D" uid="uid://bjvdrsl0v5qn1" path="res://Button Exit Screen Right Hover.png" id="59_6n6ei"]
 
 [sub_resource type="Animation" id="Animation_vmboy"]
 resource_name = "Idle"
@@ -1656,12 +1664,12 @@ scale = Vector2(0.202745, 0.196515)
 texture = ExtResource("5_4bll2")
 
 [node name="PenOnDesk" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(238, 253)
 scale = Vector2(0.202745, 0.196515)
 texture = ExtResource("9_wv1v6")
 
 [node name="PhoneOnDesk" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(213, 320)
 scale = Vector2(0.202745, 0.196515)
 texture = ExtResource("9_locot")
@@ -1779,7 +1787,7 @@ rest = Transform2D(1, -1.30879e-11, 1.30879e-11, 1, 392.498, 500.394)
 
 [node name="Head" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(-48.4978, -144.394)
-scale = Vector2(0.999999, 1)
+scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(1, -1.30879e-11, 1.30879e-11, 1, -48.4978, -144.394)
 
 [node name="EarL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/Head"]
@@ -1809,7 +1817,7 @@ rest = Transform2D(3.14289, -0.827503, 0.827504, 3.14289, 35.5022, -2.39432)
 [node name="UpperArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(-33.4978, -141.394)
 rotation = 1.67152
-scale = Vector2(0.999994, 0.999994)
+scale = Vector2(0.999993, 0.999993)
 rest = Transform2D(-0.100553, 0.994926, -0.994926, -0.100553, -33.4978, -141.394)
 
 [node name="ForeArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL"]
@@ -1859,7 +1867,7 @@ rest = Transform2D(-0.976195, 0.216896, -0.216896, -0.976195, 0, 0)
 libraries = {
 "": SubResource("AnimationLibrary_n6bl0")
 }
-blend_times = [&"Phone", &"RESET", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Writing2", 4.0, &"Phone", &"Idle", 2.0, &"Phone", &"Writing", 4.0, &"Phone", &"Roll Out", 1.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"Idle", 4.0, &"Writing2", &"Writing", 4.0, &"Writing2", &"Roll Out", 1.0, &"Idle", &"RESET", 4.0, &"Idle", &"Phone", 1.0, &"Idle", &"Writing2", 6.0, &"Idle", &"Idle", 2.0, &"Idle", &"Writing", 4.0, &"Idle", &"Phone_5MIN", 1.0, &"Idle", &"Roll Out", 1.0, &"Roll In", &"Idle", 1.0, &"Roll In", &"Roll Out", 1.0, &"Writing", &"RESET", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Writing2", 4.0, &"Writing", &"Idle", 4.0, &"Writing", &"Writing", 4.0, &"Writing", &"Roll Out", 1.0, &"Phone_5MIN", &"Idle", 1.0, &"Phone_5MIN", &"Roll In", 1.0, &"Roll Out", &"Roll In", 3.0, &"Roll Out", &"Roll Out", 1.0]
+blend_times = [&"Phone", &"RESET", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Writing2", 4.0, &"Phone", &"Idle", 2.0, &"Phone", &"Writing", 4.0, &"Phone", &"Roll Out", 1.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"Idle", 4.0, &"Writing2", &"Writing", 4.0, &"Writing2", &"Roll Out", 1.0, &"Idle", &"RESET", 4.0, &"Idle", &"Phone", 1.0, &"Idle", &"Writing2", 6.0, &"Idle", &"Idle", 2.0, &"Idle", &"Writing", 4.0, &"Idle", &"Phone_5MIN", 1.0, &"Idle", &"Roll Out", 1.0, &"Roll In", &"Roll Out", 1.0, &"Writing", &"RESET", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Writing2", 4.0, &"Writing", &"Idle", 4.0, &"Writing", &"Writing", 4.0, &"Writing", &"Roll Out", 1.0, &"Phone_5MIN", &"Idle", 1.0, &"Phone_5MIN", &"Roll In", 1.0, &"Roll Out", &"Roll In", 3.0, &"Roll Out", &"Roll Out", 1.0]
 
 [node name="AnimationManager" type="Node" parent="."]
 script = ExtResource("8_hahbl")
@@ -1992,7 +2000,7 @@ vertical_alignment = 1
 [node name="MusicScreen" type="Sprite2D" parent="Phone"]
 visible = false
 position = Vector2(1, 1)
-texture = ExtResource("21_02gba")
+texture = ExtResource("36_c4tim")
 
 [node name="MusicLabel" type="Label" parent="Phone/MusicScreen"]
 offset_left = -429.571
@@ -2037,8 +2045,9 @@ offset_top = 411.168
 offset_right = 596.448
 offset_bottom = 756.168
 scale = Vector2(0.9, 0.9)
-texture_normal = ExtResource("23_yfb4x")
-texture_pressed = ExtResource("24_yqbli")
+texture_normal = ExtResource("41_ko85q")
+texture_pressed = ExtResource("42_lb6vm")
+texture_hover = ExtResource("43_hwlvj")
 stretch_mode = 0
 
 [node name="Back Label" type="Label" parent="Phone/MusicScreen/MusicBackButton"]
@@ -2072,9 +2081,8 @@ step = 0.05
 value = 1.0
 
 [node name="SettingsScreen" type="Sprite2D" parent="Phone"]
-visible = false
 position = Vector2(2.08165e-12, 2.08165e-12)
-texture = ExtResource("21_02gba")
+texture = ExtResource("36_c4tim")
 script = ExtResource("19_20l8k")
 
 [node name="SettingLabel" type="Label" parent="Phone/SettingsScreen"]
@@ -2088,10 +2096,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StudyTimeSlider" type="HSlider" parent="Phone/SettingsScreen"]
-offset_left = -463.054
-offset_top = -659.899
-offset_right = 184.946
-offset_bottom = -537.899
+offset_left = -472.852
+offset_top = -660.0
+offset_right = 157.148
+offset_bottom = -538.0
 scale = Vector2(1.5, 1.5)
 size_flags_stretch_ratio = 6.61
 theme = SubResource("Theme_x0q6o")
@@ -2106,10 +2114,10 @@ scrollable = false
 
 [node name="StudyTimeReadout" type="Label" parent="Phone/SettingsScreen/StudyTimeSlider"]
 layout_mode = 0
-offset_left = 663.382
-offset_top = 20.305
-offset_right = 715.382
-offset_bottom = 103.305
+offset_left = 635.0
+offset_top = 20.0
+offset_right = 735.0
+offset_bottom = 103.0
 theme_override_font_sizes/font_size = 35
 text = "5"
 label_settings = ExtResource("30_25nkr")
@@ -2126,9 +2134,9 @@ label_settings = ExtResource("30_25nkr")
 vertical_alignment = 1
 
 [node name="BreakTimeSlider" type="HSlider" parent="Phone/SettingsScreen"]
-offset_left = -463.054
+offset_left = -472.906
 offset_top = -218.274
-offset_right = 184.946
+offset_right = 157.094
 offset_bottom = -96.274
 scale = Vector2(1.5, 1.5)
 theme = SubResource("Theme_7n72d")
@@ -2141,9 +2149,9 @@ value = 5.0
 
 [node name="BreakTimeReadout" type="Label" parent="Phone/SettingsScreen/BreakTimeSlider"]
 layout_mode = 0
-offset_left = 660.098
-offset_top = 20.3046
-offset_right = 723.098
+offset_left = 635.0
+offset_top = 20.305
+offset_right = 735.0
 offset_bottom = 103.305
 text = "5"
 label_settings = ExtResource("30_25nkr")
@@ -2160,9 +2168,9 @@ label_settings = ExtResource("30_25nkr")
 vertical_alignment = 1
 
 [node name="CyclesSlider" type="HSlider" parent="Phone/SettingsScreen"]
-offset_left = -463.054
+offset_left = -472.906
 offset_top = 203.046
-offset_right = 184.946
+offset_right = 157.094
 offset_bottom = 331.046
 scale = Vector2(1.5, 1.5)
 theme_override_icons/grabber = ExtResource("22_wcyrw")
@@ -2173,9 +2181,9 @@ value = 1.0
 
 [node name="CyclesReadout" type="Label" parent="Phone/SettingsScreen/CyclesSlider"]
 layout_mode = 0
-offset_left = 643.678
-offset_top = 16.9204
-offset_right = 725.678
+offset_left = 635.0
+offset_top = 16.92
+offset_right = 735.0
 offset_bottom = 110.92
 theme_override_font_sizes/font_size = 35
 text = "1"
@@ -2197,16 +2205,17 @@ offset_left = -187.192
 offset_top = 395.939
 offset_right = 305.808
 offset_bottom = 740.939
-texture_normal = ExtResource("30_ec1cj")
-texture_pressed = ExtResource("31_127ub")
+texture_normal = ExtResource("46_5hgmv")
+texture_pressed = ExtResource("47_qpykk")
+texture_hover = ExtResource("48_ovidr")
 stretch_mode = 0
 
 [node name="Start Label" type="Label" parent="Phone/SettingsScreen/StartButton"]
 layout_mode = 0
-offset_left = 64.0395
-offset_top = 81.218
-offset_right = 435.04
-offset_bottom = 274.218
+offset_left = 68.9654
+offset_top = 76.1418
+offset_right = 439.966
+offset_bottom = 269.142
 text = "Start"
 label_settings = ExtResource("23_8e3nk")
 horizontal_alignment = 1
@@ -2216,7 +2225,7 @@ vertical_alignment = 1
 visible = false
 position = Vector2(2.89404, 2.41123)
 scale = Vector2(1.00227, 1.00146)
-texture = ExtResource("21_02gba")
+texture = ExtResource("36_c4tim")
 script = ExtResource("31_qmhd2")
 
 [node name="SettingLabel2" type="Label" parent="Phone/ClockScreen"]
@@ -2295,16 +2304,17 @@ offset_left = 130.0
 offset_top = 439.0
 offset_right = 582.0
 offset_bottom = 723.0
-texture_normal = ExtResource("30_ec1cj")
-texture_pressed = ExtResource("31_127ub")
+texture_normal = ExtResource("46_5hgmv")
+texture_pressed = ExtResource("47_qpykk")
+texture_hover = ExtResource("48_ovidr")
 stretch_mode = 0
 
 [node name="SettingsBackButtonLabel" type="Label" parent="Phone/ClockScreen/ClockBackButton"]
 layout_mode = 0
-offset_left = 44.2346
-offset_top = 40.5497
-offset_right = 426.235
-offset_bottom = 232.55
+offset_left = 39.3195
+offset_top = 45.618
+offset_right = 421.32
+offset_bottom = 237.618
 text = "Back"
 label_settings = ExtResource("23_8e3nk")
 horizontal_alignment = 1
@@ -2312,7 +2322,7 @@ vertical_alignment = 1
 
 [node name="MidSessionSettings" type="Sprite2D" parent="Phone"]
 visible = false
-texture = ExtResource("21_02gba")
+texture = ExtResource("36_c4tim")
 
 [node name="SettingLabel" type="Label" parent="Phone/MidSessionSettings"]
 offset_left = -424.0
@@ -2325,66 +2335,70 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SettingsBackButton2" type="TextureButton" parent="Phone/MidSessionSettings"]
-offset_left = 103.448
-offset_top = 411.168
-offset_right = 596.448
-offset_bottom = 756.168
+offset_left = 133.005
+offset_top = 416.243
+offset_right = 592.005
+offset_bottom = 726.243
 scale = Vector2(0.9, 0.9)
-texture_normal = ExtResource("23_yfb4x")
-texture_pressed = ExtResource("24_yqbli")
+texture_normal = ExtResource("46_5hgmv")
+texture_pressed = ExtResource("47_qpykk")
+texture_hover = ExtResource("48_ovidr")
 stretch_mode = 0
 
 [node name="SettingsBackButtonLabel" type="Label" parent="Phone/MidSessionSettings/SettingsBackButton2"]
 layout_mode = 0
-offset_left = 54.7345
-offset_top = 76.0
-offset_right = 436.735
-offset_bottom = 268.0
+offset_left = 44.2857
+offset_top = 62.2273
+offset_right = 426.286
+offset_bottom = 254.227
 text = "Back"
 label_settings = ExtResource("23_8e3nk")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="(un)Pause" type="TextureButton" parent="Phone/MidSessionSettings"]
-offset_left = -339.901
-offset_top = -756.345
-offset_right = 438.099
-offset_bottom = -289.345
-texture_normal = ExtResource("30_ec1cj")
-texture_pressed = ExtResource("31_127ub")
+offset_left = -211.557
+offset_top = -685.695
+offset_right = 322.443
+offset_bottom = -304.695
+texture_normal = ExtResource("46_5hgmv")
+texture_pressed = ExtResource("47_qpykk")
+texture_hover = ExtResource("48_ovidr")
 stretch_mode = 0
 script = ExtResource("32_ruuc8")
 
 [node name="PauseLabel" type="Label" parent="Phone/MidSessionSettings/(un)Pause"]
 layout_mode = 0
-offset_left = 162.561
-offset_top = 142.132
-offset_right = 588.561
-offset_bottom = 335.132
+offset_left = 59.8473
+offset_top = 101.939
+offset_right = 485.847
+offset_bottom = 294.939
 text = "Pause"
 label_settings = ExtResource("23_8e3nk")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="EndSession" type="TextureButton" parent="Phone/MidSessionSettings"]
-offset_left = -467.98
-offset_top = -289.34
-offset_right = 557.02
-offset_bottom = 197.66
-texture_normal = ExtResource("30_ec1cj")
-texture_pressed = ExtResource("31_127ub")
+offset_left = -207.149
+offset_top = -294.416
+offset_right = 326.851
+offset_bottom = 86.5837
+texture_normal = ExtResource("41_ko85q")
+texture_pressed = ExtResource("42_lb6vm")
+texture_hover = ExtResource("43_hwlvj")
 stretch_mode = 0
 
 [node name="EndSessionLabel" type="Label" parent="Phone/MidSessionSettings/EndSession"]
 layout_mode = 0
-offset_left = 113.025
-offset_top = 147.259
-offset_right = 911.025
-offset_bottom = 340.259
+offset_left = 59.3652
+offset_top = 96.4464
+offset_right = 478.365
+offset_bottom = 289.446
 text = "End Session"
 label_settings = ExtResource("23_8e3nk")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="SessionEndScreen" type="Sprite2D" parent="Phone"]
 visible = false
@@ -2396,12 +2410,13 @@ texture = ExtResource("51_b7lw4")
 
 [node name="Buddy Name" type="Label" parent="Phone/SessionEndScreen"]
 offset_left = -399.369
-offset_top = -1080.76
+offset_top = -1085.84
 offset_right = 551.631
-offset_bottom = -929.762
+offset_bottom = -934.838
 text = "BUDDY"
 label_settings = ExtResource("23_8e3nk")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Congrats Text" type="Label" parent="Phone/SessionEndScreen"]
 offset_left = -285.295
@@ -2429,20 +2444,21 @@ label_settings = ExtResource("29_0rwny")
 vertical_alignment = 1
 
 [node name="Restart" type="TextureButton" parent="Phone/SessionEndScreen"]
-offset_left = -522.0
-offset_top = 426.0
-offset_right = 59.0
-offset_bottom = 781.0
-texture_normal = ExtResource("30_ec1cj")
-texture_pressed = ExtResource("31_127ub")
+offset_left = -443.35
+offset_top = 558.376
+offset_right = 36.6504
+offset_bottom = 773.376
+texture_normal = ExtResource("54_i1nl8")
+texture_pressed = ExtResource("55_gjpdr")
+texture_hover = ExtResource("56_6vrdi")
 stretch_mode = 0
 
 [node name="RestartLabel" type="Label" parent="Phone/SessionEndScreen/Restart"]
 layout_mode = 0
-offset_left = 88.5025
-offset_top = 132.375
-offset_right = 624.503
-offset_bottom = 265.375
+offset_left = 29.5566
+offset_top = 50.7618
+offset_right = 565.557
+offset_bottom = 183.762
 scale = Vector2(0.8, 0.8)
 text = "Restart"
 label_settings = ExtResource("23_8e3nk")
@@ -2450,22 +2466,22 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CloseButton" type="TextureButton" parent="Phone/SessionEndScreen"]
-offset_left = 84.0
-offset_top = 457.0
-offset_right = 1118.0
-offset_bottom = 1106.0
-scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("23_yfb4x")
-texture_pressed = ExtResource("24_yqbli")
+offset_left = 83.744
+offset_top = 548.224
+offset_right = 563.744
+offset_bottom = 773.224
+texture_normal = ExtResource("57_f2o0s")
+texture_pressed = ExtResource("58_8n4yx")
+texture_hover = ExtResource("59_6n6ei")
 stretch_mode = 0
 
 [node name="RestartLabel" type="Label" parent="Phone/SessionEndScreen/CloseButton"]
 layout_mode = 0
-offset_left = 107.862
-offset_top = 151.989
-offset_right = 643.862
-offset_bottom = 391.989
-scale = Vector2(1.5, 1.5)
+offset_left = 54.1871
+offset_top = 35.5321
+offset_right = 524.187
+offset_bottom = 238.532
+scale = Vector2(0.8, 0.8)
 text = "Close
 App"
 label_settings = ExtResource("23_8e3nk")
@@ -2550,7 +2566,9 @@ offset_top = -90.3239
 offset_right = -138.637
 offset_bottom = 141.676
 scale = Vector2(1.5, 1.5)
-texture_normal = ExtResource("30_ec1cj")
+texture_normal = ExtResource("46_5hgmv")
+texture_pressed = ExtResource("47_qpykk")
+texture_hover = ExtResource("48_ovidr")
 
 [node name="Quit Label" type="Label" parent="Quit Confirmation Screen/Quit Button"]
 offset_left = 42.7466
@@ -2569,7 +2587,9 @@ offset_top = -90.3239
 offset_right = 403.917
 offset_bottom = 141.676
 scale = Vector2(1.5, 1.5)
-texture_normal = ExtResource("23_yfb4x")
+texture_normal = ExtResource("41_ko85q")
+texture_pressed = ExtResource("42_lb6vm")
+texture_hover = ExtResource("43_hwlvj")
 
 [node name="Cancel Button" type="Label" parent="Quit Confirmation Screen/Cancel Button"]
 offset_left = 33.0

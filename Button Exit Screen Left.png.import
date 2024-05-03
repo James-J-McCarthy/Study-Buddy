@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccoy2sshcx4ri"
-path="res://.godot/imported/Button 2 On Click.PNG-98463cc8c0b7648f0893751d9d1083f8.ctex"
+uid="uid://bld4isgbepit5"
+path="res://.godot/imported/Button Exit Screen Left.png-e54dcc31c8c9a1e0af0fcf0ee99485e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Button 2 On Click.PNG"
-dest_files=["res://.godot/imported/Button 2 On Click.PNG-98463cc8c0b7648f0893751d9d1083f8.ctex"]
+source_file="res://Button Exit Screen Left.png"
+dest_files=["res://.godot/imported/Button Exit Screen Left.png-e54dcc31c8c9a1e0af0fcf0ee99485e7.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqiomfqgvv7bi"
-path="res://.godot/imported/Button 1 On Click.PNG-14322fb7a36eb53befd7575fb48d3504.ctex"
+uid="uid://coueorru3epic"
+path="res://.godot/imported/Button_2 Clicked.png-a0a25ccea80da9400de3c8333d3551b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Button 1 On Click.PNG"
-dest_files=["res://.godot/imported/Button 1 On Click.PNG-14322fb7a36eb53befd7575fb48d3504.ctex"]
+source_file="res://Button_2 Clicked.png"
+dest_files=["res://.godot/imported/Button_2 Clicked.png-a0a25ccea80da9400de3c8333d3551b8.ctex"]
 
 [params]
 
