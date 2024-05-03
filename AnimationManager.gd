@@ -15,14 +15,28 @@ var breakAnimation = PackedStringArray(["Phone_5MIN"])
 var buddyOnScreen = false # Whether Buddy is currently visible on-screen
 var aniPlayer # Buddy's animation player
 
+var blinkPlayer # Animation player for just blink
+var blinkPause # The interval between this and the next blink
+var blinkPauseCounter # The interval time that has elapsed since the last blink
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	TimeManager = get_parent().get_node("TimeManager")
 	aniPlayer = get_node("../StudyingBuddySkeleton/StudyingBuddyAniPlayer")
+	blinkPlayer = get_node("../StudyingBuddySkeleton/Blink AniPlayer")
+	blinkPause = 5
+	blinkPauseCounter = 0;
 
 # _process(delta) method unused for this script
 func _process(delta):
-	pass
+	if (blinkPauseCounter >= blinkPause):
+		_blink()
+		blinkPauseCounter = 0
+		blinkPause = random.randi_range(10,20)
+	blinkPauseCounter += delta
+
+func _blink():
+	blinkPlayer.play("Blink")
 
 func _rollIn():
 	if (!buddyOnScreen):
