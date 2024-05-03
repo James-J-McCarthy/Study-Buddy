@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cbqlydtioa2t5"
+path="res://.godot/imported/NEW Break Music.mp3-4ae6cd50942fbf77cf750f4a034ee0d3.mp3str"
+
+[deps]
+
+source_file="res://NEW Break Music.mp3"
+dest_files=["res://.godot/imported/NEW Break Music.mp3-4ae6cd50942fbf77cf750f4a034ee0d3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

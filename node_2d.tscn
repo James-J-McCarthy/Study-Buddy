@@ -48,7 +48,7 @@
 [ext_resource type="AudioStream" uid="uid://d4lv30wlkpf7k" path="res://Audio/nose honk SB.mp3" id="42_ae8ut"]
 [ext_resource type="Script" path="res://SessionTimerBar.gd" id="43_u5x6i"]
 [ext_resource type="AudioStream" uid="uid://b4p8h7aml471h" path="res://Audio/Study Music UPDATED.mp3" id="47_sxob4"]
-[ext_resource type="AudioStream" uid="uid://bkjfssnsmoike" path="res://Audio/Break Music UPDATED.mp3" id="48_lcdcp"]
+[ext_resource type="AudioStream" uid="uid://b88it1kgdsccp" path="res://Audio/NEW Break Music.mp3" id="48_wxd8c"]
 [ext_resource type="AudioStream" uid="uid://b045r5hn0o3ib" path="res://Audio/Session End SFX.mp3" id="50_5qd5m"]
 
 [sub_resource type="Animation" id="Animation_vmboy"]
@@ -1850,7 +1850,7 @@ rest = Transform2D(-0.976195, 0.216896, -0.216896, -0.976195, 0, 0)
 libraries = {
 "": SubResource("AnimationLibrary_n6bl0")
 }
-blend_times = [&"Phone", &"RESET", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Writing2", 4.0, &"Phone", &"Idle", 2.0, &"Phone", &"Writing", 4.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"Idle", 4.0, &"Writing2", &"Writing", 4.0, &"Idle", &"RESET", 4.0, &"Idle", &"Phone", 1.0, &"Idle", &"Writing2", 6.0, &"Idle", &"Idle", 2.0, &"Idle", &"Writing", 4.0, &"Idle", &"Phone_5MIN", 1.0, &"Roll In", &"Idle", 1.0, &"Writing", &"RESET", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Writing2", 4.0, &"Writing", &"Idle", 4.0, &"Writing", &"Writing", 4.0, &"Phone_5MIN", &"Idle", 1.0]
+blend_times = [&"Phone", &"Phone", 4.0, &"Phone", &"Idle", 2.0, &"Phone", &"Writing", 4.0, &"Phone", &"Writing2", 4.0, &"Phone", &"RESET", 4.0, &"Idle", &"Phone", 1.0, &"Idle", &"Idle", 2.0, &"Idle", &"Writing", 4.0, &"Idle", &"Phone_5MIN", 1.0, &"Idle", &"Writing2", 6.0, &"Idle", &"RESET", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Idle", 4.0, &"Writing", &"Writing", 4.0, &"Writing", &"Writing2", 4.0, &"Writing", &"RESET", 4.0, &"Roll In", &"Idle", 1.0, &"Phone_5MIN", &"Idle", 1.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Idle", 4.0, &"Writing2", &"Writing", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"RESET", 4.0]
 
 [node name="AnimationManager" type="Node" parent="."]
 script = ExtResource("8_hahbl")
@@ -2509,8 +2509,8 @@ stream = ExtResource("47_sxob4")
 volume_db = -5.0
 
 [node name="BreakMusic" type="AudioStreamPlayer" parent="MusicManager"]
-stream = ExtResource("48_lcdcp")
-volume_db = -10.0
+stream = ExtResource("48_wxd8c")
+volume_db = -5.0
 
 [node name="SFXNoseHonk" type="AudioStreamPlayer" parent="MusicManager"]
 stream = ExtResource("42_ae8ut")
