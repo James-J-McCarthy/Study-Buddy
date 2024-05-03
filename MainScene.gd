@@ -104,6 +104,7 @@ func _on_cancel_button_pressed():
 # resets to the beginning-of-session settings screen if user restarts after
 # a session is completed
 func _on_restart_pressed():
+	get_node("Phone/MenuBackButton").show()
 	Phone.settingsScreenVisible()
 	TimeManager.resetClock()
 

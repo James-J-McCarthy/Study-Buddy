@@ -70,6 +70,7 @@ func settingsScreenVisible():
 
 func endScreenVisible():
 	_hideAll()
+	get_node("MenuBackButton").hide()
 	EndScreen.show()
 
 # This method is purely for consolidating repeating code in the above visibility functions

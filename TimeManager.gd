@@ -145,13 +145,13 @@ func setBreakMarker():
 
 
 func startSession():
+	aniManager._rollIn()
 	getPeriodValues()
 	initializeClockLabelText()
 	start_study_timer()
 	sessionRunning = true
 	paused = false
 	setBreakMarker()
-	aniManager._rollIn()
 
 # resets clock but does not restart it
 func resetClock():
@@ -230,4 +230,4 @@ func _on_un_pause_pressed():
 	hit_pause()
 
 func _on_end_session_pressed():
-	endSession()	
+	endSession()
