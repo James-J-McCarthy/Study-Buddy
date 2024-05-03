@@ -1189,6 +1189,118 @@ tracks/8/keys = {
 "values": [-0.217505, -0.286361, -0.0479242, -1.30879e-11]
 }
 
+[sub_resource type="Animation" id="Animation_quujf"]
+resource_name = "Roll Out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Torso:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 0.9, 1.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(392.498, 500.394), Vector2(396.5, 498.398), Vector2(452.498, 500.454), Vector2(729.498, 500.732)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Torso/UpperArmL:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.67152, 2.22225]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Torso/UpperArmL/ForeArmL:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.41794, 0.760824]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Torso/UpperArmL/ForeArmL/HandL:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.226395, -0.404498]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Torso/UpperArmR:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.67185, 2.06349]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Torso/UpperArmR/ForeArmR:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.41275, 1.02109]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Torso/UpperArmR/ForeArmR/HandR:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.5, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.116318, 0.7407]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Torso:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.3, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.30879e-11, 0.206435]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Torso/Head:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1.1, 1.4, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-1.30879e-11, -0.0479242, -0.286361, -0.217505]
+}
+
 [sub_resource type="Animation" id="Animation_njfvu"]
 resource_name = "Writing"
 length = 10.0
@@ -1436,118 +1548,6 @@ tracks/14/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, true]
-}
-
-[sub_resource type="Animation" id="Animation_quujf"]
-resource_name = "Roll Out"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Torso:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.3, 0.9, 1.2, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(392.498, 500.394), Vector2(396.5, 498.398), Vector2(452.498, 500.454), Vector2(729.498, 500.732)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Torso/UpperArmL:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.3, 1.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [1.67152, 2.22225]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Torso/UpperArmL/ForeArmL:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.3, 1.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [1.41794, 0.760824]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Torso/UpperArmL/ForeArmL/HandL:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.9, 1.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-0.226395, -0.404498]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Torso/UpperArmR:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.9, 1.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [1.67185, 2.06349]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Torso/UpperArmR/ForeArmR:rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0.9, 1.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [1.41275, 1.02109]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Torso/UpperArmR/ForeArmR/HandR:rotation")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0.5, 1.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.116318, 0.7407]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Torso:rotation")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0.3, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-1.30879e-11, 0.206435]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Torso/Head:rotation")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 1.1, 1.4, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [-1.30879e-11, -0.0479242, -0.286361, -0.217505]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n6bl0"]
@@ -1847,14 +1847,13 @@ rest = Transform2D(5.33073, 0.622872, -0.213543, 1.82757, 45.5535, -8.41874)
 
 [node name="Lower Body" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 rotation = 2.45376
-scale = Vector2(1, 1)
 rest = Transform2D(-0.976195, 0.216896, -0.216896, -0.976195, 0, 0)
 
 [node name="StudyingBuddyAniPlayer" type="AnimationPlayer" parent="StudyingBuddySkeleton"]
 libraries = {
 "": SubResource("AnimationLibrary_n6bl0")
 }
-blend_times = [&"Phone_5MIN", &"Idle", 1.0, &"Idle", &"RESET", 4.0, &"Idle", &"Phone_5MIN", 1.0, &"Idle", &"Idle", 2.0, &"Idle", &"Writing2", 6.0, &"Idle", &"Writing", 4.0, &"Idle", &"Phone", 1.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Idle", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"Writing", 4.0, &"Writing2", &"Phone", 4.0, &"Writing", &"RESET", 4.0, &"Writing", &"Idle", 4.0, &"Writing", &"Writing2", 4.0, &"Writing", &"Writing", 4.0, &"Writing", &"Phone", 4.0, &"Roll In", &"Idle", 1.0, &"Phone", &"RESET", 4.0, &"Phone", &"Idle", 2.0, &"Phone", &"Writing2", 4.0, &"Phone", &"Writing", 4.0, &"Phone", &"Phone", 4.0]
+blend_times = [&"Phone", &"RESET", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Idle", 2.0, &"Phone", &"Writing2", 4.0, &"Phone", &"Writing", 4.0, &"Idle", &"RESET", 4.0, &"Idle", &"Phone", 1.0, &"Idle", &"Idle", 2.0, &"Idle", &"Phone_5MIN", 1.0, &"Idle", &"Writing2", 6.0, &"Idle", &"Writing", 4.0, &"Phone_5MIN", &"Idle", 1.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Idle", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"Writing", 4.0, &"Roll In", &"Idle", 1.0, &"Writing", &"RESET", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Idle", 4.0, &"Writing", &"Writing2", 4.0, &"Writing", &"Writing", 4.0]
 
 [node name="AnimationManager" type="Node" parent="."]
 script = ExtResource("8_hahbl")
