@@ -1211,7 +1211,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0.3, 0.9, 1.2, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(392.498, 500.394), Vector2(396.5, 498.398), Vector2(452.498, 500.454), Vector2(729.498, 500.732)]
+"values": [Vector2(392.498, 500.394), Vector2(396.5, 498.398), Vector2(452.498, 500.454), Vector2(768.498, 500.771)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1656,12 +1656,12 @@ scale = Vector2(0.202745, 0.196515)
 texture = ExtResource("5_4bll2")
 
 [node name="PenOnDesk" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(238, 253)
 scale = Vector2(0.202745, 0.196515)
 texture = ExtResource("9_wv1v6")
 
 [node name="PhoneOnDesk" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(213, 320)
 scale = Vector2(0.202745, 0.196515)
 texture = ExtResource("9_locot")
@@ -1771,7 +1771,6 @@ polygons = [PackedInt32Array(2, 3, 21, 22), PackedInt32Array(3, 4, 20, 21), Pack
 bones = ["Torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head/EarL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head/EarR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head/Nose", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Tail", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmL", PackedFloat32Array(1, 1, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 1, 1, 1, 1, 0.5), "Torso/UpperArmL/ForeArmL", PackedFloat32Array(0, 0, 0.5, 0.5, 1, 1, 1, 1, 1, 0.5, 0, 0, 0, 0.5, 0.5, 0.5, 1, 1, 1, 1, 1, 0.5, 0, 0, 0, 0), "Torso/UpperArmL/ForeArmL/HandL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 1, 1, 1, 1, 1, 1, 1, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmL/ForeArmL/HandL/Phone", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmL/ForeArmL/HandL/Pen", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmR/ForeArmR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/UpperArmR/ForeArmR/HandR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="StudyingBuddySkeleton" type="Skeleton2D" parent="."]
-visible = false
 rotation = -0.00100401
 
 [node name="Torso" type="Bone2D" parent="StudyingBuddySkeleton"]
@@ -1843,6 +1842,7 @@ rest = Transform2D(-0.100882, 0.994898, -0.994898, -0.100882, -95.4978, -118.394
 [node name="ForeArmR" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmR"]
 position = Vector2(35.7571, 25.5231)
 rotation = 1.41275
+scale = Vector2(1, 1)
 rest = Transform2D(0.157389, 0.987537, -0.987537, 0.157389, 35.7571, 25.5231)
 
 [node name="HandR" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmR/ForeArmR"]
@@ -1859,7 +1859,7 @@ rest = Transform2D(-0.976195, 0.216896, -0.216896, -0.976195, 0, 0)
 libraries = {
 "": SubResource("AnimationLibrary_n6bl0")
 }
-blend_times = [&"Phone", &"RESET", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Writing2", 4.0, &"Phone", &"Idle", 2.0, &"Phone", &"Writing", 4.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"Idle", 4.0, &"Writing2", &"Writing", 4.0, &"Idle", &"RESET", 4.0, &"Idle", &"Phone", 1.0, &"Idle", &"Writing2", 6.0, &"Idle", &"Idle", 2.0, &"Idle", &"Writing", 4.0, &"Idle", &"Phone_5MIN", 1.0, &"Roll In", &"Idle", 1.0, &"Writing", &"RESET", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Writing2", 4.0, &"Writing", &"Idle", 4.0, &"Writing", &"Writing", 4.0, &"Phone_5MIN", &"Idle", 1.0]
+blend_times = [&"Phone", &"RESET", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Writing2", 4.0, &"Phone", &"Idle", 2.0, &"Phone", &"Writing", 4.0, &"Phone", &"Roll Out", 1.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"Idle", 4.0, &"Writing2", &"Writing", 4.0, &"Writing2", &"Roll Out", 1.0, &"Idle", &"RESET", 4.0, &"Idle", &"Phone", 1.0, &"Idle", &"Writing2", 6.0, &"Idle", &"Idle", 2.0, &"Idle", &"Writing", 4.0, &"Idle", &"Phone_5MIN", 1.0, &"Idle", &"Roll Out", 1.0, &"Roll In", &"Idle", 1.0, &"Roll In", &"Roll Out", 1.0, &"Writing", &"RESET", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Writing2", 4.0, &"Writing", &"Idle", 4.0, &"Writing", &"Writing", 4.0, &"Writing", &"Roll Out", 1.0, &"Phone_5MIN", &"Idle", 1.0, &"Phone_5MIN", &"Roll In", 1.0, &"Roll Out", &"Roll In", 3.0, &"Roll Out", &"Roll Out", 1.0]
 
 [node name="AnimationManager" type="Node" parent="."]
 script = ExtResource("8_hahbl")

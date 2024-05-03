@@ -10,6 +10,7 @@ var ClockScreen # ClockScreen node reference
 var EndScreen # EndScreen node reference
 var AniPlayer # StudyingBuddyAniPlayer node reference
 var TimeManager # TimeManager node reference
+var PhoneUp = false;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,10 +30,16 @@ func _process(delta):
 
 # Phone up/down animations are triggered by the two methods below \/
 func up():
-	AniPlayer.play("PhoneUp")
+	if (!PhoneUp):
+		AniPlayer.play("PhoneUp")
+		PhoneUp = true;
+	else:
+		print("phone already up")
 
 func down():
-	AniPlayer.play("PhoneDown")
+	if (PhoneUp):
+		AniPlayer.play("PhoneDown")
+		PhoneUp = false;
 
 
 # Methods to show each app's screen on the Phone below \/

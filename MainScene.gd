@@ -4,7 +4,6 @@ extends Node2D
 var Phone # Phone node reference
 var studying = true
 var TimeManager # TimeManager node reference
-var buddyOnScreen = false # Whether Buddy is currently visible on-screen
 var AniManager # AnimationManager node reference
 var AniPlayer # StudyingBuddyAniPlayer node reference
 var MenuUpButton # MenuUpButton node reference
@@ -73,13 +72,6 @@ func _on_music_back_button_pressed():
 # this code runs when the session start button is pressed in SettingsScreen
 func _on_start_button_pressed():
 	_on_menu_back_button_pressed() # put phone down
-	get_node("StudyingBuddy").show()
-	if (buddyOnScreen == false):
-		AniPlayer.play("Roll In")
-		buddyOnScreen = true;
-	else:
-		var animation:String = AniManager._getAnimation()
-		AniPlayer.play(animation)
 
 # this kicks the user off the mid-session-settings screen if they end the session
 func _on_end_session_pressed():
@@ -95,6 +87,7 @@ func _on_clock_button_pressed():
 
 # quits the app when the close button is pressed
 func _on_close_button_pressed():
+	Phone.down()
 	ConfirmationScreen.show()
 	CloseButton.hide()
 
@@ -111,13 +104,12 @@ func _on_restart_pressed():
 	Phone.settingsScreenVisible()
 	TimeManager.resetClock()
 
-
 # Queue up the next appropriate animation whenever "Idle" animation is running.
 # This function checks the boolean "Studying" during the begining of Idle Animation.
 # ^ Results in a >5 second delay on animations from the actual state change.
 func _on_studying_buddy_ani_player_animation_started(anim_name):
 	# If the animation that started now is "Idle", queue the next animation
-	#if timeManager.get_session_running() == true:
+	if anim_name != "Roll Out":
 		if anim_name == "Idle":
 			print("Idle Now, queuing:")
 			var animation:String = AniManager._getAnimation()
