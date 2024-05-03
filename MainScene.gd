@@ -6,7 +6,7 @@ var studying = true
 var TimeManager # TimeManager node reference
 var buddyOnScreen = false # Whether Buddy is currently visible on-screen
 var AniManager # AnimationManager node reference
-var AniPlayer # AniPlayer node reference
+var AniPlayer # StudyingBuddyAniPlayer node reference
 var MenuUpButton # MenuUpButton node reference
 
 

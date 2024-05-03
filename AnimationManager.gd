@@ -4,7 +4,7 @@ extends Node
 
 # A random number generator
 var random = RandomNumberGenerator.new()
-var timeManager # TimeManager node reference
+var TimeManager # TimeManager node reference
 
 # Stores names for all the available Studying Animations
 var studyingAnimation = PackedStringArray(["Writing", "Writing2", "Phone", "Writing", "Writing2"])
@@ -15,7 +15,7 @@ var breakAnimation = PackedStringArray(["Phone_5MIN"])
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	timeManager = get_parent().get_node("TimeManager")
+	TimeManager = get_parent().get_node("TimeManager")
 
 # _process(delta) method unused for this script
 func _process(delta):
@@ -25,7 +25,7 @@ func _process(delta):
 # Return a random animation based on whether the buddy is studying.
 # @Return: A string name of the animation
 func _getAnimation() -> String:
-	if timeManager.getStudying() == true:
+	if TimeManager.getStudying() == true:
 		return _getStudyingAnimation()
 	else:
 		return _getBreakAnimation()
