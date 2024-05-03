@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3dtudnxbnw7x"
-path="res://.godot/imported/Button Setting.png-8813f59b38cc90037df6c74b7f436c28.ctex"
+uid="uid://be3jdv4yk5lmc"
+path="res://.godot/imported/Button Clock Hover.png-072fb8b3b2fea6224e43ecdfd4c5199f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Button Setting.png"
-dest_files=["res://.godot/imported/Button Setting.png-8813f59b38cc90037df6c74b7f436c28.ctex"]
+source_file="res://Button Clock Hover.png"
+dest_files=["res://.godot/imported/Button Clock Hover.png-072fb8b3b2fea6224e43ecdfd4c5199f.ctex"]
 
 [params]
 

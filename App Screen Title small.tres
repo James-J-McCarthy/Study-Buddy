@@ -5,4 +5,4 @@
 [resource]
 font = ExtResource("1_rafwx")
 font_size = 110
-font_color = Color(0, 0, 0, 1)
+font_color = Color(0.317647, 0.207843, 0.203922, 1)

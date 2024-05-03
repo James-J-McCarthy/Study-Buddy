@@ -8,6 +8,8 @@ var buddyOnScreen = false # Whether Buddy is currently visible on-screen
 var AniManager # AnimationManager node reference
 var AniPlayer # StudyingBuddyAniPlayer node reference
 var MenuUpButton # MenuUpButton node reference
+var CloseButton # Button to quit the app
+var ConfirmationScreen # Quit confirmation page
 
 
 # Called when the node enters the scene tree for the first time.
@@ -17,6 +19,8 @@ func _ready():
 	Phone = get_node("Phone")
 	TimeManager = get_node("TimeManager")
 	MenuUpButton = get_node("MenuUpButton")
+	CloseButton = get_node("CloseButton")
+	ConfirmationScreen = get_node("Quit Confirmation Screen")
 	
 	await get_tree().create_timer(1.25).timeout # delay phone open animation by 1.25 seconds when app opens
 	
@@ -91,7 +95,15 @@ func _on_clock_button_pressed():
 
 # quits the app when the close button is pressed
 func _on_close_button_pressed():
-	get_tree().quit()
+	ConfirmationScreen.show()
+	CloseButton.hide()
+
+func _on_quit_button_pressed():
+	get_tree().quit() 
+
+func _on_cancel_button_pressed():
+	ConfirmationScreen.hide() 
+	CloseButton.show()
 
 # resets to the beginning-of-session settings screen if user restarts after
 # a session is completed

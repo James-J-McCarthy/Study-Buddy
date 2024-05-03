@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cljxtb6vx2vek"
-path="res://.godot/imported/Button Home.png-a0486e15e5f2dd21b33b6a32010ddc4c.ctex"
+uid="uid://uximovvvroxc"
+path="res://.godot/imported/Quit ConfirmationScreen.png-42ef5fe2a8e9e49aafd6215e640c892b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Button Home.png"
-dest_files=["res://.godot/imported/Button Home.png-a0486e15e5f2dd21b33b6a32010ddc4c.ctex"]
+source_file="res://Quit ConfirmationScreen.png"
+dest_files=["res://.godot/imported/Quit ConfirmationScreen.png-42ef5fe2a8e9e49aafd6215e640c892b.ctex"]
 
 [params]
 

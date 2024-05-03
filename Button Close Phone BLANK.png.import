@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3uy8j5wp5su4"
-path="res://.godot/imported/Button Music.png-9e1804a17594023f0e69640a63ae3996.ctex"
+uid="uid://dqdievemrso52"
+path="res://.godot/imported/Button Close Phone BLANK.png-c85c0d31d3aed3707dec59aa421a6dbe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Button Music.png"
-dest_files=["res://.godot/imported/Button Music.png-9e1804a17594023f0e69640a63ae3996.ctex"]
+source_file="res://Button Close Phone BLANK.png"
+dest_files=["res://.godot/imported/Button Close Phone BLANK.png-c85c0d31d3aed3707dec59aa421a6dbe.ctex"]
 
 [params]
 

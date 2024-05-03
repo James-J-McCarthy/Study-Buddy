@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxtb2jpe7vfu1"
-path="res://.godot/imported/Button Clock.png-95803857be3d0b6638192defc7de04ba.ctex"
+uid="uid://b8oalye2d2tan"
+path="res://.godot/imported/Button Setting Clicked.png-d8f796237af2fa43e34ae591b026c3b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Button Clock.png"
-dest_files=["res://.godot/imported/Button Clock.png-95803857be3d0b6638192defc7de04ba.ctex"]
+source_file="res://Button Setting Clicked.png"
+dest_files=["res://.godot/imported/Button Setting Clicked.png-d8f796237af2fa43e34ae591b026c3b2.ctex"]
 
 [params]
 
