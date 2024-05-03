@@ -1,18 +1,18 @@
-extends Node
 # This node has a timer which is sets to count down 
 # from specified lengths to determine when to update other nodes
 # Very first call to set study time is in MaineScene.gd script
 # By defualt, study_time and break_time are set to their slider's min values
 # which can be found by going to phone > settings screen > Slider in question
+extends Node
 
 # var declarations:
 # 
-var study_time # time of "study session" measured in seconds 
-var break_time # ^ for breaks
-var cycles_total # < prob don't initialize this here # total number of study/break cycles user wants
+var studyTime # time of "study session" measured in seconds 
+var breakTime # ^ for breaks
+var cyclesTotal # < prob don't initialize this here # total number of study/break cycles user wants
 var cycle = 1 # current cycles count
 var studying = true
-var session_running = false
+var sessionRunning = false
 var paused = true
 var phone
 var PomoTimer
@@ -32,15 +32,15 @@ func _physics_process(_delta):
 # call of this function (delta)
 # and a boolean. if dontReset is false, puts hand back to '12
 func updateClockHand(_delta, dontReset):
-	if (cycles_total != null && paused == false):
-		if (cycle <= cycles_total):
+	if (cyclesTotal != null && paused == false):
+		if (cycle <= cyclesTotal):
 			var clockHand = get_node_or_null("../clockHand")
 			if (clockHand == null):
 				print("clockhand == null error!")
 				pass
 			else:
 				var currentRad = get_node("../clockHand").rotation
-				var radsPerSecond = float((2*PI) / (break_time + study_time))
+				var radsPerSecond = float((2*PI) / (breakTime + studyTime))
 				var radChange = float(_delta*radsPerSecond)
 				currentRad += radChange
 				if (currentRad >= float((2*PI))): 
@@ -51,9 +51,9 @@ func updateClockHand(_delta, dontReset):
 				get_node("../clockHand").rotation = currentRad
 
 func getPeriodValues():
-	study_time = get_node("../Phone/SettingsScreen/StudyTimeSlider").value * 60
-	cycles_total = get_node("../Phone/SettingsScreen/CyclesSlider").value 
-	break_time = get_node("../Phone/SettingsScreen/BreakTimeSlider").value * 60
+	studyTime = get_node("../Phone/SettingsScreen/StudyTimeSlider").value * 60
+	cyclesTotal = get_node("../Phone/SettingsScreen/CyclesSlider").value 
+	breakTime = get_node("../Phone/SettingsScreen/BreakTimeSlider").value * 60
 	
 # helper function that starts pomo timer given a period length
 func start_period(duration):
@@ -65,7 +65,7 @@ func start_period(duration):
 # Timer is set to "One-Shot" meaning it doesn't repeat after finishing
 func start_study_timer():
 	#print("start studying for: ", study_time, "seconds")
-	start_period(study_time)
+	start_period(studyTime)
 	updateCycleNumerator()
 	studying = true
 	var musicManager = get_node("../MusicManager")
@@ -75,7 +75,7 @@ func start_study_timer():
 #begins a study period on Pomo-Timer using break_time
 func start_break_timer():
 	#print("start break")
-	start_period(break_time)
+	start_period(breakTime)
 	studying = false
 	var musicManager = get_node("../MusicManager")
 	if(musicManager != null):
@@ -91,10 +91,10 @@ func hit_pause():
 
 # SIGNALS: 
 func _on_session_time_slider_value_changed(value):
-	study_time = value
+	studyTime = value
 
 func _on_break_time_slider_value_changed(value):
-	break_time = value
+	breakTime = value
 
 # get's signal from pomo timer when it finishes or when time is reduced to < 0
 # then restarts timer based on next period length
@@ -108,7 +108,7 @@ func _period_finished(): # I tested this funciton with a print to ensure it work
 		
 		# ">" because by the time this runs the last time, cycle
 		# will already be updated.
-		if(cycle > cycles_total):
+		if(cycle > cyclesTotal):
 			#end of session logic triggered here:
 			phone.up()
 			phone.endScreenVis()
@@ -134,7 +134,7 @@ func endSession():
 		musicManager.sessionEndMusic()
 
 func setBreakMarker():
-	var angleInRad = study_time * (float((2*PI) / (break_time + study_time)))
+	var angleInRad = studyTime * (float((2*PI) / (breakTime + studyTime)))
 	var bm = get_node("../breakMarker")
 	bm.rotation = angleInRad
 
@@ -143,7 +143,7 @@ func startSession():
 	getPeriodValues()
 	initializeClockLabelText()
 	start_study_timer()
-	session_running = true
+	sessionRunning = true
 	paused = false
 	setBreakMarker()
 
@@ -153,7 +153,7 @@ func resetClock():
 	PomoTimer.stop() # stop timer
 	set_cycle(1)
 	initializeClockLabelText()
-	session_running = false
+	sessionRunning = false
 	paused = true
 	get_node("../Phone/MidSessionSettings/(un)Pause").resetText()
 
@@ -163,49 +163,49 @@ func resetClock():
 # period. 
 func initializeClockLabelText():
 	var cycleLabel = get_node("../CycleLabel")
-	cycleLabel.text = str(cycle, "/", cycles_total)
+	cycleLabel.text = str(cycle, "/", cyclesTotal)
 
 # getters and setters below \/
 func updateCycleNumerator():
 	var cycleLabel = get_node("../CycleLabel")
-	if(cycle <= cycles_total):
-		cycleLabel.text = str(cycle, "/", cycles_total)
+	if(cycle <= cyclesTotal):
+		cycleLabel.text = str(cycle, "/", cyclesTotal)
 
 func getStudying():
 	return studying
 
 func set_break_time(new_duration):
-	break_time = new_duration
+	breakTime = new_duration
 
 func set_study_time(new_duration):
-	study_time = new_duration
+	studyTime = new_duration
 
 func set_cycles_total(new_cycles_total):
-	cycles_total = new_cycles_total
+	cyclesTotal = new_cycles_total
 
 func get_break_time():
-	return break_time
+	return breakTime
 
 func get_study_time():
-	return study_time
+	return studyTime
 
 func get_cycles_total():
-	return cycles_total
+	return cyclesTotal
 
-func get_session_running():
-	return session_running
+func getSessionRunning():
+	return sessionRunning
 
 func get_interval_time_remaining():
 	return PomoTimer.get_time_left()
 
 func get_total_time_remaining():
 	if (studying):
-		return PomoTimer.get_time_left() + break_time + (cycles_total - cycle) * (break_time + study_time)
+		return PomoTimer.get_time_left() + breakTime + (cyclesTotal - cycle) * (breakTime + studyTime)
 	else:
-		return PomoTimer.get_time_left() + (cycles_total - cycle) * (break_time + study_time)
+		return PomoTimer.get_time_left() + (cyclesTotal - cycle) * (breakTime + studyTime)
 
-func toggle_session_running():
-	session_running = !session_running
+func toggleSessionRunning():
+	sessionRunning = !sessionRunning
 
 func set_cycle(num):
 	cycle = num

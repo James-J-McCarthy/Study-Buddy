@@ -9,6 +9,7 @@ var midsettingsscreen
 var clockscreen
 var endScreen
 var animationPlayer
+var TimeManager
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,27 +20,32 @@ func _ready():
 	midsettingsscreen = get_node("MidSessionSettings")
 	endScreen = get_node("SessionEndScreen")
 	animationPlayer = get_node("../PhoneMover")
-	
+	TimeManager = get_parent().get_node("TimeManager")
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
 
 func up():
 	animationPlayer.play("PhoneUp")
 
 func down():
 	animationPlayer.play("PhoneDown")
-	
-func appScreenVis():
+
+
+func appScreenVisible():
 	appscreen.show()
 	midsettingsscreen.hide()
 	clockscreen.hide()
 	musicscreen.hide()
 	settingsscreen.hide()
 	endScreen.hide()
+	
+	if (!TimeManager.getSessionRunning()):
+		settingsScreenVisible()
 
-
-func musicScreenVis():
+func musicScreenVisible():
 	musicscreen.show()
 	midsettingsscreen.hide()
 	clockscreen.hide()
@@ -47,7 +53,7 @@ func musicScreenVis():
 	settingsscreen.hide()
 	endScreen.hide()
 
-func midScreenVis():
+func midScreenVisible():
 	appscreen.hide()
 	midsettingsscreen.show()
 	clockscreen.hide()
@@ -55,7 +61,7 @@ func midScreenVis():
 	settingsscreen.hide()
 	endScreen.hide()
 	
-func clockScreenVis():
+func clockScreenVisible():
 	appscreen.hide()
 	midsettingsscreen.hide()
 	clockscreen.show()
@@ -63,7 +69,7 @@ func clockScreenVis():
 	settingsscreen.hide()
 	endScreen.hide()
 
-func settingsScreenVis():
+func settingsScreenVisible():
 	appscreen.hide()
 	midsettingsscreen.hide()
 	clockscreen.hide()
@@ -71,7 +77,7 @@ func settingsScreenVis():
 	settingsscreen.show()
 	endScreen.hide()
 
-func endScreenVis():
+func endScreenVisible():
 	appscreen.hide()
 	midsettingsscreen.hide()
 	clockscreen.hide()

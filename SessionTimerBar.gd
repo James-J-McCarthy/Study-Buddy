@@ -11,7 +11,7 @@ var timerBarEndPoint = 185
 func _on_timer_timeout():
 	timeManager = get_node("../../../../TimeManager")
 	if (timeManager != null):
-		if (timeManager.get_session_running()):
+		if (timeManager.getSessionRunning()):
 			var totalSessionTime = timeManager.get_cycles_total() * (timeManager.get_break_time() + timeManager.get_study_time())
 			incrementSize = (timerBarEndPoint - timerBarStartPoint) / totalSessionTime
 			if (points[1].x >= timerBarEndPoint || (pausePresses%2 != 0)):

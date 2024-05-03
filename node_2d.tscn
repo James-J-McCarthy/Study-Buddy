@@ -1929,7 +1929,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(1, 1)
 texture = ExtResource("13_jc45a")
 
-[node name="MessagesButton" type="TextureButton" parent="Phone/AppScreen"]
+[node name="MusicButton" type="TextureButton" parent="Phone/AppScreen"]
 offset_left = 265.01
 offset_top = -960.391
 offset_right = 538.01
@@ -1940,7 +1940,7 @@ texture_pressed = ExtResource("17_a4p57")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="MusicLabel" type="Label" parent="Phone/AppScreen/MessagesButton"]
+[node name="MusicLabel" type="Label" parent="Phone/AppScreen/MusicButton"]
 layout_mode = 0
 offset_left = 67.4097
 offset_top = 1389.26
@@ -2036,7 +2036,7 @@ max_value = 1.0
 step = 0.05
 value = 1.0
 
-[node name="MessagesBackButton" type="TextureButton" parent="Phone/MusicScreen"]
+[node name="MusicBackButton" type="TextureButton" parent="Phone/MusicScreen"]
 offset_left = 103.448
 offset_top = 411.168
 offset_right = 596.448
@@ -2046,7 +2046,7 @@ texture_normal = ExtResource("23_yfb4x")
 texture_pressed = ExtResource("24_yqbli")
 stretch_mode = 0
 
-[node name="Back Label" type="Label" parent="Phone/MusicScreen/MessagesBackButton"]
+[node name="Back Label" type="Label" parent="Phone/MusicScreen/MusicBackButton"]
 layout_mode = 0
 offset_left = 48.1504
 offset_top = 77.85
@@ -2525,12 +2525,12 @@ bus = &"SFX"
 [connection signal="animation_started" from="StudyingBuddySkeleton/StudyingBuddyAniPlayer" to="MusicManager" method="_on_studying_buddy_ani_player_animation_started"]
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="Phone/MenuBackButton" to="." method="_on_menu_back_button_pressed"]
-[connection signal="pressed" from="Phone/AppScreen/MessagesButton" to="." method="_on_messages_button_pressed"]
+[connection signal="pressed" from="Phone/AppScreen/MusicButton" to="." method="_on_music_button_pressed"]
 [connection signal="pressed" from="Phone/AppScreen/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Phone/AppScreen/ClockButton" to="." method="_on_clock_button_pressed"]
 [connection signal="drag_ended" from="Phone/MusicScreen/Music Volume Slider" to="MusicManager" method="_on_volume_slider_drag_ended"]
 [connection signal="value_changed" from="Phone/MusicScreen/Music Volume Slider" to="MusicManager" method="_on_volume_slider_value_changed"]
-[connection signal="pressed" from="Phone/MusicScreen/MessagesBackButton" to="." method="_on_messages_back_button_pressed"]
+[connection signal="pressed" from="Phone/MusicScreen/MusicBackButton" to="." method="_on_music_back_button_pressed"]
 [connection signal="value_changed" from="Phone/MusicScreen/SFX Volume Slider" to="MusicManager" method="_on_sfx_volume_slider_value_changed"]
 [connection signal="value_changed" from="Phone/SettingsScreen/StudyTimeSlider" to="Phone/SettingsScreen" method="_on_study_time_slider_value_changed"]
 [connection signal="value_changed" from="Phone/SettingsScreen/StudyTimeSlider" to="Phone/SettingsScreen/StudyTimeSlider/StudyTimeReadout" method="_on_study_time_slider_value_changed"]

@@ -1,83 +1,102 @@
+
 extends Node2D
-var phone
+
+var Phone # Phone node reference
 var studying = true
-var timeManager
-var buddyOnScreen = false
-var aniManager
-var aniPlayer
+var TimeManager # TimeManager node reference
+var buddyOnScreen = false # Whether Buddy is currently visible on-screen
+var AniManager # AnimationManager node reference
+var AniPlayer # AniPlayer node reference
+var MenuUpButton # MenuUpButton node reference
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$StudyingBuddy.hide()
 	$MenuUpButton.hide()
-	phone = get_node("Phone")
-	timeManager = get_node("TimeManager")
+	Phone = get_node("Phone")
+	TimeManager = get_node("TimeManager")
+	MenuUpButton = get_node("MenuUpButton")
 	
-	# after the wait function // declare variables above^
 	await get_tree().create_timer(1.25).timeout # delay phone open animation by 1.25 seconds when app opens
+	
+	# Make menu button visible and pull up phone with settings screen visible
 	$MenuUpButton.show()
 	_on_menu_up_button_pressed()
 	_on_settings_button_pressed()
 	
-	aniManager = $AnimationManager
-	aniPlayer = get_node("StudyingBuddySkeleton/StudyingBuddyAniPlayer")
-	#get_node("MusicManager/BreakMusic").play()
+	AniManager = $AnimationManager
+	AniPlayer = get_node("StudyingBuddySkeleton/StudyingBuddyAniPlayer")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+# _process(delta) method unused for this script
+func _process(delta):
 	pass
 
-#func _studying_buddy_animation():
-	#get_node("StudyingBuddySkeleton/StudyingBuddyAniPlayer").play($AnimationManager._getAnimation())
 
-# this code runs when MenuUpButton is pressed
+# Button press handlers below \/
+
+# this code runs when MenuUpButton is pressed (phone button)
 func _on_menu_up_button_pressed():
-	phone.up()
-	get_node("MenuUpButton").hide()
-	phone.appScreenVis()
+	Phone.up()
+	MenuUpButton.hide()
+	Phone.appScreenVisible()
 
-# this code runs when MenuBackButton is pressed
+# this code runs when MenuBackButton is pressed (close phone button)
 func _on_menu_back_button_pressed():
-	phone.down()
-	get_node("MenuUpButton").show()
+	Phone.down()
+	MenuUpButton.show()
 
-# this code runs when MessagesButton is pressed
-func _on_messages_button_pressed():
-	phone.get_node("AppScreen").hide()
-	phone.get_node("MusicScreen").show()
+# this code runs when MusicButton is pressed from AppScreen
+func _on_music_button_pressed():
+	Phone.musicScreenVisible()
 
-# this code runs when SettingsButton is pressed from app screen
+# this code runs when SettingsButton is pressed from AppScreen
 func _on_settings_button_pressed():
-	# node variables:
-	var timeManager = get_node("TimeManager")
-	var settingsScreen = $settingsScreen
-	var settingsBackButton = get_node("Phone/SettingsScreen/SettingsBackButton")
-	
 	# shows the appropraite settings screen if session is running or not
-	if ((timeManager) != null && timeManager.get_session_running()):
-		phone.midScreenVis()
-
+	if ((TimeManager) != null && TimeManager.getSessionRunning()):
+		Phone.midScreenVisible()
 	else:
-		phone.settingsScreenVis()
+		Phone.settingsScreenVisible()
 
 # runs when mid-session settings screen back button is pressed
 func _on_settings_back_button_2_pressed():
-	phone.appScreenVis()	
-	
-# this code runs when MessagesBackButton is pressed
-func _on_messages_back_button_pressed():
-	phone.appScreenVis()
+	Phone.appScreenVisible()
 
+# this code runs when music screen back button is pressed
+func _on_music_back_button_pressed():
+	Phone.appScreenVisible()
 
+# this code runs when the session start button is pressed in SettingsScreen
 func _on_start_button_pressed():
-	_on_menu_back_button_pressed()
+	_on_menu_back_button_pressed() # put phone down
 	get_node("StudyingBuddy").show()
 	if (buddyOnScreen == false):
-		aniPlayer.play("Roll In")
+		AniPlayer.play("Roll In")
 		buddyOnScreen = true;
 	else:
-		var animation:String = aniManager._getAnimation()
-		aniPlayer.play(animation)
+		var animation:String = AniManager._getAnimation()
+		AniPlayer.play(animation)
+
+# this kicks the user off the mid-session-settings screen if they end the session
+func _on_end_session_pressed():
+	Phone.settingsScreenVisible()
+
+# this code runs when the back button is pressed on the clock screen
+func _on_clock_back_button_pressed():
+	Phone.appScreenVisible()
+
+# this code runs when the ClockButton is pressed from the AppScreen
+func _on_clock_button_pressed():
+	Phone.clockScreenVisible()
+
+
+func _on_close_button_pressed():
+	get_tree().quit()
+
+func _on_restart_pressed():
+	Phone.settingsScreenVisible()
+	TimeManager.resetClock()
+
 
 # Queue up the next appropriate animation whenever "Idle" animation is running.
 # This function checks the boolean "Studying" during the begining of Idle Animation.
@@ -87,29 +106,11 @@ func _on_studying_buddy_ani_player_animation_started(anim_name):
 	#if timeManager.get_session_running() == true:
 		if anim_name == "Idle":
 			print("Idle Now, queuing:")
-			var animation:String = aniManager._getAnimation()
+			var animation:String = AniManager._getAnimation()
 			print(animation)
-			aniPlayer.queue(animation)
+			AniPlayer.queue(animation)
 		
 		# If the animation started now is not "Idle", queue "Idle"
 		else:
-			aniPlayer.queue("Idle")
+			AniPlayer.queue("Idle")
 			print("Queuing Idle")
-	
-
-# this kicks the user off the mid-session-settings screen
-func _on_end_session_pressed():
-	phone.settingsScreenVis()
-
-func _on_clock_back_button_pressed():
-	phone.appScreenVis()
-
-func _on_clock_button_pressed():
-	phone.clockScreenVis()
-
-func _on_close_button_pressed():
-	get_tree().quit()
-
-func _on_restart_pressed():
-	phone.settingsScreenVis()
-	timeManager.resetClock()

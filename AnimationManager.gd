@@ -4,7 +4,7 @@ extends Node
 
 # A random number generator
 var random = RandomNumberGenerator.new()
-var timeManager
+var timeManager # TimeManager node reference
 
 # Stores names for all the available Studying Animations
 var studyingAnimation = PackedStringArray(["Writing", "Writing2", "Phone", "Writing", "Writing2"])
@@ -17,7 +17,7 @@ var breakAnimation = PackedStringArray(["Phone_5MIN"])
 func _ready():
 	timeManager = get_parent().get_node("TimeManager")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# _process(delta) method unused for this script
 func _process(delta):
 	pass
 

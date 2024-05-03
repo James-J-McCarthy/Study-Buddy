@@ -1,17 +1,17 @@
 # This node enables the text displayed on the pause button to change based on
 # whether the timer is already paused.
-
 extends TextureButton
 
 var paused = false
 var label  # The text on the pause button
 
-# Executes when the pause button enters the scene for the first time
+
+# Sets label text when the pause button enters the scene for the first time
 func _ready():
 	label = $"PauseLabel"
 
 
-# This function only updates the label on the pause button when it is pressed
+# This function only updates the label text on the pause button when it is pressed
 func _on_pressed():
 	checkNullLabel()
 	paused = !paused
