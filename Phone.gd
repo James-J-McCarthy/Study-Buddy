@@ -42,7 +42,9 @@ func appScreenVisible():
 	settingsscreen.hide()
 	endScreen.hide()
 	
-	if (!TimeManager.getSessionRunning()):
+	# code below prevents the user from trying to access the clock screen
+	# without starting a session
+	if (!TimeManager.getSessionRunning()): 
 		settingsScreenVisible()
 
 func musicScreenVisible():
