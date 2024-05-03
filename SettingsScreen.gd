@@ -7,7 +7,7 @@ var breakSlider # Slider setting break interval duration
 var breakSliderReadout # Readout display of current break interval duration setting
 var cycleSlider # Slider setting number of study cycles
 var cycleSliderReadout # Readout display of current setting for number of study cycles
-var timeManager
+var TimeManager # TimeManager node reference
 
 
 # Called when the node enters the scene tree for the first time.
@@ -18,7 +18,7 @@ func _ready():
 	breakSliderReadout = breakSlider.get_node("BreakTimeReadout")
 	cycleSlider = get_node("CyclesSlider")
 	cycleSliderReadout = cycleSlider.get_node("CyclesReadout")
-	timeManager = get_node("../../TimeManager")
+	TimeManager = get_node("../../TimeManager")
 
 
 # State getters below
