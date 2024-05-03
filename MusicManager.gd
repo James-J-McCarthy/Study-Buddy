@@ -1,11 +1,12 @@
+# This node manages what sounds and music are playing at any given time
 extends Node
 
-@onready var study_music = $StudyMusic
-@onready var break_music = $BreakMusic
-@onready var sfx_nose_honk = $SFXNoseHonk
-@onready var sfx_session_end = $SFXSessionEnd
+@onready var studyMusic = $StudyMusic # StudyMusic asset reference
+@onready var breakMusic = $BreakMusic # BreakMusic asset reference
+@onready var SFXNoseHonk = $SFXNoseHonk # SFXNoseHonk asset reference
+@onready var SFXSessionEnd = $SFXSessionEnd # SFXSessionEnd asset reference
 
-@onready var Music_BUS_ID = AudioServer.get_bus_index("Music")
+@onready var Music_BUS_ID = AudioServer.get_bus_index("Music") 
 @onready var SFX_BUS_ID = AudioServer.get_bus_index("SFX")
 
 var fadingStudyMusic = false
@@ -14,23 +15,24 @@ var userInputVolume = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	break_music.play()
+	breakMusic.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 # calls transitionMusic if a fade variable is true. Otherwise, it sets the current audio to the user's input volume.
 func _process(delta):
 		if fadingBreakMusic:
-			transitionMusic(study_music, break_music, delta)
+			transitionMusic(studyMusic, breakMusic, delta)
 		else: # set to correct volume
-			break_music.volume_db  = linear_to_db(userInputVolume)
+			breakMusic.volume_db  = linear_to_db(userInputVolume)
 		if fadingStudyMusic:
-			transitionMusic(break_music, study_music, delta)
+			transitionMusic(breakMusic, studyMusic, delta)
 		else: # set to correct volume
-			study_music.volume_db  = linear_to_db(userInputVolume)
+			studyMusic.volume_db  = linear_to_db(userInputVolume)
 
 
-# detects if the undesired audio is playing. If so, it decrements and begins playing the desired audio, slowing incrementing until it is the user's input volume.
+# detects if the undesired audio is playing. If so, it decrements and begins playing the desired audio
+# slowly incrementing until it matches the user's input volume.
 func transitionMusic(transitionIn, transitionOut, delta):
 	if transitionOut.playing:
 			transitionOut.volume_db -= 10*delta
@@ -47,10 +49,8 @@ func transitionMusic(transitionIn, transitionOut, delta):
 
 # reverts a current true fading variable back to false
 func stopFading():
-	if fadingBreakMusic:
-		fadingBreakMusic = false
-	if fadingStudyMusic:
-		fadingStudyMusic = false
+	fadingBreakMusic = false
+	fadingStudyMusic = false
 
 
 # changes the volume of the music (study and break) based on the user's input on the music volume slider
@@ -60,7 +60,7 @@ func _on_volume_slider_value_changed(value):
 	AudioServer.set_bus_mute(Music_BUS_ID, userInputVolume < 0.05)
 
 
-# changes the volume of the sounds effects based on the user's input on the sfx volume slider (currently only for the end of session chime)
+# changes the volume of the sound effects based on the user's input on the sfx volume slider (currently only for the end of session chime)
 func _on_sfx_volume_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(SFX_BUS_ID, linear_to_db(value))
 	AudioServer.set_bus_mute(SFX_BUS_ID, value < 0.05)
@@ -74,8 +74,8 @@ func startBreakMusic():
 	fadingStudyMusic = true
 
 
-#plays the end of session sound effect and changes the fadingStudyMusic variable to true
+# plays the end of session sound effect
 func sessionEndMusic():
-	sfx_session_end.play()
+	SFXSessionEnd.play()
 	fadingStudyMusic = true
 

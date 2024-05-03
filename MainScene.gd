@@ -6,7 +6,7 @@ var studying = true
 var TimeManager # TimeManager node reference
 var buddyOnScreen = false # Whether Buddy is currently visible on-screen
 var AniManager # AnimationManager node reference
-var AniPlayer # AniPlayer node reference
+var AniPlayer # StudyingBuddyAniPlayer node reference
 var MenuUpButton # MenuUpButton node reference
 
 
@@ -89,10 +89,12 @@ func _on_clock_back_button_pressed():
 func _on_clock_button_pressed():
 	Phone.clockScreenVisible()
 
-
+# quits the app when the close button is pressed
 func _on_close_button_pressed():
 	get_tree().quit()
 
+# resets to the beginning-of-session settings screen if user restarts after
+# a session is completed
 func _on_restart_pressed():
 	Phone.settingsScreenVisible()
 	TimeManager.resetClock()

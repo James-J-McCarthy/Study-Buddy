@@ -1,25 +1,25 @@
+# This script node controls visibility for the various phone screens
+# and also has phone up and phone down animation trigger methods
 extends Sprite2D
-# this script is here to control visibility 
-# for the various phone screens
-# also has phone up and phone down 
-var appscreen
-var musicscreen
-var settingsscreen
-var midsettingsscreen
-var clockscreen
-var endScreen
-var animationPlayer
-var TimeManager
+
+var AppScreen # AppScreen node reference
+var MusicScreen # MusicScreen node reference
+var SettingsScreen # SettingsScreen node reference
+var MidSettingsScreen # MidSessionSettings node reference
+var ClockScreen # ClockScreen node reference
+var EndScreen # EndScreen node reference
+var AniPlayer # StudyingBuddyAniPlayer node reference
+var TimeManager # TimeManager node reference
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	musicscreen = get_node("MusicScreen")
-	settingsscreen = get_node("SettingsScreen")
-	appscreen = get_node("AppScreen")
-	clockscreen = get_node("ClockScreen")
-	midsettingsscreen = get_node("MidSessionSettings")
-	endScreen = get_node("SessionEndScreen")
-	animationPlayer = get_node("../PhoneMover")
+	MusicScreen = get_node("MusicScreen")
+	SettingsScreen = get_node("SettingsScreen")
+	AppScreen = get_node("AppScreen")
+	ClockScreen = get_node("ClockScreen")
+	MidSettingsScreen = get_node("MidSessionSettings")
+	EndScreen = get_node("SessionEndScreen")
+	AniPlayer = get_node("../PhoneMover")
 	TimeManager = get_parent().get_node("TimeManager")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,60 +27,49 @@ func _process(delta):
 	pass
 
 
+# Phone up/down animations are triggered by the two methods below \/
 func up():
-	animationPlayer.play("PhoneUp")
+	AniPlayer.play("PhoneUp")
 
 func down():
-	animationPlayer.play("PhoneDown")
+	AniPlayer.play("PhoneDown")
 
 
+# Methods to show each app's screen on the Phone below \/
 func appScreenVisible():
-	appscreen.show()
-	midsettingsscreen.hide()
-	clockscreen.hide()
-	musicscreen.hide()
-	settingsscreen.hide()
-	endScreen.hide()
+	_hideAll()
+	AppScreen.show()
 	
-	if (!TimeManager.getSessionRunning()):
+	# code below prevents the user from trying to access the clock screen
+	# without starting a session
+	if (!TimeManager.getSessionRunning()): 
 		settingsScreenVisible()
 
 func musicScreenVisible():
-	musicscreen.show()
-	midsettingsscreen.hide()
-	clockscreen.hide()
-	appscreen.hide()
-	settingsscreen.hide()
-	endScreen.hide()
+	_hideAll()
+	MusicScreen.show()
 
 func midScreenVisible():
-	appscreen.hide()
-	midsettingsscreen.show()
-	clockscreen.hide()
-	musicscreen.hide()
-	settingsscreen.hide()
-	endScreen.hide()
-	
+	_hideAll()
+	MidSettingsScreen.show()
+
 func clockScreenVisible():
-	appscreen.hide()
-	midsettingsscreen.hide()
-	clockscreen.show()
-	musicscreen.hide()
-	settingsscreen.hide()
-	endScreen.hide()
+	_hideAll()
+	ClockScreen.show()
 
 func settingsScreenVisible():
-	appscreen.hide()
-	midsettingsscreen.hide()
-	clockscreen.hide()
-	musicscreen.hide()
-	settingsscreen.show()
-	endScreen.hide()
+	_hideAll()
+	SettingsScreen.show()
 
 func endScreenVisible():
-	appscreen.hide()
-	midsettingsscreen.hide()
-	clockscreen.hide()
-	musicscreen.hide()
-	settingsscreen.hide()
-	endScreen.show()
+	_hideAll()
+	EndScreen.show()
+
+# This method is purely for consolidating repeating code in the above visibility functions
+func _hideAll():
+	AppScreen.hide()
+	MidSettingsScreen.hide()
+	ClockScreen.hide()
+	MusicScreen.hide()
+	SettingsScreen.hide()
+	EndScreen.hide()
