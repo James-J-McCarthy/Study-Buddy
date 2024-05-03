@@ -43,6 +43,7 @@ func _rollIn():
 		buddyOnScreen = true;
 		aniPlayer.clear_queue()
 		aniPlayer.play("Roll In")
+		aniPlayer.queue("Idle")
 		print("Buddy On Screen?:")
 		print (buddyOnScreen)
 	else:

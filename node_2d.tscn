@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://doin1g4xrytqe"]
+[gd_scene load_steps=92 format=3 uid="uid://doin1g4xrytqe"]
 
 [ext_resource type="Script" path="res://MainScene.gd" id="1_37525"]
 [ext_resource type="Texture2D" uid="uid://dymt2u5vj5pon" path="res://Outside Window.jpg" id="2_m37tu"]
@@ -1683,6 +1683,404 @@ _data = {
 "Blink": SubResource("Animation_evbrr")
 }
 
+[sub_resource type="Animation" id="Animation_evysn"]
+resource_name = "Swing"
+length = 13.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Leaves Skeleton/Root/Leaf 3/Leaf 3_3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 13),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-192.36, -35.6207), Vector2(-192.36, -35.6207), Vector2(-192.36, -35.6207)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Leaves Skeleton/Root/Leaf 3/Leaf 3_3:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 13),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Leaves Skeleton/Root:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3, 13),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1159.09, 1120.78), Vector2(1159.09, 1120.78), Vector2(1159.09, 1120.78)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Leaves Skeleton/Root:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 13),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Leaves Skeleton/Root/Leaf 1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3, 13),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-276.209, 5.08867), Vector2(-276.209, 5.08867), Vector2(-276.209, 5.08867)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Leaves Skeleton/Root/Leaf 1:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.7, 5.6, 10, 13),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0970914, -0.031157, -0.0940495, 0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Leaves Skeleton/Root/Leaf 1/Leaf 1_1:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.8, 13),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-133.172, 117.039), Vector2(-133.172, 117.039), Vector2(-133.172, 117.039)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Leaves Skeleton/Root/Leaf 1/Leaf 1_1:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2.8, 5.6, 13),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.198644, 0.115389, 0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Leaves Skeleton/Root/Leaf 1/Leaf 1_1/Leaf 1_1_1:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 2.8, 13),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-59.1876, 198.458), Vector2(-59.1876, 198.458), Vector2(-59.1876, 198.458)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Leaves Skeleton/Root/Leaf 1/Leaf 1_1/Leaf 1_1_1:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 2.8, 5.6, 10, 13),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0803951, -0.244126, -0.319337, 0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Leaves Skeleton/Root/Leaf 2:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 2.8, 13),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-59.1876, 167.926), Vector2(-59.1876, 167.926), Vector2(-59.1876, 167.926)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Leaves Skeleton/Root/Leaf 2:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 2.8, 5.6, 10, 13),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.13955, -0.259097, -0.443034, 0.0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Leaves Skeleton/Root/Leaf 2/Leaf 2_2:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 2.8, 13),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-29.5938, 167.926), Vector2(-29.5938, 167.926), Vector2(-29.5938, 167.926)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Leaves Skeleton/Root/Leaf 2/Leaf 2_2:rotation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 2.8, 10, 13),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.190959, -0.239986, 0.0]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Leaves Skeleton/Root/Leaf 3:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 2.8, 13),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-128.24, -157.749), Vector2(-128.24, -157.749), Vector2(-128.24, -157.749)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Leaves Skeleton/Root/Leaf 3:rotation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 2.8, 5.6, 13),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0874189, 0.0396789, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_td5xw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Leaves Skeleton/Root/Leaf 3/Leaf 3_3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-192.36, -35.6207)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Leaves Skeleton/Root/Leaf 3/Leaf 3_3:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Leaves Skeleton/Root:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1159.09, 1120.78)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Leaves Skeleton/Root:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Leaves Skeleton/Root/Leaf 1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-276.209, 5.08867)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Leaves Skeleton/Root/Leaf 1:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Leaves Skeleton/Root/Leaf 1/Leaf 1_1:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-133.172, 117.039)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Leaves Skeleton/Root/Leaf 1/Leaf 1_1:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Leaves Skeleton/Root/Leaf 1/Leaf 1_1/Leaf 1_1_1:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-59.1876, 198.458)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Leaves Skeleton/Root/Leaf 1/Leaf 1_1/Leaf 1_1_1:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Leaves Skeleton/Root/Leaf 2:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-59.1876, 167.926)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Leaves Skeleton/Root/Leaf 2:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Leaves Skeleton/Root/Leaf 2/Leaf 2_2:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-29.5938, 167.926)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Leaves Skeleton/Root/Leaf 2/Leaf 2_2:rotation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Leaves Skeleton/Root/Leaf 3:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-128.24, -157.749)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Leaves Skeleton/Root/Leaf 3:rotation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l0hx3"]
+_data = {
+"RESET": SubResource("Animation_td5xw"),
+"Swing": SubResource("Animation_evysn")
+}
+
 [sub_resource type="LabelSettings" id="LabelSettings_kdu7m"]
 font = ExtResource("21_rr2ru")
 font_size = 46
@@ -1891,7 +2289,6 @@ rest = Transform2D(1, -1.30879e-11, 1.30879e-11, 1, 392.498, 500.394)
 
 [node name="Head" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(-48.4978, -144.394)
-scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(1, -1.30879e-11, 1.30879e-11, 1, -48.4978, -144.394)
 
 [node name="EarL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/Head"]
@@ -1921,12 +2318,13 @@ rest = Transform2D(3.14289, -0.827503, 0.827504, 3.14289, 35.5022, -2.39432)
 [node name="UpperArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(-33.4978, -141.394)
 rotation = 1.67152
-scale = Vector2(0.999993, 0.999993)
+scale = Vector2(0.999994, 0.999994)
 rest = Transform2D(-0.100553, 0.994926, -0.994926, -0.100553, -33.4978, -141.394)
 
 [node name="ForeArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL"]
 position = Vector2(87.652, -7.88235)
 rotation = 1.41794
+scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(0.152262, 0.98834, -0.98834, 0.152262, 87.652, -7.88235)
 
 [node name="HandL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL/ForeArmL"]
@@ -1938,22 +2336,25 @@ rest = Transform2D(6.96462, -1.60426, 0.549942, 2.38748, 88.3128, -2.97414)
 [node name="Phone" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL/ForeArmL/HandL"]
 position = Vector2(4.78279, 2.33461)
 rotation = -0.366923
+scale = Vector2(1, 1)
 rest = Transform2D(0.933436, -0.358745, 0.358745, 0.933436, 4.78279, 2.33461)
 
 [node name="Pen" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL/ForeArmL/HandL"]
 position = Vector2(4.78279, 2.33461)
 rotation = -1.20646
-scale = Vector2(1, 1)
+scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(0.356329, -0.93436, 0.93436, 0.356329, 4.78279, 2.33461)
 
 [node name="UpperArmR" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(-95.4978, -118.394)
 rotation = 1.67185
+scale = Vector2(1, 1)
 rest = Transform2D(-0.100882, 0.994898, -0.994898, -0.100882, -95.4978, -118.394)
 
 [node name="ForeArmR" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmR"]
 position = Vector2(35.7571, 25.5231)
 rotation = 1.41275
+scale = Vector2(1, 1)
 rest = Transform2D(0.157389, 0.987537, -0.987537, 0.157389, 35.7571, 25.5231)
 
 [node name="HandR" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmR/ForeArmR"]
@@ -1963,7 +2364,8 @@ scale = Vector2(5.367, 1.84)
 rest = Transform2D(5.33073, 0.622872, -0.213543, 1.82757, 45.5535, -8.41874)
 
 [node name="Lower Body" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
-rotation = 2.45376
+rotation = 2.92296
+scale = Vector2(1, 1)
 rest = Transform2D(-0.976195, 0.216896, -0.216896, -0.976195, 0, 0)
 
 [node name="StudyingBuddyAniPlayer" type="AnimationPlayer" parent="StudyingBuddySkeleton"]
@@ -1996,13 +2398,54 @@ position = Vector2(259, 323.75)
 scale = Vector2(0.202745, 0.196515)
 texture = ExtResource("14_mbevd")
 
-[node name="Leaves" type="Polygon2D" parent="."]
-position = Vector2(8, -9)
-scale = Vector2(0.19971, 0.2)
+[node name="Leaves" type="Polygon2D" parent="Pot"]
+position = Vector2(-1238.01, -1693.25)
+scale = Vector2(0.98503, 1.01773)
 texture = ExtResource("15_bdx30")
+skeleton = NodePath("../Leaves Skeleton")
 polygon = PackedVector2Array(2475.68, 2577.04, 2391.16, 2492.52, 2195.92, 2497.28, 2013.78, 2541.33, 2007.82, 2588.95, 2139.97, 2678.23, 2187.58, 2699.66, 1986.39, 2715.14, 1928.06, 2792.52, 1901.87, 2890.14, 1860.2, 2987.75, 1914.97, 3068.71, 1955.44, 3196.09, 2041.16, 3037.75, 2082.82, 2997.28, 2136.39, 2973.47, 2214.97, 2865.14, 2256.63, 2878.23, 2254.25, 2962.75, 2301.87, 3021.09, 2366.16, 3180.61, 2394.73, 3085.37, 2522.11, 3021.09, 2587.58, 2940.14, 2599.49, 2861.56, 2588.78, 2718.71, 2592.35, 2534.18)
 uv = PackedVector2Array(2465.48, 2579.76, 2380.95, 2495.24, 2185.71, 2500, 2003.57, 2544.05, 1997.62, 2591.67, 2129.76, 2680.95, 2177.38, 2702.38, 1976.19, 2717.86, 1917.86, 2795.24, 1891.67, 2892.86, 1850, 2990.48, 1904.76, 3071.43, 1945.24, 3198.81, 2030.95, 3040.48, 2072.62, 3000, 2126.19, 2976.19, 2204.76, 2867.86, 2246.43, 2880.95, 2244.05, 2965.48, 2291.67, 3023.81, 2355.95, 3183.33, 2384.52, 3088.1, 2511.9, 3023.81, 2577.38, 2942.86, 2589.29, 2864.29, 2578.57, 2721.43, 2582.14, 2536.9)
 polygons = [PackedInt32Array(17, 23, 18), PackedInt32Array(22, 18, 23), PackedInt32Array(22, 21, 19, 18), PackedInt32Array(19, 21, 20), PackedInt32Array(6, 16, 17, 23, 24, 25, 26, 0, 1), PackedInt32Array(5, 2, 1, 6), PackedInt32Array(5, 4, 3, 2), PackedInt32Array(6, 7, 16), PackedInt32Array(16, 15, 8, 7), PackedInt32Array(15, 14, 9, 8), PackedInt32Array(10, 9, 14, 13), PackedInt32Array(10, 11, 13), PackedInt32Array(12, 11, 13)]
+bones = ["Root", PackedFloat32Array(0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5), "Root/Leaf 1", PackedFloat32Array(0, 0.5, 0, 0, 0, 0, 0.5, 1, 1, 0, 0, 0.5, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Root/Leaf 1/Leaf 1_1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0, 0, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Root/Leaf 1/Leaf 1_1/Leaf 1_1_1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Root/Leaf 2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0, 0.5, 0.5, 0, 0), "Root/Leaf 2/Leaf 2_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0), "Root/Leaf 3", PackedFloat32Array(0.5, 0.5, 0, 0, 0, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Root/Leaf 3/Leaf 3_3", PackedFloat32Array(0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="Leaves Skeleton" type="Skeleton2D" parent="Pot"]
+
+[node name="Root" type="Bone2D" parent="Pot/Leaves Skeleton"]
+position = Vector2(1159.09, 1120.78)
+rest = Transform2D(1, 0, 0, 1, 1159.09, 1120.78)
+
+[node name="Leaf 1" type="Bone2D" parent="Pot/Leaves Skeleton/Root"]
+position = Vector2(-276.209, 5.08867)
+rest = Transform2D(1, 0, 0, 1, -276.209, 5.08867)
+
+[node name="Leaf 1_1" type="Bone2D" parent="Pot/Leaves Skeleton/Root/Leaf 1"]
+position = Vector2(-133.172, 117.039)
+rest = Transform2D(1, 0, 0, 1, -133.172, 117.039)
+
+[node name="Leaf 1_1_1" type="Bone2D" parent="Pot/Leaves Skeleton/Root/Leaf 1/Leaf 1_1"]
+position = Vector2(-59.1876, 198.458)
+rest = Transform2D(1, 0, 0, 1, -59.1876, 198.458)
+
+[node name="Leaf 2" type="Bone2D" parent="Pot/Leaves Skeleton/Root"]
+position = Vector2(-59.1876, 167.926)
+rest = Transform2D(1, 0, 0, 1, -59.1876, 167.926)
+
+[node name="Leaf 2_2" type="Bone2D" parent="Pot/Leaves Skeleton/Root/Leaf 2"]
+position = Vector2(-29.5938, 167.926)
+rest = Transform2D(1, 0, 0, 1, -29.5938, 167.926)
+
+[node name="Leaf 3" type="Bone2D" parent="Pot/Leaves Skeleton/Root"]
+position = Vector2(-128.24, -157.749)
+rest = Transform2D(1, 0, 0, 1, -128.24, -157.749)
+
+[node name="Leaf 3_3" type="Bone2D" parent="Pot/Leaves Skeleton/Root/Leaf 3"]
+position = Vector2(-192.36, -35.6207)
+rest = Transform2D(1, 0, 0, 1, -192.36, -35.6207)
+
+[node name="Pot Plant AniPlayer" type="AnimationPlayer" parent="Pot"]
+libraries = {
+"": SubResource("AnimationLibrary_l0hx3")
+}
 
 [node name="CloseButton" type="TextureButton" parent="."]
 offset_left = 450.0
@@ -2733,8 +3176,6 @@ bus = &"SFX"
 
 [connection signal="animation_started" from="StudyingBuddySkeleton/StudyingBuddyAniPlayer" to="." method="_on_studying_buddy_ani_player_animation_started"]
 [connection signal="animation_started" from="StudyingBuddySkeleton/StudyingBuddyAniPlayer" to="MusicManager" method="_on_studying_buddy_ani_player_animation_started"]
-[connection signal="animation_started" from="StudyingBuddySkeleton/Blink AniPlayer" to="." method="_on_studying_buddy_ani_player_animation_started"]
-[connection signal="animation_started" from="StudyingBuddySkeleton/Blink AniPlayer" to="MusicManager" method="_on_studying_buddy_ani_player_animation_started"]
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="Phone/MenuBackButton" to="." method="_on_menu_back_button_pressed"]
 [connection signal="pressed" from="Phone/AppScreen/MusicButton" to="." method="_on_music_button_pressed"]

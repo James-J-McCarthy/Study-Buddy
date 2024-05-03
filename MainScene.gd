@@ -24,6 +24,8 @@ func _ready():
 	get_node("PenOnDesk").hide()
 	get_node("PhoneOnDesk").show()
 	
+	get_node("Pot/Pot Plant AniPlayer").play("Swing")
+	
 	await get_tree().create_timer(1.25).timeout # delay phone open animation by 1.25 seconds when app opens
 	
 	# Make menu button visible and pull up phone with settings screen visible
@@ -114,8 +116,6 @@ func _on_restart_pressed():
 # ^ Results in a >5 second delay on animations from the actual state change.
 func _on_studying_buddy_ani_player_animation_started(anim_name):
 	# If the animation that started now is "Idle", queue the next animation
-	if (anim_name == "Roll In"):
-		AniPlayer.queue("Idle")
 	print(TimeManager.getSessionRunning())
 	if (TimeManager.getSessionRunning() == true):
 		if anim_name == "Idle":
