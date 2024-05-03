@@ -90,6 +90,7 @@ func _on_clock_button_pressed():
 
 # quits the app when the close button is pressed
 func _on_close_button_pressed():
+
 	Phone.down()
 	ConfirmationScreen.show()
 	CloseButton.hide()
@@ -113,7 +114,10 @@ func _on_restart_pressed():
 # ^ Results in a >5 second delay on animations from the actual state change.
 func _on_studying_buddy_ani_player_animation_started(anim_name):
 	# If the animation that started now is "Idle", queue the next animation
-	if anim_name != "Roll Out":
+	if (anim_name == "Roll In"):
+		AniPlayer.queue("Idle")
+	print(TimeManager.getSessionRunning())
+	if (TimeManager.getSessionRunning() == true):
 		if anim_name == "Idle":
 			print("Idle Now, queuing:")
 			var animation:String = AniManager._getAnimation()
@@ -124,3 +128,9 @@ func _on_studying_buddy_ani_player_animation_started(anim_name):
 		else:
 			AniPlayer.queue("Idle")
 			print("Queuing Idle")
+	else:
+		print("No Session Running")
+
+func _on_close_app_button_pressed():
+	_on_close_button_pressed()
+	get_node("Phone/MenuBackButton").show()

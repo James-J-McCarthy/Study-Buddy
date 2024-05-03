@@ -266,6 +266,78 @@ tracks/15/keys = {
 "update": 0,
 "values": [-0.415421, -0.415421]
 }
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../StudyingBuddy/PhoneOnHand:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("../StudyingBuddy/PhoneOnHand:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("../StudyingBuddy/Pen:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("../StudyingBuddy/Pen:rotation")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.00102827, 0.00102827]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("../PhoneOnDesk:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("../PenOnDesk:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
 
 [sub_resource type="Animation" id="Animation_cb3ba"]
 resource_name = "Phone"
@@ -1898,7 +1970,7 @@ rest = Transform2D(-0.976195, 0.216896, -0.216896, -0.976195, 0, 0)
 libraries = {
 "": SubResource("AnimationLibrary_n6bl0")
 }
-blend_times = [&"Roll Out", &"Roll Out", 1.0, &"Writing", &"RESET", 4.0, &"Writing", &"Roll Out", 1.0, &"Writing", &"Writing", 4.0, &"Writing", &"Writing2", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Idle", 4.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Roll Out", 1.0, &"Writing2", &"Writing", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Idle", 4.0, &"Phone", &"RESET", 4.0, &"Phone", &"Roll Out", 1.0, &"Phone", &"Writing", 4.0, &"Phone", &"Writing2", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Idle", 2.0, &"Idle", &"RESET", 4.0, &"Idle", &"Roll Out", 1.0, &"Idle", &"Writing", 4.0, &"Idle", &"Writing2", 6.0, &"Idle", &"Phone", 1.0, &"Idle", &"Idle", 2.0, &"Idle", &"Phone_5MIN", 1.0, &"Phone_5MIN", &"Idle", 1.0, &"Phone_5MIN", &"Roll In", 1.0, &"Roll In", &"Roll Out", 1.0]
+blend_times = [&"Roll Out", &"Roll Out", 1.0, &"Writing", &"RESET", 4.0, &"Writing", &"Roll Out", 1.0, &"Writing", &"Writing", 4.0, &"Writing", &"Writing2", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Idle", 4.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Roll Out", 1.0, &"Writing2", &"Writing", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Idle", 4.0, &"Phone", &"RESET", 4.0, &"Phone", &"Roll Out", 1.0, &"Phone", &"Writing", 4.0, &"Phone", &"Writing2", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Idle", 2.0, &"Idle", &"RESET", 4.0, &"Idle", &"Roll Out", 1.0, &"Idle", &"Writing", 4.0, &"Idle", &"Writing2", 6.0, &"Idle", &"Phone", 1.0, &"Idle", &"Idle", 2.0, &"Idle", &"Phone_5MIN", 1.0, &"Phone_5MIN", &"Idle", 1.0, &"Phone_5MIN", &"Roll In", 1.0, &"Roll In", &"Roll Out", 1.0, &"Roll In", &"Idle", 2.0]
 
 [node name="Blink AniPlayer" type="AnimationPlayer" parent="StudyingBuddySkeleton"]
 libraries = {
@@ -2500,7 +2572,7 @@ label_settings = ExtResource("23_8e3nk")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CloseButton" type="TextureButton" parent="Phone/SessionEndScreen"]
+[node name="CloseAppButton" type="TextureButton" parent="Phone/SessionEndScreen"]
 offset_left = 83.744
 offset_top = 548.224
 offset_right = 563.744
@@ -2510,7 +2582,7 @@ texture_pressed = ExtResource("58_8n4yx")
 texture_hover = ExtResource("59_6n6ei")
 stretch_mode = 0
 
-[node name="RestartLabel" type="Label" parent="Phone/SessionEndScreen/CloseButton"]
+[node name="RestartLabel" type="Label" parent="Phone/SessionEndScreen/CloseAppButton"]
 layout_mode = 0
 offset_left = 54.1871
 offset_top = 35.5321
@@ -2696,7 +2768,7 @@ bus = &"SFX"
 [connection signal="pressed" from="Phone/MidSessionSettings/EndSession" to="TimeManager" method="_on_end_session_pressed"]
 [connection signal="pressed" from="Phone/SessionEndScreen/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Phone/SessionEndScreen/Restart" to="Phone/ClockScreen/SessionTimeLabel/SessionTimerBar" method="_on_restart_pressed"]
-[connection signal="pressed" from="Phone/SessionEndScreen/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Phone/SessionEndScreen/CloseAppButton" to="." method="_on_close_app_button_pressed"]
 [connection signal="pressed" from="MenuUpButton" to="." method="_on_menu_up_button_pressed"]
 [connection signal="timeout" from="TimeManager/PomoTimer" to="TimeManager" method="_period_finished"]
 [connection signal="pressed" from="Quit Confirmation Screen/Quit Button" to="." method="_on_quit_button_pressed"]

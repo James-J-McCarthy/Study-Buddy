@@ -114,6 +114,7 @@ func _period_finished(): # I tested this funciton with a print to ensure it work
 			#end of session logic triggered here:
 			phone.up()
 			phone.endScreenVisible()
+			sessionRunning = false
 			print("finished study period!!")
 			var musicManager = get_node("../MusicManager")
 			if(musicManager != null):
