@@ -49,9 +49,9 @@ func updateClockHand(_delta, dontReset):
 				get_node("../clockHand").rotation = currentRad
 
 func getPeriodValues():
-	studyTime = get_node("../Phone/SettingsScreen/StudyTimeSlider").value * 1
+	studyTime = get_node("../Phone/SettingsScreen/StudyTimeSlider").value * 60
 	cyclesTotal = get_node("../Phone/SettingsScreen/CyclesSlider").value 
-	breakTime = get_node("../Phone/SettingsScreen/BreakTimeSlider").value * 1
+	breakTime = get_node("../Phone/SettingsScreen/BreakTimeSlider").value * 60
 	
 # helper function that starts pomo timer given a period length
 func start_period(duration):
