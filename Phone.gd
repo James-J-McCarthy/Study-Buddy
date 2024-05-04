@@ -40,6 +40,7 @@ func down():
 	if (PhoneUp):
 		AniPlayer.play("PhoneDown")
 		PhoneUp = false;
+		get_node("../MenuUpButton").show()
 
 
 # Methods to show each app's screen on the Phone below \/
