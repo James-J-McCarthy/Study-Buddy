@@ -3385,7 +3385,6 @@ rest = Transform2D(-0.0808582, -0.996726, 0.996726, -0.0808582, 499, 376)
 [node name="1" type="Bone2D" parent="Right Pot/Right Pot Skeleton/Root"]
 position = Vector2(22.6837, -32.2715)
 rotation = -0.655132
-scale = Vector2(1, 1)
 rest = Transform2D(0.792968, -0.609264, 0.609264, 0.792968, 22.6837, -32.2715)
 
 [node name="1_1" type="Bone2D" parent="Right Pot/Right Pot Skeleton/Root/1"]
@@ -3635,7 +3634,7 @@ rest = Transform2D(-0.976195, 0.216896, -0.216896, -0.976195, 0, 0)
 libraries = {
 "": SubResource("AnimationLibrary_n6bl0")
 }
-blend_times = [&"Phone", &"RESET", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Writing2", 4.0, &"Phone", &"Roll Out", 1.0, &"Phone", &"Writing", 4.0, &"Phone", &"Idle", 2.0, &"Writing3", &"Roll Out", 1.0, &"Writing3", &"Idle", 1.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"Roll Out", 1.0, &"Writing2", &"Writing", 4.0, &"Writing2", &"Idle", 4.0, &"Roll Out", &"Roll Out", 1.0, &"Writing", &"RESET", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Writing2", 4.0, &"Writing", &"Roll Out", 1.0, &"Writing", &"Writing", 4.0, &"Writing", &"Idle", 4.0, &"Roll In", &"RESET", 1.0, &"Roll In", &"Phone", 1.0, &"Roll In", &"Writing3", 1.0, &"Roll In", &"Writing2", 1.0, &"Roll In", &"Roll Out", 1.0, &"Roll In", &"Writing", 1.0, &"Roll In", &"Roll In", 1.0, &"Roll In", &"Idle", 3.0, &"Roll In", &"Drink", 1.0, &"Phone_5MIN", &"Roll In", 1.0, &"Phone_5MIN", &"Idle", 1.0, &"Idle", &"RESET", 4.0, &"Idle", &"Phone", 1.0, &"Idle", &"Writing3", 1.0, &"Idle", &"Writing2", 6.0, &"Idle", &"Roll Out", 1.0, &"Idle", &"Writing", 4.0, &"Idle", &"Roll In", 1.0, &"Idle", &"Phone_5MIN", 1.0, &"Idle", &"Idle", 2.0, &"Idle", &"Drink", 1.0, &"Drink", &"Roll Out", 1.0, &"Drink", &"Idle", 1.0]
+blend_times = [&"Phone", &"RESET", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Idle", 2.0, &"Phone", &"Writing2", 4.0, &"Phone", &"Writing", 4.0, &"Phone", &"Roll Out", 1.0, &"Phone_5MIN", &"Idle", 1.0, &"Phone_5MIN", &"Roll In", 1.0, &"Idle", &"RESET", 4.0, &"Idle", &"Phone", 1.0, &"Idle", &"Phone_5MIN", 1.0, &"Idle", &"Idle", 2.0, &"Idle", &"Drink", 1.0, &"Idle", &"Roll In", 1.0, &"Idle", &"Writing2", 6.0, &"Idle", &"Writing3", 1.0, &"Idle", &"Writing", 4.0, &"Idle", &"Roll Out", 1.0, &"Drink", &"Idle", 1.0, &"Drink", &"Roll Out", 1.0, &"Roll In", &"RESET", 1.0, &"Roll In", &"Phone", 1.0, &"Roll In", &"Idle", 3.0, &"Roll In", &"Drink", 1.0, &"Roll In", &"Roll In", 1.0, &"Roll In", &"Writing2", 1.0, &"Roll In", &"Writing3", 1.0, &"Roll In", &"Writing", 1.0, &"Roll In", &"Roll Out", 1.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Idle", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"Writing", 4.0, &"Writing2", &"Roll Out", 1.0, &"Writing3", &"Idle", 1.0, &"Writing3", &"Roll Out", 1.0, &"Writing", &"RESET", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Idle", 4.0, &"Writing", &"Writing2", 4.0, &"Writing", &"Writing", 4.0, &"Writing", &"Roll Out", 1.0, &"Roll Out", &"Roll Out", 1.0]
 
 [node name="Nose Boop AniPlayer" type="AnimationPlayer" parent="StudyingBuddySkeleton"]
 libraries = {
@@ -3900,6 +3899,7 @@ step = 0.05
 value = 1.0
 
 [node name="SettingsScreen" type="Sprite2D" parent="Phone"]
+visible = false
 position = Vector2(2.08165e-12, 2.08165e-12)
 texture = ExtResource("36_c4tim")
 script = ExtResource("19_20l8k")
@@ -4041,6 +4041,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ClockScreen" type="Sprite2D" parent="Phone"]
+visible = false
 position = Vector2(2.89404, 2.41123)
 scale = Vector2(1.00227, 1.00146)
 texture = ExtResource("36_c4tim")
@@ -4225,7 +4226,6 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="SessionEndScreen" type="Sprite2D" parent="Phone"]
-visible = false
 texture = ExtResource("51_yx2dx")
 
 [node name="Fake Home Button" type="Sprite2D" parent="Phone/SessionEndScreen"]
@@ -4247,7 +4247,7 @@ offset_top = -705.619
 offset_right = 751.705
 offset_bottom = -253.619
 scale = Vector2(0.55, 0.55)
-text = "Congradulations!
+text = "Congratulations!
 
 You have completed 
 your study session 
