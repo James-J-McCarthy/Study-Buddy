@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://doin1g4xrytqe"]
+[gd_scene load_steps=111 format=3 uid="uid://doin1g4xrytqe"]
 
 [ext_resource type="Script" path="res://MainScene.gd" id="1_37525"]
 [ext_resource type="Texture2D" uid="uid://dymt2u5vj5pon" path="res://Outside Window.jpg" id="2_m37tu"]
@@ -78,6 +78,105 @@
 [ext_resource type="LabelSettings" uid="uid://c1qxsvqm2r5v5" path="res://Main Screen Small Text.tres" id="57_nugnk"]
 [ext_resource type="Texture2D" uid="uid://djwh7upc1c52y" path="res://Button Exit Screen Right Clicked.png" id="58_8n4yx"]
 [ext_resource type="Texture2D" uid="uid://bjvdrsl0v5qn1" path="res://Button Exit Screen Right Hover.png" id="59_6n6ei"]
+
+[sub_resource type="Animation" id="Animation_f7dx0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Left Pot Skeleton/1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Left Pot Skeleton/1/1_1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.29268]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Left Pot Skeleton/2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.37095]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Left Pot Skeleton/2/2_2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.48787e-16]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Left Pot Skeleton/3:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.42645]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Left Pot Skeleton/3/3_3:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Left Pot Skeleton/4:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.68748]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Left Pot Skeleton/4/4_4:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_avtcg"]
 resource_name = "Swing"
@@ -180,109 +279,61 @@ tracks/7/keys = {
 "values": [0.0, -0.0935772, 0.101508, 0.0]
 }
 
-[sub_resource type="Animation" id="Animation_f7dx0"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_87jb5"]
+_data = {
+"RESET": SubResource("Animation_f7dx0"),
+"Swing": SubResource("Animation_avtcg")
+}
+
+[sub_resource type="Animation" id="Animation_m38gf"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Left Pot Skeleton/1:rotation")
+tracks/0/path = NodePath("Right Pot Skeleton/Root:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [-1.65174]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Left Pot Skeleton/1/1_1:rotation")
+tracks/1/path = NodePath("Right Pot Skeleton/Root/1:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.29268]
+"values": [-0.655132]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Left Pot Skeleton/2:rotation")
+tracks/2/path = NodePath("Right Pot Skeleton/Root/1/1_1:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [2.37095]
+"values": [0.732398]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Left Pot Skeleton/2/2_2:rotation")
+tracks/3/path = NodePath("Right Pot Skeleton/Root/2:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [3.48787e-16]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Left Pot Skeleton/3:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.42645]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Left Pot Skeleton/3/3_3:rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Left Pot Skeleton/4:rotation")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.68748]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Left Pot Skeleton/4/4_4:rotation")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_87jb5"]
-_data = {
-"RESET": SubResource("Animation_f7dx0"),
-"Swing": SubResource("Animation_avtcg")
+"values": [0.0386461]
 }
 
 [sub_resource type="Animation" id="Animation_0u8aa"]
@@ -336,57 +387,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0386461, 0.102895, 0.0462855, 0.0846625, 0.0386461]
-}
-
-[sub_resource type="Animation" id="Animation_m38gf"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Right Pot Skeleton/Root:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-1.65174]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Right Pot Skeleton/Root/1:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.655132]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Right Pot Skeleton/Root/1/1_1:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.732398]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Right Pot Skeleton/Root/2:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0386461]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lv7fc"]
@@ -2732,6 +2732,21 @@ tracks/3/keys = {
 "update": 0,
 "values": [-0.257451, -0.446383, -0.0544467, -0.220686, -0.257451]
 }
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../MusicManager/SFXNoseHonk")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0112,
+"stream": ExtResource("42_ae8ut")
+}],
+"times": PackedFloat32Array(-0.2)
+}
+tracks/4/use_blend = true
 
 [sub_resource type="Animation" id="Animation_rqsrs"]
 length = 0.001
@@ -2776,6 +2791,26 @@ tracks/2/keys = {
 _data = {
 "Nose Boop": SubResource("Animation_evbrr"),
 "RESET": SubResource("Animation_rqsrs")
+}
+
+[sub_resource type="Animation" id="Animation_5k5c0"]
+resource_name = "Blink"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../StudyingBuddy/Closed Eye:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j76ga"]
+_data = {
+"Blink": SubResource("Animation_5k5c0")
 }
 
 [sub_resource type="Animation" id="Animation_td5xw"]
@@ -3300,7 +3335,7 @@ rest = Transform2D(0.998141, 0.0609413, -0.0609413, 0.998141, 28.1142, -11.7299)
 [node name="3" type="Bone2D" parent="Left Pot/Left Pot Skeleton"]
 position = Vector2(168, 88)
 rotation = 1.42645
-scale = Vector2(1, 0.999999)
+scale = Vector2(1, 0.999998)
 rest = Transform2D(0.143846, 0.9896, -0.9896, 0.143846, 168, 88)
 
 [node name="3_3" type="Bone2D" parent="Left Pot/Left Pot Skeleton/3"]
@@ -3350,6 +3385,7 @@ rest = Transform2D(-0.0808582, -0.996726, 0.996726, -0.0808582, 499, 376)
 [node name="1" type="Bone2D" parent="Right Pot/Right Pot Skeleton/Root"]
 position = Vector2(22.6837, -32.2715)
 rotation = -0.655132
+scale = Vector2(1, 1)
 rest = Transform2D(0.792968, -0.609264, 0.609264, 0.792968, 22.6837, -32.2715)
 
 [node name="1_1" type="Bone2D" parent="Right Pot/Right Pot Skeleton/Root/1"]
@@ -3556,7 +3592,6 @@ rest = Transform2D(-0.100553, 0.994926, -0.994926, -0.100553, -33.4978, -141.394
 [node name="ForeArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL"]
 position = Vector2(87.652, -7.88235)
 rotation = 1.41794
-scale = Vector2(1, 1)
 rest = Transform2D(0.152262, 0.98834, -0.98834, 0.152262, 87.652, -7.88235)
 
 [node name="HandL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL/ForeArmL"]
@@ -3568,7 +3603,6 @@ rest = Transform2D(6.96462, -1.60426, 0.549942, 2.38748, 88.3128, -2.97414)
 [node name="Phone" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL/ForeArmL/HandL"]
 position = Vector2(4.78279, 2.33461)
 rotation = -0.366923
-scale = Vector2(1, 1)
 rest = Transform2D(0.933436, -0.358745, 0.358745, 0.933436, 4.78279, 2.33461)
 
 [node name="Pen" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL/ForeArmL/HandL"]
@@ -3580,13 +3614,11 @@ rest = Transform2D(0.356329, -0.93436, 0.93436, 0.356329, 4.78279, 2.33461)
 [node name="UpperArmR" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(-95.4978, -118.394)
 rotation = 1.67185
-scale = Vector2(1, 1)
 rest = Transform2D(-0.100882, 0.994898, -0.994898, -0.100882, -95.4978, -118.394)
 
 [node name="ForeArmR" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmR"]
 position = Vector2(35.7571, 25.5231)
 rotation = 1.41275
-scale = Vector2(1, 1)
 rest = Transform2D(0.157389, 0.987537, -0.987537, 0.157389, 35.7571, 25.5231)
 
 [node name="HandR" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmR/ForeArmR"]
@@ -3597,23 +3629,22 @@ rest = Transform2D(5.33073, 0.622872, -0.213543, 1.82757, 45.5535, -8.41874)
 
 [node name="Lower Body" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 rotation = 2.58541
-scale = Vector2(1, 1)
 rest = Transform2D(-0.976195, 0.216896, -0.216896, -0.976195, 0, 0)
 
 [node name="StudyingBuddyAniPlayer" type="AnimationPlayer" parent="StudyingBuddySkeleton"]
 libraries = {
 "": SubResource("AnimationLibrary_n6bl0")
 }
-blend_times = [&"Phone", &"RESET", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Idle", 2.0, &"Phone", &"Roll Out", 1.0, &"Phone", &"Writing", 4.0, &"Phone", &"Writing2", 4.0, &"Drink", &"Idle", 1.0, &"Drink", &"Roll Out", 1.0, &"Idle", &"RESET", 4.0, &"Idle", &"Phone", 1.0, &"Idle", &"Drink", 1.0, &"Idle", &"Idle", 2.0, &"Idle", &"Phone_5MIN", 1.0, &"Idle", &"Roll In", 1.0, &"Idle", &"Roll Out", 1.0, &"Idle", &"Writing", 4.0, &"Idle", &"Writing2", 6.0, &"Idle", &"Writing3", 1.0, &"Phone_5MIN", &"Idle", 1.0, &"Phone_5MIN", &"Roll In", 1.0, &"Roll In", &"RESET", 1.0, &"Roll In", &"Phone", 1.0, &"Roll In", &"Drink", 1.0, &"Roll In", &"Idle", 3.0, &"Roll In", &"Roll In", 1.0, &"Roll In", &"Roll Out", 1.0, &"Roll In", &"Writing", 1.0, &"Roll In", &"Writing2", 1.0, &"Roll In", &"Writing3", 1.0, &"Roll Out", &"Roll Out", 1.0, &"Writing", &"RESET", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Idle", 4.0, &"Writing", &"Roll Out", 1.0, &"Writing", &"Writing", 4.0, &"Writing", &"Writing2", 4.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Idle", 4.0, &"Writing2", &"Roll Out", 1.0, &"Writing2", &"Writing", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing3", &"Idle", 1.0, &"Writing3", &"Roll Out", 1.0]
-
-[node name="Blink AniPlayer" type="AnimationPlayer" parent="StudyingBuddySkeleton"]
-libraries = {
-"": SubResource("AnimationLibrary_awxkg")
-}
+blend_times = [&"Phone", &"RESET", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Writing2", 4.0, &"Phone", &"Roll Out", 1.0, &"Phone", &"Writing", 4.0, &"Phone", &"Idle", 2.0, &"Writing3", &"Roll Out", 1.0, &"Writing3", &"Idle", 1.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"Roll Out", 1.0, &"Writing2", &"Writing", 4.0, &"Writing2", &"Idle", 4.0, &"Roll Out", &"Roll Out", 1.0, &"Writing", &"RESET", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Writing2", 4.0, &"Writing", &"Roll Out", 1.0, &"Writing", &"Writing", 4.0, &"Writing", &"Idle", 4.0, &"Roll In", &"RESET", 1.0, &"Roll In", &"Phone", 1.0, &"Roll In", &"Writing3", 1.0, &"Roll In", &"Writing2", 1.0, &"Roll In", &"Roll Out", 1.0, &"Roll In", &"Writing", 1.0, &"Roll In", &"Roll In", 1.0, &"Roll In", &"Idle", 3.0, &"Roll In", &"Drink", 1.0, &"Phone_5MIN", &"Roll In", 1.0, &"Phone_5MIN", &"Idle", 1.0, &"Idle", &"RESET", 4.0, &"Idle", &"Phone", 1.0, &"Idle", &"Writing3", 1.0, &"Idle", &"Writing2", 6.0, &"Idle", &"Roll Out", 1.0, &"Idle", &"Writing", 4.0, &"Idle", &"Roll In", 1.0, &"Idle", &"Phone_5MIN", 1.0, &"Idle", &"Idle", 2.0, &"Idle", &"Drink", 1.0, &"Drink", &"Roll Out", 1.0, &"Drink", &"Idle", 1.0]
 
 [node name="Nose Boop AniPlayer" type="AnimationPlayer" parent="StudyingBuddySkeleton"]
 libraries = {
 "": SubResource("AnimationLibrary_awxkg")
+}
+
+[node name="Blink AniPlayer" type="AnimationPlayer" parent="StudyingBuddySkeleton"]
+libraries = {
+"": SubResource("AnimationLibrary_j76ga")
 }
 
 [node name="AnimationManager" type="Node" parent="."]
@@ -4408,8 +4439,8 @@ stream = ExtResource("48_wxd8c")
 volume_db = -5.0
 
 [node name="SFXNoseHonk" type="AudioStreamPlayer" parent="MusicManager"]
-stream = ExtResource("42_ae8ut")
 volume_db = -5.0
+bus = &"SFX"
 
 [node name="SFXSessionEnd" type="AudioStreamPlayer" parent="MusicManager"]
 stream = ExtResource("50_5qd5m")
