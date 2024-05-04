@@ -7,7 +7,7 @@ var random = RandomNumberGenerator.new()
 var TimeManager # TimeManager node reference
 
 # Stores names for all the available Studying Animations
-var studyingAnimation = PackedStringArray(["Writing", "Writing2", "Phone", "Drink", "Writing", "Writing2"])
+var studyingAnimation = PackedStringArray(["Writing", "Writing2", "Phone", "Writing", "Writing2"])
 
 # Stores names for all the available Break Animations
 var breakAnimation = PackedStringArray(["Phone_5MIN"])
@@ -44,20 +44,12 @@ func _rollIn():
 		aniPlayer.clear_queue()
 		aniPlayer.play("Roll In")
 		aniPlayer.queue("Idle")
-		print("Buddy On Screen?:")
-		print (buddyOnScreen)
-	else:
-		print("Buddy already On screen")
 
 func _rollOut():
 	if (buddyOnScreen):
 		buddyOnScreen = false;
 		aniPlayer.clear_queue()
 		aniPlayer.play("Roll Out")
-		print("Buddy On Screen?:")
-		print(buddyOnScreen)
-	else:
-		print("Buddy already Off screen")
 
 # Return a random animation based on whether the buddy is studying.
 # @Return: A string name of the animation

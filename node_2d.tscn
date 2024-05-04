@@ -27,7 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://cx4mn84vf41fd" path="res://Phone frame.png" id="21_b6ex8"]
 [ext_resource type="FontFile" uid="uid://by7ov6qiq75tk" path="res://MotleyForcesRegular-w1rZ3.ttf" id="21_rr2ru"]
 [ext_resource type="Texture2D" uid="uid://bvincygstqens" path="res://Grabber.PNG" id="22_wcyrw"]
-[ext_resource type="LabelSettings" uid="uid://bi0i30ujkntbi" path="res://Button Big.tres" id="23_8e3nk"]
+[ext_resource type="LabelSettings" path="res://Button Big.tres" id="23_8e3nk"]
 [ext_resource type="Texture2D" uid="uid://coqfecqqrf01t" path="res://Button Close Phone.png" id="23_kjpqw"]
 [ext_resource type="Texture2D" uid="uid://clyvg7tmjwede" path="res://Button Close Phone Clicked.png" id="24_h2iqv"]
 [ext_resource type="Texture2D" uid="uid://dk4cgs8ih0i0" path="res://Grabber Clicked.png" id="24_sjviw"]
@@ -36,9 +36,9 @@
 [ext_resource type="Texture2D" uid="uid://b6q3uno0vq8qh" path="res://Button Menu On Hover.png" id="26_y1yau"]
 [ext_resource type="Texture2D" uid="uid://belsedwgfin84" path="res://Button Music APP.png" id="27_hinj7"]
 [ext_resource type="Texture2D" uid="uid://bo4qnh3d8pok2" path="res://Button Music Clicked.png" id="28_gxkr8"]
-[ext_resource type="LabelSettings" uid="uid://ccudhtkq5auxj" path="res://App Screen Title small.tres" id="29_0rwny"]
+[ext_resource type="LabelSettings" path="res://App Screen Title small.tres" id="29_0rwny"]
 [ext_resource type="Texture2D" uid="uid://dfd3ggtopn7rg" path="res://Button Music Hover.png" id="29_s5tdk"]
-[ext_resource type="LabelSettings" uid="uid://ileo4jbf3gvo" path="res://Big Text Title.tres" id="30_25nkr"]
+[ext_resource type="LabelSettings" path="res://Big Text Title.tres" id="30_25nkr"]
 [ext_resource type="Script" path="res://ClockScreen.gd" id="31_qmhd2"]
 [ext_resource type="Texture2D" uid="uid://clvvhxwfyoroy" path="res://Button Setting App.png" id="31_u1xyh"]
 [ext_resource type="Texture2D" uid="uid://b8oalye2d2tan" path="res://Button Setting Clicked.png" id="32_ifnww"]
@@ -63,12 +63,12 @@
 [ext_resource type="Texture2D" uid="uid://dqdievemrso52" path="res://Button Close Phone BLANK.png" id="51_b7lw4"]
 [ext_resource type="Texture2D" uid="uid://durwrxgijioom" path="res://End Session Phone Screen.png" id="51_yx2dx"]
 [ext_resource type="Texture2D" uid="uid://bld4isgbepit5" path="res://Button Exit Screen Left.png" id="54_i1nl8"]
-[ext_resource type="LabelSettings" uid="uid://cla7mm21lnk8g" path="res://start session time lables.tres" id="55_7uhdd"]
+[ext_resource type="LabelSettings" uid="uid://1ea8m7fomymv" path="res://start session time lables.tres" id="55_7uhdd"]
 [ext_resource type="Texture2D" uid="uid://cxpe5yrcatfs3" path="res://Button Exit Screen Left Clicked.png" id="55_gjpdr"]
 [ext_resource type="Texture2D" uid="uid://uximovvvroxc" path="res://Quit ConfirmationScreen.png" id="56_6iuua"]
 [ext_resource type="Texture2D" uid="uid://bg67j6t61pfro" path="res://Button Exit Screen Left Hover.png" id="56_6vrdi"]
 [ext_resource type="Texture2D" uid="uid://dghvp4gpfggu0" path="res://Button Exit Screen Right.png" id="57_f2o0s"]
-[ext_resource type="LabelSettings" uid="uid://c1qxsvqm2r5v5" path="res://Main Screen Small Text.tres" id="57_nugnk"]
+[ext_resource type="LabelSettings" path="res://Main Screen Small Text.tres" id="57_nugnk"]
 [ext_resource type="Texture2D" uid="uid://djwh7upc1c52y" path="res://Button Exit Screen Right Clicked.png" id="58_8n4yx"]
 [ext_resource type="Texture2D" uid="uid://bjvdrsl0v5qn1" path="res://Button Exit Screen Right Hover.png" id="59_6n6ei"]
 
@@ -2717,7 +2717,7 @@ rest = Transform2D(-0.976195, 0.216896, -0.216896, -0.976195, 0, 0)
 libraries = {
 "": SubResource("AnimationLibrary_n6bl0")
 }
-blend_times = [&"Roll Out", &"Roll Out", 1.0, &"Writing", &"RESET", 4.0, &"Writing", &"Roll Out", 1.0, &"Writing", &"Writing", 4.0, &"Writing", &"Writing2", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Idle", 4.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Roll Out", 1.0, &"Writing2", &"Writing", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Idle", 4.0, &"Phone", &"RESET", 4.0, &"Phone", &"Roll Out", 1.0, &"Phone", &"Writing", 4.0, &"Phone", &"Writing2", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Idle", 2.0, &"Idle", &"RESET", 4.0, &"Idle", &"Roll Out", 1.0, &"Idle", &"Writing", 4.0, &"Idle", &"Writing2", 6.0, &"Idle", &"Phone", 1.0, &"Idle", &"Idle", 2.0, &"Idle", &"Phone_5MIN", 1.0, &"Phone_5MIN", &"Idle", 1.0, &"Phone_5MIN", &"Roll In", 1.0, &"Roll In", &"Roll Out", 1.0, &"Roll In", &"Idle", 2.0]
+blend_times = [&"Phone", &"RESET", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Idle", 2.0, &"Phone", &"Roll Out", 1.0, &"Phone", &"Writing2", 4.0, &"Phone", &"Writing", 4.0, &"Idle", &"RESET", 4.0, &"Idle", &"Phone", 1.0, &"Idle", &"Idle", 2.0, &"Idle", &"Roll Out", 1.0, &"Idle", &"Writing2", 6.0, &"Idle", &"Writing", 4.0, &"Idle", &"Phone_5MIN", 1.0, &"Roll Out", &"Roll Out", 1.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Idle", 4.0, &"Writing2", &"Roll Out", 1.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"Writing", 4.0, &"Writing", &"RESET", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Idle", 4.0, &"Writing", &"Roll Out", 1.0, &"Writing", &"Writing2", 4.0, &"Writing", &"Writing", 4.0, &"Roll In", &"Idle", 2.0, &"Roll In", &"Roll Out", 1.0, &"Phone_5MIN", &"Idle", 1.0, &"Phone_5MIN", &"Roll In", 1.0]
 
 [node name="Blink AniPlayer" type="AnimationPlayer" parent="StudyingBuddySkeleton"]
 libraries = {

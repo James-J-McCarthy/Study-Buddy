@@ -33,8 +33,6 @@ func up():
 	if (!PhoneUp):
 		AniPlayer.play("PhoneUp")
 		PhoneUp = true;
-	else:
-		print("phone already up")
 
 func down():
 	if (PhoneUp):

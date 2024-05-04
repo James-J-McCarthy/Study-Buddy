@@ -128,20 +128,14 @@ func _on_restart_pressed():
 # ^ Results in a >5 second delay on animations from the actual state change.
 func _on_studying_buddy_ani_player_animation_started(anim_name):
 	# If the animation that started now is "Idle", queue the next animation
-	print(TimeManager.getSessionRunning())
 	if (TimeManager.getSessionRunning() == true):
 		if anim_name == "Idle":
-			print("Idle Now, queuing:")
 			var animation:String = AniManager._getAnimation()
-			print(animation)
 			AniPlayer.queue(animation)
 		
 		# If the animation started now is not "Idle", queue "Idle"
 		else:
 			AniPlayer.queue("Idle")
-			print("Queuing Idle")
-	else:
-		print("No Session Running")
 
 func _on_close_app_button_pressed():
 	_on_close_button_pressed()

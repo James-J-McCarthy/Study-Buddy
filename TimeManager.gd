@@ -37,10 +37,7 @@ func updateClockHand(_delta, dontReset):
 	if (cyclesTotal != null && paused == false):
 		if (cycle <= cyclesTotal):
 			var clockHand = get_node_or_null("../clockHand")
-			if (clockHand == null):
-				print("clockhand == null error!")
-				pass
-			else:
+			if (clockHand != null):
 				var currentRad = get_node("../clockHand").rotation
 				var radsPerSecond = float((2*PI) / (breakTime + studyTime))
 				var radChange = float(_delta*radsPerSecond)
@@ -66,7 +63,6 @@ func start_period(duration):
 # begins a study period on Pomo-Timer passing in study_time
 # Timer is set to "One-Shot" meaning it doesn't repeat after finishing
 func start_study_timer():
-	#print("start studying for: ", study_time, "seconds")
 	start_period(studyTime)
 	updateCycleNumerator()
 	studying = true
@@ -76,7 +72,6 @@ func start_study_timer():
 
 #begins a study period on Pomo-Timer using break_time
 func start_break_timer():
-	#print("start break")
 	start_period(breakTime)
 	studying = false
 	var musicManager = get_node("../MusicManager")
@@ -86,10 +81,7 @@ func start_break_timer():
 # pause/unpause function
 func hit_pause():
 	paused = !paused
-	if(paused):
-		PomoTimer.set_paused(true)
-	else:
-		PomoTimer.set_paused(false)
+	PomoTimer.set_paused(paused)
 
 # SIGNALS: 
 func _on_session_time_slider_value_changed(value):
@@ -100,13 +92,10 @@ func _on_break_time_slider_value_changed(value):
 
 # gets signal from pomo timer when it finishes or when time is reduced to < 0
 # then restarts timer based on next period length
-func _period_finished(): # I tested this funciton with a print to ensure it works
+func _period_finished():
 	if(studying):
-		print("done studying!!")
 		studying = false
 		start_break_timer() # switch PomoClocks timing duration
-	else:
-		print("done with break!!")
 		
 		# ">" because by the time this runs the last time, cycle
 		# will already be updated.
@@ -115,7 +104,6 @@ func _period_finished(): # I tested this funciton with a print to ensure it work
 			phone.up()
 			phone.endScreenVisible()
 			sessionRunning = false
-			print("finished study period!!")
 			var musicManager = get_node("../MusicManager")
 			if(musicManager != null):
 				musicManager.sessionEndMusic()
