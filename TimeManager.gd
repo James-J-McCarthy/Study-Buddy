@@ -44,7 +44,6 @@ func updateClockHand(_delta, dontReset):
 				currentRad += radChange
 				if (currentRad >= float((2*PI))): 
 					currentRad = 0
-					cycle+=1
 				if(!dontReset):
 					currentRad = 0
 				get_node("../clockHand").rotation = currentRad
@@ -96,27 +95,31 @@ func _period_finished():
 	
 	# ">" because by the time this runs the last time, cycle
 	# will already be updated.
-	if(cycle > cyclesTotal):
-		#end of session logic triggered here:
-		phone.up()
-		phone.endScreenVisible()
-		sessionRunning = false
-		var musicManager = get_node("../MusicManager")
-		if(musicManager != null):
-			musicManager.sessionEndMusic()
-		aniManager._rollOut()
-		cyclesTotal = 0
 	
-	if(studying == true):
-		studying = false
-		start_break_timer() # switch PomoClocks timing duration
 	
-	else:
-		start_study_timer() # switch PomoClocks timing duration
-		studying = true
-		#cycle += 1
-		updateCycleNumerator()
-	phone.get_node("ClockScreen").setIntervalTimerLabel(studying)
+	#else:
+		if(studying == true):
+			studying = false
+			start_break_timer() # switch PomoClocks timing duration
+		
+		else:
+			start_study_timer() # switch PomoClocks timing duration
+			studying = true
+			cycle += 1
+			updateCycleNumerator()
+			
+			if(cycle > cyclesTotal):
+				#end of session logic triggered here:
+				phone.up()
+				phone.endScreenVisible()
+				sessionRunning = false
+				var musicManager = get_node("../MusicManager")
+				if(musicManager != null):
+					musicManager.sessionEndMusic()
+				aniManager._rollOut()
+				cyclesTotal = 0
+				cycle = 1
+		phone.get_node("ClockScreen").setIntervalTimerLabel(studying)
 
 	
 

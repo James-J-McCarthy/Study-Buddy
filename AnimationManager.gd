@@ -27,15 +27,17 @@ func _ready():
 	blinkPause = 5
 	blinkPauseCounter = 0;
 
-# _process(delta) method unused for this script
+# called every frame
 func _process(delta):
 	if (blinkPauseCounter >= blinkPause):
 		_blink()
 		blinkPauseCounter = 0
 		blinkPause = random.randi_range(10,20)
+		print(blinkPause)
 	blinkPauseCounter += delta
 
 func _blink():
+	print("Blinked")
 	blinkPlayer.play("Blink")
 
 func _rollIn():
