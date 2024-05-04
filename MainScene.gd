@@ -13,7 +13,7 @@ var ConfirmationScreen # Quit confirmation page
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$StudyingBuddy.hide()
+	_hideBuddyExceptMug()
 	$MenuUpButton.hide()
 	Phone = get_node("Phone")
 	TimeManager = get_node("TimeManager")
@@ -39,6 +39,19 @@ func _ready():
 # _process(delta) method unused for this script
 func _process(delta):
 	pass
+
+func _hideBuddyExceptMug():
+	get_node("StudyingBuddy/ArmR").hide()
+	get_node("StudyingBuddy/Tail").hide()
+	get_node("StudyingBuddy/Torso").hide()
+	get_node("StudyingBuddy/Desk CoverUp").hide()
+	get_node("StudyingBuddy/Head").hide()
+	get_node("StudyingBuddy/Nose").hide()
+	get_node("StudyingBuddy/Closed Eye").hide()
+	get_node("StudyingBuddy/PhoneOnHand").hide()
+	get_node("StudyingBuddy/Pen").hide()
+	get_node("StudyingBuddy/ArmL").hide()
+	get_node("StudyingBuddy/Mug").show()
 
 
 # Button press handlers below \/
@@ -92,7 +105,6 @@ func _on_clock_button_pressed():
 
 # quits the app when the close button is pressed
 func _on_close_button_pressed():
-
 	Phone.down()
 	ConfirmationScreen.show()
 	CloseButton.hide()
