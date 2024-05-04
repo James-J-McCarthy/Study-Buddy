@@ -26,6 +26,8 @@ func _ready():
 	get_node("StudyingBuddySkeleton/Torso/Head/Nose/Nose Button").hide()
 	
 	get_node("Pot/Pot Plant AniPlayer").play("Swing")
+	get_node("Left Pot/Left Pot AniPlayer").play("Swing")
+	get_node("Right Pot/Right Pot AniPlayer").play("Swing")
 	
 	await get_tree().create_timer(1.25).timeout # delay phone open animation by 1.25 seconds when app opens
 	

@@ -1,16 +1,22 @@
-[gd_scene load_steps=97 format=3 uid="uid://doin1g4xrytqe"]
+[gd_scene load_steps=109 format=3 uid="uid://doin1g4xrytqe"]
 
 [ext_resource type="Script" path="res://MainScene.gd" id="1_37525"]
 [ext_resource type="Texture2D" uid="uid://dymt2u5vj5pon" path="res://Outside Window.jpg" id="2_m37tu"]
+[ext_resource type="Texture2D" uid="uid://bd64t1poli0ut" path="res://Window BG.png" id="3_6ga3u"]
 [ext_resource type="Script" path="res://TimeManager.gd" id="3_045uj"]
+[ext_resource type="Texture2D" uid="uid://nytk7751xq3y" path="res:// Left Pot.png" id="4_gu78s"]
 [ext_resource type="Texture2D" uid="uid://fjct6vuqe7fp" path="res://Clock.PNG" id="4_xiqa2"]
+[ext_resource type="Texture2D" uid="uid://bh6iacsjkki8y" path="res://Left Pot Pot.png" id="5_3b05j"]
 [ext_resource type="Texture2D" uid="uid://vgtooyguf7dk" path="res://Main Book.png" id="5_4bll2"]
-[ext_resource type="Texture2D" uid="uid://dxjpimob5hr1w" path="res://Desk+Wall.png" id="5_4p7ab"]
 [ext_resource type="Texture2D" uid="uid://cc55byhdu8t0e" path="res://Study_Buddy.png" id="6_0ck1t"]
+[ext_resource type="Texture2D" uid="uid://gy87cep3ikue" path="res://Left Pot Leaves.png" id="6_wgmk0"]
+[ext_resource type="Texture2D" uid="uid://b73b0ru54dd8a" path="res://Right Pot.png" id="7_8jps5"]
 [ext_resource type="Texture2D" uid="uid://dlntiqf7ceup4" path="res://Desk CoverUp.png" id="7_t2xf4"]
 [ext_resource type="Script" path="res://StudyingBuddy.gd" id="8_1su8g"]
+[ext_resource type="Texture2D" uid="uid://csgpx5i77rhv5" path="res://Right Pot Cactus.png" id="8_fy0qx"]
 [ext_resource type="Script" path="res://AnimationManager.gd" id="8_hahbl"]
 [ext_resource type="Texture2D" uid="uid://dt1s63oaean02" path="res://PhoneOnDesk.png" id="9_locot"]
+[ext_resource type="Texture2D" uid="uid://bfjgh5tt1612h" path="res://Desk.png" id="9_tyhdg"]
 [ext_resource type="Texture2D" uid="uid://ktfo7081sa3i" path="res://PenOnDesk.png" id="9_wv1v6"]
 [ext_resource type="Texture2D" uid="uid://d4e47q6ie6akm" path="res://Blink Eyes.png" id="11_8h5aw"]
 [ext_resource type="Texture2D" uid="uid://bd8tlsvbswvmx" path="res://ForegroundItems.png" id="12_bgmpw"]
@@ -72,6 +78,322 @@
 [ext_resource type="LabelSettings" uid="uid://c1qxsvqm2r5v5" path="res://Main Screen Small Text.tres" id="57_nugnk"]
 [ext_resource type="Texture2D" uid="uid://djwh7upc1c52y" path="res://Button Exit Screen Right Clicked.png" id="58_8n4yx"]
 [ext_resource type="Texture2D" uid="uid://bjvdrsl0v5qn1" path="res://Button Exit Screen Right Hover.png" id="59_6n6ei"]
+
+[sub_resource type="Animation" id="Animation_avtcg"]
+resource_name = "Swing"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Left Pot Skeleton/1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Left Pot Skeleton/1/1_1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.2, 3.8, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.29268, 1.20612, 1.37363, 1.29268]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Left Pot Skeleton/2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.7, 4.6, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [2.37095, 2.24076, 2.43977, 2.37095]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Left Pot Skeleton/2/2_2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2, 5.1, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [3.48787e-16, -0.187939, 0.188316, 3.48787e-16]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Left Pot Skeleton/3:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.6, 5.3, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.42645, 1.35636, 1.59151, 1.42645]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Left Pot Skeleton/3/3_3:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.3, 5.6, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.437927, 0.0263716, 0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Left Pot Skeleton/4:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.68748, 1.68748]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Left Pot Skeleton/4/4_4:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2, 4.5, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.0935772, 0.101508, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_f7dx0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Left Pot Skeleton/1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Left Pot Skeleton/1/1_1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.29268]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Left Pot Skeleton/2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.37095]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Left Pot Skeleton/2/2_2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.48787e-16]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Left Pot Skeleton/3:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.42645]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Left Pot Skeleton/3/3_3:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Left Pot Skeleton/4:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.68748]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Left Pot Skeleton/4/4_4:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_87jb5"]
+_data = {
+"RESET": SubResource("Animation_f7dx0"),
+"Swing": SubResource("Animation_avtcg")
+}
+
+[sub_resource type="Animation" id="Animation_0u8aa"]
+resource_name = "Swing"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Right Pot Skeleton/Root:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.65174, -1.65174]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Right Pot Skeleton/Root/1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.8, 3.3, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-0.655132, -0.728619, -0.638665, -0.655132]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Right Pot Skeleton/Root/1/1_1:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 4, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.732398, 0.561848, 0.75365, 0.732398]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Right Pot Skeleton/Root/2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 2.5, 4.4, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0386461, 0.102895, 0.0462855, 0.0846625, 0.0386461]
+}
+
+[sub_resource type="Animation" id="Animation_m38gf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Right Pot Skeleton/Root:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.65174]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Right Pot Skeleton/Root/1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.655132]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Right Pot Skeleton/Root/1/1_1:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.732398]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Right Pot Skeleton/Root/2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0386461]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lv7fc"]
+_data = {
+"RESET": SubResource("Animation_m38gf"),
+"Swing": SubResource("Animation_0u8aa")
+}
 
 [sub_resource type="Animation" id="Animation_mldd4"]
 resource_name = "Drink"
@@ -1763,6 +2085,30 @@ tracks/17/keys = {
 "update": 0,
 "values": [-0.257451, -0.257451, -0.509577, -0.0544289, -0.189694, -0.257451]
 }
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("../StudyingBuddy/Mug:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(216, 536), Vector2(216, 536)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("../StudyingBuddy/Mug:rotation")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
 
 [sub_resource type="Animation" id="Animation_quujf"]
 resource_name = "Roll Out"
@@ -1922,6 +2268,30 @@ tracks/12/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../StudyingBuddy/Mug:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(216, 536), Vector2(216, 536)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("../StudyingBuddy/Mug:rotation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_njfvu"]
@@ -2878,7 +3248,129 @@ texture = ExtResource("2_m37tu")
 [node name="Wall" type="Sprite2D" parent="."]
 position = Vector2(259, 323.75)
 scale = Vector2(0.202745, 0.196515)
-texture = ExtResource("5_4p7ab")
+texture = ExtResource("3_6ga3u")
+
+[node name="Left Pot" type="Node2D" parent="."]
+
+[node name="Left Pot Back Leaves" type="Polygon2D" parent="Left Pot"]
+position = Vector2(2.00001, -1.99999)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_gu78s")
+skeleton = NodePath("../Left Pot Skeleton")
+polygon = PackedVector2Array(717.857, 172.449, 564.796, 324.49, 466.837, 437.755, 467.857, 576.531, 535.204, 722.449, 597.449, 873.469, 633.163, 905.102, 682.143, 882.653, 691.327, 745.918, 654.592, 718.367, 819.898, 736.735, 811.735, 811.224, 826.02, 888.775, 823.979, 1010.2, 876.02, 1205.1, 957.653, 1108.16, 939.286, 991.837, 978.061, 954.082, 1002.55, 821.429, 1039.29, 788.775, 997.449, 626.531, 1006.63, 562.245, 1033.16, 651.02, 1085.2, 622.449, 1109.69, 523.469, 1050.51, 344.898, 939.286, 204.082)
+uv = PackedVector2Array(717.857, 172.449, 564.796, 324.49, 466.837, 437.755, 467.857, 576.531, 535.204, 722.449, 597.449, 873.469, 633.163, 905.102, 682.143, 882.653, 691.327, 745.918, 654.592, 718.367, 819.898, 736.735, 811.735, 811.224, 826.02, 888.775, 823.979, 1010.2, 876.02, 1205.1, 957.653, 1108.16, 939.286, 991.837, 978.061, 954.082, 1002.55, 821.429, 1039.29, 788.775, 997.449, 626.531, 1006.63, 562.245, 1033.16, 651.02, 1085.2, 622.449, 1109.69, 523.469, 1050.51, 344.898, 939.286, 204.082)
+polygons = [PackedInt32Array(20, 19, 18, 11, 10), PackedInt32Array(25, 21, 22, 23, 24), PackedInt32Array(0, 1, 2, 9, 10, 20, 25, 26), PackedInt32Array(2, 3, 9), PackedInt32Array(3, 4, 8, 9), PackedInt32Array(4, 5, 6, 7, 8), PackedInt32Array(11, 12, 17, 18), PackedInt32Array(12, 13, 16, 17), PackedInt32Array(13, 14, 15, 16)]
+bones = ["1", PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5), "1/1_1", PackedFloat32Array(0, 0, 0, 0.5, 1, 0.5, 1, 1, 1, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "2/2_2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "3/3_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0), "4/4_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 1, 1, 1, 1, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="Hanging Pot" type="Sprite2D" parent="Left Pot"]
+position = Vector2(259, 323.75)
+scale = Vector2(0.202745, 0.196515)
+texture = ExtResource("5_3b05j")
+
+[node name="Left Pot Front Leaves" type="Polygon2D" parent="Left Pot"]
+position = Vector2(2.00001, -1.99999)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_wgmk0")
+skeleton = NodePath("../Left Pot Skeleton")
+polygon = PackedVector2Array(634.524, 410.952, 582.619, 469.048, 577.381, 528.572, 579.286, 586.667, 613.095, 660, 672.619, 697.619, 668.81, 623.81, 668.333, 532.857, 672.143, 473.81, 672.143, 455.714, 801.191, 439.048, 810.714, 499.524, 806.905, 599.048, 788.333, 686.191, 759.286, 750.476, 752.619, 827.619, 762.143, 908.095, 827.857, 957.143, 839.762, 826.667, 848.81, 716.191, 869.762, 663.333, 888.81, 532.857, 901.191, 493.333, 908.81, 459.048, 834.524, 405.714)
+uv = PackedVector2Array(634.524, 410.952, 582.619, 469.048, 577.381, 528.572, 579.286, 586.667, 613.095, 660, 672.619, 697.619, 668.81, 623.81, 668.333, 532.857, 672.143, 473.81, 672.143, 455.714, 801.191, 439.048, 810.714, 499.524, 806.905, 599.048, 788.333, 686.191, 759.286, 750.476, 752.619, 827.619, 762.143, 908.095, 827.857, 957.143, 839.762, 826.667, 848.81, 716.191, 869.762, 663.333, 888.81, 532.857, 901.191, 493.333, 908.81, 459.048, 834.524, 405.714)
+polygons = [PackedInt32Array(0, 1, 9, 10, 23, 24), PackedInt32Array(1, 2, 7, 8, 9), PackedInt32Array(2, 3, 6, 7), PackedInt32Array(3, 4, 5, 6), PackedInt32Array(10, 11, 21, 22, 23), PackedInt32Array(11, 12, 20, 21), PackedInt32Array(12, 13, 19, 20), PackedInt32Array(13, 14, 18, 19), PackedInt32Array(14, 15, 18), PackedInt32Array(15, 16, 17, 18)]
+bones = ["1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "1/1_1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "2", PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "2/2_2", PackedFloat32Array(0, 0, 0.5, 1, 1, 1, 1, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0.5, 1, 1, 1, 0.5, 0.5), "3/3_3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 1, 1, 1, 1, 1, 0.5, 0.5, 0, 0, 0, 0), "4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "4/4_4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="Left Pot Skeleton" type="Skeleton2D" parent="Left Pot"]
+
+[node name="1" type="Bone2D" parent="Left Pot/Left Pot Skeleton"]
+position = Vector2(119, 89)
+rest = Transform2D(1, 0, 0, 1, 119, 89)
+
+[node name="1_1" type="Bone2D" parent="Left Pot/Left Pot Skeleton/1"]
+position = Vector2(-2, 38)
+rotation = 1.29268
+rest = Transform2D(0.274545, 0.961574, -0.961574, 0.274545, -2, 38)
+
+[node name="2" type="Bone2D" parent="Left Pot/Left Pot Skeleton"]
+position = Vector2(141, 85)
+rotation = 2.37095
+rest = Transform2D(-0.717463, 0.696597, -0.696597, -0.717463, 141, 85)
+
+[node name="2_2" type="Bone2D" parent="Left Pot/Left Pot Skeleton/2"]
+position = Vector2(28.1142, -11.7299)
+rest = Transform2D(0.998141, 0.0609413, -0.0609413, 0.998141, 28.1142, -11.7299)
+
+[node name="3" type="Bone2D" parent="Left Pot/Left Pot Skeleton"]
+position = Vector2(168, 88)
+rotation = 1.42645
+scale = Vector2(1, 0.999999)
+rest = Transform2D(0.143846, 0.9896, -0.9896, 0.143846, 168, 88)
+
+[node name="3_3" type="Bone2D" parent="Left Pot/Left Pot Skeleton/3"]
+position = Vector2(42.5528, 6.18531)
+rest = Transform2D(1, 0, 0, 1, 42.5528, 6.18531)
+
+[node name="4" type="Bone2D" parent="Left Pot/Left Pot Skeleton"]
+position = Vector2(186, 110)
+rotation = 1.68748
+rest = Transform2D(-0.116421, 0.9932, -0.9932, -0.116421, 186, 110)
+
+[node name="4_4" type="Bone2D" parent="Left Pot/Left Pot Skeleton/4"]
+position = Vector2(54.9753, -3.42357)
+rest = Transform2D(1, 0, 0, 1, 54.9753, -3.42357)
+
+[node name="Left Pot AniPlayer" type="AnimationPlayer" parent="Left Pot"]
+libraries = {
+"": SubResource("AnimationLibrary_87jb5")
+}
+
+[node name="Right Pot" type="Node2D" parent="."]
+
+[node name="Right Pot and Small Table" type="Sprite2D" parent="Right Pot"]
+position = Vector2(259, 323.75)
+scale = Vector2(0.202745, 0.196515)
+texture = ExtResource("7_8jps5")
+
+[node name="Right Pot Cactus" type="Polygon2D" parent="Right Pot"]
+position = Vector2(497, 346)
+rotation = 0.0698132
+scale = Vector2(0.2, 0.2)
+offset = Vector2(-2469.21, -1766.94)
+texture = ExtResource("8_fy0qx")
+skeleton = NodePath("../Right Pot Skeleton")
+polygon = PackedVector2Array(2543.44, 1336.89, 2477.87, 1350.82, 2431.97, 1455.74, 2425.41, 1528.69, 2374.59, 1509.84, 2292.62, 1637.7, 2305.74, 1703.28, 2267.21, 1647.54, 2269.67, 1564.75, 2132.79, 1549.18, 2148.36, 1661.48, 2119.67, 1732.79, 2222.95, 1879.51, 2280.33, 1910.66, 2304.92, 1898.36, 2297.54, 1929.51, 2326.23, 1959.02, 2589.34, 1971.31, 2564.75, 1588.52)
+uv = PackedVector2Array(2543.44, 1336.89, 2477.87, 1350.82, 2431.97, 1455.74, 2425.41, 1528.69, 2374.59, 1509.84, 2292.62, 1637.7, 2305.74, 1703.28, 2267.21, 1647.54, 2269.67, 1564.75, 2132.79, 1549.18, 2148.36, 1661.48, 2119.67, 1732.79, 2222.95, 1879.51, 2280.33, 1910.66, 2304.92, 1898.36, 2297.54, 1929.51, 2326.23, 1959.02, 2589.34, 1971.31, 2564.75, 1588.52)
+polygons = [PackedInt32Array(0, 1, 2, 3, 18), PackedInt32Array(3, 4, 5, 6, 14, 15, 16, 17, 18), PackedInt32Array(10, 7, 8, 9), PackedInt32Array(11, 10, 7, 6), PackedInt32Array(11, 12, 6), PackedInt32Array(12, 6, 14, 15, 13)]
+bones = ["Root", PackedFloat32Array(0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5), "Root/1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0.5, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0), "Root/1/1_1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0), "Root/2", PackedFloat32Array(0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="Right Pot Skeleton" type="Skeleton2D" parent="Right Pot"]
+
+[node name="Root" type="Bone2D" parent="Right Pot/Right Pot Skeleton"]
+position = Vector2(499, 376)
+rotation = -1.65174
+rest = Transform2D(-0.0808582, -0.996726, 0.996726, -0.0808582, 499, 376)
+
+[node name="1" type="Bone2D" parent="Right Pot/Right Pot Skeleton/Root"]
+position = Vector2(22.6837, -32.2715)
+rotation = -0.655132
+rest = Transform2D(0.792968, -0.609264, 0.609264, 0.792968, 22.6837, -32.2715)
+
+[node name="1_1" type="Bone2D" parent="Right Pot/Right Pot Skeleton/Root/1"]
+position = Vector2(40.7093, 7.19419)
+rotation = 0.732398
+rest = Transform2D(0.743573, 0.668654, -0.668654, 0.743573, 40.7093, 7.19419)
+
+[node name="2" type="Bone2D" parent="Right Pot/Right Pot Skeleton/Root"]
+position = Vector2(69.6355, 19.6951)
+rotation = 0.0386461
+rest = Transform2D(0.999253, 0.0386365, -0.0386365, 0.999253, 69.6355, 19.6951)
+
+[node name="Right Pot AniPlayer" type="AnimationPlayer" parent="Right Pot"]
+libraries = {
+"": SubResource("AnimationLibrary_lv7fc")
+}
+
+[node name="Desk and BG" type="Sprite2D" parent="."]
+position = Vector2(259, 323.75)
+scale = Vector2(0.202745, 0.196515)
+texture = ExtResource("9_tyhdg")
 
 [node name="Clock" type="Sprite2D" parent="."]
 position = Vector2(259, 323.75)
@@ -3020,7 +3512,6 @@ rest = Transform2D(1, -1.30879e-11, 1.30879e-11, 1, 392.498, 500.394)
 
 [node name="Head" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(-48.4978, -144.394)
-scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(1, -1.30879e-11, 1.30879e-11, 1, -48.4978, -144.394)
 
 [node name="EarL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/Head"]
@@ -3113,7 +3604,7 @@ rest = Transform2D(-0.976195, 0.216896, -0.216896, -0.976195, 0, 0)
 libraries = {
 "": SubResource("AnimationLibrary_n6bl0")
 }
-blend_times = [&"Writing3", &"Roll Out", 1.0, &"Writing3", &"Idle", 1.0, &"Roll Out", &"Roll Out", 1.0, &"Writing", &"RESET", 4.0, &"Writing", &"Roll Out", 1.0, &"Writing", &"Writing", 4.0, &"Writing", &"Writing2", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Idle", 4.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Roll Out", 1.0, &"Writing2", &"Writing", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Idle", 4.0, &"Phone", &"RESET", 4.0, &"Phone", &"Roll Out", 1.0, &"Phone", &"Writing", 4.0, &"Phone", &"Writing2", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Idle", 2.0, &"Idle", &"RESET", 4.0, &"Idle", &"Writing3", 1.0, &"Idle", &"Roll Out", 1.0, &"Idle", &"Writing", 4.0, &"Idle", &"Writing2", 6.0, &"Idle", &"Phone", 1.0, &"Idle", &"Idle", 2.0, &"Idle", &"Phone_5MIN", 1.0, &"Idle", &"Roll In", 1.0, &"Idle", &"Drink", 1.0, &"Phone_5MIN", &"Idle", 1.0, &"Phone_5MIN", &"Roll In", 1.0, &"Roll In", &"RESET", 1.0, &"Roll In", &"Writing3", 1.0, &"Roll In", &"Roll Out", 1.0, &"Roll In", &"Writing", 1.0, &"Roll In", &"Writing2", 1.0, &"Roll In", &"Phone", 1.0, &"Roll In", &"Idle", 3.0, &"Roll In", &"Roll In", 1.0, &"Roll In", &"Drink", 1.0, &"Drink", &"Roll Out", 1.0, &"Drink", &"Idle", 1.0]
+blend_times = [&"Phone", &"RESET", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Idle", 2.0, &"Phone", &"Roll Out", 1.0, &"Phone", &"Writing", 4.0, &"Phone", &"Writing2", 4.0, &"Drink", &"Idle", 1.0, &"Drink", &"Roll Out", 1.0, &"Idle", &"RESET", 4.0, &"Idle", &"Phone", 1.0, &"Idle", &"Drink", 1.0, &"Idle", &"Idle", 2.0, &"Idle", &"Phone_5MIN", 1.0, &"Idle", &"Roll In", 1.0, &"Idle", &"Roll Out", 1.0, &"Idle", &"Writing", 4.0, &"Idle", &"Writing2", 6.0, &"Idle", &"Writing3", 1.0, &"Phone_5MIN", &"Idle", 1.0, &"Phone_5MIN", &"Roll In", 1.0, &"Roll In", &"RESET", 1.0, &"Roll In", &"Phone", 1.0, &"Roll In", &"Drink", 1.0, &"Roll In", &"Idle", 3.0, &"Roll In", &"Roll In", 1.0, &"Roll In", &"Roll Out", 1.0, &"Roll In", &"Writing", 1.0, &"Roll In", &"Writing2", 1.0, &"Roll In", &"Writing3", 1.0, &"Roll Out", &"Roll Out", 1.0, &"Writing", &"RESET", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Idle", 4.0, &"Writing", &"Roll Out", 1.0, &"Writing", &"Writing", 4.0, &"Writing", &"Writing2", 4.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Idle", 4.0, &"Writing2", &"Roll Out", 1.0, &"Writing2", &"Writing", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing3", &"Idle", 1.0, &"Writing3", &"Roll Out", 1.0]
 
 [node name="Blink AniPlayer" type="AnimationPlayer" parent="StudyingBuddySkeleton"]
 libraries = {
