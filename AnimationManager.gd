@@ -33,11 +33,9 @@ func _process(delta):
 		_blink()
 		blinkPauseCounter = 0
 		blinkPause = random.randi_range(10,20)
-		print(blinkPause)
 	blinkPauseCounter += delta
 
 func _blink():
-	print("Blinked")
 	blinkPlayer.play("Blink")
 
 func _rollIn():

@@ -49,9 +49,9 @@ func updateClockHand(_delta, dontReset):
 				get_node("../clockHand").rotation = currentRad
 
 func getPeriodValues():
-	studyTime = get_node("../Phone/SettingsScreen/StudyTimeSlider").value * 60
+	studyTime = get_node("../Phone/SettingsScreen/StudyTimeSlider").value * 1
 	cyclesTotal = get_node("../Phone/SettingsScreen/CyclesSlider").value 
-	breakTime = get_node("../Phone/SettingsScreen/BreakTimeSlider").value * 60
+	breakTime = get_node("../Phone/SettingsScreen/BreakTimeSlider").value * 1
 	
 # helper function that starts pomo timer given a period length
 func start_period(duration):
@@ -92,34 +92,28 @@ func _on_break_time_slider_value_changed(value):
 # gets signal from pomo timer when it finishes or when time is reduced to < 0
 # then restarts timer based on next period length
 func _period_finished():
+	if(studying == true):
+		studying = false
+		start_break_timer() # switch PomoClocks timing duration
 	
-	# ">" because by the time this runs the last time, cycle
-	# will already be updated.
-	
-	
-	#else:
-		if(studying == true):
-			studying = false
-			start_break_timer() # switch PomoClocks timing duration
-		
+	else:
+		if(cycle >= cyclesTotal):
+			#end of session logic triggered here:
+			phone.up()
+			phone.endScreenVisible()
+			sessionRunning = false
+			var musicManager = get_node("../MusicManager")
+			if(musicManager != null):
+				musicManager.sessionEndMusic()
+			aniManager._rollOut()
+			cyclesTotal = 0
+			cycle = 1
 		else:
 			start_study_timer() # switch PomoClocks timing duration
 			studying = true
 			cycle += 1
 			updateCycleNumerator()
-			
-			if(cycle > cyclesTotal):
-				#end of session logic triggered here:
-				phone.up()
-				phone.endScreenVisible()
-				sessionRunning = false
-				var musicManager = get_node("../MusicManager")
-				if(musicManager != null):
-					musicManager.sessionEndMusic()
-				aniManager._rollOut()
-				cyclesTotal = 0
-				cycle = 1
-		phone.get_node("ClockScreen").setIntervalTimerLabel(studying)
+	phone.get_node("ClockScreen").setIntervalTimerLabel(studying)
 
 	
 
