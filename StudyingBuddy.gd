@@ -15,7 +15,17 @@ func hideBuddy():
 	self.hide()
 	
 func showBuddy():
-	self.show()
+	get_node("ArmR").show()
+	get_node("Tail").show()
+	get_node("Torso").show()
+	get_node("Desk CoverUp").show()
+	get_node("Head").show()
+	get_node("Nose").show()
+	get_node("Closed Eye").hide()
+	get_node("PhoneOnHand").hide()
+	get_node("Pen").show()
+	get_node("ArmL").show()
+	get_node("Mug").show()
 
 
 # shows Buddy when user starts the study session
