@@ -1,12 +1,12 @@
-# This node has a timer which is sets to count down 
+# This node has a timer which is set to count down 
 # from specified lengths to determine when to update other nodes
-# Very first call to set study time is in MaineScene.gd script
-# By defualt, study_time and break_time are set to their slider's min values
+
+# Very first call to set study time is in MainScene.gd script
+# By default, studyTime and breakTime are set to their slider's min values
 # which can be found by going to phone > settings screen > Slider in question
 extends Node
 
 # var declarations:
-# 
 var studyTime # time of "study session" measured in seconds 
 var breakTime # ^ for breaks
 var cyclesTotal # < prob don't initialize this here # total number of study/break cycles user wants
@@ -23,14 +23,14 @@ var aniManager
 func _ready(): 
 	phone = get_node("../Phone")
 	PomoTimer = $"PomoTimer"
-	getPeriodValues() #initilize values
+	getPeriodValues() #initialize values
 	aniManager = get_node("../AnimationManager")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Called every frame. '_delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
 	updateClockHand(_delta, true)
 
-# this function moves the clock hand based on time past since the last 
+# this function moves the clock hand based on time passed since the last 
 # call of this function (delta)
 # and a boolean. if dontReset is false, puts hand back to '12
 func updateClockHand(_delta, dontReset):
@@ -98,7 +98,7 @@ func _on_session_time_slider_value_changed(value):
 func _on_break_time_slider_value_changed(value):
 	breakTime = value
 
-# get's signal from pomo timer when it finishes or when time is reduced to < 0
+# gets signal from pomo timer when it finishes or when time is reduced to < 0
 # then restarts timer based on next period length
 func _period_finished(): # I tested this funciton with a print to ensure it works
 	if(studying):

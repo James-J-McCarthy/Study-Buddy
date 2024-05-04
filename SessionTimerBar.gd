@@ -1,3 +1,4 @@
+# This node controls the progress bar on the clock readout app screen
 extends Line2D
 
 var allowIncrement = false
