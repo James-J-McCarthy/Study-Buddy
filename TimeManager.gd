@@ -217,6 +217,7 @@ func toggleSessionRunning():
 func set_cycle(num):
 	cycle = num
 
+
 #Signals Below: 
 
 # runs when settings start button is pressed

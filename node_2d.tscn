@@ -27,7 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://cx4mn84vf41fd" path="res://Phone frame.png" id="21_b6ex8"]
 [ext_resource type="FontFile" uid="uid://by7ov6qiq75tk" path="res://MotleyForcesRegular-w1rZ3.ttf" id="21_rr2ru"]
 [ext_resource type="Texture2D" uid="uid://bvincygstqens" path="res://Grabber.PNG" id="22_wcyrw"]
-[ext_resource type="LabelSettings" uid="uid://bi0i30ujkntbi" path="res://Button Big.tres" id="23_8e3nk"]
+[ext_resource type="LabelSettings" path="res://Button Big.tres" id="23_8e3nk"]
 [ext_resource type="Texture2D" uid="uid://coqfecqqrf01t" path="res://Button Close Phone.png" id="23_kjpqw"]
 [ext_resource type="Texture2D" uid="uid://clyvg7tmjwede" path="res://Button Close Phone Clicked.png" id="24_h2iqv"]
 [ext_resource type="Texture2D" uid="uid://dk4cgs8ih0i0" path="res://Grabber Clicked.png" id="24_sjviw"]
@@ -36,9 +36,9 @@
 [ext_resource type="Texture2D" uid="uid://b6q3uno0vq8qh" path="res://Button Menu On Hover.png" id="26_y1yau"]
 [ext_resource type="Texture2D" uid="uid://belsedwgfin84" path="res://Button Music APP.png" id="27_hinj7"]
 [ext_resource type="Texture2D" uid="uid://bo4qnh3d8pok2" path="res://Button Music Clicked.png" id="28_gxkr8"]
-[ext_resource type="LabelSettings" uid="uid://ccudhtkq5auxj" path="res://App Screen Title small.tres" id="29_0rwny"]
+[ext_resource type="LabelSettings" path="res://App Screen Title small.tres" id="29_0rwny"]
 [ext_resource type="Texture2D" uid="uid://dfd3ggtopn7rg" path="res://Button Music Hover.png" id="29_s5tdk"]
-[ext_resource type="LabelSettings" uid="uid://ileo4jbf3gvo" path="res://Big Text Title.tres" id="30_25nkr"]
+[ext_resource type="LabelSettings" path="res://Big Text Title.tres" id="30_25nkr"]
 [ext_resource type="Script" path="res://ClockScreen.gd" id="31_qmhd2"]
 [ext_resource type="Texture2D" uid="uid://clvvhxwfyoroy" path="res://Button Setting App.png" id="31_u1xyh"]
 [ext_resource type="Texture2D" uid="uid://b8oalye2d2tan" path="res://Button Setting Clicked.png" id="32_ifnww"]
@@ -63,12 +63,12 @@
 [ext_resource type="Texture2D" uid="uid://dqdievemrso52" path="res://Button Close Phone BLANK.png" id="51_b7lw4"]
 [ext_resource type="Texture2D" uid="uid://durwrxgijioom" path="res://End Session Phone Screen.png" id="51_yx2dx"]
 [ext_resource type="Texture2D" uid="uid://bld4isgbepit5" path="res://Button Exit Screen Left.png" id="54_i1nl8"]
-[ext_resource type="LabelSettings" uid="uid://cla7mm21lnk8g" path="res://start session time lables.tres" id="55_7uhdd"]
+[ext_resource type="LabelSettings" uid="uid://1ea8m7fomymv" path="res://start session time lables.tres" id="55_7uhdd"]
 [ext_resource type="Texture2D" uid="uid://cxpe5yrcatfs3" path="res://Button Exit Screen Left Clicked.png" id="55_gjpdr"]
 [ext_resource type="Texture2D" uid="uid://uximovvvroxc" path="res://Quit ConfirmationScreen.png" id="56_6iuua"]
 [ext_resource type="Texture2D" uid="uid://bg67j6t61pfro" path="res://Button Exit Screen Left Hover.png" id="56_6vrdi"]
 [ext_resource type="Texture2D" uid="uid://dghvp4gpfggu0" path="res://Button Exit Screen Right.png" id="57_f2o0s"]
-[ext_resource type="LabelSettings" uid="uid://c1qxsvqm2r5v5" path="res://Main Screen Small Text.tres" id="57_nugnk"]
+[ext_resource type="LabelSettings" path="res://Main Screen Small Text.tres" id="57_nugnk"]
 [ext_resource type="Texture2D" uid="uid://djwh7upc1c52y" path="res://Button Exit Screen Right Clicked.png" id="58_8n4yx"]
 [ext_resource type="Texture2D" uid="uid://bjvdrsl0v5qn1" path="res://Button Exit Screen Right Hover.png" id="59_6n6ei"]
 
@@ -2025,6 +2025,201 @@ _data = {
 "Blink": SubResource("Animation_evbrr")
 }
 
+[sub_resource type="Animation" id="Animation_td5xw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Leaves Skeleton/Root/Leaf 3/Leaf 3_3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-192.36, -35.6207)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Leaves Skeleton/Root/Leaf 3/Leaf 3_3:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Leaves Skeleton/Root:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1159.09, 1120.78)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Leaves Skeleton/Root:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Leaves Skeleton/Root/Leaf 1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-276.209, 5.08867)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Leaves Skeleton/Root/Leaf 1:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Leaves Skeleton/Root/Leaf 1/Leaf 1_1:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-133.172, 117.039)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Leaves Skeleton/Root/Leaf 1/Leaf 1_1:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Leaves Skeleton/Root/Leaf 1/Leaf 1_1/Leaf 1_1_1:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-59.1876, 198.458)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Leaves Skeleton/Root/Leaf 1/Leaf 1_1/Leaf 1_1_1:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Leaves Skeleton/Root/Leaf 2:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-59.1876, 167.926)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Leaves Skeleton/Root/Leaf 2:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Leaves Skeleton/Root/Leaf 2/Leaf 2_2:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-29.5938, 167.926)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Leaves Skeleton/Root/Leaf 2/Leaf 2_2:rotation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Leaves Skeleton/Root/Leaf 3:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-128.24, -157.749)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Leaves Skeleton/Root/Leaf 3:rotation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_evysn"]
 resource_name = "Swing"
 length = 13.0
@@ -2220,201 +2415,6 @@ tracks/15/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0874189, 0.0396789, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_td5xw"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Leaves Skeleton/Root/Leaf 3/Leaf 3_3:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-192.36, -35.6207)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Leaves Skeleton/Root/Leaf 3/Leaf 3_3:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Leaves Skeleton/Root:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1159.09, 1120.78)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Leaves Skeleton/Root:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Leaves Skeleton/Root/Leaf 1:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-276.209, 5.08867)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Leaves Skeleton/Root/Leaf 1:rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Leaves Skeleton/Root/Leaf 1/Leaf 1_1:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-133.172, 117.039)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Leaves Skeleton/Root/Leaf 1/Leaf 1_1:rotation")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Leaves Skeleton/Root/Leaf 1/Leaf 1_1/Leaf 1_1_1:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-59.1876, 198.458)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Leaves Skeleton/Root/Leaf 1/Leaf 1_1/Leaf 1_1_1:rotation")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Leaves Skeleton/Root/Leaf 2:position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-59.1876, 167.926)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Leaves Skeleton/Root/Leaf 2:rotation")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("Leaves Skeleton/Root/Leaf 2/Leaf 2_2:position")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-29.5938, 167.926)]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("Leaves Skeleton/Root/Leaf 2/Leaf 2_2:rotation")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("Leaves Skeleton/Root/Leaf 3:position")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-128.24, -157.749)]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("Leaves Skeleton/Root/Leaf 3:rotation")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l0hx3"]
@@ -2684,7 +2684,6 @@ rest = Transform2D(6.96462, -1.60426, 0.549942, 2.38748, 88.3128, -2.97414)
 [node name="Phone" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL/ForeArmL/HandL"]
 position = Vector2(4.78279, 2.33461)
 rotation = -0.366923
-scale = Vector2(1, 1)
 rest = Transform2D(0.933436, -0.358745, 0.358745, 0.933436, 4.78279, 2.33461)
 
 [node name="Pen" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL/ForeArmL/HandL"]
@@ -2696,13 +2695,11 @@ rest = Transform2D(0.356329, -0.93436, 0.93436, 0.356329, 4.78279, 2.33461)
 [node name="UpperArmR" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(-95.4978, -118.394)
 rotation = 1.67185
-scale = Vector2(1, 1)
 rest = Transform2D(-0.100882, 0.994898, -0.994898, -0.100882, -95.4978, -118.394)
 
 [node name="ForeArmR" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmR"]
 position = Vector2(35.7571, 25.5231)
 rotation = 1.41275
-scale = Vector2(1, 1)
 rest = Transform2D(0.157389, 0.987537, -0.987537, 0.157389, 35.7571, 25.5231)
 
 [node name="HandR" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmR/ForeArmR"]
@@ -2720,13 +2717,12 @@ rest = Transform2D(-0.976195, 0.216896, -0.216896, -0.976195, 0, 0)
 libraries = {
 "": SubResource("AnimationLibrary_n6bl0")
 }
-blend_times = [&"Roll Out", &"Roll Out", 1.0, &"Writing", &"RESET", 4.0, &"Writing", &"Roll Out", 1.0, &"Writing", &"Writing", 4.0, &"Writing", &"Writing2", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Idle", 4.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Roll Out", 1.0, &"Writing2", &"Writing", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Idle", 4.0, &"Phone", &"RESET", 4.0, &"Phone", &"Roll Out", 1.0, &"Phone", &"Writing", 4.0, &"Phone", &"Writing2", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Idle", 2.0, &"Idle", &"RESET", 4.0, &"Idle", &"Roll Out", 1.0, &"Idle", &"Writing", 4.0, &"Idle", &"Writing2", 6.0, &"Idle", &"Phone", 1.0, &"Idle", &"Idle", 2.0, &"Idle", &"Phone_5MIN", 1.0, &"Phone_5MIN", &"Idle", 1.0, &"Phone_5MIN", &"Roll In", 1.0, &"Roll In", &"Roll Out", 1.0, &"Roll In", &"Idle", 2.0]
+blend_times = [&"Phone", &"RESET", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Writing2", 4.0, &"Phone", &"Writing", 4.0, &"Phone", &"Roll Out", 1.0, &"Phone", &"Idle", 2.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"Writing", 4.0, &"Writing2", &"Roll Out", 1.0, &"Writing2", &"Idle", 4.0, &"Phone_5MIN", &"Roll In", 1.0, &"Phone_5MIN", &"Idle", 1.0, &"Writing", &"RESET", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Writing2", 4.0, &"Writing", &"Writing", 4.0, &"Writing", &"Roll Out", 1.0, &"Writing", &"Idle", 4.0, &"Roll Out", &"Roll Out", 1.0, &"Roll In", &"Roll Out", 1.0, &"Roll In", &"Idle", 2.0, &"Idle", &"RESET", 4.0, &"Idle", &"Phone", 1.0, &"Idle", &"Writing2", 6.0, &"Idle", &"Phone_5MIN", 1.0, &"Idle", &"Writing", 4.0, &"Idle", &"Roll Out", 1.0, &"Idle", &"Idle", 2.0]
 
 [node name="Blink AniPlayer" type="AnimationPlayer" parent="StudyingBuddySkeleton"]
 libraries = {
 "": SubResource("AnimationLibrary_awxkg")
 }
-blend_times = [&"Roll Out", &"Roll Out", 1.0, &"Writing", &"RESET", 4.0, &"Writing", &"Roll Out", 1.0, &"Writing", &"Writing", 4.0, &"Writing", &"Writing2", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Idle", 4.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Roll Out", 1.0, &"Writing2", &"Writing", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Idle", 4.0, &"Phone", &"RESET", 4.0, &"Phone", &"Roll Out", 1.0, &"Phone", &"Writing", 4.0, &"Phone", &"Writing2", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Idle", 2.0, &"Idle", &"RESET", 4.0, &"Idle", &"Roll Out", 1.0, &"Idle", &"Writing", 4.0, &"Idle", &"Writing2", 6.0, &"Idle", &"Phone", 1.0, &"Idle", &"Idle", 2.0, &"Idle", &"Phone_5MIN", 1.0, &"Phone_5MIN", &"Idle", 1.0, &"Phone_5MIN", &"Roll In", 1.0, &"Roll In", &"Roll Out", 1.0]
 
 [node name="AnimationManager" type="Node" parent="."]
 script = ExtResource("8_hahbl")

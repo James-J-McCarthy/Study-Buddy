@@ -11,7 +11,7 @@ var SessionTimeReadout # Timer readout for total remaining time in study session
 func _ready():
 	TimeManager = get_parent().get_parent().get_node("TimeManager")
 	IntervalTimeLabel = get_node("IntervalTimeLabel")
-	IntervalTimeReadout = get_node("IntervalTimeReadout")
+	IntervalTimeReadout = IntervalTimeLabel.get_node("IntervalTimeReadout")
 	SessionTimeReadout = get_node("SessionTimeLabel").get_node("SessionTimeReadout")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
