@@ -23,6 +23,7 @@ func _ready():
 	
 	get_node("PenOnDesk").hide()
 	get_node("PhoneOnDesk").show()
+	get_node("StudyingBuddySkeleton/Torso/Head/Nose/Nose Button").hide()
 	
 	get_node("Pot/Pot Plant AniPlayer").play("Swing")
 	
@@ -89,6 +90,7 @@ func _on_music_back_button_pressed():
 
 # this code runs when the session start button is pressed in SettingsScreen
 func _on_start_button_pressed():
+	get_node("StudyingBuddySkeleton/Torso/Head/Nose/Nose Button").show()
 	_on_menu_back_button_pressed() # put phone down
 
 # this kicks the user off the mid-session-settings screen if they end the session
@@ -140,3 +142,6 @@ func _on_studying_buddy_ani_player_animation_started(anim_name):
 func _on_close_app_button_pressed():
 	_on_close_button_pressed()
 	get_node("Phone/MenuBackButton").show()
+
+func _on_nose_button_pressed():
+	get_node("StudyingBuddySkeleton/Nose Boop AniPlayer").play("Nose Boop")

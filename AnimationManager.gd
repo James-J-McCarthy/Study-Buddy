@@ -7,7 +7,7 @@ var random = RandomNumberGenerator.new()
 var TimeManager # TimeManager node reference
 
 # Stores names for all the available Studying Animations
-var studyingAnimation = PackedStringArray(["Writing", "Writing2", "Phone", "Writing", "Writing2"])
+var studyingAnimation = PackedStringArray(["Writing", "Writing2", "Writing3", "Phone", "Writing", "Writing2", "Writing3", "Drink"])
 
 # Stores names for all the available Break Animations
 var breakAnimation = PackedStringArray(["Phone_5MIN"])

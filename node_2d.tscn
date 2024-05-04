@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://doin1g4xrytqe"]
+[gd_scene load_steps=97 format=3 uid="uid://doin1g4xrytqe"]
 
 [ext_resource type="Script" path="res://MainScene.gd" id="1_37525"]
 [ext_resource type="Texture2D" uid="uid://dymt2u5vj5pon" path="res://Outside Window.jpg" id="2_m37tu"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bd8tlsvbswvmx" path="res://ForegroundItems.png" id="12_bgmpw"]
 [ext_resource type="Texture2D" uid="uid://drfce3k5x0lux" path="res://Mug.png" id="12_qhsgu"]
 [ext_resource type="Texture2D" uid="uid://cwabur6purtut" path="res://Radio.png" id="13_4bgji"]
+[ext_resource type="Texture2D" uid="uid://c8ia6484a6kv0" path="res://Button Nose.png" id="13_i0mhi"]
 [ext_resource type="Texture2D" uid="uid://cijhhrph4p3ks" path="res://Phone BG.png" id="13_jc45a"]
 [ext_resource type="Texture2D" uid="uid://vj60owv3uvhx" path="res://Pot.png" id="14_mbevd"]
 [ext_resource type="Texture2D" uid="uid://bjqoitllf6h1k" path="res://Leaves.png" id="15_bdx30"]
@@ -27,7 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://cx4mn84vf41fd" path="res://Phone frame.png" id="21_b6ex8"]
 [ext_resource type="FontFile" uid="uid://by7ov6qiq75tk" path="res://MotleyForcesRegular-w1rZ3.ttf" id="21_rr2ru"]
 [ext_resource type="Texture2D" uid="uid://bvincygstqens" path="res://Grabber.PNG" id="22_wcyrw"]
-[ext_resource type="LabelSettings" path="res://Button Big.tres" id="23_8e3nk"]
+[ext_resource type="LabelSettings" uid="uid://bi0i30ujkntbi" path="res://Button Big.tres" id="23_8e3nk"]
 [ext_resource type="Texture2D" uid="uid://coqfecqqrf01t" path="res://Button Close Phone.png" id="23_kjpqw"]
 [ext_resource type="Texture2D" uid="uid://clyvg7tmjwede" path="res://Button Close Phone Clicked.png" id="24_h2iqv"]
 [ext_resource type="Texture2D" uid="uid://dk4cgs8ih0i0" path="res://Grabber Clicked.png" id="24_sjviw"]
@@ -36,9 +37,9 @@
 [ext_resource type="Texture2D" uid="uid://b6q3uno0vq8qh" path="res://Button Menu On Hover.png" id="26_y1yau"]
 [ext_resource type="Texture2D" uid="uid://belsedwgfin84" path="res://Button Music APP.png" id="27_hinj7"]
 [ext_resource type="Texture2D" uid="uid://bo4qnh3d8pok2" path="res://Button Music Clicked.png" id="28_gxkr8"]
-[ext_resource type="LabelSettings" path="res://App Screen Title small.tres" id="29_0rwny"]
+[ext_resource type="LabelSettings" uid="uid://ccudhtkq5auxj" path="res://App Screen Title small.tres" id="29_0rwny"]
 [ext_resource type="Texture2D" uid="uid://dfd3ggtopn7rg" path="res://Button Music Hover.png" id="29_s5tdk"]
-[ext_resource type="LabelSettings" path="res://Big Text Title.tres" id="30_25nkr"]
+[ext_resource type="LabelSettings" uid="uid://ileo4jbf3gvo" path="res://Big Text Title.tres" id="30_25nkr"]
 [ext_resource type="Script" path="res://ClockScreen.gd" id="31_qmhd2"]
 [ext_resource type="Texture2D" uid="uid://clvvhxwfyoroy" path="res://Button Setting App.png" id="31_u1xyh"]
 [ext_resource type="Texture2D" uid="uid://b8oalye2d2tan" path="res://Button Setting Clicked.png" id="32_ifnww"]
@@ -63,12 +64,12 @@
 [ext_resource type="Texture2D" uid="uid://dqdievemrso52" path="res://Button Close Phone BLANK.png" id="51_b7lw4"]
 [ext_resource type="Texture2D" uid="uid://durwrxgijioom" path="res://End Session Phone Screen.png" id="51_yx2dx"]
 [ext_resource type="Texture2D" uid="uid://bld4isgbepit5" path="res://Button Exit Screen Left.png" id="54_i1nl8"]
-[ext_resource type="LabelSettings" uid="uid://1ea8m7fomymv" path="res://start session time lables.tres" id="55_7uhdd"]
+[ext_resource type="LabelSettings" uid="uid://cla7mm21lnk8g" path="res://start session time lables.tres" id="55_7uhdd"]
 [ext_resource type="Texture2D" uid="uid://cxpe5yrcatfs3" path="res://Button Exit Screen Left Clicked.png" id="55_gjpdr"]
 [ext_resource type="Texture2D" uid="uid://uximovvvroxc" path="res://Quit ConfirmationScreen.png" id="56_6iuua"]
 [ext_resource type="Texture2D" uid="uid://bg67j6t61pfro" path="res://Button Exit Screen Left Hover.png" id="56_6vrdi"]
 [ext_resource type="Texture2D" uid="uid://dghvp4gpfggu0" path="res://Button Exit Screen Right.png" id="57_f2o0s"]
-[ext_resource type="LabelSettings" path="res://Main Screen Small Text.tres" id="57_nugnk"]
+[ext_resource type="LabelSettings" uid="uid://c1qxsvqm2r5v5" path="res://Main Screen Small Text.tres" id="57_nugnk"]
 [ext_resource type="Texture2D" uid="uid://djwh7upc1c52y" path="res://Button Exit Screen Right Clicked.png" id="58_8n4yx"]
 [ext_resource type="Texture2D" uid="uid://bjvdrsl0v5qn1" path="res://Button Exit Screen Right Hover.png" id="59_6n6ei"]
 
@@ -1179,6 +1180,18 @@ tracks/21/keys = {
 "update": 0,
 "values": [Vector2(-48.4978, -144.394), Vector2(-43.8576, -142.044), Vector2(-43.8576, -142.044), Vector2(-48.4978, -144.394), Vector2(-35.3246, -146.932), Vector2(-35.3246, -146.932), Vector2(-45.4196, -142.835), Vector2(-43.8576, -142.044), Vector2(-48.4978, -144.394)]
 }
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Torso/Lower Body:rotation")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0, 4.2, 7.4, 290.8, 300),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [2.92296, 2.92296, 2.58541, 2.58541, 2.92296]
+}
 
 [sub_resource type="Animation" id="Animation_3ebs1"]
 length = 0.001
@@ -1518,6 +1531,18 @@ tracks/27/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("Torso/Lower Body:rotation")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.58541]
+}
 
 [sub_resource type="Animation" id="Animation_sv2dl"]
 resource_name = "Roll In"
@@ -1630,6 +1655,114 @@ tracks/8/keys = {
 "update": 0,
 "values": [-0.217505, -0.286361, -0.0479242, -1.30879e-11]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../PhoneOnDesk:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../StudyingBuddy/PhoneOnHand:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../PenOnDesk:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../StudyingBuddy/Pen:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../StudyingBuddy/Pen:rotation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.00102827, 0.00102827]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Torso/Head:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-48.4978, -144.394), Vector2(-48.4978, -144.394)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Torso/Head/EarL:rotation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.3, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-0.935605, -0.612004, -0.649031, -0.935605]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Torso/Head/EarR:rotation")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.3, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.288606, 0.0638963, -0.084546, 0.288606]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Torso/Tail:rotation")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.2, 1.5, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.257451, -0.257451, -0.509577, -0.0544289, -0.189694, -0.257451]
+}
 
 [sub_resource type="Animation" id="Animation_quujf"]
 resource_name = "Roll Out"
@@ -1741,6 +1874,54 @@ tracks/8/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [-1.30879e-11, -0.0479242, -0.286361, -0.217505]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../PenOnDesk:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../PhoneOnDesk:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../StudyingBuddy/Pen:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../StudyingBuddy/PhoneOnHand:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
 }
 
 [sub_resource type="Animation" id="Animation_njfvu"]
@@ -1992,6 +2173,131 @@ tracks/14/keys = {
 "values": [true, true]
 }
 
+[sub_resource type="Animation" id="Animation_u3jvs"]
+resource_name = "Writing3"
+length = 15.0
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Torso/UpperArmL/ForeArmL/HandL:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.533333, 0.866667, 1.16667, 2.26666, 2.59966, 2.83276, 3.13246, 3.46546, 3.76516, 3.99826, 4.26466, 4.49776, 4.76416, 5.03056, 5.39686, 5.62996, 5.89636, 6.2604, 6.5268, 6.7599, 7.0263, 7.2927, 8.2251, 10.2564, 10.5894, 10.8225, 11.1222, 11.4552, 11.7549, 11.988, 12.2544, 12.4875, 12.7539, 13.0203, 13.3866, 13.6197, 13.8861, 14.1192, 14.3856, 14.652, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0200706, -0.00158796, 0.0413477, -0.0333846, -0.00470137, 0.0, 0.0200706, -0.00158796, 0.0413477, -0.0333846, -0.00470137, -0.048608, -0.0356567, -0.0739825, -0.00440945, 0.0, -0.00470137, -0.048608, -0.0356567, -0.048608, -0.0356567, -0.0739825, -0.00440945, 0.0, 0.175544, 0.0, 0.0200706, -0.00158796, 0.0413477, -0.0333846, -0.00470137, -0.048608, -0.0356567, -0.0739825, -0.00440945, 0.0, -0.00470137, -0.048608, -0.0356567, -0.0739825, -0.00440945, 0.0, 0.0200706]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Torso/UpperArmL:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.96666, 7.2927, 8.2251, 10.2564, 14.1333, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.67185, 1.89116, 1.67185, 1.89813, 1.67185, 1.89116, 1.67185]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Torso/UpperArmL/ForeArmL:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.866666, 1.96666, 2.5, 7.2927, 8.2251, 9.4905, 10.2564, 12.9667, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.41275, 1.20205, 1.34413, 1.1892, 1.41275, 1.7431, 1.84151, 1.41275, 1.59348, 1.41275]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Torso/Head:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.8648, 2.93333, 7.6257, 8.8911, 9.7569, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.0597522, -0.0597522, -0.0597522, 0.0, -0.0802554, -0.0370033, -0.0597522]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../StudyingBuddy/Pen:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0333, 14.985),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Torso/UpperArmR/ForeArmR:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.0333, 1.53333, 13.4, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.41275, 1.05261, 1.25996, 1.41275]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Torso/UpperArmR:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.0333, 1.53333, 13.4, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.67185, 2.04584, 1.84375, 1.67185]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Torso:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.0333, 1.5318, 14.1333, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-1.30879e-11, -0.124553, -0.124553, -1.30879e-11]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Torso:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.0333, 1.53333, 14.1333, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(392.498, 500.394), Vector2(408.504, 494.41), Vector2(408.504, 494.41), Vector2(392.498, 500.394)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Torso/UpperArmR/ForeArmR/HandR:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.0333, 1.53333, 13.7667, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.116318, 0.408586, 0.408586, 0.116318]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n6bl0"]
 _data = {
 "Drink": SubResource("Animation_mldd4"),
@@ -2002,11 +2308,12 @@ _data = {
 "Roll In": SubResource("Animation_sv2dl"),
 "Roll Out": SubResource("Animation_quujf"),
 "Writing": SubResource("Animation_njfvu"),
-"Writing2": SubResource("Animation_vatju")
+"Writing2": SubResource("Animation_vatju"),
+"Writing3": SubResource("Animation_u3jvs")
 }
 
 [sub_resource type="Animation" id="Animation_evbrr"]
-resource_name = "Blink"
+resource_name = "Nose Boop"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -2014,15 +2321,91 @@ tracks/0/path = NodePath("../StudyingBuddy/Closed Eye:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.5, 1),
+"times": PackedFloat32Array(0, 0.1, 0.6, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [false, true, false, false]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Torso/Head/EarL:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 1),
+"transitions": PackedFloat32Array(1, 2.14355, 1),
+"update": 0,
+"values": [-0.935605, -0.617458, -0.935605]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Torso/Head/EarR:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 1),
+"transitions": PackedFloat32Array(1, 2.14355, 1),
+"update": 0,
+"values": [0.288606, -0.0594865, 0.288606]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Torso/Tail:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.257451, -0.446383, -0.0544467, -0.220686, -0.257451]
+}
+
+[sub_resource type="Animation" id="Animation_rqsrs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Torso/Head/EarL:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.624047]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Torso/Head/EarR:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.0594865]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Torso/Tail:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.446383]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_awxkg"]
 _data = {
-"Blink": SubResource("Animation_evbrr")
+"Nose Boop": SubResource("Animation_evbrr"),
+"RESET": SubResource("Animation_rqsrs")
 }
 
 [sub_resource type="Animation" id="Animation_td5xw"]
@@ -2637,17 +3020,18 @@ rest = Transform2D(1, -1.30879e-11, 1.30879e-11, 1, 392.498, 500.394)
 
 [node name="Head" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(-48.4978, -144.394)
+scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(1, -1.30879e-11, 1.30879e-11, 1, -48.4978, -144.394)
 
 [node name="EarL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/Head"]
 position = Vector2(34, -161)
-rotation = -0.935605
+rotation = -0.624047
 scale = Vector2(3.4, 3.4)
 rest = Transform2D(2.01733, -2.73686, 2.73686, 2.01733, 34, -161)
 
 [node name="EarR" type="Bone2D" parent="StudyingBuddySkeleton/Torso/Head"]
 position = Vector2(-86, -159)
-rotation = 0.288606
+rotation = -0.0594865
 scale = Vector2(2.49999, 2.49999)
 rest = Transform2D(2.39659, 0.711537, -0.711537, 2.39659, -86, -159)
 
@@ -2657,9 +3041,18 @@ rotation = -2.26785
 scale = Vector2(2.49999, 2.49999)
 rest = Transform2D(-1.6049, -1.91683, 1.91683, -1.6049, -81.3054, -51.7361)
 
+[node name="Nose Button" type="TextureButton" parent="StudyingBuddySkeleton/Torso/Head/Nose"]
+offset_left = 7.7908
+offset_top = -1.81793
+offset_right = 177.791
+offset_bottom = 110.182
+rotation = 2.30034
+scale = Vector2(0.08, 0.08)
+texture_normal = ExtResource("13_i0mhi")
+
 [node name="Tail" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(35.5022, -2.39432)
-rotation = -0.257451
+rotation = -0.446383
 scale = Vector2(3.25, 3.25)
 rest = Transform2D(3.14289, -0.827503, 0.827504, 3.14289, 35.5022, -2.39432)
 
@@ -2672,7 +3065,7 @@ rest = Transform2D(-0.100553, 0.994926, -0.994926, -0.100553, -33.4978, -141.394
 [node name="ForeArmL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL"]
 position = Vector2(87.652, -7.88235)
 rotation = 1.41794
-scale = Vector2(0.999998, 0.999997)
+scale = Vector2(1, 1)
 rest = Transform2D(0.152262, 0.98834, -0.98834, 0.152262, 87.652, -7.88235)
 
 [node name="HandL" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL/ForeArmL"]
@@ -2684,6 +3077,7 @@ rest = Transform2D(6.96462, -1.60426, 0.549942, 2.38748, 88.3128, -2.97414)
 [node name="Phone" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL/ForeArmL/HandL"]
 position = Vector2(4.78279, 2.33461)
 rotation = -0.366923
+scale = Vector2(1, 1)
 rest = Transform2D(0.933436, -0.358745, 0.358745, 0.933436, 4.78279, 2.33461)
 
 [node name="Pen" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmL/ForeArmL/HandL"]
@@ -2695,11 +3089,13 @@ rest = Transform2D(0.356329, -0.93436, 0.93436, 0.356329, 4.78279, 2.33461)
 [node name="UpperArmR" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
 position = Vector2(-95.4978, -118.394)
 rotation = 1.67185
+scale = Vector2(1, 1)
 rest = Transform2D(-0.100882, 0.994898, -0.994898, -0.100882, -95.4978, -118.394)
 
 [node name="ForeArmR" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmR"]
 position = Vector2(35.7571, 25.5231)
 rotation = 1.41275
+scale = Vector2(1, 1)
 rest = Transform2D(0.157389, 0.987537, -0.987537, 0.157389, 35.7571, 25.5231)
 
 [node name="HandR" type="Bone2D" parent="StudyingBuddySkeleton/Torso/UpperArmR/ForeArmR"]
@@ -2709,7 +3105,7 @@ scale = Vector2(5.367, 1.84)
 rest = Transform2D(5.33073, 0.622872, -0.213543, 1.82757, 45.5535, -8.41874)
 
 [node name="Lower Body" type="Bone2D" parent="StudyingBuddySkeleton/Torso"]
-rotation = 2.92296
+rotation = 2.58541
 scale = Vector2(1, 1)
 rest = Transform2D(-0.976195, 0.216896, -0.216896, -0.976195, 0, 0)
 
@@ -2717,9 +3113,14 @@ rest = Transform2D(-0.976195, 0.216896, -0.216896, -0.976195, 0, 0)
 libraries = {
 "": SubResource("AnimationLibrary_n6bl0")
 }
-blend_times = [&"Phone", &"RESET", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Idle", 2.0, &"Phone", &"Roll Out", 1.0, &"Phone", &"Writing2", 4.0, &"Phone", &"Writing", 4.0, &"Idle", &"RESET", 4.0, &"Idle", &"Phone", 1.0, &"Idle", &"Idle", 2.0, &"Idle", &"Roll Out", 1.0, &"Idle", &"Writing2", 6.0, &"Idle", &"Writing", 4.0, &"Idle", &"Phone_5MIN", 1.0, &"Roll Out", &"Roll Out", 1.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Idle", 4.0, &"Writing2", &"Roll Out", 1.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"Writing", 4.0, &"Writing", &"RESET", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Idle", 4.0, &"Writing", &"Roll Out", 1.0, &"Writing", &"Writing2", 4.0, &"Writing", &"Writing", 4.0, &"Roll In", &"Idle", 2.0, &"Roll In", &"Roll Out", 1.0, &"Phone_5MIN", &"Idle", 1.0, &"Phone_5MIN", &"Roll In", 1.0]
+blend_times = [&"Writing3", &"Roll Out", 1.0, &"Writing3", &"Idle", 1.0, &"Roll Out", &"Roll Out", 1.0, &"Writing", &"RESET", 4.0, &"Writing", &"Roll Out", 1.0, &"Writing", &"Writing", 4.0, &"Writing", &"Writing2", 4.0, &"Writing", &"Phone", 4.0, &"Writing", &"Idle", 4.0, &"Writing2", &"RESET", 4.0, &"Writing2", &"Roll Out", 1.0, &"Writing2", &"Writing", 4.0, &"Writing2", &"Writing2", 4.0, &"Writing2", &"Phone", 4.0, &"Writing2", &"Idle", 4.0, &"Phone", &"RESET", 4.0, &"Phone", &"Roll Out", 1.0, &"Phone", &"Writing", 4.0, &"Phone", &"Writing2", 4.0, &"Phone", &"Phone", 4.0, &"Phone", &"Idle", 2.0, &"Idle", &"RESET", 4.0, &"Idle", &"Writing3", 1.0, &"Idle", &"Roll Out", 1.0, &"Idle", &"Writing", 4.0, &"Idle", &"Writing2", 6.0, &"Idle", &"Phone", 1.0, &"Idle", &"Idle", 2.0, &"Idle", &"Phone_5MIN", 1.0, &"Idle", &"Roll In", 1.0, &"Idle", &"Drink", 1.0, &"Phone_5MIN", &"Idle", 1.0, &"Phone_5MIN", &"Roll In", 1.0, &"Roll In", &"RESET", 1.0, &"Roll In", &"Writing3", 1.0, &"Roll In", &"Roll Out", 1.0, &"Roll In", &"Writing", 1.0, &"Roll In", &"Writing2", 1.0, &"Roll In", &"Phone", 1.0, &"Roll In", &"Idle", 3.0, &"Roll In", &"Roll In", 1.0, &"Roll In", &"Drink", 1.0, &"Drink", &"Roll Out", 1.0, &"Drink", &"Idle", 1.0]
 
 [node name="Blink AniPlayer" type="AnimationPlayer" parent="StudyingBuddySkeleton"]
+libraries = {
+"": SubResource("AnimationLibrary_awxkg")
+}
+
+[node name="Nose Boop AniPlayer" type="AnimationPlayer" parent="StudyingBuddySkeleton"]
 libraries = {
 "": SubResource("AnimationLibrary_awxkg")
 }
@@ -3118,7 +3519,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ClockScreen" type="Sprite2D" parent="Phone"]
-visible = false
 position = Vector2(2.89404, 2.41123)
 scale = Vector2(1.00227, 1.00146)
 texture = ExtResource("36_c4tim")
@@ -3147,17 +3547,20 @@ metadata/_edit_use_anchors_ = true
 [node name="IntervalTimeReadout" type="Label" parent="Phone/ClockScreen/IntervalTimeLabel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.558
-anchor_top = 0.5
-anchor_right = 0.558
-anchor_bottom = 0.5
-offset_left = -155.547
-offset_top = -26.1629
-offset_right = 469.453
-offset_bottom = 94.8372
+anchor_left = 0.377271
+anchor_top = 2.0092
+anchor_right = 0.377271
+anchor_bottom = 2.0092
+offset_left = -155.657
+offset_top = -26.163
+offset_right = 469.343
+offset_bottom = 94.837
 grow_horizontal = 2
 grow_vertical = 2
+text = "0"
 label_settings = ExtResource("30_25nkr")
+horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="SessionTimeLabel" type="Label" parent="Phone/ClockScreen"]
@@ -3176,13 +3579,16 @@ anchor_left = 0.53
 anchor_top = 0.5
 anchor_right = 0.53
 anchor_bottom = 0.5
-offset_left = -200.701
-offset_top = -25.1451
-offset_right = 339.299
-offset_bottom = 91.8549
+offset_left = -328.6
+offset_top = 89.736
+offset_right = 296.4
+offset_bottom = 210.736
 grow_horizontal = 2
 grow_vertical = 2
+text = "0"
 label_settings = ExtResource("30_25nkr")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SessionTimerBar" type="Line2D" parent="Phone/ClockScreen/SessionTimeLabel"]
 position = Vector2(-465.625, -2052.75)
@@ -3519,6 +3925,7 @@ stream = ExtResource("50_5qd5m")
 volume_db = 5.0
 bus = &"SFX"
 
+[connection signal="pressed" from="StudyingBuddySkeleton/Torso/Head/Nose/Nose Button" to="." method="_on_nose_button_pressed"]
 [connection signal="animation_started" from="StudyingBuddySkeleton/StudyingBuddyAniPlayer" to="." method="_on_studying_buddy_ani_player_animation_started"]
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="Phone/MenuBackButton" to="." method="_on_menu_back_button_pressed"]
